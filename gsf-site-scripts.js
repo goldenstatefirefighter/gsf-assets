@@ -1339,27 +1339,54 @@
     once('roadmap_view', 'roadmap_view', { page_path: path() });
   }
 
-  // ---- 2 and 3. roadmap_submit plus newsletter_signup ---------------------
-  // The MailerLite universal embed posts its own form. One delegated submit
-  // listener covers every embed on the site; the page decides which event.
+  // ---- 2 and 3. known MailerLite attempts and provider acceptance ---------
+  // An accepted request is not proof of an active subscriber or inbox delivery.
+  // Match the provider form, never infer subscription intent from the page URL.
+  var MAILERLITE_FORMS = {
+    hzJv5U: { context: 'roadmap', accepted: 'roadmap_request_accepted' }
+  };
+  var formStates = typeof WeakMap === 'function' ? new WeakMap() : null;
+
   function formSubmits() {
     document.addEventListener('submit', function (e) {
       var form = e.target;
-      if (!form || form.nodeName !== 'FORM') return;
-      var wrap = form.closest && form.closest('.ml-embedded, .ml-form-embedContainer, [data-form]');
-      var hasEmail = form.querySelector && form.querySelector('input[type="email"]');
-      if (!wrap && !hasEmail) return;
-      var holder = form.closest && form.closest('[data-form]');
-      var formId = (holder && holder.getAttribute('data-form')) || 'unknown';
-      if (isRoadmapPage()) {
-        once('roadmap_submit', 'roadmap_submit', { form_id: formId, page_path: path() });
-      } else {
-        once('newsletter_signup_' + formId, 'newsletter_signup', {
-          form_id: formId,
-          page_path: path(),
-          list_context: isJobsPage() ? 'jobs_alert' : 'general'
+      if (!form || form.nodeName !== 'FORM' || !form.closest) return;
+      var wrap = form.closest('.ml-embedded[data-form]');
+      var formId = wrap && wrap.getAttribute('data-form');
+      var config = formId && MAILERLITE_FORMS[formId];
+      if (!config || !Object.prototype.hasOwnProperty.call(MAILERLITE_FORMS, formId)) return;
+      // MailerLite marks required fields with classes, not the HTML required attribute.
+      var email = form.querySelector('input[type="email"]');
+      if (!email || !(email.value || '').trim() || !email.checkValidity()) return;
+      if (typeof form.checkValidity !== 'function' || !form.checkValidity()) return;
+      if (!form.getClientRects().length) return;
+      var params = { form_id: formId, page_path: path(), list_context: config.context,
+        submission_state: 'attempt' };
+      var attemptName = isRoadmapPage() ? 'roadmap_submit' : 'newsletter_signup';
+      once(attemptName + '_' + formId, attemptName, params);
+      if (!formStates || typeof MutationObserver !== 'function') return;
+      var state = formStates.get(wrap);
+      if (state) return;
+      state = { accepted: false, observer: null };
+      formStates.set(wrap, state);
+      function providerAccepted() {
+        if (state.accepted) return;
+        var success = wrap.querySelector('.ml-form-successBody');
+        if (!success || !success.getClientRects().length) return;
+        var style = getComputedStyle(success);
+        if (style.display === 'none' || style.visibility === 'hidden' || style.visibility === 'collapse') return;
+        state.accepted = true;
+        once('provider_accepted_' + formId, config.accepted, {
+          form_id: formId, page_path: path(), list_context: config.context,
+          submission_state: 'provider_accepted', confirmation_state: 'not_verified'
         });
+        if (state.observer) state.observer.disconnect();
       }
+      state.observer = new MutationObserver(providerAccepted);
+      state.observer.observe(wrap, { subtree: true, childList: true, attributes: true,
+        attributeFilter: ['style', 'class', 'hidden'] });
+      // Check only after this valid submit; an initially visible panel is not a signup.
+      setTimeout(providerAccepted, 0);
     }, true);
   }
 
