@@ -39,48 +39,305 @@
   };
 
   // --- Article manifest (slug, title, phase). Keep in sync as articles ship.
+  // Verified public feed + original source categories, 2026-09-06.
   var ARTICLES = [
-    // Get Hired
-    {s:'how-to-become-a-firefighter-in-california', t:'How to Become a Firefighter in California', p:'Get Hired'},
-    {s:'firefighter-hiring-process-california', t:'The Firefighter Hiring Process in California, Step by Step', p:'Get Hired'},
-    {s:'how-long-to-become-a-firefighter-california', t:'How Long Does It Take to Become a Firefighter?', p:'Get Hired'},
-    {s:'cal-fire-vs-city-vs-county', t:'CAL FIRE vs City vs County Fire: How to Choose', p:'Get Hired'},
-    {s:'do-you-need-emt-before-applying-firefighter-california', t:'Do You Need Your EMT Before Applying?', p:'Get Hired'},
-    {s:'fire-academy-vs-fire-technology-california', t:'Fire Academy vs. Fire Technology in California', p:'Get Hired'},
-    {s:'fctc-written-test-explained', t:'The FCTC Written Test, Explained', p:'Get Hired'},
-    {s:'how-to-pass-the-cpat', t:'How to Pass the CPAT: The 8 Events and How to Train', p:'Get Hired'},
-    {s:'firefighter-oral-board-questions', t:'Firefighter Oral Board Questions and How to Answer Them', p:'Get Hired'},
-    {s:'personal-history-statement-explained', t:'The Personal History Statement (PHS), Explained', p:'Get Hired'},
-    {s:'firefighter-background-investigation', t:'The Firefighter Background Investigation, Explained', p:'Get Hired'},
-    {s:'firefighter-salary-california', t:'Firefighter Salary in California: An Honest Breakdown', p:'Get Hired'},
-    {s:'firefighter-schedule-explained', t:'The Firefighter Schedule Explained (48/96 and More)', p:'Get Hired'},
-    {s:'engine-vs-truck-company', t:'Engine vs Truck Company: What Is the Difference?', p:'Get Hired'},
-    {s:'is-being-a-firefighter-worth-it', t:'Is Being a Firefighter Worth It? An Honest Look', p:'Get Hired'},
-    // On the Job
-    {s:'surviving-firefighter-probation', t:'Surviving Firefighter Probation: A Rookie’s Playbook', p:'On the Job'},
-    {s:'why-probationary-firefighters-fail', t:'Why Probationary Firefighters Fail (and How Not To)', p:'On the Job'},
-    {s:'fire-station-etiquette', t:'Fire Station Etiquette: The Rookie’s Unwritten Rules', p:'On the Job'},
-    {s:'firefighter-task-book-explained', t:'The Firefighter Task Book, Explained', p:'On the Job'},
-    {s:'how-to-be-a-good-firefighter', t:'How to Be a Good Firefighter (Beyond Probation)', p:'On the Job'},
-    {s:'firefighter-mental-health', t:'Firefighter Mental Health: An Honest Guide', p:'On the Job'},
-    {s:'fire-service-specialties-explained', t:'Fire Service Specialties Explained', p:'On the Job'},
-    {s:'how-to-get-on-a-specialty-team', t:'How to Get on a Specialty Team (USAR and Hazmat)', p:'On the Job'},
-    {s:'hazmat-technician-firefighter', t:'Hazmat Technician Firefighter: The California Path', p:'On the Job'},
-    {s:'how-to-become-a-fire-investigator', t:'How to Become a Fire Investigator in California', p:'On the Job'},
-    {s:'should-you-become-a-firefighter-paramedic', t:'Should You Become a Firefighter Paramedic?', p:'On the Job'},
-    {s:'wildland-firefighter-career-california', t:'Wildland Firefighter Career in California', p:'On the Job'},
-    // Promote
-    {s:'how-to-promote-in-the-fire-service-california', t:'How to Promote in the Fire Service (California)', p:'Promote'},
-    {s:'building-your-firefighter-promotional-file', t:'Building Your Firefighter Promotional File', p:'Promote'},
-    {s:'fire-promotional-assessment-center', t:'The Fire Promotional Assessment Center Explained', p:'Promote'},
-    {s:'how-to-promote-to-fire-engineer', t:'How to Promote to Fire Engineer in California', p:'Promote'},
-    {s:'how-to-promote-to-fire-captain', t:'How to Promote to Fire Captain in California', p:'Promote'},
-    {s:'how-to-promote-to-battalion-chief', t:'How to Promote to Battalion Chief in California', p:'Promote'},
-    {s:'how-to-become-a-fire-chief', t:'How to Become a Fire Chief in California', p:'Promote'},
-    {s:'fire-officer-certification-california', t:'Fire Officer Certification in California Explained', p:'Promote'},
-    {s:'fire-service-leadership-for-officers', t:'Fire Service Leadership for Aspiring Officers', p:'Promote'},
-    {s:'firefighter-incentive-pay', t:'Firefighter Incentive Pay in California, Explained', p:'Promote'}
-  ];
+  {
+    "s": "which-experience-helps-firefighter-application-california",
+    "t": "Which Experience Actually Helps a California Firefighter Application?",
+    "p": "Get Hired"
+  },
+  {
+    "s": "become-a-firefighter-california-without-quitting-your-job",
+    "t": "How to Become a California Firefighter Without Quitting Your Job",
+    "p": "Get Hired"
+  },
+  {
+    "s": "academy-or-paramedic-first-california",
+    "t": "Academy or Paramedic First? A California Firefighter Path Decision Guide",
+    "p": "Get Hired"
+  },
+  {
+    "s": "retired-firefighter-tax-breaks",
+    "t": "Retired Firefighter Tax Breaks: HELPS, IDR, Early Access",
+    "p": "On the Job"
+  },
+  {
+    "s": "no-tax-on-overtime-firefighters",
+    "t": "No Tax on Overtime for Firefighters: What Qualifies",
+    "p": "On the Job"
+  },
+  {
+    "s": "firefighter-taxes-california",
+    "t": "California Firefighter Taxes: How to Actually Pay Less",
+    "p": "On the Job"
+  },
+  {
+    "s": "firefighter-side-business-taxes",
+    "t": "Firefighter Side Business Taxes: What You Can Deduct",
+    "p": "On the Job"
+  },
+  {
+    "s": "firefighter-overtime-tax-myth",
+    "t": "Firefighter Overtime Tax: Why Your OT Check Looks Small",
+    "p": "On the Job"
+  },
+  {
+    "s": "firefighter-money-mistakes",
+    "t": "Firefighter Money Mistakes: The First Five Years",
+    "p": "On the Job"
+  },
+  {
+    "s": "calpers-pension-taxes",
+    "t": "Is a CalPERS Pension Taxable? Federal, California, Moving",
+    "p": "On the Job"
+  },
+  {
+    "s": "california-firefighter-tax-deductions",
+    "t": "Firefighter Tax Deductions California Still Allows",
+    "p": "On the Job"
+  },
+  {
+    "s": "457b-fees-annuity-audit",
+    "t": "457(b) Fees: How to Audit the Firehouse Annuity Pitch",
+    "p": "On the Job"
+  },
+  {
+    "s": "457b-california-firefighters",
+    "t": "The 457(b): The Firefighter's Best Tax Break",
+    "p": "On the Job"
+  },
+  {
+    "s": "military-to-firefighter-california",
+    "t": "From Military to Firefighter in California",
+    "p": "Get Hired"
+  },
+  {
+    "s": "how-to-promote-to-fire-engineer",
+    "t": "How to Promote to Fire Engineer in California",
+    "p": "Promote"
+  },
+  {
+    "s": "how-to-promote-to-fire-captain",
+    "t": "How to Promote to Fire Captain in California",
+    "p": "Promote"
+  },
+  {
+    "s": "how-to-promote-to-battalion-chief",
+    "t": "How to Promote to Battalion Chief in California",
+    "p": "Promote"
+  },
+  {
+    "s": "how-to-promote-in-the-fire-service-california",
+    "t": "How to Promote in the Fire Service (California)",
+    "p": "Promote"
+  },
+  {
+    "s": "how-to-become-a-fire-chief",
+    "t": "How to Become a Fire Chief in California",
+    "p": "Promote"
+  },
+  {
+    "s": "firefighter-incentive-pay",
+    "t": "Firefighter Incentive Pay in California, Explained",
+    "p": "Promote"
+  },
+  {
+    "s": "fire-service-leadership-for-officers",
+    "t": "Fire Service Leadership for Aspiring Officers",
+    "p": "Promote"
+  },
+  {
+    "s": "fire-promotional-assessment-center",
+    "t": "The Fire Promotional Assessment Center Explained",
+    "p": "Promote"
+  },
+  {
+    "s": "fire-officer-certification-california",
+    "t": "Fire Officer Certification in California Explained",
+    "p": "Promote"
+  },
+  {
+    "s": "building-your-firefighter-promotional-file",
+    "t": "Building Your Firefighter Promotional File",
+    "p": "Promote"
+  },
+  {
+    "s": "wildland-firefighter-career-california",
+    "t": "Wildland Firefighter Career in California",
+    "p": "On the Job"
+  },
+  {
+    "s": "why-probationary-firefighters-fail",
+    "t": "Why Probationary Firefighters Fail (and How Not To)",
+    "p": "On the Job"
+  },
+  {
+    "s": "what-firefighters-actually-do-all-day",
+    "t": "What Firefighters Actually Do All Day",
+    "p": "On the Job"
+  },
+  {
+    "s": "surviving-firefighter-probation",
+    "t": "Surviving Firefighter Probation: A Rookie's Playbook",
+    "p": "On the Job"
+  },
+  {
+    "s": "should-you-become-a-firefighter-paramedic",
+    "t": "Should You Become a Firefighter Paramedic?",
+    "p": "On the Job"
+  },
+  {
+    "s": "how-to-get-on-a-specialty-team",
+    "t": "How to Get on a Specialty Team (USAR & Hazmat)",
+    "p": "On the Job"
+  },
+  {
+    "s": "how-to-become-a-fire-investigator",
+    "t": "How to Become a Fire Investigator in California",
+    "p": "On the Job"
+  },
+  {
+    "s": "how-to-be-a-good-firefighter",
+    "t": "How to Be a Good Firefighter (Beyond Probation)",
+    "p": "On the Job"
+  },
+  {
+    "s": "hazmat-technician-firefighter",
+    "t": "Hazmat Technician Firefighter: The California Path",
+    "p": "On the Job"
+  },
+  {
+    "s": "firefighter-task-book-explained",
+    "t": "The Firefighter Task Book, Explained",
+    "p": "On the Job"
+  },
+  {
+    "s": "firefighter-mental-health",
+    "t": "Firefighter Mental Health: The Toll and Where to Get Help",
+    "p": "On the Job"
+  },
+  {
+    "s": "fire-station-etiquette",
+    "t": "Fire Station Etiquette: The Rookie's Unwritten Rules",
+    "p": "On the Job"
+  },
+  {
+    "s": "fire-service-specialties-explained",
+    "t": "Fire Service Specialties Explained (California Guide)",
+    "p": "On the Job"
+  },
+  {
+    "s": "california-firefighter-pension-retirement",
+    "t": "The California Firefighter Pension and Retirement, Explained",
+    "p": "On the Job"
+  },
+  {
+    "s": "what-fire-academy-is-like-california",
+    "t": "What Fire Academy Is Really Like in California",
+    "p": "Get Hired"
+  },
+  {
+    "s": "personal-history-statement-explained",
+    "t": "The Personal History Statement (PHS), Explained",
+    "p": "Get Hired"
+  },
+  {
+    "s": "how-to-stand-out-and-get-hired-as-a-firefighter",
+    "t": "How to Stand Out and Get Hired as a Firefighter",
+    "p": "Get Hired"
+  },
+  {
+    "s": "how-long-to-become-a-firefighter-california",
+    "t": "How Long Does It Take to Become a Firefighter? (CA)",
+    "p": "Get Hired"
+  },
+  {
+    "s": "firefighter-tattoos-grooming-standards-california",
+    "t": "Firefighter Tattoos and Grooming Standards in California",
+    "p": "Get Hired"
+  },
+  {
+    "s": "firefighter-schedule-explained",
+    "t": "The Firefighter Schedule Explained (48/96 and More)",
+    "p": "Get Hired"
+  },
+  {
+    "s": "fire-explorer-cadet-programs-california",
+    "t": "Fire Explorer and Cadet Programs in California",
+    "p": "Get Hired"
+  },
+  {
+    "s": "fctc-statewide-eligibility-list-explained",
+    "t": "The FCTC Statewide Eligibility List (SEL), Explained",
+    "p": "Get Hired"
+  },
+  {
+    "s": "engine-vs-truck-company",
+    "t": "Engine vs Truck Company: What's the Difference?",
+    "p": "Get Hired"
+  },
+  {
+    "s": "cal-fire-vs-city-vs-county",
+    "t": "CAL FIRE vs City vs County Fire: How to Choose",
+    "p": "Get Hired"
+  },
+  {
+    "s": "am-i-too-old-to-become-a-firefighter-california",
+    "t": "Am I Too Old to Become a Firefighter in California?",
+    "p": "Get Hired"
+  },
+  {
+    "s": "firefighter-background-investigation",
+    "t": "The Firefighter Background Investigation, Explained",
+    "p": "Get Hired"
+  },
+  {
+    "s": "firefighter-oral-board-questions",
+    "t": "Firefighter Oral Board Questions and How to Answer Them",
+    "p": "Get Hired"
+  },
+  {
+    "s": "firefighter-hiring-process-california",
+    "t": "The Firefighter Hiring Process in California, Step by Step",
+    "p": "Get Hired"
+  },
+  {
+    "s": "fctc-written-test-explained",
+    "t": "The FCTC Written Test, Explained (California)",
+    "p": "Get Hired"
+  },
+  {
+    "s": "how-to-pass-the-cpat",
+    "t": "How to Pass the CPAT: The 8 Events and How to Train",
+    "p": "Get Hired"
+  },
+  {
+    "s": "fire-academy-vs-fire-technology-california",
+    "t": "Fire Academy vs. Fire Technology in California",
+    "p": "Get Hired"
+  },
+  {
+    "s": "do-you-need-emt-before-applying-firefighter-california",
+    "t": "Do You Need an EMT to Be a Firefighter in California?",
+    "p": "Get Hired"
+  },
+  {
+    "s": "firefighter-salary-california",
+    "t": "California Firefighter Salary: Base Pay, Overtime, Pension",
+    "p": "Get Hired"
+  },
+  {
+    "s": "is-being-a-firefighter-worth-it",
+    "t": "Is Being a Firefighter Worth It? Rewards, Costs, and Fit",
+    "p": "Get Hired"
+  },
+  {
+    "s": "how-to-become-a-firefighter-in-california",
+    "t": "How to Become a Firefighter in California",
+    "p": "Get Hired"
+  }
+];
+
 
   /* Keyword-routed callouts (copy from Commercialization/Affiliate_Program_Plan.md).
      Each: { match:[substrings tested against slug+title], title, body, cta, href }.
@@ -225,7 +482,7 @@
           [
             "2",
             "Hose Drag",
-            "Drag a charged hoseline, then pull it in hand over hand; legs, core, grip, and back."
+            "Drag an uncharged hoseline, then pull it in hand over hand; legs, core, grip, and back."
           ],
           [
             "3",
@@ -669,32 +926,175 @@
     });
   }
 
+  // Temporary presentation recovery for confirmed empty native title fields.
+  // Native data still needs repair. Never replace an existing non-empty H1.
+  var EMPTY_NATIVE_TITLES = ["fire-officer-certification-california", "wildland-firefighter-career-california", "why-probationary-firefighters-fail", "what-firefighters-actually-do-all-day", "should-you-become-a-firefighter-paramedic", "how-to-be-a-good-firefighter", "firefighter-mental-health", "fire-service-specialties-explained", "california-firefighter-pension-retirement", "what-fire-academy-is-like-california", "how-to-stand-out-and-get-hired-as-a-firefighter", "firefighter-tattoos-grooming-standards-california", "firefighter-schedule-explained", "fire-explorer-cadet-programs-california", "engine-vs-truck-company", "am-i-too-old-to-become-a-firefighter-california", "firefighter-oral-board-questions", "firefighter-hiring-process-california", "do-you-need-emt-before-applying-firefighter-california", "firefighter-salary-california", "is-being-a-firefighter-worth-it"];
+  function restoreEmptyTitle(slug) {
+    if (EMPTY_NATIVE_TITLES.indexOf(slug) === -1) return;
+    var h = document.querySelector('h1.entry-title[data-content-field="title"]');
+    var a = findArticle(slug);
+    if (h && a && !(h.textContent || '').trim()) {
+      h.textContent = a.t;
+      h.setAttribute('data-gsf-title-recovered', '2026-09-06');
+    }
+  }
+
+  // Source-verified presentation corrections pending native-body repair.
+  // Preflight all anchors; preserve any later native edit. Sources/receipts in sprint implementation.
+  var AGE_COPY_FIXES = [
+  {
+    "selector": "p",
+    "oldText": "No, you are almost certainly not too old. California fire departments do not set a maximum hiring age, and it is against the law for them to reject you simply because of how old you are. Plenty of people pin on a badge in their thirties and forties, often after a first career somewhere else. The real questions are not about the calendar. They are whether you can pass the physical test, whether you are honest about the years the process takes, and whether the pension math still works for you. Let us walk through all three.",
+    "newHtml": "<p>Being in your thirties or forties does not by itself rule out a California firefighter career. LAFD, for example, publishes no upper age limit. Check the current requirements for the department and position you want, then plan around the physical test, hiring timeline, and retirement system.</p>"
+  },
+  {
+    "selector": "p",
+    "oldText": "There is no maximum age limit to become a firefighter in California. The City of Los Angeles Fire Department states this plainly in its qualifications (as of 2026, confirm the current bulletin): there is no maximum age to apply. That is the norm across the state, not the exception.",
+    "newHtml": "<p>The <a href=\"https://www.joinlafd.org/qualifications-and-selection-process\">City of Los Angeles Fire Department</a> currently requires applicants to be at least 18 and publishes no upper age limit. Check the current recruitment bulletin for every department you are considering, because employer and position requirements differ.</p>"
+  },
+  {
+    "selector": "p",
+    "oldText": "The reason there is no ceiling is legal, not just cultural. The federal Age Discrimination in Employment Act protects workers 40 and older, and California's own Fair Employment and Housing Act protects applicants 40 and older as well. Local fire departments cannot post a \"must be under 35\" rule the way some federal jobs can. So when you see a 35 or 37 cutoff online, it is almost always talking about a federal firefighter track or another state, not a California city or county department.",
+    "newHtml": "<p>Age-discrimination protections do not settle every firefighter hiring rule. The federal <a href=\"https://www.eeoc.gov/statutes/age-discrimination-employment-act-1967\">Age Discrimination in Employment Act</a> generally protects people 40 and older, but section 623(j) includes an exception for certain state and local firefighter hiring plans. Confirm the rule for the exact employer and role with its hiring office.</p>"
+  },
+  {
+    "selector": "p",
+    "oldText": "There is no maximum age limit at California fire departments. The minimum is usually 18, and some departments require 21 for a permanent position. Age-based rejection of applicants 40 and older is prohibited under federal and California employment law. Always confirm the exact minimum with the department.",
+    "newHtml": "<p>LAFD currently requires applicants to be at least 18 and publishes no upper age limit. Other employers and positions can have different requirements. Read the current bulletin and confirm any age rule with the hiring office before you apply.</p>"
+  },
+  {
+    "selector": "p",
+    "oldText": "Legally, yes. There is no maximum age. The practical questions get sharper the later you start: passing the physical test, surviving a demanding academy, and whether enough working years remain to build the pension you want. At 45 it is very doable. At 50-plus, do a hard, honest cost-benefit check first, including a conversation with CalPERS.",
+    "newHtml": "<p>Starting at 45 or 50 can be an option at a department without an upper hiring age, such as LAFD. Confirm the current requirements first. Then weigh the physical test, academy demands, hiring timeline, and the working years available to build retirement benefits with the relevant retirement system.</p>"
+  },
+  {
+    "selector": "li",
+    "oldText": "U.S. Age Discrimination in Employment Act (protects workers 40+) and California's Fair Employment and Housing Act (protects applicants 40+) - basis for the no-maximum-age norm.",
+    "newHtml": "<li><a href=\"https://www.eeoc.gov/statutes/age-discrimination-employment-act-1967\">U.S. Age Discrimination in Employment Act</a>, sections 623(j) and 631(a), covers certain firefighter hiring exceptions and the general age-40 threshold for protection.</li>"
+  },
+  {
+    "selector": "p",
+    "oldText": "Not your birth year. Three real things:",
+    "newHtml": "<p>After confirming the department's age requirements, consider three practical questions:</p>"
+  },
+  {
+    "selector": "p",
+    "oldText": "No. Forty is a common starting age for career-changers in the fire service. The barriers are physical readiness, the multi-year timeline, and your pension math, not the number itself. If you can pass the CPAT and commit to the process, 40 is workable.",
+    "newHtml": "<p>Age 40 does not rule you out at an employer such as LAFD, which lists no upper age limit. Check the current qualifications, then assess the physical requirements, hiring timeline, and retirement implications.</p>"
+  },
+  {
+    "selector": "p",
+    "oldText": "Not because of age. Departments cannot score you down for being older, and many value the maturity and work history a second-career candidate brings. The only disadvantage is if you show up out of shape or unwilling to start at the bottom. Both are within your control.",
+    "newHtml": "<p>A second-career applicant may bring relevant work experience and maturity. Eligibility and selection depend on the employer's current requirements and assessment process. Ask the hiring office about its rules; do not rely on a general promise that age can never affect eligibility.</p>"
+  }
+];
+  function applyVerifiedCopyRepairs(slug, host) {
+    if (slug === 'how-to-pass-the-cpat') {
+      var hose = Array.prototype.slice.call(host.querySelectorAll('.d, td, p')).filter(function(n) {
+        return (n.textContent || '').trim() === 'Pull a charged line, then kneel and pull hand over hand.';
+      });
+      if (hose.length === 1) hose[0].textContent = 'Drag an uncharged hose, then kneel and pull hand over hand.';
+    }
+    if (slug !== 'am-i-too-old-to-become-a-firefighter-california') return;
+    function norm(x) { return (x || '').replace(/\s+/g, ' ').trim(); }
+    var changes = [];
+    for (var i = 0; i < AGE_COPY_FIXES.length; i++) {
+      var f = AGE_COPY_FIXES[i], tmp = document.createElement('template');
+      tmp.innerHTML = f.newHtml;
+      var replacement = tmp.content.firstElementChild;
+      var nodes = Array.prototype.slice.call(host.querySelectorAll(f.selector));
+      var matches = nodes.filter(function(n) { return norm(n.textContent) === norm(f.oldText); });
+      if (matches.length === 0 && nodes.some(function(n) { return norm(n.textContent) === norm(replacement.textContent); })) continue;
+      if (matches.length !== 1) return;
+      changes.push({old:matches[0], next:replacement});
+    }
+    changes.forEach(function(c) { c.old.parentNode.replaceChild(c.next, c.old); });
+    host.setAttribute('data-gsf-copy-reviewed', '2026-09-06');
+  }
+
+  function relatedGroup(a) {
+    return /tax|457b|pension|money|salary|incentive-pay|schedule/.test(a.s) ? 'Pay and benefits' : a.p;
+  }
+  var RELATED_PRIORITY = {
+  "am-i-too-old-to-become-a-firefighter-california": [
+    "how-long-to-become-a-firefighter-california",
+    "become-a-firefighter-california-without-quitting-your-job",
+    "how-to-become-a-firefighter-in-california"
+  ],
+  "firefighter-tattoos-grooming-standards-california": [
+    "firefighter-background-investigation",
+    "personal-history-statement-explained",
+    "firefighter-hiring-process-california"
+  ],
+  "fire-officer-certification-california": [
+    "how-to-promote-to-fire-captain",
+    "how-to-promote-to-fire-engineer",
+    "how-to-promote-in-the-fire-service-california"
+  ],
+  "calpers-pension-taxes": [
+    "california-firefighter-pension-retirement",
+    "retired-firefighter-tax-breaks",
+    "457b-california-firefighters"
+  ],
+  "firefighter-salary-california": [
+    "firefighter-schedule-explained",
+    "firefighter-incentive-pay",
+    "california-firefighter-pension-retirement"
+  ],
+  "how-long-to-become-a-firefighter-california": [
+    "how-to-become-a-firefighter-in-california",
+    "do-you-need-emt-before-applying-firefighter-california",
+    "become-a-firefighter-california-without-quitting-your-job"
+  ],
+  "fctc-written-test-explained": [
+    "fctc-statewide-eligibility-list-explained",
+    "how-to-pass-the-cpat",
+    "firefighter-hiring-process-california"
+  ],
+  "fctc-statewide-eligibility-list-explained": [
+    "fctc-written-test-explained",
+    "how-to-pass-the-cpat",
+    "firefighter-hiring-process-california"
+  ],
+  "do-you-need-emt-before-applying-firefighter-california": [
+    "academy-or-paramedic-first-california",
+    "fire-academy-vs-fire-technology-california",
+    "firefighter-hiring-process-california"
+  ]
+};
+
   // ---- 1. Keep Reading ---------------------------------------------------
   function keepReading(slug, host){
     if (byId('gsf-keep-reading')) return;
     var me = findArticle(slug), i;
     if (!me) return;
     var base = currentBase();
-    var same = ARTICLES.filter(function(a){ return a.s!==slug && a.p===me.p; });
-    var other = ARTICLES.filter(function(a){ return a.s!==slug && a.p!==me.p; });
+    var group = relatedGroup(me);
+    var same = ARTICLES.filter(function(a){ return a.s!==slug && relatedGroup(a)===group; });
     var seed = slug.length;
     function rot(arr){ return arr.slice(seed % (arr.length||1)).concat(arr.slice(0, seed % (arr.length||1))); }
-    var picks = rot(same).concat(rot(other)).slice(0, CFG.maxRelated);
+    var preferred = (RELATED_PRIORITY[slug] || []).map(findArticle).filter(Boolean);
+    var seen = {};
+    var picks = preferred.concat(rot(same)).filter(function(a) {
+      if (a.s === slug || seen[a.s]) return false;
+      seen[a.s] = true; return true;
+    }).slice(0, CFG.maxRelated);
     if (!picks.length) return;
 
     var b = CFG.brand;
     var wrap = el('section', 'margin:3.5rem 0 1rem;padding-top:2rem;border-top:3px solid '+b.navy+';');
     wrap.id = 'gsf-keep-reading';
+    wrap.setAttribute('data-gsf-related-group', group);
     wrap.appendChild(el('div',
       'font:700 .72rem/1 "Saira Condensed","Public Sans",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:'+b.brass+';margin-bottom:1rem;',
       'Keep Reading'));
-    var grid = el('div','display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;');
+    var grid = el('div','display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:1rem;');
     picks.forEach(function(a){
       var card = el('a', 'display:block;padding:1rem 1.1rem;background:'+b.bone+';border:1px solid '+b.rule+';text-decoration:none;color:'+b.char+';transition:border-color .15s;');
       card.href = base + a.s;
+      card.setAttribute('data-gsf-resource', a.s);
       card.onmouseover = function(){ card.style.borderColor = b.brass; };
       card.onmouseout  = function(){ card.style.borderColor = b.rule; };
-      card.appendChild(el('div','font:700 .62rem/1 "Saira Condensed","Public Sans",system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:'+b.brass+';margin-bottom:.4rem;', a.p));
       card.appendChild(el('div','font:600 1.02rem/1.3 "Public Sans",system-ui,sans-serif;color:'+b.navy+';', a.t));
       grid.appendChild(card);
     });
@@ -851,9 +1251,11 @@
   // ---- boot --------------------------------------------------------------
   function run(){
     var slug = currentSlug();
-    if (!slug || !findArticle(slug)) return;   // only on known article pages (path-agnostic)
+    if (!slug || !findArticle(slug)) return;   // only on verified article pages
+    restoreEmptyTitle(slug);
     var host = contentEl();
     if (!host) return;
+    applyVerifiedCopyRepairs(slug, host);
     try { graphics(slug, host); } catch(e){}
     try { toc(host); } catch(e){}
     try { callout(slug, host); } catch(e){}
@@ -1084,7 +1486,21 @@
   // native GA4 integration. Hand-firing it here would double-count. The
   // required parameter shape is recorded in the event dictionary.
 
+  function relatedResourceClicks() {
+    document.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest && e.target.closest('#gsf-keep-reading a[data-gsf-resource]');
+      if (!a) return;
+      var u; try { u = new URL(a.href, location.href); } catch (err) { return; }
+      if (u.host !== location.host) return;
+      send('related_resource_click', {
+        page_path: path(), destination_path: u.pathname,
+        resource_group: a.closest('#gsf-keep-reading').getAttribute('data-gsf-related-group') || 'unknown'
+      });
+    }, true);
+  }
+
   function boot() {
+    try { relatedResourceClicks(); } catch (e) {}
     try { roadmapView(); } catch (e) {}
     try { formSubmits(); } catch (e) {}
     try { toolStart(); } catch (e) {}
