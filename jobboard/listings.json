@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-09-07T05:37:56",
-    "count": 37,
+    "generated": "2026-09-08T05:38:05",
+    "count": 36,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
@@ -318,15 +318,6 @@
       "open_date": "2022-09-27",
       "close_date": null,
       "source_url": "https://www.governmentjobs.com/careers/tulareca/jobs/3739748",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Carlsbad Fire Department",
-      "title": "Paramedic Firefighter (Entry/Lateral)",
-      "region": "San Diego",
-      "open_date": "2026-08-17",
-      "close_date": "2026-09-07",
-      "source_url": "https://www.governmentjobs.com/careers/CARLSBAD/jobs/5450777",
       "source": "governmentjobs"
     },
     {
