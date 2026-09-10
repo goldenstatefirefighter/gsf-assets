@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-09-08T05:38:05",
-    "count": 36,
+    "generated": "2026-09-10T05:37:56",
+    "count": 37,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
@@ -12,6 +12,15 @@
       "open_date": "2025-06-03",
       "close_date": null,
       "source_url": "https://www.governmentjobs.com/careers/lacounty/jobs/4830530",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "West Covina Fire Department",
+      "title": "FIRE CAPTAIN (Promotional)",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2026-09-09",
+      "close_date": "2026-09-23",
+      "source_url": "https://www.governmentjobs.com/careers/westcovina/jobs/5470871",
       "source": "governmentjobs"
     },
     {
