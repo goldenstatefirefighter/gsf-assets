@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-09-10T05:37:56",
-    "count": 37,
+    "generated": "2026-09-11T05:37:56",
+    "count": 38,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
@@ -30,6 +30,15 @@
       "open_date": "2026-08-27",
       "close_date": "2026-11-22",
       "source_url": "https://www.governmentjobs.com/careers/monrovia/jobs/5464473",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Montebello Fire Department",
+      "title": "FIRE CAPTAIN (PROMOTIONAL)",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2026-09-10",
+      "close_date": "2026-09-24",
+      "source_url": "https://www.governmentjobs.com/careers/montebello/jobs/5456337",
       "source": "governmentjobs"
     },
     {
@@ -267,6 +276,15 @@
       "source": "governmentjobs"
     },
     {
+      "department": "Orange County Fire Authority",
+      "title": "Administrative Fire Captain - Division I",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2026-09-10",
+      "close_date": "2026-09-23",
+      "source_url": "https://www.governmentjobs.com/careers/ocfa/jobs/5477550",
+      "source": "governmentjobs"
+    },
+    {
       "department": "Coalinga Fire Department",
       "title": "Firefighter/Paramedic",
       "region": "Sacramento/Central Valley",
@@ -309,15 +327,6 @@
       "open_date": "2026-08-28",
       "close_date": "2026-09-18",
       "source_url": "https://www.governmentjobs.com/careers/southplacerfire/jobs/5461676",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Sutter County Fire Department",
-      "title": "VOLUNTEER FIREFIGHTER",
-      "region": "Sacramento/Central Valley",
-      "open_date": "2023-09-14",
-      "close_date": null,
-      "source_url": "https://www.governmentjobs.com/careers/SutterCounty/jobs/4171612",
       "source": "governmentjobs"
     },
     {
