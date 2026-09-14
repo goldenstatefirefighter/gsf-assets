@@ -1,10 +1,19 @@
 {
   "meta": {
-    "generated": "2026-09-13T05:38:19",
-    "count": 38,
+    "generated": "2026-09-14T05:38:02",
+    "count": 37,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
+    {
+      "department": "Bakersfield Fire Department",
+      "title": "Firefighter Trainee",
+      "region": "Sacramento/Central Valley",
+      "open_date": "2026-09-14",
+      "close_date": "2026-10-26",
+      "source_url": "https://www.governmentjobs.com/careers/bakersfield/jobs/5480502",
+      "source": "governmentjobs"
+    },
     {
       "department": "Los Angeles County Fire Department",
       "title": "CALL FIRE FIGHTER, NON-COMPETITIVE (AS NEEDED)",
@@ -129,24 +138,6 @@
       "open_date": "2026-08-31",
       "close_date": "2026-09-14",
       "source_url": "https://www.governmentjobs.com/careers/napacity/jobs/5402506",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Livermore- Pleasanton Fire Department",
-      "title": "Firefighter-EMT",
-      "region": "Bay Area",
-      "open_date": "2026-08-24",
-      "close_date": "2026-09-13",
-      "source_url": "https://www.governmentjobs.com/careers/pleasanton/jobs/5433308",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Livermore- Pleasanton Fire Department",
-      "title": "Firefighter-Paramedic",
-      "region": "Bay Area",
-      "open_date": "2026-08-24",
-      "close_date": "2026-09-13",
-      "source_url": "https://www.governmentjobs.com/careers/pleasanton/jobs/5417029",
       "source": "governmentjobs"
     },
     {
