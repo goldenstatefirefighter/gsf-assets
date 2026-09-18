@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-17T05:37:34",
+    "generated": "2026-09-18T05:38:10",
     "count": 37,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
@@ -111,6 +111,15 @@
       "open_date": "2026-01-01",
       "close_date": null,
       "source_url": "https://www.governmentjobs.com/careers/elcentro/jobs/5183105",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "San Ramon Valley Fire Protection District",
+      "title": "Firefighter Paramedic",
+      "region": "Bay Area",
+      "open_date": "2026-09-17",
+      "close_date": "2026-10-01",
+      "source_url": "https://www.governmentjobs.com/careers/srvfire/jobs/5483806",
       "source": "governmentjobs"
     },
     {
@@ -273,15 +282,6 @@
       "open_date": "2026-09-15",
       "close_date": "2026-10-02",
       "source_url": "https://www.governmentjobs.com/careers/sierramadre/jobs/5483152",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Lindsay Fire Department",
-      "title": "Fire Apparatus Engineer",
-      "region": "Sacramento/Central Valley",
-      "open_date": "2026-09-16",
-      "close_date": "2026-09-23",
-      "source_url": "https://www.governmentjobs.com/careers/lindsayca/jobs/5485461",
       "source": "governmentjobs"
     },
     {
