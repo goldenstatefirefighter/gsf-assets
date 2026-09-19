@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-09-18T05:38:10",
-    "count": 37,
+    "generated": "2026-09-19T05:38:17",
+    "count": 36,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
@@ -309,15 +309,6 @@
       "open_date": "2026-07-08",
       "close_date": null,
       "source_url": "https://www.governmentjobs.com/careers/rocklinca/jobs/5403075",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "South Placer Fire Protection District",
-      "title": "Fire Captain",
-      "region": "Sacramento/Central Valley",
-      "open_date": "2026-08-28",
-      "close_date": "2026-09-18",
-      "source_url": "https://www.governmentjobs.com/careers/southplacerfire/jobs/5461676",
       "source": "governmentjobs"
     },
     {
