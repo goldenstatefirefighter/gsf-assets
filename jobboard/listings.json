@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-09-20T05:38:30",
-    "count": 36,
+    "generated": "2026-09-21T05:38:07",
+    "count": 37,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
@@ -138,6 +138,15 @@
       "open_date": "2026-07-22",
       "close_date": "2026-09-30",
       "source_url": "https://www.governmentjobs.com/careers/hollisterca/jobs/5420493",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Oxnard Fire Department",
+      "title": "Fire Engineer (Department Promotion)",
+      "region": "Central Coast",
+      "open_date": "2026-09-21",
+      "close_date": "2026-10-19",
+      "source_url": "https://www.governmentjobs.com/careers/cityofoxnard/jobs/5477977",
       "source": "governmentjobs"
     },
     {
