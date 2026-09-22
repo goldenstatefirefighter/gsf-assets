@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-09-21T05:38:07",
-    "count": 37,
+    "generated": "2026-09-22T05:37:36",
+    "count": 39,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
@@ -57,15 +57,6 @@
       "open_date": "2026-08-03",
       "close_date": null,
       "source_url": "https://www.governmentjobs.com/careers/fullerton/jobs/5430126",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Santa Barbara City Fire Department",
-      "title": "Firefighter - Entry",
-      "region": "Central Coast",
-      "open_date": "2026-08-17",
-      "close_date": "2026-09-21",
-      "source_url": "https://www.governmentjobs.com/careers/santabarbara/jobs/5445639",
       "source": "governmentjobs"
     },
     {
@@ -255,6 +246,33 @@
       "open_date": "2026-05-08",
       "close_date": null,
       "source_url": "https://www.governmentjobs.com/careers/newportbeach/jobs/5319450",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Orange County Fire Authority",
+      "title": "Firefighter Paramedic - Professional Experience",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2026-09-21",
+      "close_date": "2026-10-18",
+      "source_url": "https://www.governmentjobs.com/careers/ocfa/jobs/5490286",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Orange County Fire Authority",
+      "title": "Firefighter Paramedic - Trainee",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2026-09-21",
+      "close_date": "2026-10-18",
+      "source_url": "https://www.governmentjobs.com/careers/ocfa/jobs/5490264",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Orange County Fire Authority",
+      "title": "Fire Apparatus Engineer",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2026-09-21",
+      "close_date": "2026-10-07",
+      "source_url": "https://www.governmentjobs.com/careers/ocfa/jobs/5466481",
       "source": "governmentjobs"
     },
     {
