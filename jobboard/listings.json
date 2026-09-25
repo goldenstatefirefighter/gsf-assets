@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-09-24T05:37:58",
-    "count": 40,
+    "generated": "2026-09-25T05:38:00",
+    "count": 41,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
@@ -48,15 +48,6 @@
       "open_date": "2026-08-27",
       "close_date": "2026-11-22",
       "source_url": "https://www.governmentjobs.com/careers/monrovia/jobs/5464473",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Montebello Fire Department",
-      "title": "FIRE CAPTAIN (PROMOTIONAL)",
-      "region": "Los Angeles/SoCal",
-      "open_date": "2026-09-10",
-      "close_date": "2026-09-24",
-      "source_url": "https://www.governmentjobs.com/careers/montebello/jobs/5456337",
       "source": "governmentjobs"
     },
     {
@@ -147,6 +138,24 @@
       "open_date": "2026-07-22",
       "close_date": "2026-09-30",
       "source_url": "https://www.governmentjobs.com/careers/hollisterca/jobs/5420493",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Montecito Fire Protection District",
+      "title": "Firefighter - Paramedic 2026 Recruitment",
+      "region": "Central Coast",
+      "open_date": "2026-09-24",
+      "close_date": "2026-10-19",
+      "source_url": "https://www.governmentjobs.com/careers/montecitofire/jobs/5494950",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Montecito Fire Protection District",
+      "title": "Firefighter - EMT 2026 Recruitment",
+      "region": "Central Coast",
+      "open_date": "2026-09-24",
+      "close_date": "2026-10-19",
+      "source_url": "https://www.governmentjobs.com/careers/montecitofire/jobs/5494741",
       "source": "governmentjobs"
     },
     {
