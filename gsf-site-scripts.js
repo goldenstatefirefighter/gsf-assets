@@ -1274,6 +1274,7 @@
         '.blog-masonry .entry--list{box-sizing:border-box!important;min-width:0}',
         '.gsf .phase .flag,.gsf .callout.warn .k,#gsfj .job .dates .close.soon{color:#EE8F7E!important}',
         '.blog-item-content p a,.blog-item-content li a,.blog-item-content figure a,.gsf p a:not(.btn),.gsf li a:not(.btn),.gsf .breadcrumb a{text-decoration:underline!important;text-underline-offset:.18em}',
+        '.blog-item-content [id^="gsf-gfx-"] a{color:#79551C!important;text-decoration:underline!important}',
         '#gsfd .contact a{display:inline-flex;align-items:center;min-height:44px}',
         '#gsftd .scroll:focus-visible,.blog-item-content [role="region"]:focus-visible{outline:2px solid currentColor;outline-offset:3px}'
       ].join('\n');
