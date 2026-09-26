@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-09-25T05:38:00",
-    "count": 41,
+    "generated": "2026-09-26T05:38:12",
+    "count": 40,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
@@ -165,15 +165,6 @@
       "open_date": "2026-09-21",
       "close_date": "2026-10-19",
       "source_url": "https://www.governmentjobs.com/careers/cityofoxnard/jobs/5477977",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "San Luis Obispo City Fire Department",
-      "title": "Firefighter",
-      "region": "Central Coast",
-      "open_date": "2026-09-01",
-      "close_date": "2026-09-25",
-      "source_url": "https://www.governmentjobs.com/careers/slobispo/jobs/5441542",
       "source": "governmentjobs"
     },
     {
