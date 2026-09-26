@@ -414,7 +414,7 @@
   //   type  = 'note' | 'stat' | 'table' | 'steps' | 'checklist'.
   // Populate from the article's own fact-checked text. Empty = module no-ops.
   var GFX = {
-    accent:'#C08A2D', accent2:'#101C33', ink:'#1E2128', bg:'#F3EFE6',
+    accent:'#C08A2D', textAccent:'#79551C', accent2:'#101C33', ink:'#1E2128', bg:'#F3EFE6',
     surface:'#ffffff', rule:'#D7D2C6', muted:'#5B6472',
     head:'"Saira Condensed","Public Sans",system-ui,sans-serif', body:'"Public Sans",system-ui,sans-serif'
   };
@@ -424,22 +424,13 @@
       "after": "Base pay by rough rank",
       "type": "stat",
       "data": {
-        "kicker": "Entry-level base pay, 2025 to 2026 public reporting",
-        "title": "Broad ranges to confirm, not promises",
+        "kicker": "Official entry base pay, checked September 2026",
+        "title": "Two current department examples",
         "items": [
-          {
-            "value": "$60k to $85k",
-            "label": "Common entry-level base range statewide"
-          },
-          {
-            "value": "High $70k to low $80k",
-            "label": "Los Angeles entry pay"
-          },
-          {
-            "value": "Into the $90k",
-            "label": "San Francisco entry pay"
-          }
-        ]
+          { "value": "$87,883", "label": "LAFD Firefighter I annual base salary" },
+          { "value": "$100,464", "label": "San Francisco H002 starting annual salary" }
+        ],
+        "caption": "Official department figures, not a statewide average. Sources: <a href=\"https://www.joinlafd.org/salary-and-benefits\">LAFD Salary and Benefits</a> and <a href=\"https://careers.sf.gov/classifications/?classCode=H002\">San Francisco H002 classification schedule</a>, checked September 26, 2026. Confirm the current recruitment bulletin or salary schedule before relying on either amount."
       }
     },
     {
@@ -531,7 +522,7 @@
           },
           {
             "h": "FCTC written test",
-            "d": "Pass the $50, 100-question test and land on the statewide list used by over 170 departments."
+            "d": "A passing written score is one FCTC Statewide Eligibility List requirement. You also need a valid CPAT, a complete profile, and current required documents."
           },
           {
             "h": "The application",
@@ -633,7 +624,7 @@
       "after": "The Short Version",
       "type": "steps",
       "data": {
-        "title": "The path most California candidates follow",
+        "title": "One path to compare with department requirements",
         "items": [
           {
             "h": "Decide it is really what you want",
@@ -641,11 +632,11 @@
           },
           {
             "h": "Get your EMT certification",
-            "d": "Nearly every department expects it; a California EMT certificate is valid for two years."
+            "d": "Many recruitments require EMT certification, while some recruit academies include the training. Confirm when your target department requires it."
           },
           {
             "h": "Complete a Firefighter I academy",
-            "d": "Most departments want a State Fire Marshal accredited Firefighter I certification or the academy training behind it."
+            "d": "Check whether the recruitment requires prior academy training or Fire Fighter 1 certification, or includes a paid recruit academy after hire."
           },
           {
             "h": "Pass the CPAT",
@@ -653,11 +644,11 @@
           },
           {
             "h": "Take the FCTC written test",
-            "d": "A $50, 100-question test that places you on the Statewide Eligibility List; the score is valid 12 months."
+            "d": "A $50, 100-question test. A passing score is one Statewide Eligibility List requirement; you also need a valid CPAT, a complete profile, and current required documents."
           },
           {
             "h": "Apply to departments",
-            "d": "Apply widely; more than 170 departments use the FCTC list and openings are irregular."
+            "d": "Check current recruitment bulletins. Some departments use the FCTC list, while others run a separate selection process."
           },
           {
             "h": "Pass the oral board",
@@ -686,8 +677,8 @@
         "kicker": "Ballpark figures, confirm with each provider",
         "items": [
           {
-            "value": "3 to 5 years",
-            "label": "Typical time from starting out to a permanent position"
+            "value": "Varies",
+            "label": "Preparation and hiring time depend on your starting point and the recruitment"
           },
           {
             "value": "$50",
@@ -698,8 +689,8 @@
             "label": "CPAT (test plus two orientations)"
           },
           {
-            "value": "$1,300 to $2,700",
-            "label": "EMT course at a CA community college (ballpark)"
+            "value": "Program-specific",
+            "label": "Compare EMT tuition, supplies, exams, and certification costs"
           }
         ]
       }
@@ -840,14 +831,14 @@
 
   function gfxShell(title, kicker){
     var w = el('figure','margin:2rem 0;padding:1.25rem 1.4rem;background:'+GFX.surface+';border:1px solid '+GFX.rule+';border-top:4px solid '+GFX.accent+';');
-    if (kicker) w.appendChild(el('figcaption','font:700 .64rem/1 '+GFX.head+';letter-spacing:.14em;text-transform:uppercase;color:'+GFX.accent+';margin-bottom:.6rem;', kicker));
+    if (kicker) w.appendChild(el('figcaption','font:700 .64rem/1 '+GFX.head+';letter-spacing:.14em;text-transform:uppercase;color:'+GFX.textAccent+';margin-bottom:.6rem;', kicker));
     if (title)  w.appendChild(el('div','font:600 1.12rem/1.3 '+GFX.head+';color:'+GFX.ink+';margin-bottom:.85rem;', title));
     return w;
   }
   function renderNote(g){
     var d=g.data||{}, warn=(d.variant==='warn');
     var box=el('aside','margin:2rem 0;padding:1.05rem 1.3rem;background:'+GFX.bg+';border:1px solid '+GFX.rule+';');
-    if(d.title) box.appendChild(el('div','font:700 .66rem/1 '+GFX.head+';letter-spacing:.12em;text-transform:uppercase;color:'+(warn?GFX.accent:GFX.accent2)+';margin-bottom:.4rem;', d.title));
+    if(d.title) box.appendChild(el('div','font:700 .66rem/1 '+GFX.head+';letter-spacing:.12em;text-transform:uppercase;color:'+(warn?GFX.textAccent:GFX.accent2)+';margin-bottom:.4rem;', d.title));
     if(d.body)  box.appendChild(el('div','font:400 .96rem/1.55 '+GFX.body+';color:'+GFX.ink+';', d.body));
     return box;
   }
@@ -860,11 +851,16 @@
       c.appendChild(el('div','font:500 .82rem/1.35 '+GFX.body+';color:'+GFX.muted+';margin-top:.3rem;', it.label));
       row.appendChild(c);
     });
-    w.appendChild(row); return w;
+    w.appendChild(row);
+    if(d.caption) w.appendChild(el('div','font:400 .78rem/1.4 '+GFX.body+';color:'+GFX.muted+';margin-top:.8rem;',d.caption));
+    return w;
   }
   function renderTable(g){
     var d=g.data||{}, w=gfxShell(d.title, d.kicker||'At a glance');
     var scroll=el('div','overflow-x:auto;');
+    scroll.tabIndex=0;
+    scroll.setAttribute('role','region');
+    scroll.setAttribute('aria-label',d.title||'Comparison table');
     var t=el('table','width:100%;border-collapse:collapse;font:400 .9rem/1.4 '+GFX.body+';color:'+GFX.ink+';');
     if(d.headers){ var thead=el('thead'), tr=el('tr');
       d.headers.forEach(function(h){ tr.appendChild(el('th','text-align:left;padding:.55rem .7rem;background:'+GFX.accent2+';color:#fff;font:600 .82rem '+GFX.body+';', h)); });
@@ -1174,7 +1170,7 @@
     box.setAttribute('aria-label','On this page');
 
     var head = el('div','display:flex;align-items:center;justify-content:space-between;gap:.75rem;');
-    head.appendChild(el('div','font:600 .68rem/1 "IBM Plex Mono",ui-monospace,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:'+b.brass+';','On this page'));
+    head.appendChild(el('div','font:600 .68rem/1 "IBM Plex Mono",ui-monospace,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:'+b.navy+';','On this page'));
     var toggle = el('button','background:none;border:1px solid '+b.rule+';color:'+b.navy+';font:600 .64rem/1 "IBM Plex Mono",ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;padding:.35rem .6rem;cursor:pointer;display:none;');
     toggle.type = 'button';
     head.appendChild(toggle);
@@ -1241,7 +1237,7 @@
         if (!/\bnoopener\b/i.test(rel)) a.setAttribute('rel', (rel ? rel + ' ' : '') + 'noopener');
       }
       if (a.querySelector('img')) continue; // no marker on image links
-      var mark = el('span','font:600 .72em/1 "Public Sans",system-ui,sans-serif;vertical-align:super;margin-left:.18em;color:'+CFG.brand.slate+';');
+      var mark = el('span','font:600 .72em/1 "Public Sans",system-ui,sans-serif;vertical-align:super;margin-left:.18em;color:inherit;');
       mark.textContent = '↗︎'; // text-presentation north-east arrow, not an emoji
       mark.setAttribute('aria-hidden','true');
       a.appendChild(mark);
@@ -1265,6 +1261,33 @@
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
   else run();
+})();
+
+/* GSF accessibility repairs, September 26, 2026. Scoped to existing UI. */
+(function(){
+  'use strict';
+  function apply(){
+    if(!document.getElementById('gsf-audit-accessibility')){
+      var style=document.createElement('style');
+      style.id='gsf-audit-accessibility';
+      style.textContent=[
+        '.blog-masonry .entry--list{box-sizing:border-box!important;min-width:0}',
+        '.gsf .phase .flag,.gsf .callout.warn .k,#gsfj .job .dates .close.soon{color:#EE8F7E!important}',
+        '.blog-item-content p a,.blog-item-content li a,.blog-item-content figure a,.gsf p a:not(.btn),.gsf li a:not(.btn),.gsf .breadcrumb a{text-decoration:underline!important;text-underline-offset:.18em}',
+        '#gsfd .contact a{display:inline-flex;align-items:center;min-height:44px}',
+        '#gsftd .scroll:focus-visible,.blog-item-content [role="region"]:focus-visible{outline:2px solid currentColor;outline-offset:3px}'
+      ].join('\n');
+      document.head.appendChild(style);
+    }
+    var tables=document.querySelectorAll('#gsftd .scroll');
+    for(var i=0;i<tables.length;i++){
+      tables[i].tabIndex=0;
+      tables[i].setAttribute('role','region');
+      tables[i].setAttribute('aria-label','Testing options comparison');
+    }
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',apply);
+  else apply();
 })();
 
 /* ==========================================================================
