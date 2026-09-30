@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-09-29T05:38:10",
-    "count": 43,
+    "generated": "2026-09-30T05:38:16",
+    "count": 44,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
@@ -70,6 +70,15 @@
     },
     {
       "department": "Fullerton Fire Department",
+      "title": "Firefighter Trainee",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2026-09-29",
+      "close_date": "2026-10-18",
+      "source_url": "https://www.governmentjobs.com/careers/fullerton/jobs/5488730",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Fullerton Fire Department",
       "title": "Fire Cadet",
       "region": "Los Angeles/SoCal",
       "open_date": "2026-08-03",
@@ -91,7 +100,7 @@
       "title": "Firefighter Paramedic Recruit",
       "region": "San Diego",
       "open_date": "2026-05-01",
-      "close_date": null,
+      "close_date": "2026-11-27",
       "source_url": "https://www.governmentjobs.com/careers/oceansideca/jobs/5329377",
       "source": "governmentjobs"
     },
