@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-09-30T05:38:16",
-    "count": 44,
+    "generated": "2026-09-30T17:44:42",
+    "count": 43,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
@@ -30,15 +30,6 @@
       "open_date": "2026-09-23",
       "close_date": "2026-10-23",
       "source_url": "https://www.governmentjobs.com/careers/vallejo/jobs/5493544",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Visalia Fire Department",
-      "title": "FIRE CAPTAIN-PROMOTIONAL ONLY",
-      "region": "Sacramento/Central Valley",
-      "open_date": "2026-09-22",
-      "close_date": "2026-09-30",
-      "source_url": "https://www.governmentjobs.com/careers/visalia/jobs/5461348",
       "source": "governmentjobs"
     },
     {
@@ -178,20 +169,20 @@
     },
     {
       "department": "Montecito Fire Protection District",
-      "title": "Firefighter - Paramedic 2026 Recruitment",
-      "region": "Central Coast",
-      "open_date": "2026-09-24",
-      "close_date": "2026-10-19",
-      "source_url": "https://www.governmentjobs.com/careers/montecitofire/jobs/5494950",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Montecito Fire Protection District",
       "title": "Firefighter - EMT 2026 Recruitment",
       "region": "Central Coast",
       "open_date": "2026-09-24",
       "close_date": "2026-10-19",
       "source_url": "https://www.governmentjobs.com/careers/montecitofire/jobs/5494741",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Montecito Fire Protection District",
+      "title": "Firefighter - Paramedic 2026 Recruitment",
+      "region": "Central Coast",
+      "open_date": "2026-09-24",
+      "close_date": "2026-10-19",
+      "source_url": "https://www.governmentjobs.com/careers/montecitofire/jobs/5494950",
       "source": "governmentjobs"
     },
     {
@@ -367,20 +358,20 @@
     },
     {
       "department": "Rocklin Fire Department",
-      "title": "Firefighter/Paramedic (Non-Lateral)",
-      "region": "Sacramento/Central Valley",
-      "open_date": "2026-07-08",
-      "close_date": null,
-      "source_url": "https://www.governmentjobs.com/careers/rocklinca/jobs/5406709",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Rocklin Fire Department",
       "title": "Firefighter/Paramedic (Lateral)",
       "region": "Sacramento/Central Valley",
       "open_date": "2026-07-08",
       "close_date": null,
       "source_url": "https://www.governmentjobs.com/careers/rocklinca/jobs/5403075",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Rocklin Fire Department",
+      "title": "Firefighter/Paramedic (Non-Lateral)",
+      "region": "Sacramento/Central Valley",
+      "open_date": "2026-07-08",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/rocklinca/jobs/5406709",
       "source": "governmentjobs"
     },
     {
