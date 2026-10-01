@@ -1,26 +1,4 @@
-/* ==========================================================================
-   Golden State Firefighter - site-wide behavior layer  (gsf-site-scripts.js)
-   --------------------------------------------------------------------------
-   The GSF equivalent of Ambitious Harvest's ah-site-scripts.js.
 
-   HOSTING: live sitewide from the public gsf-assets repo. To deploy an edit:
-     1. Copy this file into the gsf-assets clone at the GSF folder root.
-     2. Commit that ONE file (public repo, never git add -A) and push.
-     3. Purge once:
-        curl -s "https://purge.jsdelivr.net/gh/goldenstatefirefighter/gsf-assets@main/gsf-site-scripts.js"
-   Loader already in the Squarespace header:
-        https://cdn.jsdelivr.net/gh/goldenstatefirefighter/gsf-assets@main/gsf-site-scripts.js
-
-   Modules (article-only, idempotent):
-     1. Keep Reading  - related-article cards from the embedded manifest
-     2. FAQ polish    - consistent styling for the FAQ block
-     3. Callouts      - keyword-routed product / affiliate callout, mid-article
-     4. On this page  - compact TOC after the first paragraph (4+ h2 articles)
-     5. External-link marker - superscript arrow + noopener on other-host links
-
-   Smoke-test the DOM selectors on the live site once and adjust if needed.
-   Voice rule: no em-dashes, no emojis, no hype in any injected copy.
-   ========================================================================== */
 (function () {
   'use strict';
 
@@ -38,7 +16,7 @@
     }
   };
 
-  // --- Article manifest (slug, title, phase). Keep in sync as articles ship.
+  
   // Verified public feed + original source categories, 2026-09-06.
   var ARTICLES = [
   {
@@ -339,44 +317,8 @@
 ];
 
 
-  /* Keyword-routed callouts (copy from Commercialization/Affiliate_Program_Plan.md).
-     Each: { match:[substrings tested against slug+title], title, body, cta, href }.
-     A callout stays DORMANT until its href is a real URL: any href still holding
-     the REPLACE_WITH token is skipped, so this is safe to ship before any program
-     is joined. To activate one: join the program, then paste the real affiliate
-     URL over the token. First live match wins. */
-  var CALLOUTS = [
-    { match:['how-to-pass-the-cpat','cpat','physical ability'],
-      title:'Train for the CPAT the way the test actually feels',
-      body:'The CPAT is a timed grind in a 50-pound vest, and most candidates who struggle simply did not rehearse the load. A weighted vest and steady stair work in the weeks before your date close that gap.',
-      cta:'See the weighted vest most candidates train in',
-      href:'REPLACE_WITH_ROGUE_OR_AMAZON_URL' },
-    { match:['do-you-need-emt-before-applying-firefighter-california','nremt','emt certification'],
-      title:'Get the EMT card before it becomes the thing holding you back',
-      body:'Most California fire jobs want a current EMT certification before you test, and the NREMT cognitive exam trips up people who did not drill practice questions. A focused prep course is a small cost against a six-figure job.',
-      cta:'Practice for the NREMT exam',
-      href:'REPLACE_WITH_EMT_NATIONAL_TRAINING_URL' },
-    { match:['firefighter-oral-board-questions','oral board','panel interview'],
-      title:'The oral board is won on preparation, not personality',
-      body:'The candidates who score well have rehearsed their answers out loud until the nerves stop running the room. A well-worn interview prep book gives you the question bank and the structure to practice against.',
-      cta:'See the firefighter interview prep book',
-      href:'REPLACE_WITH_AMAZON_AFFILIATE_URL' },
-    { match:['fctc-written-test-explained','written test','written exam','study guide'],
-      title:'Walk into the written test having already seen the format',
-      body:'The FCTC and department written tests reward familiarity with the question types more than raw knowledge. A practice-heavy study guide lets you rehearse the timing so nothing on test day is a surprise.',
-      cta:'See a firefighter written-exam study guide',
-      href:'REPLACE_WITH_AMAZON_AFFILIATE_URL' },
-    { match:['fire-academy-vs-fire-technology-california','surviving-firefighter-probation','duty boots','turnout','station gear'],
-      title:'Show up to the academy with boots that will not quit on you',
-      body:'Recruits spend long days on their feet, and cheap boots fail fast. A solid pair of duty boots and basic station gear are worth buying once and buying right before day one.',
-      cta:'See duty boots built for the academy',
-      href:'REPLACE_WITH_LAPOLICEGEAR_URL' },
-    { match:['firefighter fitness','conditioning','work capacity'],
-      title:'The job rewards the people who keep training after they get hired',
-      body:'Fitness is not a one-time test you clear and forget. A vest, a sandbag, and a simple weekly plan keep your work capacity where the job needs it, on and off probation.',
-      cta:'See the strength gear firefighters actually use',
-      href:'REPLACE_WITH_ROGUE_OR_AMAZON_URL' }
-  ];
+  
+  var CALLOUTS = [];
 
   // ---- helpers -----------------------------------------------------------
   function currentSlug() {
@@ -412,7 +354,7 @@
   //   after = heading-text substring to anchor after (graphic is SKIPPED if the
   //           heading is not found, so it never lands in the wrong place).
   //   type  = 'note' | 'stat' | 'table' | 'steps' | 'checklist'.
-  // Populate from the article's own fact-checked text. Empty = module no-ops.
+  
   var GFX = {
     accent:'#C08A2D', textAccent:'#79551C', accent2:'#101C33', ink:'#1E2128', bg:'#F3EFE6',
     surface:'#ffffff', rule:'#D7D2C6', muted:'#5B6472',
@@ -1291,20 +1233,7 @@
   else apply();
 })();
 
-/* ==========================================================================
-   GSF ANALYTICS EVENT LAYER  (added 2026-08-19)
-   --------------------------------------------------------------------------
-   Fires the GSF core conversion events as GA4 gtag events. This module is a
-   deliberate NO-OP until a GA4 tag is present on the page: every send goes
-   through send(), which returns immediately unless window.gtag is a function.
-   Installing the measurement ID in Squarespace (Settings > Developer Tools >
-   External API Keys, the "Google Analytics account number" field) is what
-   switches it on. Never install the tag through Code Injection via API.
 
-   Event contract is documented in Admin & Brand/analytics-event-dictionary.md.
-   Keep the two in sync. This IIFE is separate from the article layer above
-   because that one returns early on non-article pages; this one runs sitewide.
-   ========================================================================== */
 (function () {
   'use strict';
 
@@ -1532,10 +1461,10 @@
     }, true);
   }
 
-  // NOTE: purchase is intentionally NOT implemented here. GSF sells nothing
-  // yet, and when it does, Squarespace Commerce emits purchase through the
-  // native GA4 integration. Hand-firing it here would double-count. The
-  // required parameter shape is recorded in the event dictionary.
+  
+  
+  
+  
 
   function relatedResourceClicks() {
     document.addEventListener('click', function (e) {
