@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-09-30T17:44:42",
-    "count": 43,
+    "generated": "2026-10-01T05:38:17",
+    "count": 39,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
@@ -21,15 +21,6 @@
       "open_date": "2026-09-28",
       "close_date": "2026-10-05",
       "source_url": "https://www.governmentjobs.com/careers/berkeley/jobs/5487119",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Vallejo Fire Department",
-      "title": "Firefighter / Paramedic",
-      "region": "Bay Area",
-      "open_date": "2026-09-23",
-      "close_date": "2026-10-23",
-      "source_url": "https://www.governmentjobs.com/careers/vallejo/jobs/5493544",
       "source": "governmentjobs"
     },
     {
@@ -159,15 +150,6 @@
       "source": "governmentjobs"
     },
     {
-      "department": "Hollister Fire Department",
-      "title": "Firefighter/EMT (Entry Level)",
-      "region": "Central Coast",
-      "open_date": "2026-07-22",
-      "close_date": "2026-09-30",
-      "source_url": "https://www.governmentjobs.com/careers/hollisterca/jobs/5420493",
-      "source": "governmentjobs"
-    },
-    {
       "department": "Montecito Fire Protection District",
       "title": "Firefighter - EMT 2026 Recruitment",
       "region": "Central Coast",
@@ -237,24 +219,6 @@
       "open_date": "2026-09-22",
       "close_date": "2026-10-05",
       "source_url": "https://www.governmentjobs.com/careers/coronaca/jobs/5481198",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Loma Linda Fire Department",
-      "title": "Fire Engineer (Internal Only)",
-      "region": "Inland Empire",
-      "open_date": "2026-09-14",
-      "close_date": "2026-09-30",
-      "source_url": "https://www.governmentjobs.com/careers/lomalinda/jobs/5471614",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Loma Linda Fire Department",
-      "title": "Fire Captain (Internal Only)",
-      "region": "Inland Empire",
-      "open_date": "2026-09-14",
-      "close_date": "2026-09-30",
-      "source_url": "https://www.governmentjobs.com/careers/lomalinda/jobs/5471583",
       "source": "governmentjobs"
     },
     {
