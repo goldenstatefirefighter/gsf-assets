@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-10-02T05:37:57",
-    "count": 41,
+    "generated": "2026-10-03T05:38:57",
+    "count": 40,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
@@ -309,15 +309,6 @@
       "open_date": "2026-09-28",
       "close_date": "2026-10-11",
       "source_url": "https://www.governmentjobs.com/careers/santafesprings/jobs/5490699",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Sierra Madre Fire Department",
-      "title": "Single-function Firefighter/Firefighter Paramedic",
-      "region": "Los Angeles/SoCal",
-      "open_date": "2026-09-15",
-      "close_date": "2026-10-02",
-      "source_url": "https://www.governmentjobs.com/careers/sierramadre/jobs/5483152",
       "source": "governmentjobs"
     },
     {
