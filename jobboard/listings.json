@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-10-03T05:38:57",
-    "count": 40,
+    "generated": "2026-10-04T05:38:10",
+    "count": 39,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
@@ -219,15 +219,6 @@
       "open_date": "2026-05-11",
       "close_date": null,
       "source_url": "https://www.governmentjobs.com/careers/cathedralcityca/jobs/5338561",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Corona Fire Department",
-      "title": "Prevention Fire Cadet (Part-Time)",
-      "region": "Inland Empire",
-      "open_date": "2026-09-22",
-      "close_date": "2026-10-05",
-      "source_url": "https://www.governmentjobs.com/careers/coronaca/jobs/5481198",
       "source": "governmentjobs"
     },
     {
