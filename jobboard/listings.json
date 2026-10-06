@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-10-05T05:37:33",
-    "count": 40,
+    "generated": "2026-10-06T05:37:38",
+    "count": 39,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
@@ -12,15 +12,6 @@
       "open_date": "2026-09-28",
       "close_date": "2026-10-12",
       "source_url": "https://www.governmentjobs.com/careers/berkeley/jobs/5487103",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Berkeley Fire Department",
-      "title": "Firefighter EMT",
-      "region": "Bay Area",
-      "open_date": "2026-09-28",
-      "close_date": "2026-10-05",
-      "source_url": "https://www.governmentjobs.com/careers/berkeley/jobs/5487119",
       "source": "governmentjobs"
     },
     {
