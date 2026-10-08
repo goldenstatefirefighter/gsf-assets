@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-10-07T05:37:52",
-    "count": 37,
+    "generated": "2026-10-08T05:38:20",
+    "count": 35,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
@@ -39,6 +39,15 @@
       "open_date": "2026-09-14",
       "close_date": "2026-10-26",
       "source_url": "https://www.governmentjobs.com/careers/bakersfield/jobs/5480502",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Los Angeles County Fire Department",
+      "title": "FIRE FIGHTER TRAINEE (PARAMEDIC)",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2026-10-07",
+      "close_date": "2026-10-23",
+      "source_url": "https://www.governmentjobs.com/careers/lacounty/jobs/5491217",
       "source": "governmentjobs"
     },
     {
@@ -204,15 +213,6 @@
       "source": "governmentjobs"
     },
     {
-      "department": "Loma Linda Fire Department",
-      "title": "Firefighter Paramedic",
-      "region": "Inland Empire",
-      "open_date": "2026-09-14",
-      "close_date": "2026-10-07",
-      "source_url": "https://www.governmentjobs.com/careers/lomalinda/jobs/5471678",
-      "source": "governmentjobs"
-    },
-    {
       "department": "Montclair Fire Department",
       "title": "Fire Engineer",
       "region": "Inland Empire",
@@ -240,15 +240,6 @@
       "source": "governmentjobs"
     },
     {
-      "department": "Newport Beach Fire Department",
-      "title": "FIREFIGHTER PARAMEDIC",
-      "region": "Los Angeles/SoCal",
-      "open_date": "2026-05-08",
-      "close_date": null,
-      "source_url": "https://www.governmentjobs.com/careers/newportbeach/jobs/5319450",
-      "source": "governmentjobs"
-    },
-    {
       "department": "Orange County Fire Authority",
       "title": "Firefighter Paramedic - Professional Experience",
       "region": "Los Angeles/SoCal",
@@ -264,15 +255,6 @@
       "open_date": "2026-09-21",
       "close_date": "2026-10-18",
       "source_url": "https://www.governmentjobs.com/careers/ocfa/jobs/5490264",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Orange County Fire Authority",
-      "title": "Fire Apparatus Engineer",
-      "region": "Los Angeles/SoCal",
-      "open_date": "2026-09-21",
-      "close_date": "2026-10-07",
-      "source_url": "https://www.governmentjobs.com/careers/ocfa/jobs/5466481",
       "source": "governmentjobs"
     },
     {
