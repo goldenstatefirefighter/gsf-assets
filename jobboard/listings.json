@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-10-09T05:37:49",
-    "count": 36,
+    "generated": "2026-10-10T05:38:55",
+    "count": 37,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
@@ -120,6 +120,15 @@
       "open_date": "2024-11-27",
       "close_date": null,
       "source_url": "https://www.governmentjobs.com/careers/santee/jobs/4744205",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "San Bernardino County Fire",
+      "title": "Fire Captain",
+      "region": "Inland Empire",
+      "open_date": "2026-10-10",
+      "close_date": "2026-10-19",
+      "source_url": "https://www.governmentjobs.com/careers/sanbernardino/jobs/5498865",
       "source": "governmentjobs"
     },
     {
