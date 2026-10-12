@@ -1,0 +1,208 @@
+<!-- GOLDEN STATE FIREFIGHTER: PENSION ESTIMATOR PAGE (/pension-estimator)
+     Crawlable wrapper copy for the tool widget. The widget is NOT inlined here.
+
+     PASTE IN THREE PIECES, top to bottom, in one full-width section:
+       BLOCK 1  = Code Block  (everything between BEGIN BLOCK 1 / END BLOCK 1)
+       WIDGET   = Code Block  (the ENTIRE contents of pages/tool-pension-estimator.html,
+                              its own block so its <script> runs. Widget id #gsfpens.)
+       BLOCK 2  = Code Block  (everything between BEGIN BLOCK 2 / END BLOCK 2)
+
+     Slug MUST be exactly /pension-estimator.
+     SEO title/description: SEO_Settings_Worklist.md row "Pension Estimator".
+     Classes used (25, all verified present in 01_HEADER_INJECTION.html):
+       gsf, gsf-full, page-hero, wrap, inner, breadcrumb, eyebrow, lede, section, sec-head,
+       cards, card, kick, go, muted, prose, callout, k, warn, capture, fine, btn, brass,
+       trust-strip, t
+     Every figure on this page was COUNTED from the DATA and script inside
+     tool-pension-estimator.html, not estimated: 4 formula options in the tier select
+     (3% at 50, 3% at 55, PEPRA 2.7% at 57, custom factor); the three FACT tables
+     (3at50 flat 3.000 with a 90% cap; 3at55 2.400 at 50 stepping 0.030 per completed
+     quarter to 3.000 at 55, 90% cap; PEPRA 2.000 at 50 stepping 0.025 per completed
+     quarter to 2.700 at 57, no chart cap); minimum age 50; the two 2026 PEPRA
+     pensionable-pay caps $159,733 and $191,679; 3 optional premium fields
+     (paramedic, education, bilingual); 4 result rows; 5 possible flags.
+     YMYL money page. Education only. Owner released the money-cluster hold 2026-08-11.
+     Money-cluster articles are NOT linked yet; they are not live. Add those links in the
+     article wave. Links below were verified live 2026-08-11.
+-->
+
+<!-- ===================== BEGIN BLOCK 1 ===================== -->
+<div class="gsf gsf-full">
+
+  <section class="page-hero">
+    <div class="wrap"><div class="inner">
+      <p class="breadcrumb"><a href="/">Home</a> / Pension Estimator</p>
+      <p class="eyebrow">Free tool &middot; No email needed</p>
+      <h1>California Firefighter Pension Estimator</h1>
+      <p class="lede">Your retirement formula, your years of service, and the age you walk out the door decide most of your pension. This tool runs those three numbers against the published CalPERS safety benefit factors and returns a rough annual and monthly estimate. It is education only, and your retirement system is the authority on your actual number.</p>
+    </div></div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">How to use it</p>
+        <h2>Four inputs, one estimate, no account</h2>
+      </div>
+      <div class="prose">
+        <p>Pick your retirement formula from the four options, then enter your years of service, the age you expect to retire, and your final compensation as annual base pensionable pay. If you pick the PEPRA formula, the tool also asks whether your position participates in Social Security, because that answer decides which 2026 pensionable-pay cap applies.</p>
+        <p>You get back the percent of final compensation your formula produces, an estimated annual pension, and the monthly figure. Underneath that, the tool prints notes explaining anything that changed the math, such as retiring before your formula's full age, hitting the 90% maximum, or running into the PEPRA pay cap.</p>
+        <p>There are three optional premium fields for paramedic, education, and bilingual pay. Those feed a separate premium total. Include any eligible pensionable portion in the verified final compensation input. The tool does not automatically add optional premiums to the pension estimate or assume their eligibility.</p>
+        <p>If your system is not CalPERS, choose the fourth option and enter the benefit factor from your own chart. This calculator runs its calculations in your browser and does not itself submit or store these inputs. This statement concerns the calculator code; the surrounding site may have its own analytics and network requests.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+<!-- ====================== END BLOCK 1 ====================== -->
+
+
+<!-- ============ WIDGET SLOT ============================================================
+     Paste the ENTIRE contents of Website/squarespace/pages/tool-pension-estimator.html
+     into its own Code Block here. Do not edit it in the Squarespace editor; edit the
+     source file and re-paste, or the inline styles get destroyed.
+     The widget is self-contained (its own <style> and <script>, id #gsfpens) and works
+     with or without the header injection.
+================================================================================= -->
+
+
+<!-- ===================== BEGIN BLOCK 2 ===================== -->
+<div class="gsf gsf-full">
+
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">The data</p>
+        <h2>Where the factors come from</h2>
+      </div>
+      <div class="prose">
+        <p>The benefit factors are the published CalPERS Local Safety charts. The pensionable-pay caps are the 2026 figures from CalPERS Circular Letter 200-001-26. Nothing here is a house estimate of what a factor should be.</p>
+
+        <h3>Classic 3% at 50</h3>
+        <p>A flat 3.000% factor at every age from 50 up, with the benefit capped at 90% of final compensation. Thirty years of service reaches that 90% ceiling, and service past it does not raise the percentage.</p>
+
+        <h3>Classic 3% at 55</h3>
+        <p>Starts at 2.400% at age 50 and steps up 0.030 for each completed quarter year until it reaches 3.000% at 55 and above. Also capped at 90% of final compensation. Leaving at 52 instead of 55 costs you factor for life, and the tool says so when it applies.</p>
+
+        <h3>PEPRA 2.7% at 57</h3>
+        <p>The formula most firefighters hired in recent years fall under. It starts at 2.000% at age 50 and steps up 0.025 for each completed quarter year until it reaches 2.700% at 57 and above. The published chart carries no 90% cap, so the tool does not apply one.</p>
+
+        <h3>Your own benefit factor</h3>
+        <p>County systems such as LACERA, OCERS, and SDCERA, and city systems such as LAFPP, run their own charts. Choose the fourth option, enter the factor your chart gives for your exact age, and the tool uses it without applying a CalPERS cap.</p>
+
+        <div class="callout">
+          <span class="k">The 2026 PEPRA pay cap</span>
+          <p>PEPRA limits how much of your pay can count toward a pension. For 2026 the cap is $159,733 if your position participates in Social Security and $191,679 if it does not. If you enter final compensation above the cap that applies to you, the tool estimates on the capped figure and tells you exactly how many dollars it excluded.</p>
+        </div>
+
+        <p>CalPERS charts publish factors at completed quarter-year ages, so the tool ignores partial quarters rather than interpolating between them. A firefighter retiring at 56 years and 9 months gets the 56.75 factor, not something in between.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Straight talk</p>
+        <h2>What this estimator does not tell you</h2>
+      </div>
+      <div class="prose">
+        <p>This is an estimate for planning conversations, not a benefit statement. Know the edges before you make a decision on it.</p>
+        <ul>
+          <li><strong>It is not your retirement system's number.</strong> Only CalPERS or your county or city system can produce a real estimate, and they hold your membership date, your service credit, and your reciprocity. Run their calculator before you set a retirement date. Confirm the tax side with a licensed CPA.</li>
+          <li><strong>It shows the unmodified allowance.</strong> No survivor option, no beneficiary continuance, no taxes, no health premiums deducted. Choosing an option that pays a spouse after you die reduces the monthly figure, sometimes considerably.</li>
+          <li><strong>Use verified reportable compensation.</strong> Pensionable compensation follows your tier's reportable-pay rules and can include eligible special compensation. Overtime is generally excluded, with specific exceptions such as applicable 7(k) compensation. Verify the applicable rule rather than deciding from the paystub label alone.</li>
+          <li><strong>Final compensation rules differ.</strong> PEPRA uses a 36-month average. Some Classic contracts allow a single highest year. The tool takes whatever figure you type, so the accuracy of the output depends on you entering the right kind of number.</li>
+          <li><strong>Premiums are shown separately for a reason.</strong> Whether paramedic, education, or bilingual pay counts toward your pension is set in your memorandum of understanding and by law, and it varies. The tool never assumes it counts.</li>
+          <li><strong>It does not model cost of living adjustments.</strong> The annual figure is a starting allowance, not what it will look like twenty years into retirement.</li>
+          <li><strong>It cannot tell you your tier.</strong> Membership date and reciprocity decide whether you are Classic or PEPRA, and candidates guess wrong about this often. Check your annual member statement instead of assuming.</li>
+        </ul>
+        <p>Pension rules also change. Legislation, contract negotiations, and cap updates all move the numbers, and this page is a snapshot rather than a live feed.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="trust-strip">
+        <div class="t"><h4>Published factors only</h4><p>Every factor traces to the CalPERS Local Safety charts, and the pay caps to CalPERS Circular Letter 200-001-26.</p></div>
+        <div class="t"><h4>Education, not advice</h4><p>No projection, no recommendation, no promise about what you will receive. Your retirement system and a licensed CPA are the authorities.</p></div>
+        <div class="t"><h4>Nothing collected</h4><p>The estimator runs entirely in your browser. No email, no account, no saved answers.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="callout">
+        <span class="k">A useful way to run it</span>
+        <p>Run it three times: the age you say you will retire, two years earlier, and two years later. Write down the three percentages side by side. Seeing what a single year of factor movement does to a lifetime allowance is more useful than any one estimate, and it is the comparison most firefighters have never actually made.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="capture">
+        <p class="eyebrow">Next step</p>
+        <h2>Get the whole path on one page</h2>
+        <p>The pension is the far end of a California fire career. The free EMT-to-Badge Roadmap covers the near end: the nine steps to getting hired, in order, with what each one costs and how long it takes.</p>
+        <a class="btn brass" href="/free-roadmap">Get the free roadmap</a>
+        <p class="fine">We email you the roadmap and a short series about the steps in it. No cost. Unsubscribe from any email.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Read next</p>
+        <h2>The pay picture around the pension</h2>
+      </div>
+      <div class="cards">
+        <a class="card" href="/learn/firefighter-salary-california">
+          <span class="kick">Pay</span>
+          <h4>Firefighter salary in California</h4>
+          <p>What base pay actually looks like across the state, and why total compensation is a different number.</p>
+          <span class="go">Read the guide &rarr;</span>
+        </a>
+        <a class="card" href="/learn/firefighter-incentive-pay">
+          <span class="kick">Premiums</span>
+          <h4>Incentive and premium pay</h4>
+          <p>Paramedic, education, and bilingual pay, how they are negotiated, and why pensionability varies.</p>
+          <span class="go">Read the guide &rarr;</span>
+        </a>
+        <a class="card" href="/learn/firefighter-schedule-explained">
+          <span class="kick">Schedule</span>
+          <h4>The firefighter schedule</h4>
+          <p>48/96 and the other rotations, and how the hours behind them shape a career.</p>
+          <span class="go">Read the guide &rarr;</span>
+        </a>
+        <a class="card" href="/learn/calpers-pension-taxes">
+          <span class="kick">Taxes</span>
+          <h4>How a CalPERS pension is taxed</h4>
+          <p>What the federal side takes, how California treats the same money, and what changes if you retire out of state.</p>
+          <span class="go">Read the guide &rarr;</span>
+        </a>
+        <a class="card" href="/learn/retired-firefighter-tax-breaks">
+          <span class="kick">Retirement</span>
+          <h4>Tax breaks after you retire</h4>
+          <p>HELPS, the disability retirement question, and the early access rules that apply to public safety.</p>
+          <span class="go">Read the guide &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="callout warn">
+        <span class="k">Independent resource, not affiliated</span>
+        <p>Golden State Firefighter is not connected to, endorsed by, or affiliated with CalPERS, any county or city retirement system, CAL FIRE, or any fire department or government agency. Nothing on this page is financial, tax, legal, or retirement advice, and no result here is a benefit determination. Benefit factors, pay caps, and pension law change. Confirm your membership date, tier, benefit factor, pensionable compensation, and estimate with your retirement system, and confirm the tax side with a licensed CPA, before you act on any number here.</p>
+      </div>
+      <p class="muted">Estimates only. Factors from the CalPERS Local Safety charts; 2026 pensionable pay caps from CalPERS Circular Letter 200-001-26. Checked August 2026 and not updated automatically.</p>
+    </div>
+  </section>
+
+</div>
+<!-- ====================== END BLOCK 2 ====================== -->

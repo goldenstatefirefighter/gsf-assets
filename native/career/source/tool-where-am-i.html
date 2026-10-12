@@ -1,0 +1,181 @@
+<!-- GOLDEN STATE FIREFIGHTER — "Where Am I?" assessment tool.
+     Paste into a CODE BLOCK (e.g. on /start-here or a /where-do-i-start page).
+     Self-contained: works with or without the header injection.
+     The result CTA links to /free-roadmap (your MailerLite capture page). -->
+<div class="gsf gsf-full">
+<div id="gsfq">
+  <style>
+    #gsfq{--nv:#101C33;--nv2:#0B1425;--ch:#1E2128;--br:#C08A2D;--brh:#D7A649;--em:#B23A2E;
+      --bo:#F3EFE6;--dm:#B9BCC4;--fd:#9AA0AC;--ln:rgba(243,239,230,.13);
+      --disp:"Saira Condensed","Bahnschrift",system-ui,sans-serif;--body:"Public Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",Consolas,monospace;
+      max-width:720px;margin:0 auto;font-family:var(--body)}
+    #gsfq *{box-sizing:border-box}
+    #gsfq .q-card{background:var(--ch);border:1px solid var(--ln);border-radius:10px;padding:30px 28px}
+    #gsfq .q-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--br);margin:0 0 6px}
+    #gsfq .q-bar{height:4px;background:var(--nv);border-radius:2px;overflow:hidden;margin:0 0 22px}
+    #gsfq .q-bar > i{display:block;height:100%;background:var(--br);width:0;transition:width .3s}
+    #gsfq h3{font-family:var(--disp);text-transform:uppercase;font-weight:700;color:var(--bo);font-size:26px;line-height:1.05;margin:0 0 20px}
+    #gsfq .opt{display:block;width:100%;text-align:left;background:var(--nv);border:1px solid var(--ln);border-radius:6px;
+      color:var(--bo);font-family:var(--body);font-size:16px;padding:15px 17px;margin:0 0 11px;cursor:pointer;transition:.14s}
+    #gsfq .opt:hover{border-color:var(--br);background:#16233d}
+    #gsfq .opt.sel{border-color:var(--br);background:rgba(192,138,45,.12)}
+    #gsfq .opt .sub{display:block;color:var(--fd);font-size:13px;margin-top:3px}
+    #gsfq .q-actions{display:flex;gap:12px;align-items:center;margin-top:8px}
+    #gsfq .btn2{font-family:var(--disp);text-transform:uppercase;font-weight:600;letter-spacing:.04em;font-size:15px;
+      background:var(--em);color:var(--bo);border:0;border-radius:5px;padding:13px 22px;cursor:pointer}
+    #gsfq .btn2:hover{background:#c64b3e}
+    #gsfq .btn2.brass{background:var(--br);color:var(--nv)}
+    #gsfq .btn2.ghost{background:transparent;border:1.5px solid var(--fd);color:var(--dm)}
+    #gsfq .lnk{background:none;border:0;color:var(--fd);font-family:var(--body);font-size:14px;cursor:pointer;text-decoration:underline}
+    #gsfq .res-tag{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--br)}
+    #gsfq .res-step{background:var(--nv2);border:1px solid var(--br);border-radius:8px;padding:18px 20px;margin:16px 0}
+    #gsfq .res-step .k{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--br);display:block;margin-bottom:6px}
+    #gsfq .res-step p{margin:0;color:var(--bo);font-size:16px}
+    #gsfq .res-links{list-style:none;padding:0;margin:16px 0}
+    #gsfq .res-links a{display:block;color:var(--br);padding:8px 0;border-top:1px solid var(--ln);font-size:15px;text-decoration:none}
+    #gsfq .res-links a:hover{color:var(--brh)}
+    #gsfq p.lead{color:var(--dm);font-size:15px;margin:0 0 4px}
+    #gsfq button:focus-visible,#gsfq a:focus-visible{outline:3px solid var(--bo);outline-offset:2px}
+  </style>
+
+  <div class="q-card">
+    <div class="q-bar"><i id="gsfq-bar"></i></div>
+    <div id="gsfq-body" role="region" aria-label="Career preparation check" aria-live="polite" tabindex="-1"></div>
+  </div>
+
+  <script>
+  (function(){
+    var root=document.getElementById('gsfq');
+    var body=document.getElementById('gsfq-body');
+    var bar=document.getElementById('gsfq-bar');
+    var state={path:null,have:[],hurdle:null,step:0,total:2};
+
+    var GUIDE={ explore:['/learn/is-being-a-firefighter-worth-it','Is being a firefighter worth it?'], qualify:['/get-hired','The Get Hired guide'],
+      emt:['/learn/do-you-need-emt-before-applying-firefighter-california','How to get your EMT'], academy:['/learn/fire-academy-vs-fire-technology-california','Fire academy vs Fire Tech'],
+      cpat:['/learn/how-to-pass-the-cpat','How to pass the CPAT'], fctc:['/learn/fctc-written-test-explained','The FCTC written test, explained'],
+      oral:['/learn/firefighter-oral-board-questions','The oral board, scored'], background:['/learn/personal-history-statement-explained','The Personal History Statement'],
+      probation:['/learn/surviving-firefighter-probation','Surviving probation'] };
+
+    function el(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e;}
+    function setBar(n){bar.style.width=(n/state.total*100)+'%';}
+
+    function screenStart(){
+      state={path:null,have:[],hurdle:null,step:0,total:2};
+      setBar(0);
+      body.innerHTML='';
+      body.appendChild(el('p','q-eyebrow',null)).textContent='30-second check';
+      body.appendChild(el('h3',null,'Where are you on the ladder?'));
+      body.appendChild(el('p','lead','Answer two quick questions to find preparation resources. This check cannot certify eligibility; your target role bulletin sets the requirements.'));
+      var a=el('div','q-actions');var b=el('button','btn2','Start');b.onclick=q1;a.appendChild(b);
+      body.appendChild(a);
+      body.focus();
+    }
+
+    function navigation(back){
+      var a=el('div','q-actions');
+      if(back){var b=el('button','lnk','Back');b.onclick=back;a.appendChild(b);}
+      var reset=el('button','lnk','Start over');reset.onclick=screenStart;a.appendChild(reset);
+      body.appendChild(a);body.focus();
+    }
+
+    function q1(){
+      state.step=1;setBar(1);
+      body.innerHTML='';
+      body.appendChild(el('p','q-eyebrow',null)).textContent='Question 1 of 2';
+      body.appendChild(el('h3',null,'What best describes you right now?'));
+      var opts=[['explore','I\'m exploring the career','Deciding if firefighting is right for me'],
+        ['qualify','I\'m getting qualified','Working on my EMT, academy, or CPAT'],
+        ['apply','I\'m applying and testing','In the hiring process now'],
+        ['hired','I just got hired','On or about to start probation']];
+      opts.forEach(function(o){
+        var btn=el('button','opt','<b>'+o[1]+'</b><span class="sub">'+o[2]+'</span>');
+        btn.onclick=function(){state.path=o[0];route1();};
+        body.appendChild(btn);
+      });
+      navigation(null);
+    }
+
+    function route1(){
+      if(state.path==='explore'){return result('explore');}
+      if(state.path==='hired'){return result('hired');}
+      if(state.path==='qualify'){return q2qualify();}
+      return q2apply();
+    }
+
+    function q2qualify(){
+      state.step=2;setBar(2);
+      body.innerHTML='';
+      body.appendChild(el('p','q-eyebrow',null)).textContent='Question 2 of 2';
+      body.appendChild(el('h3',null,'Which of these have you finished?'));
+      body.appendChild(el('p','lead','Tap all that apply.'));
+      var items=[['emt','EMT certification'],['academy','Fire academy / Firefighter I'],['cpat','CPAT (physical test)']];
+      items.forEach(function(o){
+        var btn=el('button','opt','<b>'+o[1]+'</b>');
+        btn.classList.toggle('sel',state.have.indexOf(o[0])>=0);
+        btn.setAttribute('aria-pressed',state.have.indexOf(o[0])>=0?'true':'false');
+        btn.onclick=function(){var i=state.have.indexOf(o[0]);if(i<0){state.have.push(o[0]);btn.classList.add('sel');btn.setAttribute('aria-pressed','true');}else{state.have.splice(i,1);btn.classList.remove('sel');btn.setAttribute('aria-pressed','false');}};
+        body.appendChild(btn);
+      });
+      var a=el('div','q-actions');
+      var b=el('button','btn2','See my next step');b.onclick=function(){
+        var next=['emt','academy','cpat'].filter(function(x){return state.have.indexOf(x)<0;})[0];
+        result(next?('q_'+next):'q_done');
+      };
+      a.appendChild(b);
+      body.appendChild(a);
+      navigation(q1);
+    }
+
+    function q2apply(){
+      state.step=2;setBar(2);
+      body.innerHTML='';
+      body.appendChild(el('p','q-eyebrow',null)).textContent='Question 2 of 2';
+      body.appendChild(el('h3',null,'What is your next hurdle?'));
+      var opts=[['fctc','FCTC SEL eligibility','Written test, CPAT, profile, and documents'],
+        ['oral','The oral board','A department-scored interview'],
+        ['background','The background & PHS','Personal History Statement, polygraph, medical']];
+      opts.forEach(function(o){
+        var btn=el('button','opt','<b>'+o[1]+'</b><span class="sub">'+o[2]+'</span>');
+        btn.onclick=function(){result('a_'+o[0]);};
+        body.appendChild(btn);
+      });
+      navigation(q1);
+    }
+
+    var RESULTS={
+      explore:['You\'re at the very start, which is the smart place to be.','Decide before you spend years and money.','Read the Explore guides, then get honest about whether the schedule and the odds fit your life.',['explore']],
+      hired:['You made it. Now the job is to keep it.','Survive probation.','Year one is its own test. Learn what washes people out and how to not be one of them.',['probation']],
+      q_emt:['You\'re getting qualified. First things first.','Check the required EMS credential and deadline.','Some roles require an accepted credential at application, others by appointment. Read your target bulletin before deciding when to enroll.',['emt']],
+      q_academy:['You\'ve got your EMT. Keep building.','Check whether an academy is required before applying.','Some departments provide paid recruit training after hire. If your target role accepts applicants without Firefighter I, applying may be appropriate now. Do not buy a self-sponsored academy solely because this quiz lists it.',['academy']],
+      q_cpat:['You recorded EMT and academy preparation.','Confirm the physical test for your target role.','Take CPAT only if the role names it; other departments use a different test or deadline. These three credentials do not establish full eligibility.',['cpat']],
+      q_done:['You recorded these three credentials.','Check the current role before applying.','Confirm its complete eligibility rules, test currency, application deadline and required documents. This checklist does not certify that you are qualified.',['fctc','oral']],
+      a_fctc:['You\'re building FCTC eligibility.','Complete every SEL requirement.','A passing written score is one part. You also need a valid CPAT, complete profile, current documents, and the other published minimums. Departments rank separately.',['fctc']],
+      a_oral:['You\'re close, and this is the big one.','Win the oral board.','It is scored, and it is where most candidates lose ground they can\'t get back. Prepare hard.',['oral']],
+      a_background:['You\'re near the finish. Don\'t stumble here.','Clear the background and PHS.','The Personal History Statement trips people up. Get it organized and honest.',['background']]
+    };
+
+    function result(key){
+      var r=RESULTS[key]||RESULTS.explore;
+      setBar(state.total);
+      body.innerHTML='';
+      body.appendChild(el('p','res-tag',null)).textContent='Your result';
+      body.appendChild(el('h3',null,r[0]));
+      var step=el('div','res-step','<span class="k">Your next step</span><p><b>'+r[1]+'</b> '+r[2]+'</p>');
+      body.appendChild(step);
+      var ul=el('ul','res-links');
+      r[3].forEach(function(g){var gg=GUIDE[g];if(gg){var a=el('a',null,gg[1]+' →');a.href=gg[0];ul.appendChild(a);}});
+      body.appendChild(ul);
+      var a=el('div','q-actions');
+      var b=el('a','btn2 brass','Get your full roadmap');b.href='/free-roadmap';b.style.textDecoration='none';
+      var again=el('button','lnk','Start over');again.onclick=screenStart;
+      var back=el('button','lnk','Back');back.onclick=function(){if(state.path==='qualify')q2qualify();else if(state.path==='apply')q2apply();else q1();};
+      a.appendChild(b);a.appendChild(back);a.appendChild(again);
+      body.appendChild(a);
+      body.focus();
+    }
+
+    screenStart();
+  })();
+  </script>
+</div>
+</div>

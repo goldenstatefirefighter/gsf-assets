@@ -1,0 +1,79 @@
+{
+  "items": [
+    {
+      "department": "City of Albany Fire Department",
+      "candidate": "James Boito retired April 20, 2026",
+      "status": "unverified",
+      "source_url": "https://www.albanyca.org/departments/fire-emergency-medical-services",
+      "observation": "The current department page did not name a chief, and no direct official retirement notice was located in the bounded review. Do not guess a successor or clear the existing name from this claim alone.",
+      "observed_on": "2026-10-12",
+      "purpose": "leadership identity guard"
+    },
+    {
+      "department": "Southern Marin Fire Protection District",
+      "candidate": "Heather Marques succeeding interim leadership",
+      "status": "date-conflict; no current patch",
+      "source_url": "https://www.smfd.org/Home/Components/News/News/1701/80",
+      "observation": "The district announced Marques as its new chief, but indexed official text and contemporaneous reporting conflict on an October 12 versus October 13 effective date. Preserve current data until the effective date is unambiguous and has arrived.",
+      "observed_on": "2026-10-12",
+      "purpose": "future-effective leadership guard"
+    },
+    {
+      "department": "Monterey Fire Department",
+      "candidate": "Patrick Moore",
+      "status": "retain",
+      "source_url": "https://www.monterey.gov/Departments/Fire",
+      "observation": "Current official evidence continues to identify Patrick Moore as Fire Chief. No change is proposed.",
+      "observed_on": "2026-10-12",
+      "purpose": "prevent a false leadership correction"
+    },
+    {
+      "department": "Riverside County Fire Department",
+      "candidate": "Robert Fish",
+      "status": "retain",
+      "source_url": "https://www.fire.ca.gov/about/resources/cal-fire-contacts",
+      "observation": "CAL FIRE lists Robert Fish as Riverside Unit Chief. Todd Hopkins is the Banning Division Chief, not the Riverside Unit Chief.",
+      "observed_on": "2026-10-12",
+      "purpose": "preserve unit-level leadership identity"
+    },
+    {
+      "department": "Marin County Fire Department",
+      "candidate": "recruitment closed August 31, 2026",
+      "status": "unverified exact candidate",
+      "source_url": "https://www.governmentjobs.com/careers/marincounty/jobs/newprint/5093249",
+      "observation": "The directory's linked official posting is a FIRE Foundry Firefighter Paramedic Trainee recruitment with a November 18, 2025 closing date and open-continuous language. The separate August 31, 2026 claim was not corroborated in the bounded review.",
+      "observed_on": "2026-10-12",
+      "purpose": "avoid attaching the wrong closing date to a historical recruitment"
+    },
+    {
+      "department": "Calimesa Fire Department",
+      "candidate": "continuous Firefighter/Paramedic recruitment versus June 18 packet",
+      "status": "retain conflict for review",
+      "source_url": "https://www.calimesa.gov/Jobs.aspx",
+      "observation": "The live city jobs page lists Firefighter/Paramedic, posted July 16, 2026, as Open Until Filled. Because the directory simultaneously marks hiring_window_closed true and a separate June 18 packet was reported, retain the conflict explicitly rather than treating either artifact as a silent supersession.",
+      "observed_on": "2026-10-12",
+      "purpose": "recruitment conflict guard"
+    },
+    {
+      "department": "Cathedral City Fire Department",
+      "candidate": "internal promotional Firefighter/EMT versus public Firefighter/Paramedic",
+      "status": "unverified current scope",
+      "source_url": "https://www.governmentjobs.com/careers/cathedralcityca/jobs/newprint/4743271",
+      "observation": "The directory-linked official Firefighter/EMT posting opened November 26, 2024 and had a January 6, 2025 deadline. The bounded review did not locate current official postings that resolve the claimed internal-promotional versus public-paramedic distinction.",
+      "observed_on": "2026-10-12",
+      "purpose": "avoid presenting an internal promotional process as public recruitment"
+    },
+    {
+      "department": "Lompoc Fire Department",
+      "status": "held: current official leadership page inaccessible",
+      "candidate": "Kevin Shay",
+      "source_url": "https://www.cityoflompoc.com/government/departments/fire-department/about-us/executive-leadership"
+    },
+    {
+      "department": "Corona Fire Department",
+      "status": "retain historical lateral medic requirement; entry-only alternative not independently verified",
+      "source_url": "https://www.governmentjobs.com/careers/coronaca/jobs/newprint/4895133"
+    }
+  ],
+  "preserve_unknown": true
+}

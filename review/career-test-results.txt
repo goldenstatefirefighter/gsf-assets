@@ -1,0 +1,12 @@
+PASS every staged inline script compiles
+PASS directory preserves every record and all unapproved fields
+PASS actual directory filters match independent oracle in every region/county/chip combination
+PASS directory failure and malformed payloads retain visibly partial fallback
+PASS directory escapes hostile record text and rejects dangerous link schemes
+PASS cost actual click-handler arithmetic matches independent 16-state oracle
+PASS cost exclusions and all five decoder journeys remain explicit
+PASS quiz repeat, back, and reset flows keep selections and recommendations consistent
+PASS oral disclosure buttons announce expansion and reset on next question
+PASS directory displays role deadlines, interim/division labels, archive status and former-name search
+PASS jobs schema2 exposes restricted access, safe links, observed dates, expiry and stale-feed guards
+{"test_groups":11,"cases":2427,"passed":true,"at":"2026-10-12T16:02:00.136Z","method":"Node VM executes staged scripts, independent arithmetic/filter oracles; not a browser-rendering certification"}

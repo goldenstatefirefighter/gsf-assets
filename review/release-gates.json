@@ -1,0 +1,22 @@
+{
+  "status": "draft review, no merge/deployment/CMS publication",
+  "handoff": "October source-backed report received; visible confirmed rows incorporated. Full outstanding contact/eligibility worksheets and truncated portions require reconciliation.",
+  "required_before_release": [
+    "Review this exact branch diff and all field-level sources; recheck volatile openings/chiefs/fees immediately before release.",
+    "Shared Chrome turn is not granted. Capture current authenticated complete blocks and payloads; compare them against public/local baselines. Directory and fee wrapper full-block parity remains unresolved.",
+    "Preserve all other blocks, author, collection, title, media, workflow state and publish date. GSF articles are type1337 with html/source parity.",
+    "Run desktop/mobile and keyboard previews, then verify saved editor persistence and signed-out public output after each approved CMS batch.",
+    "Financial/legal/safety proposals require independent primary-source review and the applicable explicit owner publication clearance. Broad implementation authorization is not such clearance.",
+    "Do not merge or deploy until release review is complete. Merging the directory path changes publicly fetched data; native files remain staged templates, not installed blocks.",
+    "Install the scheduler parser separately only through its approved deployment recipe, inspect generated schema2 feed and health report, then release the matching jobs renderer.",
+    "Reconcile other confirmed findings listed in remaining-scope.json; do not declare the whole audit or compound queue asks complete."
+  ],
+  "protected": [
+    "Police and Healthcare untouched",
+    "No settings, credentials, subscriptions, commerce prices or scheduler changes",
+    "No main push, merge, production deployment or CMS publication",
+    "All371 records retained; old names preserved as aliases; unknowns not filled by guesses",
+    "Healthy zero-scrape guard retained",
+    "Owner-approved labeled NTN estimates retained"
+  ]
+}

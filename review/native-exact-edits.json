@@ -1,0 +1,102 @@
+[
+  {
+    "file": "native/career/data/jobboard/fetch_listings.py",
+    "old": "(\"Santa Clara Fire Department\", \"Bay Area\", \"sccfd\")",
+    "new": "(\"Santa Clara County Fire Department\", \"Bay Area\", \"sccfd\")"
+  },
+  {
+    "file": "native/career/data/build_directory_widget.py",
+    "old": "PAGES_DIR = Path(os.environ.get(\"GSF_PAGES_DIR\", HERE.parent / \"squarespace\" / \"pages\"))",
+    "new": "PAGES_DIR = Path(os.environ.get(\"GSF_PAGES_DIR\", HERE.parent / \"source\"))"
+  },
+  {
+    "file": "native/career/data/build_directory_widget.py",
+    "old": "California fire departments that employ career firefighters. ",
+    "new": "California fire-agency records, including contract-served agencies. "
+  },
+  {
+    "file": "native/career/source/tool-department-directory.html",
+    "old": "var out=[], evidence=safeHttpUrl(d.evidence_url);",
+    "new": "var out=[], evidence=safeHttpUrl(d.evidence_url);\n      if(d.requirements_scope){ out.push('<p><b>Requirement scope:</b> '+esc(d.requirements_scope)+'.</p>'); }\n      if(d.contact_source && /^https?:/.test(d.contact_source)){ var cs=safeHttpUrl(d.contact_source); if(cs) out.push('<p><b>Contact source:</b> <a href=\"'+esc(cs)+'\" target=\"_blank\" rel=\"noopener\">Official page</a>'+(d.contact_checked?' (checked '+esc(d.contact_checked)+')':'')+'.</p>'); }"
+  },
+  {
+    "file": "native/career/source/tool-department-directory.html",
+    "old": "if(!rows || !rows.length) throw new Error('empty');",
+    "new": "if(!Array.isArray(rows) || !rows.length || rows.some(function(d){ return !d || typeof d.name!=='string' || typeof d.county!=='string' || typeof d.region!=='string'; })) throw new Error('invalid directory');"
+  },
+  {
+    "file": "native/career/source/tool-department-directory.html",
+    "old": "+ (d.emp ? '<p class=\"notes\"><b>Hired by:</b> '+esc(d.emp)+'. This department is served under contract, so applications go to that employer.</p>':'')",
+    "new": "+ (d.emp ? '<p class=\"notes\"><b>Employer / service arrangement:</b> '+esc(d.emp)+'. Confirm the hiring authority for the role.</p>':'')"
+  },
+  {
+    "file": "native/career/source/tool-cost-calculator.html",
+    "old": "Named California examples checked September 2026.",
+    "new": "Named California examples checked October 12, 2026."
+  },
+  {
+    "file": "native/career/source/tool-cost-calculator.html",
+    "old": "<span class=\"l\">Estimated cost left</span>",
+    "new": "<span class=\"l\">Named-example subtotal</span>"
+  },
+  {
+    "file": "native/career/source/tool-cost-calculator.html",
+    "old": "Palomar publishes an estimated $800 total.",
+    "new": "Palomar publishes an estimated $800 course total. Its list does not establish every outside certification charge; confirm exam, fingerprint and local certification fees separately."
+  },
+  {
+    "file": "native/career/source/tool-cost-calculator.html",
+    "old": "This range compares those named programs and is not a statewide market range.",
+    "new": "South Bay also requires a $199 preparation course, and card payments add a 3% bank fee. These are not included in its $7,730 academy subtotal. This range compares named programs and is not a statewide market range."
+  },
+  {
+    "file": "native/career/source/tool-cost-calculator.html",
+    "old": "'Named examples checked September 2026. Full path from these four steps: $5,010 to $9,415.",
+    "new": "'Named examples checked October 12, 2026. Subtotal for these four steps: $5,010 to $9,415."
+  },
+  {
+    "file": "native/career/source/tool-cost-calculator.html",
+    "old": "Excludes paramedic school, living costs, lost wages, travel, retests, and department-specific expenses.",
+    "new": "The low EMT example does not establish every outside certification charge. South Bay preparation and payment charges also add to the subtotal. Excludes paramedic school, living costs, lost wages, travel, retests, and department-specific expenses."
+  },
+  {
+    "file": "native/career/source/tool-testing-decoder.html",
+    "old": "Most California city &amp; county departments",
+    "new": "A role that names FCTC in its bulletin"
+  },
+  {
+    "file": "native/career/source/tool-testing-decoder.html",
+    "old": "The shared statewide system (FCTC). If you are applying broadly, start here.",
+    "new": "Check the role, application stage and current department bulletin before booking a test."
+  },
+  {
+    "file": "native/career/source/tool-testing-decoder.html",
+    "old": "CAL FIRE: a separate state exam",
+    "new": "CAL FIRE: requirements depend on the classification"
+  },
+  {
+    "file": "native/career/source/tool-testing-decoder.html",
+    "old": "what:'CAL FIRE hires Firefighter I through the California <b>state civil-service process</b> (CalCareers / joincalfire), on its own exam bulletins. This is <b>not</b> the FCTC system. Applications open and close on their own schedule, so you check for a current bulletin and apply during the window.',",
+    "new": "what:'CAL FIRE uses a <b>classification-specific state hiring process</b>. Seasonal Fire Fighter I instructions describe application cutoffs and category placement based on returnee rights and documented training. Other classifications can require examination eligibility before a vacancy application. Do not assume every CAL FIRE role has the same written exam or eligibility list. Read the current <a href=\"https://www.joincalfire.com/classifications/fire-protection/firefighting-and-paramedics/fire-fighter-i\" target=\"_blank\" rel=\"noopener\">Fire Fighter I instructions</a> or the exact classification and job bulletin.',"
+  },
+  {
+    "file": "native/career/source/tool-testing-decoder.html",
+    "old": "The <b>CPAT</b> (eight timed events, 50-lb vest, pass/fail) is the physical test tied to the FCTC system and most municipal departments.",
+    "new": "The <b>CPAT</b> (eight timed events, 50-lb vest, pass/fail) is required for FCTC SEL placement and is accepted by departments that name it in the role bulletin."
+  },
+  {
+    "file": "native/career/source/tool-testing-decoder.html",
+    "old": "'Most CA city &amp; county departments'",
+    "new": "'Participating agencies, for roles and hiring stages that name FCTC'"
+  },
+  {
+    "file": "native/career/source/tool-testing-decoder.html",
+    "old": "'LAFD (FCA); CAL FIRE (state exam)'",
+    "new": "'LAFD (FCA); CAL FIRE (classification-specific eligibility)'"
+  },
+  {
+    "file": "native/career/source/tool-testing-decoder.html",
+    "old": "A passing written score, valid CPAT, complete profile, and current required documents make you eligible for the <b>Statewide Eligibility List (SEL)</b>,",
+    "new": "SEL requirements include age 18+, a valid driver license uploaded and kept current, high school diploma or equivalent recorded in the profile, a valid Cal-JAC CPAT and passing written score from the past 12 months. Complete the profile and required documentation for the <b>Statewide Eligibility List (SEL)</b>,"
+  }
+]

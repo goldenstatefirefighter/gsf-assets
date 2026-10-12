@@ -1,0 +1,207 @@
+<!-- GOLDEN STATE FIREFIGHTER: FEE DRAG CALCULATOR PAGE (/fee-drag)
+     Crawlable wrapper copy for the tool widget. The widget is NOT inlined here.
+
+     PASTE IN THREE PIECES, top to bottom, in one full-width section:
+       BLOCK 1  = Code Block  (everything between BEGIN BLOCK 1 / END BLOCK 1)
+       WIDGET   = Code Block  (the ENTIRE contents of pages/tool-fee-drag.html,
+                              its own block so its <script> runs. Widget id #gsffee.)
+       BLOCK 2  = Code Block  (everything between BEGIN BLOCK 2 / END BLOCK 2)
+
+     Slug MUST be exactly /fee-drag.
+     SEO title/description: SEO_Settings_Worklist.md row "Fee Drag Calculator".
+     Classes used (25, all verified present in 01_HEADER_INJECTION.html):
+       gsf, gsf-full, page-hero, wrap, inner, breadcrumb, eyebrow, lede, section, sec-head,
+       cards, card, kick, go, muted, prose, callout, k, warn, capture, fine, btn, brass,
+       trust-strip, t
+     Every figure on this page was COUNTED or re-derived from the inputs and script inside
+     tool-fee-drag.html, not estimated: 6 inputs (balance, monthly contribution, years
+     slider 1 to 40 default 20, your fee default 1.2%, comparison fee default 0.10%,
+     gross return slider 3% to 9% in 0.5 steps default 6%); monthly compounding of
+     (gross minus fee) with level end-of-month contributions; 4 result rows plus the
+     two-line canvas chart; 2 possible flags.
+     The worked example in Block 2 ($40,000 start, $800/month, 20 years, 6% gross:
+     $495,084 at 0.10% vs $425,608 at 1.2%, a $69,476 difference, which the tool reports
+     as 7.2 years of contributions) was re-derived by hand from the tool's own compounding
+     loop on 2026-08-11 and matches the closed-form future value to the dollar.
+     YMYL money page. Hypothetical illustration only. Owner released the money-cluster
+     hold 2026-08-11. The paired article /learn/457b-fees-annuity-audit is NOT live and is
+     NOT linked here; add that link in the article wave. Links verified live 2026-08-11.
+-->
+
+<!-- ===================== BEGIN BLOCK 1 ===================== -->
+<div class="gsf gsf-full">
+
+  <section class="page-hero">
+    <div class="wrap"><div class="inner">
+      <p class="breadcrumb"><a href="/">Home</a> / Fee Drag Calculator</p>
+      <p class="eyebrow">Free tool &middot; No email needed</p>
+      <h1>Retirement Plan Fee Drag Calculator</h1>
+      <p class="lede">A one percent annual fee reads as a rounding error on a statement. Held across a thirty year career it is not. This tool takes the same money, the same assumed market, and two different fee levels, and shows the two paths side by side. It is a hypothetical illustration for education, not a projection of what you will have.</p>
+    </div></div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">How to use it</p>
+        <h2>Two fees, one set of assumptions</h2>
+      </div>
+      <div class="prose">
+        <p>Enter your current balance and what you contribute each month. Set the years until you expect to retire on the slider, which runs from 1 to 40. Then enter two fee levels: the all-in annual cost of your current plan, and a comparison figure. The last slider sets the assumed gross annual return, from 3% to 9% in half point steps.</p>
+        <p>The tool runs both scenarios with monthly compounding, subtracting each annual fee from the assumed return, and adding your contribution every month. You get the ending balance under each fee, the dollar difference between them, and that difference expressed as years of your own contributions, which is usually the number that lands hardest. Below that, a chart plots both paths year by year.</p>
+        <p>Your plan's all-in annual cost is the figure you need, and it is not always one number on the statement. It can include the fund expense ratio, an administrative or recordkeeping fee, an advisory or wrap fee, and, in an annuity product, mortality and expense charges. The fee disclosure document your plan is required to provide is where to find it.</p>
+        <p>Nothing you enter is saved or sent anywhere. No email field, no account. Reload the page and it has forgotten you.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+<!-- ====================== END BLOCK 1 ====================== -->
+
+
+<!-- ============ WIDGET SLOT ============================================================
+     Paste the ENTIRE contents of Website/squarespace/pages/tool-fee-drag.html
+     into its own Code Block here. Do not edit it in the Squarespace editor; edit the
+     source file and re-paste, or the inline styles get destroyed.
+     The widget is self-contained (its own <style> and <script>, id #gsffee) and works
+     with or without the header injection.
+================================================================================= -->
+
+
+<!-- ===================== BEGIN BLOCK 2 ===================== -->
+<div class="gsf gsf-full">
+
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">The math</p>
+        <h2>What the calculator is actually doing</h2>
+      </div>
+      <div class="prose">
+        <p>The model is deliberately simple, and the simplicity is the point. Nothing is hidden in it.</p>
+
+        <h3>The assumptions you control</h3>
+        <p>Six inputs: starting balance, monthly contribution, years until retirement, your plan's all-in annual fee, a comparison fee, and an assumed gross annual return. Every one of those is a figure you set. The tool has no opinion about what any of them should be.</p>
+
+        <h3>The compounding</h3>
+        <p>Each scenario takes your assumed gross return, subtracts that scenario's flat annual fee, and compounds the result monthly while adding your contribution at the end of each month. Both scenarios get identical money in and identical assumed markets. The fee is the only difference between the two lines.</p>
+
+        <h3>What the chart shows</h3>
+        <p>Two paths plotted year by year to the end of your chosen period. They separate slowly at first and then widen, because the fee is charged on a balance that is itself growing. That widening shape is the entire lesson.</p>
+
+        <div class="callout">
+          <span class="k">A worked example</span>
+          <p>Start with $40,000, add $800 a month for 20 years, and assume a 6% gross return. At a 0.10% annual fee the illustration ends at $495,084. At a 1.2% annual fee it ends at $425,608. The difference is $69,476, which the tool reports as 7.2 years of your own contributions. Those are hypothetical figures from the assumptions in this paragraph, not a prediction and not any real plan's numbers.</p>
+        </div>
+
+        <p>The values pre-filled in the fee boxes are illustrative examples chosen to show a spread. They are not any specific plan's fees, and you should replace both with real numbers before you draw a conclusion about your own situation.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Straight talk</p>
+        <h2>What this calculator does not tell you</h2>
+      </div>
+      <div class="prose">
+        <p>This is a hypothetical illustration, not a forecast, and it leaves out a great deal on purpose.</p>
+        <ul>
+          <li><strong>It is not a projection of your balance.</strong> Real returns vary year to year and can be negative. A constant return is a teaching device, not a description of any market that has ever existed. Past performance guarantees nothing.</li>
+          <li><strong>It does not recommend a plan, a product, or a move.</strong> A lower fee is not automatically the better choice once surrender charges, guarantees, employer match rules, and your own tax picture enter the room. Review your actual fee disclosures with a licensed CPA or a fee-only advisor before changing anything.</li>
+          <li><strong>Fees are not always one flat number.</strong> The model subtracts a single annual percentage. Real plans layer expense ratios, administrative fees, advisory fees, and in annuity products mortality and expense charges, and some are charged on contributions rather than assets. Read the disclosure rather than guessing.</li>
+          <li><strong>It ignores taxes.</strong> No traditional versus Roth treatment, no withdrawal taxation, no required distributions.</li>
+          <li><strong>It ignores raises.</strong> Your contribution is level for the whole period. Most careers do not work that way.</li>
+          <li><strong>It cannot see surrender charges.</strong> Some products charge to leave, on a schedule that declines over years. If you are comparing because you are considering a change, that charge belongs in the comparison and this tool does not know about it.</li>
+          <li><strong>It does not know your plan.</strong> What is available to you is set by your employer's plan menu. The alternative you are comparing against may or may not be an option you actually have.</li>
+        </ul>
+        <p>The useful takeaway is direction rather than a dollar figure: over a long career, fees compound the same way returns do, and that is worth a careful look at your disclosure document.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="trust-strip">
+        <div class="t"><h4>Your assumptions, shown plainly</h4><p>Every input is yours, and the fine print restates the exact assumptions behind each result.</p></div>
+        <div class="t"><h4>Education, not advice</h4><p>A hypothetical illustration only. No projection, no product recommendation, no promise of any result.</p></div>
+        <div class="t"><h4>Nothing collected</h4><p>The calculator runs entirely in your browser. No email, no account, no saved answers.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="callout">
+        <span class="k">A useful way to run it</span>
+        <p>Find your plan's fee disclosure first, then run the tool once with that real number against a comparison you actually have access to in the same plan menu. Running it on invented fees produces a big number and no decision. Take the result to a licensed CPA or a fee-only advisor rather than to a salesperson whose product is one of the two lines.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="capture">
+        <p class="eyebrow">Next step</p>
+        <h2>Get the whole path on one page</h2>
+        <p>Plan fees are a mid-career problem. The free EMT-to-Badge Roadmap covers the start of the road: the nine steps of the California hiring path, in order, with what each one costs and how long it takes.</p>
+        <a class="btn brass" href="/free-roadmap">Get the free roadmap</a>
+        <p class="fine">We email you the roadmap and a short series about the steps in it. No cost. Unsubscribe from any email.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Read next</p>
+        <h2>The money around the account</h2>
+      </div>
+      <div class="cards">
+        <a class="card" href="/learn/firefighter-incentive-pay">
+          <span class="kick">Premiums</span>
+          <h4>Incentive and premium pay</h4>
+          <p>Paramedic, education, and bilingual pay, and how each one changes what you have available to contribute.</p>
+          <span class="go">Read the guide &rarr;</span>
+        </a>
+        <a class="card" href="/learn/firefighter-schedule-explained">
+          <span class="kick">Schedule</span>
+          <h4>The firefighter schedule</h4>
+          <p>48/96 and the other rotations, and how the hours behind them shape a career.</p>
+          <span class="go">Read the guide &rarr;</span>
+        </a>
+        <a class="card" href="/learn/firefighter-salary-california">
+          <span class="kick">Pay</span>
+          <h4>Firefighter salary in California</h4>
+          <p>What base pay looks like across the state, and why total compensation is a different number.</p>
+          <span class="go">Read the guide &rarr;</span>
+        </a>
+        <a class="card" href="/learn/457b-fees-annuity-audit">
+          <span class="kick">Fees</span>
+          <h4>Auditing the annuity pitch</h4>
+          <p>Where the fees hide in a firehouse annuity, and the questions that get you a straight number.</p>
+          <span class="go">Read the guide &rarr;</span>
+        </a>
+        <a class="card" href="/learn/firefighter-money-mistakes">
+          <span class="kick">Early career</span>
+          <h4>Money mistakes in the first five years</h4>
+          <p>The patterns that cost probationary firefighters the most, and what to do instead of each one.</p>
+          <span class="go">Read the guide &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="callout warn">
+        <span class="k">Independent resource, not affiliated</span>
+        <p>Golden State Firefighter is not connected to, endorsed by, or affiliated with any government agency, fire department, retirement system, plan provider, or investment firm. Everything on this page is a hypothetical illustration for education, not tax, legal, or investment advice, and not a projection or a recommendation of any plan, product, or course of action. Investment returns vary and can be negative. Review your actual plan fee disclosures with a licensed CPA or a fee-only advisor before making any change.</p>
+      </div>
+      <p class="muted">Hypothetical illustration only. All inputs are user-set assumptions. Nothing here predicts any actual result.</p>
+    </div>
+  </section>
+
+</div>
+<!-- ====================== END BLOCK 2 ====================== -->

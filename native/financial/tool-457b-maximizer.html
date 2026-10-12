@@ -1,0 +1,234 @@
+<!-- GOLDEN STATE FIREFIGHTER - 457(b) Max Calculator (2026). Paste into a CODE BLOCK. Self-contained.
+     Pairs with /learn/457b-california-firefighters. Estimates only. Not affiliated with any plan provider or department. Not financial advice.
+     Limits: IRS Notice 2025-67 (2026): $24,500 basic; $8,000 age-50 catch-up; $11,250 age 60-63 super catch-up (replaces, does not stack);
+     special 3-year catch-up up to $49,000; Roth catch-up mandate trigger = prior-year FICA wages over $150,000 (SECURE 2.0 Sec. 603).
+     REVIEW 2026-08-11: all 2026 figures re-verified against irs.gov (Notice 2025-67 amounts confirmed on the IRS catch-up and 457(b) pages).
+     Wage question re-worded to Social Security wages (W-2 Box 3) and a no-FICA exemption note added: employees with zero prior-year FICA
+     wages from the sponsoring employer (departments outside Social Security) are NOT subject to the Roth catch-up mandate (final regs, 2025).
+     VERIFY 2026-08-11 (second pass): Notice 2025-67 amounts re-confirmed against the notice PDF itself (irs.gov/pub/irs-drop/n-25-67.pdf):
+     $24,500 (457(e)(15)), $8,000 (414(v)(2)(B)(i)), $11,250 age 60-63 (unchanged), Roth wage threshold $145,000 to $150,000 for 2025 wages.
+     OWNER RELEASED THE MONEY-CLUSTER HOLD 2026-08-11: cleared for publish (all 2026 limits verified vs IRS Notice 2025-67 same day).
+     Publish the paired article /learn/457b-california-firefighters in the same wave; it was 404 as of 2026-08-11. -->
+<div class="gsf gsf-full">
+<div id="gsf457">
+  <style>
+    #gsf457{--nv:#101C33;--nv2:#0B1425;--ch:#1E2128;--br:#C08A2D;--brh:#D7A649;--em:#B23A2E;--bo:#F3EFE6;--dm:#B9BCC4;--fd:#8A909C;--ln:rgba(243,239,230,.13);
+      --disp:"Saira Condensed","Bahnschrift",system-ui,sans-serif;--body:"Public Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",Consolas,monospace;max-width:640px;margin:0 auto;font-family:var(--body)}
+    #gsf457 *{box-sizing:border-box}
+    #gsf457 .card{background:var(--ch);border:1px solid var(--ln);border-radius:10px;padding:30px 28px}
+    #gsf457 .eye{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--br);margin:0 0 6px}
+    #gsf457 h3{font-family:var(--disp);text-transform:uppercase;font-weight:700;color:var(--bo);font-size:23px;margin:0 0 6px;line-height:1.05}
+    #gsf457 p.sub{color:var(--dm);font-size:14px;margin:0 0 22px;line-height:1.5}
+    #gsf457 .fld{margin:0 0 17px}
+    #gsf457 label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dm);margin:0 0 7px}
+    #gsf457 label .hint{text-transform:none;letter-spacing:0;color:var(--fd);font-size:11px}
+    #gsf457 select,#gsf457 input{width:100%;background:var(--nv);border:1px solid var(--ln);border-radius:6px;color:var(--bo);font-family:var(--body);font-size:16px;padding:12px 14px}
+    #gsf457 select:focus-visible,#gsf457 input:focus-visible,#gsf457 .go:focus-visible{outline:2px solid var(--brh);outline-offset:2px;border-color:var(--brh)}
+    #gsf457 [aria-invalid="true"]{border-color:#FF9B90}
+    #gsf457 .cap{color:var(--fd);font-size:12px;line-height:1.5;margin:7px 0 0}
+    #gsf457 .row{display:flex;gap:14px}
+    #gsf457 .row .fld{flex:1}
+    #gsf457 .go{font-family:var(--disp);text-transform:uppercase;font-weight:600;letter-spacing:.04em;font-size:15px;background:var(--em);color:var(--bo);border:0;border-radius:5px;padding:14px 22px;cursor:pointer;margin-top:8px}
+    #gsf457 .go:hover{background:#c64b3e}
+    #gsf457 .res{margin-top:24px;border-top:1px solid var(--ln);padding-top:22px}
+    #gsf457 .res.hidden,#gsf457 .hidden{display:none}
+    #gsf457 .stat{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--ln)}
+    #gsf457 .stat .l{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fd)}
+    #gsf457 .stat .v{font-family:var(--disp);font-weight:700;color:var(--br);font-size:24px;text-align:right}
+    #gsf457 .stat.big .v{font-size:30px;color:var(--brh)}
+    #gsf457 .flag{background:rgba(192,138,45,.10);border:1px solid var(--br);border-radius:8px;padding:12px 15px;margin:16px 0 0}
+    #gsf457 .flag .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--br);display:block;margin-bottom:5px}
+    #gsf457 .flag p{margin:0 0 7px;color:var(--bo);font-size:13px;line-height:1.5}
+    #gsf457 .flag p:last-child{margin:0}
+    #gsf457 .err{color:#FF9B90;font-family:var(--body);font-size:14px;margin:10px 0 0}
+    #gsf457 .fine{font-family:var(--mono);font-size:10.5px;color:var(--fd);line-height:1.65;letter-spacing:.02em;margin-top:20px}
+    #gsf457 .fine strong{color:var(--dm)}
+    @media (max-width:520px){#gsf457 .row{flex-direction:column;gap:0}#gsf457 .card{padding:24px 18px}}
+  </style>
+  <div class="card">
+    <p class="eye">457(b) max calculator</p>
+    <h3>Max your 457(b) in 2026</h3>
+    <p class="sub">Enter your age, what has reached the plan this year, and how many checks remain. We will show your 2026 limit and the amount each remaining check would need to reach it. Education only, not financial advice.</p>
+
+    <form id="gsf457-form" novalidate>
+    <div class="row">
+      <div class="fld">
+        <label for="gsf457-age">Your age at the end of 2026</label>
+        <input id="gsf457-age" type="number" inputmode="numeric" step="1" min="16" max="80" placeholder="e.g. 38" required aria-describedby="gsf457-err">
+      </div>
+      <div class="fld">
+        <label for="gsf457-pp">Pay periods per year</label>
+        <select id="gsf457-pp" aria-describedby="gsf457-err">
+          <option value="26" selected>26 (every two weeks)</option>
+          <option value="24">24 (twice a month)</option>
+          <option value="12">12 (monthly)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="fld">
+      <label for="gsf457-cur">Your employee contribution per paycheck <span class="hint">($, toward this limit)</span></label>
+      <input id="gsf457-cur" type="number" inputmode="decimal" step="25" min="0" placeholder="e.g. 500" required aria-describedby="gsf457-cur-help gsf457-err">
+      <p class="cap" id="gsf457-cur-help">Include your traditional and Roth employee deferrals here. Enter expected future employer and other 457-plan amounts separately below so they are not double-counted.</p>
+    </div>
+
+    <div class="row">
+      <div class="fld">
+        <label for="gsf457-ytd">2026 amount credited so far <span class="hint">($, plan or payroll YTD)</span></label>
+        <input id="gsf457-ytd" type="number" inputmode="decimal" step="25" min="0" placeholder="e.g. 13000" required aria-describedby="gsf457-ytd-help gsf457-err">
+      </div>
+      <div class="fld">
+        <label for="gsf457-left">Paychecks remaining in 2026</label>
+        <input id="gsf457-left" type="number" inputmode="numeric" step="1" min="0" max="26" placeholder="e.g. 7" required aria-describedby="gsf457-ytd-help gsf457-err">
+      </div>
+    </div>
+    <p class="cap" id="gsf457-ytd-help">Use all counted 2026 employee and employer deferrals across applicable 457(b) plans in YTD. Use actual remaining paychecks, not a full-year schedule.</p>
+
+    <div class="fld">
+      <label for="gsf457-future">Expected remaining employer and other 457(b) contributions ($)</label>
+      <input id="gsf457-future" type="number" min="0" step="0.01" required placeholder="Enter 0 if none" aria-describedby="gsf457-future-help gsf457-err">
+      <p class="cap" id="gsf457-future-help">Count amounts expected to vest this year that are not in YTD and are not your employee-per-paycheck input. Confirm what counts with each plan.</p>
+    </div>
+    <div class="fld">
+      <label for="gsf457-comp">2026 eligible compensation limit confirmed by your plan ($)</label>
+      <input id="gsf457-comp" type="number" min="0" step="0.01" required placeholder="Use your plan's includible-compensation figure" aria-describedby="gsf457-comp-help gsf457-err">
+      <p class="cap" id="gsf457-comp-help">Do not substitute total household income or assume ordinary gross wages use the same definition. This illustration assumes a governmental plan permits the age-based catch-up shown. Special three-year catch-up and additional plan/payroll restrictions require plan review.</p>
+    </div>
+    <div class="fld">
+      <label for="gsf457-wage">Were your 2025 Social Security wages from this employer above $150,000? <span class="hint">(W-2 Box 3, not gross pay)</span></label>
+      <select id="gsf457-wage">
+        <option value="no" selected>No</option>
+        <option value="yes">Yes</option>
+        <option value="unsure">Not sure</option>
+      </select>
+    </div>
+
+    <button class="go" id="gsf457-go" type="submit" aria-controls="gsf457-res">Show my numbers</button>
+    <p class="err hidden" id="gsf457-err" role="alert" aria-live="assertive"></p>
+    </form>
+
+    <div class="res hidden" id="gsf457-res" role="status" aria-live="polite" aria-atomic="true" tabindex="-1">
+      <div class="stat big"><span class="l">Illustrated 2026 ceiling</span><span class="v" id="gsf457-limit"></span></div>
+      <div class="stat"><span class="l">Still available to contribute</span><span class="v" id="gsf457-remaining"></span></div>
+      <div class="stat"><span class="l">Per remaining paycheck to max</span><span class="v" id="gsf457-need"></span></div>
+      <div class="stat"><span class="l" id="gsf457-gaplbl">Add to your current amount</span><span class="v" id="gsf457-gap"></span></div>
+      <div class="flag" id="gsf457-flags"></div>
+      <p class="fine" id="gsf457-fine"></p>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    // 2026 limits per IRS Notice 2025-67.
+    var BASE=24500, CATCHUP50=8000, SUPER6063=11250, SPECIAL3YR=49000, ROTH_WAGE=150000;
+    var $=function(id){return document.getElementById(id);};
+    function money(n){return '$'+Math.round(n).toLocaleString('en-US');}
+    function money2(n){return '$'+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+    function num(id){return parseFloat($(id).value);}
+    function clearErr(){
+      var e=$('gsf457-err'); e.classList.add('hidden'); e.textContent='';
+      ['gsf457-age','gsf457-pp','gsf457-cur','gsf457-ytd','gsf457-left','gsf457-future','gsf457-comp','gsf457-wage'].forEach(function(id){$(id).removeAttribute('aria-invalid');});
+    }
+    function showErr(msg,id){
+      var e=$('gsf457-err'); e.textContent=msg; e.classList.remove('hidden'); $('gsf457-res').classList.add('hidden');
+      if(id){$(id).setAttribute('aria-invalid','true'); $(id).focus();}
+    }
+
+    $('gsf457-form').addEventListener('submit',function(event){
+      event.preventDefault(); clearErr();
+      if(!$('gsf457-age').value){ return showErr('Enter your age at the end of 2026.','gsf457-age'); }
+      if(!$('gsf457-cur').value){ return showErr('Enter the amount currently credited per paycheck. Enter 0 if nothing is being contributed.','gsf457-cur'); }
+      if(!$('gsf457-ytd').value){ return showErr('Enter the 2026 year-to-date amount credited toward this limit. Enter 0 if nothing has been contributed.','gsf457-ytd'); }
+      if(!$('gsf457-left').value){ return showErr('Enter the number of paychecks remaining in 2026. Enter 0 if none remain.','gsf457-left'); }
+      var age=Math.floor(num('gsf457-age')), pp=parseInt($('gsf457-pp').value,10), cur=num('gsf457-cur');
+      var ytd=num('gsf457-ytd'), checksLeft=num('gsf457-left');
+      var wage=$('gsf457-wage').value;
+      if(!isFinite(age)||age<16||age>80){ return showErr('Enter an age from 16 through 80.','gsf457-age'); }
+      if(!isFinite(cur)||cur<0){ return showErr('The current per-paycheck amount must be 0 or more.','gsf457-cur'); }
+      if(!isFinite(ytd)||ytd<0){ return showErr('The year-to-date amount must be 0 or more.','gsf457-ytd'); }
+      if(!isFinite(checksLeft)||checksLeft<0||checksLeft!==Math.floor(checksLeft)){ return showErr('Paychecks remaining must be a whole number of 0 or more.','gsf457-left'); }
+      if(checksLeft>pp){ return showErr('Paychecks remaining cannot exceed the '+pp+' pay periods in the schedule you selected.','gsf457-left'); }
+      var future=num('gsf457-future'),compLimit=num('gsf457-comp');
+      if(!$('gsf457-future').value||!isFinite(future)||future<0){ return showErr('Enter expected remaining employer/other 457 amounts of 0 or more.','gsf457-future'); }
+      if(!$('gsf457-comp').value||!isFinite(compLimit)||compLimit<0){ return showErr('Enter the eligible compensation limit confirmed by your plan.','gsf457-comp'); }
+      var flags=[];
+
+      // gentle validation on unusual ages
+      if(age<18){ flags.push(['Check your age entry','That age is younger than a typical plan participant. The math below still runs, but double-check the number you entered.']); }
+      if(age>75){ flags.push(['Check your age entry','That age is past a typical deferral window. The math below still runs, but double-check the number you entered, and note that plan rules around required distributions may apply at your age. Ask your plan provider.']); }
+
+      // 2026 limit logic per Notice 2025-67:
+      // base $24,500; age 50-59 or 64+ adds $8,000 ($32,500); age 60-63 super catch-up $11,250 REPLACES the $8,000 ($35,750).
+      var limit=BASE, tierNote='basic limit, no catch-up (under 50)';
+      if(age>=60 && age<=63){
+        limit=BASE+SUPER6063; tierNote='basic $24,500 plus the age 60-63 super catch-up of $11,250, which replaces the $8,000 catch-up';
+      } else if(age>=50){
+        limit=BASE+CATCHUP50; tierNote='basic $24,500 plus the age 50+ catch-up of $8,000';
+      }
+
+      limit=Math.min(limit,compLimit);
+      var counted=ytd+future;
+      var remaining=Math.max(0,limit-counted);
+      var need=checksLeft>0?remaining/checksLeft:0;
+      var projected=counted+(cur*checksLeft);
+      var gap=need-cur;
+
+      $('gsf457-limit').textContent=money(limit);
+      $('gsf457-remaining').textContent=money2(remaining);
+      $('gsf457-need').textContent=checksLeft>0?money2(need):'No checks left';
+
+      if(counted>limit){
+        $('gsf457-gaplbl').textContent='Additional amount needed';
+        $('gsf457-gap').textContent='$0.00';
+        flags.push(['Check for a possible excess','Your entered YTD plus expected remaining employer/other amounts total '+money2(counted-limit)+' above the '+money(limit)+' limit used here. Do not make another contribution until your plan provider confirms whether every entered dollar counts toward this limit and whether a correction is needed.']);
+      } else if(remaining===0){
+        $('gsf457-gaplbl').textContent='Additional amount needed';
+        $('gsf457-gap').textContent='$0.00';
+        flags.push(['Illustrated room already allocated','Your entered YTD plus expected remaining employer/other amounts have allocated the '+money(limit)+' limit. Confirm the total with your plan provider before changing payroll.']);
+      } else if(checksLeft===0){
+        $('gsf457-gaplbl').textContent='2026 amount still unused';
+        $('gsf457-gap').textContent=money2(remaining);
+        flags.push(['No paychecks remain','You entered zero remaining paychecks and '+money2(remaining)+' of unused 2026 limit. This tool cannot spread that amount across payroll. Ask your plan provider whether any contribution route is still available.']);
+      } else if(cur===0){
+        $('gsf457-gaplbl').textContent='Start contributing per check';
+        $('gsf457-gap').textContent=money2(need);
+        flags.push(['Remaining-check target','With '+money2(ytd)+' credited plus '+money2(future)+' expected employer/other contributions and '+checksLeft+' checks left, '+money2(need)+' per remaining check would reach the limit. Confirm payroll can accept that amount.']);
+      } else if(gap>0.005){
+        $('gsf457-gaplbl').textContent='Add per remaining paycheck';
+        $('gsf457-gap').textContent=money2(gap);
+        flags.push(['Remaining-check target','With '+money2(ytd)+' credited plus '+money2(future)+' expected employer/other contributions and '+checksLeft+' checks left, your current amount would end near '+money(projected)+'. Adding '+money2(gap)+' to each remaining check would reach the '+money(limit)+' limit. Confirm payroll can accept that amount.']);
+      } else if(gap<-0.005){
+        $('gsf457-gaplbl').textContent='Additional amount needed';
+        $('gsf457-gap').textContent='$0.00';
+        flags.push(['Current amount would pass the limit','With '+money2(ytd)+' credited plus '+money2(future)+' expected employer/other contributions and '+checksLeft+' checks left, continuing '+money2(cur)+' per check would reach about '+money(projected)+'. The per-check target is '+money2(need)+'. Payroll systems often stop deferrals at the limit, but confirm the setting with your plan provider.']);
+      } else {
+        $('gsf457-gaplbl').textContent='Additional amount needed';
+        $('gsf457-gap').textContent='$0.00';
+        flags.push(['On target','With '+money2(ytd)+' credited plus '+money2(future)+' expected employer/other contributions and '+checksLeft+' checks left, your current per-check amount reaches the 2026 limit. Recheck after any payroll change.']);
+      }
+
+      // Roth catch-up mandate (SECURE 2.0 Sec. 603), 2026 trigger = 2025 FICA wages over $150,000 (Notice 2025-67).
+      if(age>=50 && wage==='yes'){
+        flags.push(['Roth catch-up applies to you','With 2025 Social Security wages above $150,000 from this employer, your 2026 catch-up contributions must be Roth (SECURE 2.0). Confirm how your plan handles this.']);
+      } else if(age>=50 && wage==='unsure'){
+        flags.push(['Check your 2025 W-2, Box 3','If Box 3 (Social Security wages) on your 2025 W-2 from this employer shows more than $150,000, your 2026 catch-up contributions must be Roth (SECURE 2.0). If your department does not participate in Social Security, Box 3 will be zero or blank, and the Roth requirement does not apply to you. Either way, confirm how your plan handles this.']);
+      } else if(age<50 && wage==='yes'){
+        flags.push(['Roth mandate, not yet','The Roth catch-up mandate only touches catch-up contributions, and you are under 50, so it does not change your math this year. It will matter the year you turn 50 if your wages stay above the threshold.']);
+      }
+
+      // Static notes: special 3-year catch-up + dual-plan fact.
+      flags.push(['The special 3-year catch-up','In the three years before your plan’s normal retirement age, the 457(b) special catch-up can take you up to $49,000 in 2026. It depends on unused deferrals from earlier years and cannot combine with the age-50 catch-up in the same year, so the math is plan-specific. Ask your plan provider.']);
+      flags.push(['Two plans, two limits','If your employer also offers a 401(k) or 403(b), that plan has its OWN separate $24,500 limit. You can defer the full amount into each. Confirm with HR whether you have both.']);
+
+      var fb=$('gsf457-flags');
+      fb.innerHTML=flags.map(function(f){return '<span class="k">'+f[0]+'</span><p>'+f[1]+'</p>';}).join('');
+
+      $('gsf457-fine').innerHTML='The illustration caps the age-based dollar ceiling at your entered eligible compensation limit, subtracts all counted YTD and expected remaining employer/other 457 amounts, then divides employee room by remaining paychecks. It assumes your governmental plan permits the illustrated age-based catch-up; confirm eligibility and additional plan restrictions. Your limit uses the '+tierNote+'. Figures: 2026, verified August 2026 (IRS Notice 2025-67). <strong>Education only, not tax, legal, or investment advice. Confirm which contributions count toward your limit, your catch-up eligibility, and your payroll setup with your plan provider and a licensed CPA before acting. Golden State Firefighter is not affiliated with any government agency, department, retirement system, or plan provider.</strong>';
+
+      $('gsf457-res').classList.remove('hidden');
+      $('gsf457-res').focus();
+    });
+  })();
+  </script>
+</div>
+</div>

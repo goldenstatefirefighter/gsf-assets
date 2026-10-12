@@ -1,0 +1,191 @@
+<!-- GOLDEN STATE FIREFIGHTER: DEPARTMENT DIRECTORY PAGE (/department-directory)
+     Crawlable wrapper copy for the tool widget. The widget is NOT inlined here.
+
+     PASTE IN THREE PIECES, top to bottom, in one full-width section:
+       BLOCK 1  = Code Block  (everything between BEGIN BLOCK 1 / END BLOCK 1)
+       WIDGET   = Code Block  (the ENTIRE contents of pages/tool-department-directory.html,
+                              its own block so its <script> runs. Widget id #gsfd.)
+       BLOCK 2  = Code Block  (everything between BEGIN BLOCK 2 / END BLOCK 2)
+
+     Slug: /department-directory (SEO_Settings_Worklist.md, "Department Directory" row).
+     NOTE ON /jobs: TOOLS_NAV_PLAN.md section 5 has the same widget pasted on /jobs, and
+     the live /jobs page still serves the older pre-regeneration directory. This wrapper is
+     for the standalone tool page. If the directory ends up living only on /jobs, redirect
+     /department-directory there rather than running two copies of the same data.
+
+     Classes used (25, all verified present in 01_HEADER_INJECTION.html):
+       gsf, gsf-full, page-hero, wrap, inner, breadcrumb, eyebrow, lede, section, sec-head,
+       cards, card, kick, go, muted, prose, callout, k, warn, capture, fine, btn, brass,
+       trust-strip, t
+     Requirement totals are rendered by tool-department-directory.html from the same
+     hosted array used by the filters. Do not hard-code them in this wrapper.
+-->
+
+<!-- ===================== BEGIN BLOCK 1 ===================== -->
+<div class="gsf gsf-full">
+
+  <section class="page-hero">
+    <div class="wrap"><div class="inner">
+      <p class="breadcrumb"><a href="/">Home</a> / Department Directory</p>
+      <p class="eyebrow">Free tool &middot; No email needed</p>
+      <h1>California Fire Department Directory</h1>
+      <p class="lede">California has hundreds of fire agencies and no single place that says what each one wants from an applicant. This directory covers the career departments in our current statewide dataset, with contact details, requirement evidence, check dates, and a plain flag where the public record does not establish an answer.</p>
+    </div></div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">How to use it</p>
+        <h2>Filter first, then read the notes</h2>
+      </div>
+      <div class="prose">
+        <p>Search by department, city, county or fire chief, narrow to one of nine regions or any of 49 counties, or press a filter chip to show only departments on the FCTC statewide list, or only those known to require an EMT to apply. The count updates as you filter.</p>
+        <p>Every card carries the region, the agency type, the tags, a hiring pattern where we could establish one, notes, and a link to the department's careers page. Read the notes. That is where the exceptions live, and exceptions cost cycles.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+<!-- ====================== END BLOCK 1 ====================== -->
+
+
+<!-- ============ WIDGET SLOT ============================================================
+     Paste the ENTIRE contents of Website/squarespace/pages/tool-department-directory.html
+     into its own Code Block here. Do not edit it in the Squarespace editor; edit the
+     source file and re-paste, or the inline styles get destroyed.
+     That file is GENERATED from Website/data/ca-fire-departments.json by
+     build_directory_widget.py. To change data, edit the JSON, re-run the generator,
+     re-paste. Never hand-edit the widget.
+================================================================================= -->
+
+
+<!-- ===================== BEGIN BLOCK 2 ===================== -->
+<div class="gsf gsf-full">
+
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">What is in here</p>
+        <h2>The current statewide dataset</h2>
+      </div>
+      <div class="prose">
+        <p>Coverage comes from the State Fire Marshal roster and includes city departments, fire protection districts, county departments, fire authorities, and CAL FIRE. Contract-served agencies stay in the directory because candidates need to know which employer actually hires for them.</p>
+        <p>The live summary above derives every FCTC and EMT yes, no, and not-confirmed total from the same hosted array used by the filters. A roster absence is not converted into a confirmed no. Where a field says not confirmed, the public evidence did not establish either answer.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">How this was built</p>
+        <h2>Where the data comes from</h2>
+      </div>
+      <div class="prose">
+        <p>Every record here was compiled from official department material and public rosters, one agency at a time. It is not a purchased list. Each card shows the recorded requirement evidence and check date when available, plus the FCTC basis and its roster check date. A missing source is labelled instead of being filled with a guess.</p>
+        <p>The directory is a reviewed snapshot, not a live feed, and a department's current job bulletin always outranks anything on this page. Confirm on their posting before you rely on it. Our full source hierarchy, inclusion rules, review-date policy, and correction route are in our <a href="/editorial-standards">editorial standards</a>. If a record is wrong, tell us at <a href="mailto:hello@goldenstatefirefighter.com">hello@goldenstatefirefighter.com</a> and we will check it against the department's own material and fix every page carrying the same claim.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Why some fields say unknown</p>
+        <h2>An honest blank beats a confident guess</h2>
+      </div>
+      <div class="prose">
+        <p>Some cards carry a tag reading <strong>FCTC list: not confirmed</strong>, <strong>EMT to apply: not confirmed</strong>, or <strong>Paramedic: not confirmed</strong>. Those are evidence states, not negative answers.</p>
+        <h3>Unconfirmed requirement tags</h3>
+        <p>Requirements often live inside a recruitment bulletin and disappear between cycles. When the reviewed public material did not establish yes or no, the card says not confirmed. Treat that as a question to resolve from the next bulletin, never as permission to assume no.</p>
+        <h3>Hiring pattern not published</h3>
+        <p>Some departments do not publish a recurring cycle. Those cards say the hiring pattern is not published instead of supplying a season. Set up an official job alert and check the GovernmentJobs sample on this site.</p>
+        <p>The same discipline runs through every note. Where a bulletin hedges, the note hedges with it. This directory would look more authoritative with every cell filled, and it would be lying.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Straight talk</p>
+        <h2>What this directory does not tell you</h2>
+      </div>
+      <div class="prose">
+        <ul>
+          <li><strong>46 of these do not employ their own firefighters.</strong> They are served under contract, usually by CAL FIRE or a county department. Those cards name the real employer, because applying to the wrong one wastes an application.</li>
+          <li><strong>It is not a live job board.</strong> No card says whether a recruitment is open now. Follow the careers link for that.</li>
+          <li><strong>It is a reviewed snapshot.</strong> The hosted dataset can be refreshed, but department requirements still change between cycles. Each card shows its recorded evidence and check date.</li>
+          <li><strong>No pay, benefits, or pension tier.</strong> Those vary by bargaining unit and hire date and go stale fast.</li>
+          <li><strong>It does not rank departments.</strong> No best-to-worst order and no opinion on which to target. That depends on where you can live and what you can qualify for.</li>
+          <li><strong>It does not estimate your chances.</strong> Meeting every listed minimum makes you eligible, not competitive.</li>
+        </ul>
+        <p>One naming trap worth knowing before you search. Several California departments share a city name with a separate agency, and applying to the wrong one wastes a cycle. LAFD and the Los Angeles County Fire Department are different employers with different tests. So are Santa Clara County Fire and the City of Santa Clara, Santa Barbara City and County, and Bakersfield City and Kern County. For contract-served cities, confirm the current hiring authority rather than assuming the local service name is a separate employer.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="trust-strip">
+        <div class="t"><h4>Evidence shown on the card</h4><p>Requirement sources and check dates appear with the claim when they are recorded.</p></div>
+        <div class="t"><h4>Unknowns stay unknown</h4><p>Where a department publishes no answer, the card says so. No field is filled with a guess.</p></div>
+        <div class="t"><h4>Nothing collected</h4><p>Search and filters run in your browser. No email, no account.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="capture">
+        <p class="eyebrow">Next step</p>
+        <h2>Get the two-page EMT-to-Badge roadmap to compare the steps and plan your next move.</h2>
+        <p>Knowing what a department wants is one thing. Knowing the order to earn it in is another. The free EMT-to-Badge Roadmap lays out all nine steps, with real costs and timelines.</p>
+        <a class="btn brass" href="/free-roadmap">Get the free roadmap</a>
+        <p class="fine">We email the roadmap plus a short series on the steps. Unsubscribe any time.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Read next</p>
+        <h2>Make sense of what the cards say</h2>
+      </div>
+      <div class="cards">
+        <a class="card" href="/learn/fctc-statewide-eligibility-list-explained">
+          <span class="kick">FCTC</span>
+          <h4>The statewide eligibility list</h4>
+          <p>What the SEL is, and why being on it does not mean a department has to look at you.</p>
+          <span class="go">Read the guide &rarr;</span>
+        </a>
+        <a class="card" href="/learn/cal-fire-vs-city-vs-county">
+          <span class="kick">Agency types</span>
+          <h4>CAL FIRE vs city vs county</h4>
+          <p>Three employers, three jobs, three hiring processes. Pick deliberately.</p>
+          <span class="go">Read the guide &rarr;</span>
+        </a>
+        <a class="card" href="/jobs">
+          <span class="kick">Openings</span>
+          <h4>The job board</h4>
+          <p>Where California fire jobs are posted, and how to catch a window before it closes.</p>
+          <span class="go">See the job board &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="callout warn">
+        <span class="k">Independent resource, not affiliated</span>
+        <p>Golden State Firefighter is not connected to, endorsed by, or affiliated with CAL FIRE, the FCTC, Cal-JAC, or any fire department, academy, or government agency. Department names are used for identification only. A department's current recruitment bulletin overrides anything listed here, so confirm details with the department before you apply or pay for a test. We do not guarantee employment or any hiring outcome.</p>
+      </div>
+      <p class="muted">Evidence and check dates vary by record. A current recruitment bulletin overrides this directory. Corrections are welcome through the contact page.</p>
+    </div>
+  </section>
+
+</div>
+<!-- ====================== END BLOCK 2 ====================== -->

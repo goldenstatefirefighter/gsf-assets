@@ -1,0 +1,14 @@
+wrote C:\Users\Adrie\AppData\Local\Temp\tmp01cqpmij\candidate.json (0 listings)
+TOTAL SCRAPE FAILURE: 0 listings from 170 agencies (0 ok, 170 errored). Refusing to write listings.json; previous published feed is left in place.
+test_county_and_city_agencies_stay_distinct (__main__.ParserTests.test_county_and_city_agencies_stay_distinct) ... ok
+test_dates_reject_missing_or_unknown (__main__.ParserTests.test_dates_reject_missing_or_unknown) ... ok
+test_restrictions_and_open_promotional (__main__.ParserTests.test_restrictions_and_open_promotional) ... ok
+test_role_labels_keep_track_and_job_type (__main__.ParserTests.test_role_labels_keep_track_and_job_type) ... ok
+test_writer_uses_schema2_and_timezone (__main__.ParserTests.test_writer_uses_schema2_and_timezone) ... ok
+test_xml_keeps_unknown_access_and_structured_pay (__main__.ParserTests.test_xml_keeps_unknown_access_and_structured_pay) ... ok
+test_zero_scrape_preserves_existing_feed (__main__.ParserTests.test_zero_scrape_preserves_existing_feed) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.050s
+
+OK

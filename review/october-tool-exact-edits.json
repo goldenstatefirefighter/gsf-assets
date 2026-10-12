@@ -1,0 +1,343 @@
+[
+  {
+    "file": "native/career/source/tool-cost-calculator.html",
+    "old": "cl:4000,ch:7730,ml:3,mh:5",
+    "new": "cl:4000,ch:7929,ml:3,mh:6",
+    "count": 1,
+    "already_staged": true
+  },
+  {
+    "file": "native/career/source/tool-cost-calculator.html",
+    "old": "South Bay publishes a $7,730 total. South Bay also requires a $199 preparation course, and card payments add a 3% bank fee. These are not included in its $7,730 academy subtotal.",
+    "new": "South Bay lists $7,730 for academy, PPE and uniform plus its mandatory $199 preparation course, or $7,929 before conditional Visa/Mastercard charges. Its listed full-time and part-time schedules differ; the October 3, 2026 to March 26, 2027 part-time academy is about six months.",
+    "count": 1,
+    "already_staged": true
+  },
+  {
+    "file": "native/career/source/tool-cost-calculator.html",
+    "old": "$5,010 to $9,415",
+    "new": "$5,010 to $9,614",
+    "count": 1,
+    "already_staged": true
+  },
+  {
+    "file": "native/career/source/tool-cost-calculator.html",
+    "old": "South Bay preparation and payment charges also add to the subtotal.",
+    "new": "The mandatory South Bay preparation course is included; its conditional 3% Visa/Mastercard payment charge is excluded.",
+    "count": 1,
+    "already_staged": true
+  },
+  {
+    "file": "native/career/source/page-cost-calculator.html",
+    "old": "$4,000 to $7,730, and 3 to 5 months.",
+    "new": "$4,000 to $7,929, and an illustrative 3 to 6 months.",
+    "count": 1,
+    "already_staged": true
+  },
+  {
+    "file": "native/career/source/page-cost-calculator.html",
+    "old": "South Bay Regional Public Safety Training Consortium publishes a $7,730 total. The calculator uses El Camino's $4,000 low and South Bay's $7,730 total to compare those two named programs.",
+    "new": "South Bay Regional Public Safety Training Consortium publishes $7,730 for academy, PPE and uniform plus a mandatory $199 preparation class. Its $7,929 subtotal excludes the conditional 3% Visa/Mastercard fee. The listed part-time October 2026 through March 2027 academy is about six months; full-time schedules differ. El Camino lists $3,782 to $3,982 in itemized components but publishes an approximate $4,000 to $5,000 planning total. The calculator uses that complete $4,000 published estimate and South Bay's $7,929 subtotal.",
+    "count": 1,
+    "already_staged": true
+  },
+  {
+    "file": "native/career/source/page-cost-calculator.html",
+    "old": "$5,010 to $9,415, and an illustrative 6 to 12 months",
+    "new": "$5,010 to $9,614, and an illustrative 6 to 13 months",
+    "count": 1,
+    "already_staged": true
+  },
+  {
+    "file": "native/career/source/page-cost-calculator.html",
+    "old": "South Bay lists a required $199 preparation course and a 3% card-payment fee in addition to its $7,730 academy subtotal. These extras are excluded from the displayed subtotal.",
+    "new": "South Bay's mandatory $199 preparation course is included above. Its conditional 3% Visa/Mastercard charge remains excluded. Resident tuition and program eligibility must be confirmed with each provider.",
+    "count": 1,
+    "already_staged": true
+  },
+  {
+    "file": "native/career/source/tool-where-am-i.html",
+    "old": "<div id=\"gsfq-body\"></div>",
+    "new": "<div id=\"gsfq-body\" role=\"region\" aria-label=\"Career preparation check\" aria-live=\"polite\" tabindex=\"-1\"></div>",
+    "count": 1
+  },
+  {
+    "file": "native/career/source/tool-where-am-i.html",
+    "old": "    function screenStart(){\n      setBar(0);",
+    "new": "    function screenStart(){\n      state={path:null,have:[],hurdle:null,step:0,total:2};\n      setBar(0);",
+    "count": 1
+  },
+  {
+    "file": "native/career/source/tool-where-am-i.html",
+    "old": "        btn.setAttribute('aria-pressed','false');\n        btn.onclick",
+    "new": "        btn.classList.toggle('sel',state.have.indexOf(o[0])>=0);\n        btn.setAttribute('aria-pressed',state.have.indexOf(o[0])>=0?'true':'false');\n        btn.onclick",
+    "count": 1
+  },
+  {
+    "file": "native/career/source/tool-where-am-i.html",
+    "old": "      body.appendChild(a);\n    }",
+    "new": "      body.appendChild(a);\n      body.focus();\n    }",
+    "count": 3
+  },
+  {
+    "file": "native/career/source/tool-where-am-i.html",
+    "old": "'Answer two quick questions and we will point you at the exact next step for your situation.'",
+    "new": "'Answer two quick questions to find preparation resources. This check cannot certify eligibility; your target role bulletin sets the requirements.'",
+    "count": 1
+  },
+  {
+    "file": "native/career/source/tool-where-am-i.html",
+    "old": "'Get your EMT certification.','Most California departments require it at hire, so this is your real starting line.'",
+    "new": "'Check the required EMS credential and deadline.','Some roles require an accepted credential at application, others by appointment. Read your target bulletin before deciding when to enroll.'",
+    "count": 1
+  },
+  {
+    "file": "native/career/source/tool-where-am-i.html",
+    "old": "'Fire academy and Firefighter I.','It makes you far more competitive, whether or not a department requires it up front.'",
+    "new": "'Check whether an academy is required before applying.','Some departments provide paid recruit training after hire. If your target role accepts applicants without Firefighter I, applying may be appropriate now. Do not buy a self-sponsored academy solely because this quiz lists it.'",
+    "count": 1
+  },
+  {
+    "file": "native/career/source/tool-where-am-i.html",
+    "old": "'Almost eligible. One physical step left.','Pass the CPAT.','Train for it, then take it before or during your applications.'",
+    "new": "'You recorded EMT and academy preparation.','Confirm the physical test for your target role.','Take CPAT only if the role names it; other departments use a different test or deadline. These three credentials do not establish full eligibility.'",
+    "count": 1
+  },
+  {
+    "file": "native/career/source/tool-where-am-i.html",
+    "old": "'You\\'re qualified. Now it\\'s time to compete.','Test and apply.','Keep every required FCTC or department record current, then prepare for each department\\'s interview process.'",
+    "new": "'You recorded these three credentials.','Check the current role before applying.','Confirm its complete eligibility rules, test currency, application deadline and required documents. This checklist does not certify that you are qualified.'",
+    "count": 1
+  },
+  {
+    "file": "native/career/source/tool-testing-decoder.html",
+    "old": "<div class=\"res hidden\" id=\"gsftd-res\" aria-live=\"polite\"></div>",
+    "new": "<div class=\"res hidden\" id=\"gsftd-res\" role=\"status\" aria-live=\"polite\" aria-atomic=\"true\" tabindex=\"-1\"></div>",
+    "count": 1,
+    "already_staged": true
+  },
+  {
+    "file": "native/career/source/tool-testing-decoder.html",
+    "old": "b.setAttribute('data-key',o[0]);",
+    "new": "b.setAttribute('data-key',o[0]);\n      b.setAttribute('aria-pressed','false');",
+    "count": 1
+  },
+  {
+    "file": "native/career/source/tool-testing-decoder.html",
+    "old": "function(c){c.classList.remove('sel');}",
+    "new": "function(c){c.classList.remove('sel');c.setAttribute('aria-pressed','false');}",
+    "count": 2,
+    "already_staged": true
+  },
+  {
+    "file": "native/career/source/tool-testing-decoder.html",
+    "old": "b.classList.add('sel');",
+    "new": "b.classList.add('sel');b.setAttribute('aria-pressed','true');",
+    "count": 1
+  },
+  {
+    "file": "native/career/source/tool-testing-decoder.html",
+    "old": "resBox.classList.remove('hidden');",
+    "new": "resBox.classList.remove('hidden');resBox.focus();",
+    "count": 1
+  },
+  {
+    "file": "native/career/source/tool-oral-board-drill.html",
+    "old": "<div class=\"q\" id=\"gsfdrill-q\"></div>",
+    "new": "<div class=\"q\" id=\"gsfdrill-q\" aria-live=\"polite\" tabindex=\"-1\"></div>",
+    "count": 1
+  },
+  {
+    "file": "native/career/source/tool-oral-board-drill.html",
+    "old": "id=\"gsfdrill-reveal\">",
+    "new": "id=\"gsfdrill-reveal\" aria-expanded=\"false\" aria-controls=\"gsfdrill-tips\">",
+    "count": 1
+  },
+  {
+    "file": "native/career/source/tool-oral-board-drill.html",
+    "old": "id=\"gsfdrill-exbtn\">",
+    "new": "id=\"gsfdrill-exbtn\" aria-expanded=\"false\" aria-controls=\"gsfdrill-ex\">",
+    "count": 1
+  },
+  {
+    "file": "native/career/source/tool-oral-board-drill.html",
+    "old": "tips.classList.add('hidden');ex.classList.add('hidden');}",
+    "new": "tips.classList.add('hidden');ex.classList.add('hidden');document.getElementById('gsfdrill-reveal').setAttribute('aria-expanded','false');document.getElementById('gsfdrill-exbtn').setAttribute('aria-expanded','false');}",
+    "count": 1
+  },
+  {
+    "file": "native/career/source/tool-oral-board-drill.html",
+    "old": "addEventListener('click',pick);",
+    "new": "addEventListener('click',function(){pick();q.focus();});",
+    "count": 1
+  },
+  {
+    "file": "native/career/source/tool-oral-board-drill.html",
+    "old": "function(){tips.classList.toggle('hidden');}",
+    "new": "function(){tips.classList.toggle('hidden');this.setAttribute('aria-expanded',tips.classList.contains('hidden')?'false':'true');}",
+    "count": 1
+  },
+  {
+    "file": "native/career/source/tool-oral-board-drill.html",
+    "old": "function(){ex.classList.toggle('hidden');}",
+    "new": "function(){ex.classList.toggle('hidden');this.setAttribute('aria-expanded',ex.classList.contains('hidden')?'false':'true');}",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-fee-drag.html",
+    "old": "The higher fee is as large as the assumed return or larger, so that scenario loses ground every year in this illustration.",
+    "new": "The higher fee is as large as the assumed return or larger, so investment growth before contributions is zero or negative in that scenario. Contributions can still increase the balance.",
+    "count": 1,
+    "already_staged": true
+  },
+  {
+    "file": "native/financial/tool-pension-estimator.html",
+    "old": "annual base pensionable pay, no overtime",
+    "new": "verified tier-eligible pensionable pay, including eligible special pay",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-pension-estimator.html",
+    "old": "These vary by MOU and many are not pensionable, so they are shown separately and are NOT added to the pension estimate above. Estimate only.",
+    "new": "These vary by MOU and retirement tier. Include any eligible pensionable portion in your verified final compensation above. These optional entries are shown as a separate premium total and are not automatically added to the pension estimate.",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-pension-estimator.html",
+    "old": "Current gross pay (with premiums)",
+    "new": "Optional entered premium total",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-pension-estimator.html",
+    "old": "if(comp<=0){ return showErr('Enter your final compensation (annual base pay).'); }",
+    "new": "if(!isFinite(yos)||yos<=0){ return showErr('Enter finite positive years of service.'); }\n      if(!isFinite(comp)||comp<=0){ return showErr('Enter finite positive pensionable final compensation verified by your retirement system.'); }\n      if(!isFinite(age)||age<=0){ return showErr('Enter a finite positive retirement age.'); }\n      if(key!=='custom' && !FACT[key]){ return showErr('Choose a supported retirement formula.'); }",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-pension-estimator.html",
+    "old": "if(factor<=0){",
+    "new": "if(!isFinite(factor)||factor<=0){",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-pension-estimator.html",
+    "old": "          flags.push(['Below minimum age','CalPERS safety members generally cannot retire before age 50. This estimate uses the age 50 factor. Confirm your minimum retirement age.']);\n          age=t.minAge;",
+    "new": "          return showErr('This formula starts at age '+t.minAge+'. Enter an eligible retirement age; an age-49 input is not an age-50 estimate.');",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-pension-estimator.html",
+    "old": "      var pct = yos * factor;",
+    "new": "      if(yos<5){ flags.push([\"Eligibility not established\",\"CalPERS service retirement generally requires five years of service credit, with exceptions such as qualifying reciprocity. This formula illustration does not establish that you can receive a pension. Confirm eligibility with your system.\"]); }\n      var pct = yos * factor;",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-pension-estimator.html",
+    "old": "      var monthly = annual/12;",
+    "new": "      if(!isFinite(annual)){ return showErr(\"The entered values exceed the supported calculation range.\"); }\n      var monthly = annual/12;",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-pension-estimator.html",
+    "old": "money(comp+prem)",
+    "new": "money(prem)",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-pension-estimator.html",
+    "old": "Overtime generally does not count.",
+    "new": "Use reportable final compensation confirmed for your tier, including eligible special pay. Overtime is generally excluded, with specific exceptions such as applicable 7(k) compensation; do not infer pensionability solely from a paystub label.",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-pension-estimator.html",
+    "old": "id=\"gsfp-err\"></p>",
+    "new": "id=\"gsfp-err\" role=\"alert\" aria-live=\"assertive\"></p>",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-pension-estimator.html",
+    "old": "id=\"gsfp-res\">",
+    "new": "id=\"gsfp-res\" role=\"status\" aria-live=\"polite\" tabindex=\"-1\">",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-457b-maximizer.html",
+    "old": "Current amount credited per paycheck",
+    "new": "Your employee contribution per paycheck",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-457b-maximizer.html",
+    "old": "Include traditional and Roth deferrals together, plus any employer amount your plan says counts toward the same annual limit.",
+    "new": "Include your traditional and Roth employee deferrals here. Enter expected future employer and other 457-plan amounts separately below so they are not double-counted.",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-457b-maximizer.html",
+    "old": "Use the year-to-date total and remaining-check count shown by payroll or your plan. Do not estimate them from a full-year schedule.",
+    "new": "Use all counted 2026 employee and employer deferrals across applicable 457(b) plans in YTD. Use actual remaining paychecks, not a full-year schedule.",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-457b-maximizer.html",
+    "old": "    <div class=\"fld\">\n      <label for=\"gsf457-wage\">",
+    "new": "    <div class=\"fld\">\n      <label for=\"gsf457-future\">Expected remaining employer and other 457(b) contributions ($)</label>\n      <input id=\"gsf457-future\" type=\"number\" min=\"0\" step=\"0.01\" required placeholder=\"Enter 0 if none\" aria-describedby=\"gsf457-future-help gsf457-err\">\n      <p class=\"cap\" id=\"gsf457-future-help\">Count amounts expected to vest this year that are not in YTD and are not your employee-per-paycheck input. Confirm what counts with each plan.</p>\n    </div>\n    <div class=\"fld\">\n      <label for=\"gsf457-comp\">2026 eligible compensation limit confirmed by your plan ($)</label>\n      <input id=\"gsf457-comp\" type=\"number\" min=\"0\" step=\"0.01\" required placeholder=\"Use your plan's includible-compensation figure\" aria-describedby=\"gsf457-comp-help gsf457-err\">\n      <p class=\"cap\" id=\"gsf457-comp-help\">Do not substitute total household income or assume ordinary gross wages use the same definition. This illustration assumes a governmental plan permits the age-based catch-up shown. Special three-year catch-up and additional plan/payroll restrictions require plan review.</p>\n    </div>\n    <div class=\"fld\">\n      <label for=\"gsf457-wage\">",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-457b-maximizer.html",
+    "old": "'gsf457-ytd','gsf457-left','gsf457-wage'",
+    "new": "'gsf457-ytd','gsf457-left','gsf457-future','gsf457-comp','gsf457-wage'",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-457b-maximizer.html",
+    "old": "      var flags=[];",
+    "new": "      var future=num('gsf457-future'),compLimit=num('gsf457-comp');\n      if(!$('gsf457-future').value||!isFinite(future)||future<0){ return showErr('Enter expected remaining employer/other 457 amounts of 0 or more.','gsf457-future'); }\n      if(!$('gsf457-comp').value||!isFinite(compLimit)||compLimit<0){ return showErr('Enter the eligible compensation limit confirmed by your plan.','gsf457-comp'); }\n      var flags=[];",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-457b-maximizer.html",
+    "old": "      var remaining=Math.max(0,limit-ytd);",
+    "new": "      limit=Math.min(limit,compLimit);\n      var counted=ytd+future;\n      var remaining=Math.max(0,limit-counted);",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-457b-maximizer.html",
+    "old": "var projected=ytd+(cur*checksLeft);",
+    "new": "var projected=counted+(cur*checksLeft);",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-457b-maximizer.html",
+    "old": "if(ytd>limit){",
+    "new": "if(counted>limit){",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-457b-maximizer.html",
+    "old": "money2(ytd-limit)",
+    "new": "money2(counted-limit)",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-457b-maximizer.html",
+    "old": "Your entered year-to-date amount is ",
+    "new": "Your entered YTD plus expected remaining employer/other amounts total ",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-457b-maximizer.html",
+    "old": "Your 2026 annual limit",
+    "new": "Illustrated 2026 ceiling",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-457b-maximizer.html",
+    "old": "The remaining-check estimate subtracts the year-to-date amount you entered from the 2026 limit, then divides the balance by the paychecks you said remain.",
+    "new": "The illustration caps the age-based dollar ceiling at your entered eligible compensation limit, subtracts all counted YTD and expected remaining employer/other 457 amounts, then divides employee room by remaining paychecks. It assumes your governmental plan permits the illustrated age-based catch-up; confirm eligibility and additional plan restrictions.",
+    "count": 1
+  }
+]

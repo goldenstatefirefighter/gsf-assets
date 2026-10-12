@@ -1,0 +1,396 @@
+<!-- GOLDEN STATE FIREFIGHTER: JOBS v2 (/jobs). STAGED REMEDIATION SOURCE. Paste into a Code Block.
+     Two zones: "Open now" (live listings from data/jobboard/listings.json) + "Regular cadence"
+     (static directory from data/ca-fire-departments.json). Self-contained; the Open-now zone
+     fetches a hosted listings.json when LISTINGS_URL is set, else renders the embedded fallback. -->
+<div class="gsf gsf-full">
+
+  <section class="page-hero">
+    <div class="wrap"><div class="inner">
+      <p class="breadcrumb"><a href="/">Home</a> / Jobs</p>
+      <h1>California fire jobs, what is open now</h1>
+      <p class="lede">Open recruitments are at the top, sorted by the soonest deadline, so you do not miss a window. Below them is every department we track and how each one typically hires. Always confirm a posting on the department's own page before you rely on it. Postings and dates change.</p>
+    </div></div>
+  </section>
+
+  <!-- ============ ZONE 1: OPEN NOW ============ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Open recruitments</p>
+        <h2>Open now</h2>
+        <p>Open California fire-service roles from configured NEOGOV/GovernmentJobs agency feeds. Results can include recruit, firefighter-paramedic, lateral, cadet, seasonal, volunteer, part-time, internal, and promotional roles. Soonest deadline first. This is a GovernmentJobs sample, not every agency or open role in California. Departments that hire through other systems still appear in the directory below.</p>
+        <p>The feed is checked daily. Each card shows the access classification supported by the feed, the employment type and salary when GovernmentJobs supplies them, and the date the listing was observed. <strong>Access: confirm in bulletin</strong> means the feed did not establish whether the public can apply. A department's posting always outranks this page.</p>
+      </div>
+      <div id="gsfj">
+        <style>
+          #gsfj{--nv:#101C33;--nv2:#0B1425;--ch:#1E2128;--br:#C08A2D;--brh:#D7A649;--em:#B23A2E;
+            --bo:#F3EFE6;--dm:#B9BCC4;--fd:#9AA0AC;--ln:rgba(243,239,230,.13);
+            --disp:"Saira Condensed","Bahnschrift",system-ui,sans-serif;--body:"Public Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",Consolas,monospace;
+            font-family:var(--body)}
+          #gsfj *{box-sizing:border-box}
+          #gsfj .j-count{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--fd);text-transform:uppercase;margin:0 0 16px}
+          #gsfj .j-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+          #gsfj .job{background:var(--ch);border:1px solid var(--ln);border-radius:8px;padding:20px;display:flex;flex-direction:column}
+          #gsfj .job .jtags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+           #gsfj .job .jtag{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:3px;background:var(--nv);color:var(--dm);border:1px solid var(--ln)}
+           #gsfj .job .jtag.restricted{color:var(--bo);border-color:var(--em);background:rgba(178,58,46,.18)}
+           #gsfj .job .jtag.unknown{color:var(--brh);border-color:rgba(192,138,45,.55)}
+          #gsfj .job h4{font-family:var(--disp);text-transform:uppercase;font-weight:700;color:var(--bo);font-size:20px;line-height:1.05;margin:0 0 4px}
+          #gsfj .job .dept{color:var(--dm);font-size:13px;margin:0 0 14px}
+          #gsfj .job .dates{font-family:var(--mono);font-size:12px;color:var(--fd);line-height:1.7;margin:0 0 16px}
+          #gsfj .job .dates b{color:var(--bo);font-weight:600}
+          #gsfj .job .dates .close{color:var(--brh)}
+           #gsfj .job .dates .close.soon{color:var(--em)}
+           #gsfj .job .detail{color:var(--dm);font-size:12.5px;line-height:1.5;margin:0 0 10px}
+           #gsfj .job .restriction{color:var(--bo);font-size:12.5px;line-height:1.5;margin:0 0 14px;padding:10px 12px;border-left:3px solid var(--em);background:rgba(178,58,46,.1)}
+          #gsfj .job a.apply{margin-top:auto;font-family:var(--disp);text-transform:uppercase;font-weight:600;font-size:13px;letter-spacing:.04em;color:var(--br);text-decoration:none}
+          #gsfj .job a.apply:hover{color:var(--brh)}
+          #gsfj .j-note{font-family:var(--mono);font-size:11px;color:var(--fd);letter-spacing:.04em;line-height:1.6;margin-top:22px;border-top:1px solid var(--ln);padding-top:14px}
+          #gsfj .empty{color:var(--dm);padding:24px;text-align:center;grid-column:1/-1;border:1px dashed var(--ln);border-radius:8px}
+          @media(max-width:900px){#gsfj .j-grid{grid-template-columns:repeat(2,1fr)}}
+          @media(max-width:600px){#gsfj .j-grid{grid-template-columns:1fr}}
+        </style>
+        <p class="j-count" id="gsfj-count"></p>
+        <div class="j-grid" id="gsfj-grid"></div>
+        <p class="j-note" id="gsfj-note">Sample listings shown; verify each one against the department's official page before relying on it. Postings and dates change without notice.</p>
+
+        <script>
+        (function(){
+          // Live data source. MUST be raw.githubusercontent (cache-control max-age=300),
+          // NOT jsDelivr: jsDelivr serves max-age=604800 (7 days), which would keep showing
+          // closed recruitments as open. Verified 2026-08-13.
+          var LISTINGS_URL = "https://raw.githubusercontent.com/goldenstatefirefighter/gsf-assets/main/jobboard/listings.json";
+          // FALLBACK IS DELIBERATELY EMPTY. It previously held three real July 2026 roles whose
+          // close dates (Jul 20 / Jul 22) are now long past, and the renderer has no expiry
+          // filter, so they rendered as current openings with a working Apply button. On a job
+          // board an empty honest state beats a confidently wrong one. Do not re-add listings.
+          var FALLBACK = [];
+          // Shown when a hosted feed is configured but returns nothing or cannot be reached.
+          var EMPTY_MSG = 'No open firefighter recruitments are showing from the job feeds right now, or the live feed could not be reached. This board only samples agencies that post to NEOGOV/GovernmentJobs, so it is not every open role in California. Check the department directory below and confirm current openings on each department’s official page.';
+          var grid=document.getElementById('gsfj-grid'), count=document.getElementById('gsfj-count'),
+              note=document.getElementById('gsfj-note');
+          function esc(s){ return String(s||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+          function safeHttpUrl(value){ if(!value)return ''; try{var u=new URL(value,window.location.href);return (u.protocol==='https:'||u.protocol==='http:')?u.href:'';}catch(e){return '';} }
+          function fmt(d){ if(!d) return null; var p=d.split('-'); if(p.length!==3) return d;
+            var mo=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+            return mo[(+p[1])-1]+' '+(+p[2])+', '+p[0]; }
+          function daysLeft(d){ if(!d) return null; var t=new Date(d+'T23:59:59')-new Date();
+            return Math.ceil(t/86400000); }
+          function sortJobs(a,b){
+            // dated closings first, ascending; open-until-filled (no close) last
+            if(!a.close_date && !b.close_date) return 0;
+            if(!a.close_date) return 1; if(!b.close_date) return -1;
+            return a.close_date < b.close_date ? -1 : (a.close_date > b.close_date ? 1 : 0);
+          }
+          function titleLabels(title){
+            var out=[], rules=[['Cadet',/\bcadet\b/i],['Volunteer',/\bvolunteer\b/i],['Lateral',/\blateral\b/i],['Seasonal',/\bseasonal\b/i],['Recruit/trainee',/\brecruit\b|\btrainee\b/i],['Part-time',/\bpart[ -]?time\b/i]];
+            rules.forEach(function(r){if(r[1].test(title||''))out.push(r[0]);}); return out;
+          }
+          function access(j){
+            if(j.access_status) return j.access_status;
+            if(/\bpromotional(?:\s+only)?\b/i.test(j.title||'') && !/\bopen\s*(?:&|and|\/)\s*promotional\b/i.test(j.title||'')) return 'promotional';
+            if(/\binternal\s+only\b/i.test(j.title||'')) return 'internal';
+            return 'unknown';
+          }
+          function amount(value){
+            if(value===null||value===undefined||value==='')return '';
+            var n=Number(String(value).replace(/[$,]/g,''));
+            return isNaN(n)?String(value):'$'+n.toLocaleString(undefined,{maximumFractionDigits:2});
+          }
+          function salary(j){
+            var lo=amount(j.salary_min), hi=amount(j.salary_max), period=j.salary_interval?(' per '+String(j.salary_interval).toLowerCase()):'';
+            if(lo&&hi) return lo===hi?lo+period:lo+' to '+hi+period;
+            return (lo||hi)?(lo||hi)+period:'';
+          }
+          function render(rows){
+            rows = (rows||[]).slice().sort(sortJobs);
+            count.textContent = rows.length + ' open role' + (rows.length===1?'':'s');
+            grid.innerHTML = rows.length ? rows.map(function(j){
+              var dl = daysLeft(j.close_date);
+              var soon = dl!==null && dl>=0 && dl<=10;
+              var closeTxt = j.close_date
+                ? '<span class="close'+(soon?' soon':'')+'">Closes '+esc(fmt(j.close_date))+(soon?(' &middot; '+dl+' day'+(dl===1?'':'s')+' left'):'')+'</span>'
+                : '<span class="close">Open until filled</span>';
+              var a=access(j), labels=Array.isArray(j.role_labels)?j.role_labels.slice():[];
+              titleLabels(j.title).forEach(function(v){if(labels.indexOf(v)<0)labels.push(v);});
+              if(j.employment_type && !labels.some(function(v){return v.toLowerCase()===String(j.employment_type).toLowerCase();})) labels.push(j.employment_type);
+              var accessText=a==='internal'?'Internal only':a==='promotional'?'Promotional only':a==='public'?'Public application':'Access: confirm in bulletin';
+              var accessClass=(a==='internal'||a==='promotional')?' restricted':(a==='unknown'?' unknown':'');
+              var pay=salary(j), sourceUrl=safeHttpUrl(j.source_url);
+              return '<div class="job'+(soon?' soon':'')+'">'
+                + '<div class="jtags">'+(j.region?'<span class="jtag">'+esc(j.region)+'</span>':'')
+                +   (j.source?'<span class="jtag">'+esc(j.source==='governmentjobs'?'GovernmentJobs':j.source)+'</span>':'')
+                +   labels.map(function(v){return '<span class="jtag">'+esc(v)+'</span>';}).join('')
+                +   '<span class="jtag'+accessClass+'">'+esc(accessText)+'</span></div>'
+                + '<h4>'+esc(j.title)+'</h4>'
+                + '<p class="dept">'+esc(j.department)+'</p>'
+                + (pay?'<p class="detail"><b>Salary:</b> '+esc(pay)+'</p>':'')
+                + '<p class="dates">'+(j.open_date?'<b>Opened</b> '+esc(fmt(j.open_date))+'<br>':'')+closeTxt+(j.observed_at?'<br><b>Observed</b> '+esc(fmt(j.observed_at)):'')+'</p>'
+                + (j.access_note?'<p class="restriction"><b>Who may apply:</b> '+esc(j.access_note)+'</p>':'')
+                + (sourceUrl?'<a class="apply" href="'+esc(sourceUrl)+'" target="_blank" rel="noopener">View posting &amp; apply &rarr;</a>':'')
+                + '</div>';
+            }).join('') : '';
+            if(!rows.length) renderEmpty();
+          }
+          function renderEmpty(){
+            // Never leave a blank/broken-looking widget: show a clear directions panel.
+            count.textContent = '';
+            grid.innerHTML = '<div class="empty">'+esc(EMPTY_MSG)+'</div>';
+            note.textContent = 'Postings and dates change without notice. Always confirm on the department’s official page before relying on it.';
+          }
+          // Drop anything already closed. Belt and braces: protects against a stale hosted file
+          // as well as a feed that keeps returning an expired row.
+          function dropExpired(rows){
+            var today=new Date(); today.setHours(0,0,0,0);
+            return (rows||[]).filter(function(j){
+              if(!j || !j.close_date) return true;            // open until filled
+              var c=new Date(j.close_date+"T23:59:59");
+              return !isNaN(c) && c>=today;
+            });
+          }
+          // A scheduled refresh fails SILENTLY by going stale, not by erroring. If the file is
+          // more than 3 days old, show the honest empty state instead of aging listings.
+          function tooStale(generated){
+            if(!generated) return false;
+            var g=new Date(generated); if(isNaN(g)) return false;
+            return (new Date()-g)/86400000 > 3;
+          }
+          function go(data){ var rows=dropExpired(data); if(rows.length) render(rows); else renderEmpty(); }
+          if(LISTINGS_URL){
+            fetch(LISTINGS_URL).then(function(r){ if(!r.ok) throw new Error('bad status'); return r.json(); })
+              .then(function(j){ var rows=(j&&j.listings)?j.listings:(Array.isArray(j)?j:[]);
+                rows = dropExpired(rows);
+                if(j&&j.meta&&tooStale(j.meta.generated)){ renderEmpty(); return; }
+                if(rows.length){
+                  if(j&&j.meta&&j.meta.generated){ note.textContent='Updated '+j.meta.generated.slice(0,10)+'. Source scope: configured NEOGOV/GovernmentJobs agency feeds only. This is not every open role statewide. Verify each listing against the official bulletin.'; }
+                  render(rows);
+                } else { renderEmpty(); } })
+              .catch(function(){ renderEmpty(); });
+          } else { go(FALLBACK); }
+        })();
+        </script>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Official sources ============ -->
+  <section class="section tight">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Where openings are posted</p>
+        <h2>The official sources</h2>
+        <p>Our board is a convenience layer over these. When in doubt, these are the systems of record.</p>
+      </div>
+      <div class="cards">
+        <a class="card" href="https://www.fctconline.org/find-a-job/now-hiring/" target="_blank" rel="noopener"><span class="kick">Statewide</span><h4>FCTC Now Hiring</h4><p>The list 170+ California departments hire from, plus who is recruiting now.</p><span class="go">Visit &rarr;</span></a>
+        <a class="card" href="https://www.governmentjobs.com/" target="_blank" rel="noopener"><span class="kick">Applications</span><h4>GovernmentJobs</h4><p>Where most California cities and counties post openings and take applications.</p><span class="go">Visit &rarr;</span></a>
+        <a class="card" href="https://www.joincalfire.com/" target="_blank" rel="noopener"><span class="kick">State agency</span><h4>Join CAL FIRE</h4><p>The state's wildland and contract-county firefighting recruitment.</p><span class="go">Visit &rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ZONE 2: FULL DIRECTORY ============ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">The full directory</p>
+        <h2>Every department we track</h2>
+        <p>Use the filters, then read each card's evidence and check dates. Not confirmed means the public evidence did not establish yes or no.</p>
+      </div>
+<!-- BEGIN GENERATED DIRECTORY WIDGET -->
+<!-- GOLDEN STATE FIREFIGHTER: CA Fire Department Directory.
+     GENERATED from data/ca-fire-departments.json by build_directory_widget.py. Do not hand-edit.
+     Paste into a CODE BLOCK on /jobs. Self-contained; works with or without header injection.
+     To update: edit the JSON, re-run the generator, re-paste. -->
+<div class="gsf gsf-full">
+<div id="gsfd">
+  <style>
+    #gsfd{--nv:#101C33;--nv2:#0B1425;--ch:#1E2128;--br:#C08A2D;--brh:#D7A649;--em:#B23A2E;
+      --bo:#F3EFE6;--dm:#B9BCC4;--fd:#8A909C;--ln:rgba(243,239,230,.13);
+      --disp:"Saira Condensed","Bahnschrift",system-ui,sans-serif;--body:"Public Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",Consolas,monospace;
+      font-family:var(--body)}
+    #gsfd *{box-sizing:border-box}
+    #gsfd .d-controls{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 20px;align-items:center}
+    #gsfd select,#gsfd input{background:var(--nv2);border:1px solid var(--ln);border-radius:6px;color:var(--bo);
+      font-family:var(--body);font-size:14px;min-height:44px;padding:10px 12px}
+    #gsfd input{flex:1;min-width:180px}
+    #gsfd input::placeholder{color:var(--fd)}
+    #gsfd .chip-t{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--fd);
+      border:1px solid var(--ln);border-radius:20px;min-height:44px;padding:8px 14px;cursor:pointer;background:none;transition:.14s}
+    #gsfd .chip-t.on{color:var(--nv);background:var(--br);border-color:var(--br)}
+    #gsfd .reset{font-family:var(--body);font-size:13px;color:var(--br);background:none;border:0;min-height:44px;padding:8px 10px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+    #gsfd select:focus-visible,#gsfd input:focus-visible,#gsfd button:focus-visible,#gsfd a:focus-visible{outline:3px solid var(--bo);outline-offset:2px}
+    #gsfd .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    #gsfd .d-count{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--fd);text-transform:uppercase;margin:0 0 8px}
+    #gsfd .d-summary{font-family:var(--mono);font-size:11px;color:var(--dm);line-height:1.6;margin:0 0 16px}
+    #gsfd .d-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    #gsfd .dept{background:var(--ch);border:1px solid var(--ln);border-radius:8px;padding:20px}
+    #gsfd .dept h4{font-family:var(--disp);text-transform:uppercase;font-weight:700;color:var(--bo);font-size:19px;line-height:1.05;margin:0 0 8px}
+    #gsfd .tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+    #gsfd .tag{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:3px;background:var(--nv);color:var(--dm);border:1px solid var(--ln)}
+    #gsfd .tag.y{color:var(--br);border-color:rgba(192,138,45,.5)}
+    #gsfd .tag.n{color:var(--fd)}
+    #gsfd .dept .hire{color:var(--dm);font-size:13px;margin:0 0 8px}
+    #gsfd .dept .notes{color:var(--fd);font-size:12.5px;line-height:1.5;margin:0 0 14px}
+    #gsfd .dept a{font-family:var(--disp);text-transform:uppercase;font-weight:600;font-size:13px;letter-spacing:.04em;color:var(--br);text-decoration:none}
+    #gsfd .dept a:hover{color:var(--brh)}
+    #gsfd .d-note{font-family:var(--mono);font-size:11px;color:var(--fd);letter-spacing:.04em;line-height:1.6;margin-top:22px;border-top:1px solid var(--ln);padding-top:14px}
+    #gsfd .contact{border-top:1px solid var(--ln);margin:10px 0 12px;padding-top:10px;display:grid;gap:4px}
+    #gsfd .c-row{display:grid;grid-template-columns:82px 1fr;gap:8px;font-size:13px;line-height:1.45;align-items:start}
+    #gsfd .c-k{color:var(--dm);text-transform:uppercase;letter-spacing:.04em;font-size:10.5px;padding-top:2px}
+    #gsfd .contact a{color:var(--bo);text-decoration:underline;word-break:break-word;min-height:44px;display:inline-flex;align-items:center}
+    #gsfd .sources{border-top:1px solid var(--ln);margin:12px 0 10px;padding-top:10px;color:var(--fd);font-size:11.5px;line-height:1.55}
+    #gsfd .sources p{margin:0 0 7px}
+    #gsfd .sources a,#gsfd a.careers{min-height:44px;display:inline-flex;align-items:center}
+    #gsfd .empty{color:var(--dm);padding:30px;text-align:center;grid-column:1/-1}
+    @media(max-width:680px){#gsfd .d-grid{grid-template-columns:1fr}}
+  </style>
+
+  <div class="d-controls">
+    <label for="gsfd-q" class="sr-only">Search departments</label>
+    <input type="text" id="gsfd-q" placeholder="Search department or city...">
+    <label for="gsfd-region" class="sr-only">Filter by region</label>
+    <select id="gsfd-region"><option value="">All regions</option></select>
+    <label for="gsfd-county" class="sr-only">Filter by county</label>
+    <select id="gsfd-county"><option value="">All counties</option></select>
+    <button class="chip-t" id="gsfd-fctc" data-on="0" aria-pressed="false">Uses FCTC list</button>
+    <button class="chip-t" id="gsfd-emt" data-on="0" aria-pressed="false">Known to require EMT</button>
+    <button class="reset" id="gsfd-reset" type="button">Reset filters</button>
+  </div>
+  <p class="d-count" id="gsfd-count" aria-live="polite"></p>
+  <p class="d-summary" id="gsfd-summary" aria-live="polite"></p>
+  <div class="d-grid" id="gsfd-grid"></div>
+  <p class="d-note">371 California fire-agency records, including contract-served agencies. The roster is based on the State Fire Marshal FDID list; FCTC status comes from the official participating-departments roster. Each card shows the FCTC basis and check date. 370 cards include a recorded requirements source. Not confirmed means the public evidence did not establish yes or no. A current recruitment bulletin always outranks this directory.</p>
+
+  <script>
+  (function(){
+    // The full directory is hosted, not embedded: 371 records is ~127KB, past the code-block
+    // paste limit, and hosting means a data refresh needs no re-paste. raw.githubusercontent
+    // sends cache-control max-age=300 and access-control-allow-origin: *.
+    var DATA_URL = "https://raw.githubusercontent.com/goldenstatefirefighter/gsf-assets/main/directory/ca-fire-departments.json";
+    var DEPTS = [{"name":"Alameda County Fire Department","county":"Alameda","region":"Bay Area","type":"County","sector":"County","emt":"yes","medic":"preferred","fctc":"yes","url":"https://alamedacountyfire.gov/careers/","site":"https://alamedacountyfire.gov/","addr":"6363 Clark Avenue","city":"Dublin","zip":"94568","tel":"(925) 833-3473","chief":"William L. McDonald","hiring":"Recruitment 26-8137-01 Firefighter Recruit-EMT opened September 28 and closes November 13, 2026 at 5 p.m. Confirm current status in the official bulletin.","form":"https://acgov.org/form_app/feedback/feedback.jsp?id=FIRweb","contact_source":"owner-verified 2026-08-14","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://www.jobapscloud.com/Alameda/sup/bulpreview.asp?R1=26&R2=8137&R3=01","hiring_asof":"2026-10-12","chief_asof":"2026-08-14","requirements_scope":"An accepted active California EMT/AEMT, California paramedic, National Registry EMT or National Registry paramedic credential is required at filing. Eligible National Registry applicants must obtain the specified California credential within 90 days of a conditional offer. Current FCTC SEL and CPAT within 12 months at filing; FF I course is desirable, not a minimum requirement."},{"name":"Alameda Fire Department","county":"Alameda","region":"Bay Area","type":"Municipal","sector":"Municipal","emt":"yes","medic":"preferred","fctc":"yes","url":"https://www.governmentjobs.com/careers/alamedaca","site":"https://www.alamedaca.gov/Departments/Fire-Department","addr":"1300 Park St","city":"Alameda","zip":"94501","tel":"(510) 337-2100","chief":"Nicholas Luby","hiring":"Periodic Firefighter recruitments posted on the City of Alameda NEOGOV portal; candidates are ranked off the FCTC Statewide Eligibility List onto a City eligible list.","email":"afd@alamedaca.gov","contact_source":"owner-verified 2026-08-14","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://www.governmentjobs.com/careers/alamedaca/jobs/newprint/2434450","hiring_asof":"2026-08-13","chief_asof":"2026-08-14"},{"name":"Berkeley Fire Department","county":"Alameda","region":"Bay Area","type":"Municipal","sector":"Municipal","emt":"yes","medic":"no","fctc":"yes","url":"https://www.governmentjobs.com/careers/berkeley","site":"https://berkeleyca.gov/safety-health/fire","addr":"2100 Mlk Jr Way, 2nd Floor","city":"Berkeley","zip":"94704","tel":"(510) 981-3473","chief":"David Sprague","hiring":"Periodic Firefighter recruitments posted on the City of Berkeley NEOGOV portal, with FCTC written exam and CPAT card required at application.","email":"fire@berkeleyca.gov","contact_source":"owner-verified 2026-08-14","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://www.governmentjobs.com/careers/berkeley/jobs/newprint/4803058","hiring_asof":"2025-01-27","chief_asof":"2026-08-14"},{"name":"City of Albany Fire Department","county":"Alameda","region":"Bay Area","type":"Municipal","sector":"Municipal","emt":"yes","medic":"required","fctc":"yes","url":"https://www.governmentjobs.com/careers/albanyca","site":"https://www.albanyca.gov/Departments/Fire-Department","addr":"1000 San Pablo Avenue","city":"Albany","zip":"94706","tel":"(510) 528-5770","chief":"James Boito","hiring":"The city's 2026 Firefighter/Paramedic recruitment opened March 2 and closed April 10, 2026; the posting required at least six months as a full-time firefighter/paramedic in a 911 transporting agency despite its entry-level title.","email":"albanyfire@albanyca.gov","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://www.governmentjobs.com/careers/albanyca/jobs/newprint/5247036","hiring_asof":"2026-10-12","chief_asof":"2026-05-18","hiring_window_closed":true},{"name":"East Bay Regional Park District","county":"Alameda","region":"Bay Area","type":"Municipal","sector":"Municipal","emt":"unverified","medic":"unverified","fctc":"unverified","url":"https://www.governmentjobs.com/careers/ebparks","site":"https://www.ebparks.org/about/fire/","addr":"2950 Peralto Oaks Court","city":"Oakland","zip":"94605","tel":"(510) 690-6600","chief":"Ray Iverson","hiring":"Firefighter II recruitments posted infrequently on the District NEOGOV portal; zero jobs listed at time of check.","form":"https://www.ebparks.org/index%2Ephp/contact","fctc_basis":"Not found on the FCTC participating-departments roster checked 2026-08-13, but FCTC does not state its roster is exhaustive; absence is weaker evidence than presence, so this is unverified rather than confirmed no.","fctc_checked":"2026-08-13","evidence_url":"https://www.governmentjobs.com/careers/ebparks/jobs/newprint/3793561","hiring_asof":"2022-11-09","chief_asof":"2026-10-12","chief_source":"https://www.ebparks.org/board-and-staff/staff","chief_role":"Interim Fire Chief"},{"name":"Fremont Fire Department","county":"Alameda","region":"Bay Area","type":"Municipal","sector":"Municipal","emt":"unverified","medic":"unverified","fctc":"yes","url":"https://www.governmentjobs.com/careers/fremontca","site":"https://www.fremont.gov/government/departments/fire","addr":"3300 Capitol Avenue","city":"Fremont","zip":"94538","tel":"(510) 494-4200","chief":"Zoraida Diaz","hiring":"Firefighter (EMT or Paramedic) recruitments run through the City of Fremont NEOGOV portal and the department's jobs.fremontfire.gov recruitment site.","email":"fremontfire@fremont.gov","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://www.fctconline.org/participating-departments/","hiring_asof":"2026-08-13","chief_asof":"2026-05-18"},{"name":"Hayward Fire Department","county":"Alameda","region":"Bay Area","type":"Municipal","sector":"Municipal","emt":"no","medic":"required","fctc":"yes","url":"https://www.governmentjobs.com/careers/haywardca","site":"https://www.hayward-ca.gov/fire-department","addr":"777 B St","city":"Hayward","zip":"94541","tel":"(510) 583-4930","chief":"Eric Vollmer","hiring":"Firefighter Trainee recruitments on the City of Hayward NEOGOV portal; applicants must be on the FCTC Statewide Eligibility List.","email":"hfd@hayward-ca.gov","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://www.governmentjobs.com/careers/haywardca/jobs/newprint/4636587","hiring_asof":"2024-12-19","chief_asof":"2026-05-18"},{"name":"Livermore-Pleasanton Fire Department","county":"Alameda","region":"Bay Area","type":"Municipal","sector":"Municipal","emt":"yes","medic":"required","fctc":"yes","url":"https://www.governmentjobs.com/careers/pleasanton","site":"https://www.lpfire.org/","addr":"3560 Nevada Street","city":"Pleasanton","zip":"94566","tel":"(925) 454-2361","chief":"Aaron Lacey","hiring":"Firefighter-Paramedic recruitments posted through the City of Pleasanton NEOGOV portal, requiring FCTC SEL placement and a Cal-JAC CPAT card.","emp":"City of Pleasanton (LPFD Is Jointly Operated By Livermore and Pleasanton; Hiring Runs Through the Pleasanton Portal)","form":"https://lpfire.org/contact-us/","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://www.governmentjobs.com/careers/pleasanton/jobs/newprint/4969111","hiring_asof":"2025-06-30","chief_asof":"2026-05-18"},{"name":"Oakland Fire Department","county":"Alameda","region":"Bay Area","type":"Municipal","sector":"Municipal","emt":"yes","medic":"required","fctc":"yes","url":"https://www.governmentjobs.com/careers/oaklandca","site":"https://www.oaklandca.gov/Public-Safety-Streets/Fire","addr":"150 Frank H. Ogawa Plaza","city":"Oakland","zip":"94612","tel":"(510) 238-3856","chief":"Damon L. Covington","hiring":"Firefighter Paramedic Trainee recruitments on the City of Oakland NEOGOV portal feeding academies of 30-35 trainees.","email":"publicedofd@oaklandca.gov","note_status":"OFD publishes no general mailbox; PublicEdOFD is its public education and prevention address, alongside EmergencyPlanning@OaklandCA.gov and MACRO@oaklandca.gov. The stored /departm","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://www.governmentjobs.com/careers/oaklandca/jobs/newprint/5147822","hiring_asof":"2026-01-05","chief_asof":"2026-05-18"},{"name":"Piedmont Fire Department","county":"Alameda","region":"Bay Area","type":"Municipal","sector":"Municipal","emt":"yes","medic":"required","fctc":"yes","url":"https://joinpiedmontfire.com/","site":"https://www.piedmont.ca.gov/services___departments/fire","addr":"120 Vista Avenue","city":"Piedmont","zip":"94611","tel":"(510) 420-3030","chief":"David Brannigan","hiring":"Entry-level and lateral Firefighter/Paramedic recruitments advertised at joinpiedmontfire.com with applications through piedmont.casellehire.com.","email":"fireinfo@piedmont.ca.gov","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://joinpiedmontfire.com/","hiring_asof":"2026-01-05","chief_asof":"2026-05-18"},{"name":"Contra Costa County Fire Protection District","county":"Contra Costa","region":"Bay Area","type":"Fire District","sector":"Special District","emt":"yes","medic":"preferred","fctc":"yes","url":"https://www.governmentjobs.com/careers/contracosta","site":"https://www.cccfpd.org/","addr":"4005 Port Chicago Highway","city":"Suite #25 Concord","zip":"94520","tel":"(925) 941-3300","chief":"Aaron McAlister","hiring":"Periodic Firefighter-Recruit and Firefighter Paramedic-Recruit openings on the county NEOGOV portal; applicants must be active on the FCTC Statewide Eligibility List by the filing ","email":"info@cccfpd.org","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://www.governmentjobs.com/careers/contracosta/jobs/newprint/2315983","hiring_asof":"2026-08-13","chief_asof":"2026-10-12","chief_source":"https://www.cccfpd.org/","chief_effective_on":"2026-05-12"},{"name":"Corteva Fire Department","county":"Contra Costa","region":"Bay Area","type":"Municipal","sector":"Municipal","emt":"unverified","medic":"unverified","fctc":"unverified","addr":"901 Loveridge Road","city":"Pittsburg","zip":"94565","tel":"(925) 432-5278","chief":"Robert L. Morris","fctc_basis":"Not found on the FCTC participating-departments roster checked 2026-08-13, but FCTC does not state its roster is exhaustive; absence is weaker evidence than presence, so this is unverified rather than confirmed no.","fctc_checked":"2026-08-13","evidence_url":"https://www.fctconline.org/participating-departments/","hiring_status":"not published","hiring_checked":"2026-08-13","chief_asof":"2026-05-18","url_status":"not published","url_checked":"2026-08-13","contact_status":"not published"},{"name":"El Cerrito Fire Department","county":"Contra Costa","region":"Bay Area","type":"Municipal","sector":"Municipal","emt":"yes","medic":"no","fctc":"yes","url":"https://www.governmentjobs.com/careers/elcerrito","site":"http://www.elcerrito.gov/133/Fire-Department","addr":"10900 San Pablo Avenue","city":"El Cerrito","zip":"94530","tel":"(510) 215-4450","chief":"Eric Saylors","hiring":"Firefighter/EMT recruitments on the City of El Cerrito NEOGOV portal; candidates must hold a CPAT from the last 12 months and be on the FCTC statewide list.","form":"http://www.elcerrito.gov/1080/Contact-Connect","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://www.governmentjobs.com/careers/elcerrito/jobs/newprint/5174106","hiring_asof":"2025-12-18","chief_asof":"2026-05-18"},{"name":"Martinez Refining Company Fire Department","county":"Contra Costa","region":"Bay Area","type":"Municipal","sector":"Municipal","emt":"unverified","medic":"unverified","fctc":"unverified","addr":"3485 Pacheco Boulevard.","city":"Martinez","zip":"94553","tel":"(925) 313-9601","chief":"Michael Miller","emp":"Martinez Refining Company (PBF Energy)","form":"https://martinezrefiningcompany.com/contact/","site":"https://martinezrefiningcompany.com/","fctc_basis":"Not found on the FCTC participating-departments roster checked 2026-08-13, but FCTC does not state its roster is exhaustive; absence is weaker evidence than presence, so this is unverified rather than confirmed no.","fctc_checked":"2026-08-13","evidence_url":"https://www.fctconline.org/participating-departments/","hiring_status":"not published","hiring_checked":"2026-08-13","chief_asof":"2026-05-18","url_status":"not published","url_checked":"2026-08-13"},{"name":"Moraga Orinda Fire Protection District","county":"Contra Costa","region":"Bay Area","type":"Fire District","sector":"Special District","emt":"yes","medic":"required","fctc":"yes","url":"https://www.governmentjobs.com/careers/mofd","site":"https://www.mofd.org/","addr":"1280 Moraga Way","city":"Moraga","zip":"94556","tel":"(925) 258-4599","chief":"Jeff Isaacs","hiring":"Firefighter/Paramedic Trainee recruitments on the District NEOGOV portal, plus single-role paramedic and EMT ambulance postings since 2025.","email":"info@mofd.org","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://www.governmentjobs.com/careers/mofd/jobs/4753854/firefighter-paramedic-trainee","hiring_asof":"2025-01-06","hiring_window_closed":true,"chief_asof":"2026-05-18"},{"name":"Richmond Fire Department","county":"Contra Costa","region":"Bay Area","type":"Municipal","sector":"Municipal","emt":"yes","medic":"unverified","fctc":"yes","url":"https://www.ci.richmond.ca.us/2792/Recruitment","site":"https://www.ci.richmond.ca.us/79/Fire-Department","addr":"440 Civic Center Plaza","city":"Richmond","zip":"94804","tel":"(510) 307-8031","chief":"Aaron R. Osorio","hiring":"Firefighter Trainee recruitments announced on the City of Richmond fire recruitment pages, with applications filed through the City's NEOGOV portal.","email":"fire@ci.richmond.ca.us","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"http://www.ci.richmond.ca.us/index.aspx?NID=2793","hiring_asof":"2026-08-13","chief_asof":"2026-05-18"},{"name":"Rodeo Hercules Fire Department","county":"Contra Costa","region":"Bay Area","type":"Municipal","sector":"Municipal","emt":"yes","medic":"unverified","fctc":"unverified","url":"https://www.cccfpd.org/326/Recruitment-and-Outreach","site":"https://www.cccfpd.org/","addr":"1680 Refugio Valley Road","city":"Hercules","zip":"94547","tel":"(510) 799-4561","chief":"Rebecca Ramirez","hiring":"Firefighter hiring is now run by Contra Costa County Fire Protection District through its recruitment and outreach program.","emp":"Contra Costa County Fire Protection District (Con Fire)","note_site":"Website redirects to a social account; the department may have merged or closed.","email":"info@cccfpd.org","note_status":"Annexed into the Contra Costa County Fire Protection District effective 1 July 2025; the old rhfd.org domain now 301s to an unrelated Instagram account, so Con Fire is the contacta","fctc_basis":"Not found on the FCTC participating-departments roster checked 2026-08-13, but FCTC does not state its roster is exhaustive; absence is weaker evidence than presence, so this is unverified rather than confirmed no.","fctc_checked":"2026-08-13","evidence_url":"https://www.cccfpd.org/186/Becoming-a-Firefighter","hiring_asof":"undated live requirements page, retrieved 2026-08-13","chief_asof":"2026-05-18"},{"name":"San Ramon Valley Fire Protection District","county":"Contra Costa","region":"Bay Area","type":"Fire District","sector":"Special District","emt":"yes","medic":"required","fctc":"yes","url":"https://www.governmentjobs.com/careers/srvfire","site":"https://www.firedepartment.org/","addr":"2401 Crow Canyon Road,","city":"Suite. A San Ramon","zip":"94583","tel":"(925) 838-6600","chief":"Jonas Aguiar","hiring":"Firefighter Paramedic recruitments on the District NEOGOV portal feeding an autumn academy, alongside single-role EMT and paramedic ambulance postings.","email":"info@firedepartment.org","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://www.governmentjobs.com/careers/srvfire/jobs/newprint/4833948","hiring_asof":"2025-02-19","chief_asof":"2026-05-18"},{"name":"Central Marin Fire Authority","county":"Marin","region":"Bay Area","type":"Fire Authority","sector":"Special District","emt":"unverified","medic":"required","fctc":"yes","url":"https://www.governmentjobs.com/careers/centralmarinpolice/CMFA","site":"https://www.centralmarinfire.org/","addr":"342 Tamalpias Drive","city":"Corte Madera","zip":"94925","tel":"(415) 927-5077","chief":"Ruben Martin","hiring":"Firefighter-Paramedic recruitments are posted on the shared Central Marin Police/CMFA NEOGOV portal; none were open at the time of checking.","email":"info@centralmarinfire.org","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://www.centralmarinfire.org/admin/employment","hiring_asof":"2026-08-13","chief_asof":"2026-05-18"},{"name":"Kentfield Fire Protection District","county":"Marin","region":"Bay Area","type":"Fire District","sector":"Special District","emt":"yes","medic":"unverified","fctc":"unverified","url":"https://kentfieldfire.org/administration/employment","site":"https://kentfieldfire.org/","addr":"1004 Sir Francis Drake Boulevard","city":"Kentfield","zip":"94904","tel":"(415) 453-7464","chief":"Mark Pomi","hiring":"The district's 2025 Entry Level Firefighter/EMT recruitment had a final filing deadline of November 7, 2025 at noon and is closed; retain the posting as historical recruitment evidence.","fctc_basis":"Not found on the FCTC participating-departments roster checked 2026-08-13, but FCTC does not state its roster is exhaustive; absence is weaker evidence than presence, so this is unverified rather than confirmed no.","fctc_checked":"2026-08-13","evidence_url":"https://kentfieldfire.org/component/fileman/?view=file&routed=1&name=Full-Time%20Firefighter%20Recruitment.pdf&container=fileman-attachments","hiring_asof":"2026-10-12","chief_asof":"2026-05-18","contact_status":"not published","hiring_window_closed":true},{"name":"Marin County Fire Department","county":"Marin","region":"Bay Area","type":"County","sector":"County","emt":"yes","medic":"after-hire","fctc":"yes","url":"https://www.governmentjobs.com/careers/marincounty","site":"https://www.marincounty.gov/departments/fire","addr":"33 Castlerock Avenue / Po Box","city":"518 Woodacre","zip":"94973","tel":"(415) 473-6717","chief":"Jason Weber","hiring":"The cited FIRE Foundry trainee bulletin has a November 18, 2025 closing date despite open-continuous boilerplate. It is historical evidence, not proof of a current opening or a recurring January/October cycle.","email":"fireadministration@marincounty.gov","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://www.governmentjobs.com/careers/marincounty/jobs/newprint/5093249","hiring_asof":"2026-10-12","chief_asof":"2026-05-18","requirements_scope":"Historical FIRE Foundry Firefighter Paramedic Trainee bulletin: California EMT and FF I academy or certificate at application, current FCTC SEL/written/CPAT before hire, paramedic program enrollment within six months and California paramedic licensure/Marin accreditation within 24 months. Other classifications require separate applications.","hiring_window_closed":true},{"name":"Marinwood Fire Department","county":"Marin","region":"Bay Area","type":"Municipal","sector":"Municipal","emt":"yes","medic":"required","fctc":"yes","url":"https://www.marinwood.org/fire-employment-opportunities","site":"https://www.marinwood.org/wildfire-prevention","addr":"777 Miller Creek Road","city":"San Rafael","zip":"94903","tel":"(415) 479-0122","chief":"Abraham Roman","hiring":"Firefighter/Paramedic openings posted on the District fire employment page with applications submitted through CalOpps.","email":"csd@marinwood.org","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://www.marinwood.org/sites/default/files/marinwood-fire-recruitmentflyer_july2025.pdf","hiring_asof":"2025-07","chief_asof":"2026-10-12","chief_source":"https://www.marinwood.org/fire-department-staff","chief_role":"Shared-service Fire Chief (San Rafael)"},{"name":"Mill Valley Fire Department","county":"Marin","region":"Bay Area","type":"Municipal","sector":"Municipal","emt":"yes","medic":"required","fctc":"unverified","url":"https://www.smfd.org/our-district/human-resources/employment-opportunities","site":"https://www.smfd.org/","addr":"1 Hamilton Drive","city":"Mill Valley","zip":"94941","tel":"(415) 389-4130","chief":"Christian D. Tubbs","hiring":"Entry-level and lateral Firefighter/Paramedic hiring is run by Southern Marin Fire Protection District at smfd.org/careers.","emp":"Southern Marin Fire Protection District","email":"info@smfd.org","fctc_basis":"Not found on the FCTC participating-departments roster checked 2026-08-13, but FCTC does not state its roster is exhaustive; absence is weaker evidence than presence, so this is unverified rather than confirmed no.","fctc_checked":"2026-08-13","evidence_url":"https://www.smfd.org/Home/Components/JobPosts/Job/55/99","hiring_asof":"2025-12-10","chief_asof":"2026-05-18"},{"name":"Novato Fire Protection District","county":"Marin","region":"Bay Area","type":"Fire District","sector":"Special District","emt":"yes","medic":"required","fctc":"yes","url":"https://www.governmentjobs.com/careers/novatofire","site":"https://www.novatofire.org/","addr":"95 Rowland Way","city":"Novato","zip":"94945","tel":"(415) 892-1513","chief":"Dan Peters","hiring":"The district's 2026 entry-level Firefighter/Paramedic recruitment opened January 1 and closed January 21, 2026 at 5 p.m.; preserve it as a dated historical posting without implying an annual January cycle.","form":"https://www.novatofire.org/how-do-i/submit-form/contact-novato-fire","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://www.governmentjobs.com/careers/novatofire/jobs/5176146-0/firefighter-paramedic-entry-level","hiring_asof":"2026-10-12","chief_asof":"2026-05-18","hiring_window_closed":true},{"name":"Ross Valley Fire Department","county":"Marin","region":"Bay Area","type":"Municipal","sector":"Municipal","emt":"yes","medic":"required","fctc":"yes","url":"https://www.governmentjobs.com/careers/townofsananselmo","site":"https://www.rossvalleyfire.gov/","addr":"777 San Anselmo Avenue","city":"San Anselmo","zip":"94960","tel":"(415) 258-4686","chief":"Daniel Mahoney","hiring":"The 2026 entry and lateral Firefighter/Paramedic recruitment opened August 3 and closed August 28, 2026 at 5 p.m.; retain the posting as historical recruitment evidence.","email":"info@rossvalleyfire.org","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://www.governmentjobs.com/careers/townofsananselmo/jobs/5429933/firefighter-paramedic","hiring_asof":"2026-10-12","chief_asof":"2026-05-18","hiring_window_closed":true,"requirements_scope":"The cited closed 2026 Firefighter/Paramedic bulletin allowed paramedic students to apply and required licensure by appointment; lateral applicants needed one year of comparable paid experience. This is historical role guidance, not an open application."},{"name":"San Rafael Fire Department","county":"Marin","region":"Bay Area","type":"Municipal","sector":"Municipal","emt":"yes","medic":"required","fctc":"yes","url":"https://www.sanrafaelfiredepartment.org/","site":"https://www.cityofsanrafael.org/departments/fire/","addr":"1375 5th Avenue","city":"San Rafael","zip":"94901","tel":"(415) 485-3304","chief":"Abraham Roman","hiring":"Continuous entry-level and lateral Firefighter/Paramedic recruitments advertised at sanrafaelfiredepartment.org with applications through CalOpps.","form":"https://www.cityofsanrafael.org/contact","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://www.calopps.org/san-rafael/job-20764504","hiring_asof":"2026-07","chief_asof":"2026-05-18"},{"name":"Skywalker Ranch Fire Brigade","county":"Marin","region":"Bay Area","type":"Municipal","sector":"Municipal","emt":"unverified","medic":"unverified","fctc":"unverified","url":"https://www.calopps.org/skywalker-fire-brigade","site":"https://www.marinfirehistory.org/skywalker-ranch-fb.html","addr":"Po Box 10877","city":"San Rafael","zip":"94912","tel":"(415) 662-1704","chief":"Joshua Buscemi","hiring":"Rare openings at this private single-station brigade are posted on CalOpps and applied for through Skywalker Properties' Paylocity portal.","emp":"Skywalker Properties Ltd. (Private Lucasfilm Ranch Brigade)","form":"https://www.marinfirehistory.org/contact.html","fctc_basis":"Not found on the FCTC participating-departments roster checked 2026-08-13, but FCTC does not state its roster is exhaustive; absence is weaker evidence than presence, so this is unverified rather than confirmed no.","fctc_checked":"2026-08-13","evidence_url":"https://www.fctconline.org/participating-departments","hiring_asof":"2026-08-13","chief_asof":"2026-05-18"},{"name":"Southern Marin Fire Protection District","county":"Marin","region":"Bay Area","type":"Fire District","sector":"Special District","emt":"yes","medic":"required","fctc":"yes","url":"https://www.smfd.org/our-district/human-resources/employment-opportunities","site":"https://www.smfd.org/","addr":"308 Reed Boulevard","city":"Mill Valley","zip":"94941","tel":"(415) 388-8182","chief":"Chris Tubbs","hiring":"Entry-level Firefighter/Paramedic recruitment is open until filled and screened off the FCTC Statewide Eligibility List.","email":"info@smfd.org","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://www.fctconline.org/media/uploads/southern_marin_ffpm_ouf_12.15.25.pdf","hiring_asof":"2025-12-15","chief_asof":"2026-05-18"},{"name":"Tiburon Fire Protection District","county":"Marin","region":"Bay Area","type":"Fire District","sector":"Special District","emt":"unverified","medic":"unverified","fctc":"unverified","url":"https://www.tiburonfire.gov/employment-opportunities","site":"https://www.tiburonfire.gov/","addr":"1679 Tiburon Boulevard","city":"Tiburon","zip":"94920","tel":"(415) 435-7200","chief":"Thomas Hellyer","hiring":"Firefighter-Trainee hiring usually opens in the fall or winter months; no positions were open as of August 2026.","form":"https://www.tiburonfire.gov/contact-us","fctc_basis":"Not found on the FCTC participating-departments roster checked 2026-08-13, but FCTC does not state its roster is exhaustive; absence is weaker evidence than presence, so this is unverified rather than confirmed no.","fctc_checked":"2026-08-13","evidence_url":"https://www.fctconline.org/participating-departments","hiring_asof":"2026-08-13","chief_asof":"2026-05-18"},{"name":"American Canyon Fire Protection District","county":"Napa","region":"Bay Area","type":"Fire District","sector":"Special District","emt":"yes","medic":"no","fctc":"yes","url":"https://www.governmentjobs.com/careers/amcanfire","site":"https://www.amcanfire.ca.gov/","addr":"911 Donaldson Way E.","city":"American Canyon","zip":"94503","tel":"(707) 551-0650","chief":"Michael P. Cahill","hiring":"Open-continuous Firefighter/EMT and Firefighter with Paramedic Credential recruitment through the district's own NeoGov portal.","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://www.fctconline.org/media/uploads/american_canyon_ffemt_and_ffpm_continuous_10.18.23.pdf","hiring_asof":"2023-10-18","chief_asof":"2026-05-18","contact_status":"not published"},{"name":"Calistoga Fire Department","county":"Napa","region":"Bay Area","type":"Municipal","sector":"Municipal","emt":"unverified","medic":"unverified","fctc":"yes","url":"https://www.calistogaca.gov/Government/City-Jobs/Current-Opportunities","site":"https://www.calistogaca.gov/Services/Fire","addr":"1232 Washington St","city":"Calistoga","zip":"94515","tel":"(707) 942-2821","chief":"Jared Campbell","hiring":"Firefighter recruitments are posted on the city jobs page; the most recent closed in July 2026 and no fire opening was listed in August 2026.","email":"fire@calistogaca.gov","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://www.fctconline.org/participating-departments","hiring_asof":"2026-08-13","chief_asof":"2026-05-18"},{"name":"City of Napa Fire Department","county":"Napa","region":"Bay Area","type":"Municipal","sector":"Municipal","emt":"yes","medic":"preferred","fctc":"yes","url":"https://www.governmentjobs.com/careers/napacity","site":"https://www.cityofnapa.org/352/Fire-Department","addr":"Po Box 660","city":"Napa","zip":"94559","tel":"(707) 257-9593","chief":"Zach Curren","hiring":"Firefighter and Firefighter/Paramedic recruitments are posted on the city's NeoGov portal; no fire openings as of August 2026.","email":"firedepartment@cityofnapa.org","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://www.governmentjobs.com/careers/napacity/classspecs/50929","hiring_asof":"2026-03-17","chief_asof":"2026-05-18"},{"name":"Napa Fire Department","county":"Napa","region":"Bay Area","type":"Municipal","sector":"Municipal","emt":"no","medic":"unverified","fctc":"unverified","url":"https://www.fire.ca.gov/join-calfire","site":"https://www.napacounty.gov/3454/Fire-Department","addr":"1199 Big Tree Road","city":"St Helena","zip":"94574","tel":"(707) 963-3601","chief":"Matt Ryan","hiring":"Career firefighter hiring runs through CAL FIRE and CalCareers, not through Napa County.","emp":"CAL FIRE (Sonoma-Lake-Napa Unit) Under Cooperative Agreement With Napa County","email":"firedepartment@countyofnapa.org","fctc_basis":"Not found on the FCTC participating-departments roster checked 2026-08-13, but FCTC does not state its roster is exhaustive; absence is weaker evidence than presence, so this is unverified rather than confirmed no.","fctc_checked":"2026-08-13","evidence_url":"https://www.rvcfire.org/employment/faq","hiring_asof":"undated live CAL FIRE hiring FAQ, retrieved 2026-08-13","chief_asof":"2026-05-18"},{"name":"St Helena Fire Department","county":"Napa","region":"Bay Area","type":"Municipal","sector":"Municipal","emt":"yes","medic":"unverified","fctc":"unverified","url":"https://www.cityofsthelena.gov/401/Employment","site":"https://www.cityofsthelena.gov/162/Fire","addr":"1480 Main St.","city":"St Helena","zip":"94574","tel":"(707) 967-2880","chief":"John Sorensen","hiring":"Openings are posted through the city's career page and CalOpps; the department runs six full-time and 18 part-time firefighters.","email":"firechief@cityofsthelena.gov","fctc_basis":"Not found on the FCTC participating-departments roster checked 2026-08-13, but FCTC does not state its roster is exhaustive; absence is weaker evidence than presence, so this is unverified rather than confirmed no.","fctc_checked":"2026-08-13","evidence_url":"https://www.governmentjobs.com/careers/sthelenaca/classspecs/1526955","hiring_asof":"2026-08-13","chief_asof":"2026-05-18"},{"name":"San Francisco Fire Department","county":"San Francisco","region":"Bay Area","type":"Municipal","sector":"Municipal","emt":"yes","medic":"no","fctc":"yes","url":"https://sf-fire.org/employment-opportunities/h2-candidates","site":"https://sf-fire.org/","addr":"698 2nd St","city":"San Francisco","zip":"94107","tel":"(415) 558-3400","chief":"Dean Crispen","hiring":"Continuous H-2 Firefighter filing through careers.sf.gov, screened off the FCTC Statewide Eligibility List with a 70% written score and a Cal-JAC CPAT card.","email":"fireadministration@sfgov.org","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://careers.sf.gov/role/?id=3743990012517585","hiring_asof":"2023-11-21","chief_asof":"2026-05-18"},{"name":"Central County Fire Department","county":"San Mateo","region":"Bay Area","type":"County","sector":"County","emt":"yes","medic":"no","fctc":"yes","url":"https://ccfd.org/employment-careers/","site":"https://ccfd.org/","addr":"1399 Rollins Road","city":"Burlingame","zip":"94010","tel":"(650) 558-7600","chief":"David Pucci","hiring":"Lateral and entry-level firefighter openings are posted on the department's CalOpps page; none were open as of August 2026.","form":"https://www.ccfd.org/contact-us","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://www.ccfd.org/employment-careers","hiring_asof":"live page accessed 2026-08-13","chief_asof":"2026-05-18"},{"name":"Coastside Fire District","county":"San Mateo","region":"Bay Area","type":"Fire District","sector":"Special District","emt":"no","medic":"unverified","fctc":"unverified","url":"https://www.fire.ca.gov/join-calfire","site":"https://www.coastsidefire.org/","addr":"P.o. Drawer F-2","city":"Felton","zip":"95018","tel":"(831) 335-5355","chief":"Jed Wilson","hiring":"Career firefighter hiring runs through CAL FIRE and CalCareers; the district's own recruitment page is for volunteers only.","emp":"CAL FIRE (San Mateo-Santa Cruz Unit / CZU) Under Cooperative Contract With the District","email":"cfpdfiremarshal@fire.ca.gov","fctc_basis":"Not found on the FCTC participating-departments roster checked 2026-08-13, but FCTC does not state its roster is exhaustive; absence is weaker evidence than presence, so this is unverified rather than confirmed no.","fctc_checked":"2026-08-13","evidence_url":"https://www.joincalfire.com/classifications/fire-protection/firefighting-and-paramedics/fire-fighter-ii?tab=requirementTab","hiring_asof":"2026-08-13","chief_asof":"2026-05-18"},{"name":"Menlo Park Fire Protection District","county":"San Mateo","region":"Bay Area","type":"Fire District","sector":"Special District","emt":"yes","medic":"preferred","fctc":"yes","url":"https://www.governmentjobs.com/careers/menlofire","site":"https://www.menlofire.gov/","addr":"170 Middlefield Road","city":"Menlo Park","zip":"94025","tel":"(650) 688-8400","chief":"Mark Lorenzen","hiring":"Firefighter recruitments post on the district's own NeoGov portal; none were open as of August 2026.","form":"https://www.menlofire.gov/contact-us","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://www.governmentjobs.com/careers/menlofire/classspecs/1406920","hiring_asof":"2026-08-13","chief_asof":"2026-05-18"},{"name":"North County Fire Authority","county":"San Mateo","region":"Bay Area","type":"Fire Authority","sector":"Special District","emt":"yes","medic":"no","fctc":"yes","url":"https://northcountyfire.gov/careers/","site":"https://northcountyfire.gov/","addr":"10 Wembley Dr","city":"Daly City","zip":"94015","tel":"(650) 991-8138","chief":"Todd Johnson","hiring":"Joint NCFA Firefighter/FF Paramedic recruitment is open until filled and requires a complete application to all three member cities: Daly City, Brisbane and Pacifica.","form":"https://northcountyfire.gov/contact/","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://www.calopps.org/pacifica/job-20730317","hiring_asof":"2026-08-13","chief_asof":"2026-05-18"},{"name":"Redwood City Fire Department","county":"San Mateo","region":"Bay Area","type":"Municipal","sector":"Municipal","emt":"yes","medic":"no","fctc":"yes","url":"https://www.calopps.org/city-of-redwood-city","site":"https://www.redwoodcity.org/departments/fire-department","addr":"755 Marshall St","city":"Redwood City","zip":"94063","tel":"(650) 780-7400","chief":"Baraka Carter","hiring":"Firefighter Trainee and Firefighter/Engineer/Paramedic recruitments run about annually on CalOpps and are screened off the FCTC Statewide Eligibility List.","fctc_basis":"On the FCTC participating-departments roster, checked 2026-08-13.","fctc_checked":"2026-08-13","evidence_url":"https://www.calopps.org/sites/default/files/Firefighter%20Trainee%2024A-42%20-%20Job%20Announcement_updated%2012.2024.pdf","hiring_asof":"2024-12","chief_asof":"2026-05-18","contact_status":"not published"}];   // partial list, shown only if the fetch fails
+    var PARTIAL = true;
+    var q=document.getElementById('gsfd-q'), region=document.getElementById('gsfd-region'),
+        fctc=document.getElementById('gsfd-fctc'), emt=document.getElementById('gsfd-emt'), reset=document.getElementById('gsfd-reset'),
+        grid=document.getElementById('gsfd-grid'), count=document.getElementById('gsfd-count'), summary=document.getElementById('gsfd-summary');
+    var county=document.getElementById('gsfd-county');
+    function fillSelects(){
+      [[region,'region'],[county,'county']].forEach(function(pair){
+        var sel=pair[0], key=pair[1];
+        while(sel.options.length>1) sel.remove(1);
+        var seen=[]; DEPTS.forEach(function(d){ if(d[key] && seen.indexOf(d[key])<0) seen.push(d[key]); });
+        seen.sort().forEach(function(v){ var o=document.createElement('option'); o.value=v; o.textContent=v; sel.appendChild(o); });
+      });
+    }
+    function esc(s){ return String(s||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+    function safeHttpUrl(value){
+      if(!value) return '';
+      try { var u=new URL(value,window.location.href); return (u.protocol==='https:'||u.protocol==='http:')?u.href:''; }
+      catch(e){ return ''; }
+    }
+    function safeEmail(value){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value||'') ? value : ''; }
+    function tag(label,val){ var cls = val==='yes'?'tag y':(val==='no'?'tag n':'tag'); var txt = val==='yes'?label:(val==='no'?('No '+label.toLowerCase()):(label+': not confirmed')); return '<span class="'+cls+'">'+txt+'</span>'; }
+    function medicTag(val){
+      if(val==='after-hire') return '<span class="tag">Paramedic after hire (cited trainee)</span>';
+      if(val==='required') return '<span class="tag y">Paramedic required</span>';
+      if(val==='preferred') return '<span class="tag y">Paramedic preferred</span>';
+      if(val==='no') return '<span class="tag n">Paramedic not required for base role</span>';
+      return '<span class="tag">Paramedic: not confirmed</span>';
+    }
+    function renderSummary(){
+      if(PARTIAL){ summary.textContent='Full-directory requirement totals are unavailable while the hosted data is unreachable.'; return; }
+      var f={yes:0,no:0,unverified:0}, e={yes:0,no:0,unverified:0};
+      DEPTS.forEach(function(d){ f[d.fctc] = (f[d.fctc]||0)+1; e[d.emt] = (e[d.emt]||0)+1; });
+      summary.textContent='FCTC list: '+f.yes+' confirmed yes, '+f.no+' confirmed no, '+f.unverified+' not confirmed. EMT to apply: '+e.yes+' confirmed yes, '+e.no+' confirmed no, '+e.unverified+' not confirmed. Not confirmed means the public evidence did not establish yes or no.';
+    }
+    function sourceBlock(d){
+      var out=[], evidence=safeHttpUrl(d.evidence_url);
+      if(d.chief_status){out.push('<p><b>Leadership status:</b> '+esc(d.chief_status)+'</p>');}
+      if(d.chief_effective_on){out.push('<p><b>Leadership appointment date:</b> '+esc(d.chief_effective_on)+'.</p>');}
+      if(d.former_name){out.push('<p><b>Former listing name:</b> '+esc(d.former_name)+'.</p>');}
+      if(d.contact_purpose){out.push('<p><b>Contact purpose:</b> '+esc(d.contact_purpose)+'.</p>');}
+      if(d.note_status){out.push('<p><b>Record status:</b> '+esc(d.note_status)+'</p>');}
+      if(d.former_name){out.push('<p><b>Former listing name:</b> '+esc(d.former_name)+'.</p>');}
+      if(d.contact_purpose){out.push('<p><b>Contact purpose:</b> '+esc(d.contact_purpose)+'.</p>');}
+      if(d.note_status){out.push('<p><b>Record status:</b> '+esc(d.note_status)+'</p>');}
+      if(d.requirements_scope){ out.push('<p><b>Requirement scope:</b> '+esc(d.requirements_scope)+'.</p>'); }
+      if(d.contact_source && /^https?:/.test(d.contact_source)){ var cs=safeHttpUrl(d.contact_source); if(cs) out.push('<p><b>Contact source:</b> <a href="'+esc(cs)+'" target="_blank" rel="noopener">Official page</a>'+(d.contact_checked?' (checked '+esc(d.contact_checked)+')':'')+'.</p>'); }
+      if(evidence){ out.push('<p><b>Requirements evidence:</b> <a href="'+esc(evidence)+'" target="_blank" rel="noopener">Open source</a>'+(d.hiring_asof?' (checked '+esc(d.hiring_asof)+')':' (check date not recorded)')+'.</p>'); }
+      else if(d.hiring_asof){ out.push('<p><b>Requirements check:</b> '+esc(d.hiring_asof)+'. Source link not recorded.</p>'); }
+      if(d.fctc_basis){
+        out.push('<p><b>FCTC basis:</b> '+esc(d.fctc_basis)+' <a href="https://www.fctconline.org/participating-departments/" target="_blank" rel="noopener">FCTC roster</a>'+(d.fctc_checked?' (checked '+esc(d.fctc_checked)+')':'')+'.</p>');
+      }
+      if(d.chief && d.chief_asof){ var source=safeHttpUrl(d.chief_source);out.push('<p><b>Chief checked:</b> '+esc(d.chief_asof)+(source?' <a href="'+esc(source)+'" target="_blank" rel="noopener">Official source</a>':'')+'.</p>'); }
+      return out.length?'<div class="sources">'+out.join('')+'</div>':'';
+    }
+    function render(){
+      var qq=(q.value||'').toLowerCase(), rg=region.value, cy=county.value, fo=fctc.dataset.on==='1', eo=emt.dataset.on==='1';
+      var rows=DEPTS.filter(function(d){
+        if(rg && d.region!==rg) return false;
+        if(cy && d.county!==cy) return false;
+        if(fo && d.fctc!=='yes') return false;
+        if(eo && d.emt!=='yes') return false;
+        if(qq){ var hay=(d.name+' '+(d.former_name||'')+' '+d.region+' '+(d.county||'')+' '+(d.city||'')+' '+(d.chief||'')+' '+(d.email||'')).toLowerCase(); if(hay.indexOf(qq)<0) return false; }
+        return true;
+      });
+      count.textContent = rows.length+' department'+(rows.length===1?'':'s')+' of '+DEPTS.length
+        + (PARTIAL ? '  (partial list, the full directory could not be loaded)' : '');
+      grid.innerHTML = rows.length? rows.map(function(d){
+        var where = [d.addr, [d.city, d.zip].filter(Boolean).join(' ')].filter(Boolean).join(', ');
+        var telHref = (d.tel||'').replace(/[^0-9]/g,''), siteUrl=safeHttpUrl(d.site), formUrl=safeHttpUrl(d.form), careerUrl=safeHttpUrl(d.url), email=safeEmail(d.email);
+        var contact = ''
+          + (where ? '<div class="c-row"><span class="c-k">Address</span><span>'+esc(where)+'</span></div>' : '')
+          + (d.tel ? '<div class="c-row"><span class="c-k">Phone</span><a href="tel:'+esc(telHref)+'">'+esc(d.tel)+'</a></div>' : '')
+          + (siteUrl ? '<div class="c-row"><span class="c-k">Website</span><a href="'+esc(siteUrl)+'" target="_blank" rel="noopener">'+esc(siteUrl.replace(/^https?:\/\//,'').replace(/\/$/,'').slice(0,42))+'</a></div>' : '')
+          + (email ? '<div class="c-row"><span class="c-k">Email</span><a href="mailto:'+esc(email)+'">'+esc(email)+'</a></div>' : '')
+          + (!email && formUrl ? '<div class="c-row"><span class="c-k">Contact</span><a href="'+esc(formUrl)+'" target="_blank" rel="noopener">Contact form</a></div>' : '')
+          + (d.chief ? '<div class="c-row"><span class="c-k">'+esc(d.chief_role||'Fire chief')+'</span><span>'+esc(d.chief)+'</span></div>' : '');
+        return '<div class="dept"><h4>'+esc(d.name)+'</h4>'
+          +'<div class="tags"><span class="tag">'+esc(d.county)+' County</span><span class="tag">'+esc(d.type)+'</span>'
+          + tag('EMT to apply', d.emt) + tag('FCTC list', d.fctc)
+          + medicTag(d.medic) + '</div>'
+          + (contact ? '<div class="contact">'+contact+'</div>' : '')
+          + (d.emp ? '<p class="notes"><b>Employer / service arrangement:</b> '+esc(d.emp)+'. Confirm the hiring authority for the role.</p>':'')
+          + (d.hiring ? '<p class="hire"><b>Hiring:</b> '+esc(d.hiring)+'</p>':'')
+          + (!d.hiring && d.hiring_status ? '<p class="hire"><b>Hiring pattern:</b> '+esc(d.hiring_status)+'.</p>':'')
+          + (!email && !formUrl && d.contact_status ? '<p class="notes"><b>Recruitment contact:</b> '+esc(d.contact_status)+'.</p>':'')
+          + sourceBlock(d)
+          + (careerUrl ? '<a class="careers" href="'+esc(careerUrl)+'" target="_blank" rel="noopener">'+(d.agency_status?'General employer careers (historical institution)':'View careers page')+' &rarr;</a>':'')
+          + '</div>';
+      }).join('') : '<div class="empty">No departments match those filters. Try widening your search.</div>';
+      renderSummary();
+    }
+    function toggle(btn){ btn.dataset.on = btn.dataset.on==='1'?'0':'1'; btn.classList.toggle('on'); btn.setAttribute('aria-pressed',btn.dataset.on==='1'?'true':'false'); render(); }
+    q.addEventListener('input',render); region.addEventListener('change',render); county.addEventListener('change',render);
+    fctc.addEventListener('click',function(){toggle(fctc);}); emt.addEventListener('click',function(){toggle(emt);});
+    reset.addEventListener('click',function(){q.value='';region.value='';county.value='';[fctc,emt].forEach(function(btn){btn.dataset.on='0';btn.classList.remove('on');btn.setAttribute('aria-pressed','false');});render();q.focus();});
+
+    // Render the partial list immediately so the tool is never blank, then swap in the
+    // full hosted directory. If the fetch fails the partial list stays and SAYS SO -
+    // a directory that quietly shows 40 of 371 departments would look complete and mislead.
+    fillSelects(); render();
+    fetch(DATA_URL).then(function(r){ if(!r.ok) throw new Error('bad status'); return r.json(); })
+      .then(function(rows){
+        if(!Array.isArray(rows) || !rows.length || rows.some(function(d){ return !d || typeof d.name!=='string' || typeof d.county!=='string' || typeof d.region!=='string'; })) throw new Error('invalid directory');
+        DEPTS = rows; PARTIAL = false; fillSelects(); render();
+      })
+      .catch(function(){ PARTIAL = true; render(); });
+  })();
+  </script>
+</div>
+</div>
+<!-- END GENERATED DIRECTORY WIDGET -->
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="wrap">
+      <div class="capture">
+        <h2>Plan the steps around your applications</h2>
+        <p>The EMT-to-Badge Roadmap puts testing, applications, the oral board, and background in order, with typical costs and timing.</p>
+        <a class="btn brass" href="/free-roadmap">Get the hiring roadmap</a>
+      </div>
+    </div>
+  </section>
+
+</div>

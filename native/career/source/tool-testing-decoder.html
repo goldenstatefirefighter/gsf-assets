@@ -1,0 +1,271 @@
+<!-- GOLDEN STATE FIREFIGHTER - California Firefighter Testing Decoder.
+     Paste into a CODE BLOCK. Self-contained (inline style + script).
+     Untangles FCTC vs NTN/FireTEAM vs Biddle vs department-run tests: what each is,
+     who uses it, whether scores transfer, and estimated cost.
+     GSF is independent and not affiliated with FCTC, Cal-JAC, NTN, CAL FIRE, or any department.
+     ALL DATED NUMBERS live in the DATA block near the top of the script - verify before publish.
+     OWNER DECISION 2026-09-14 (queue q0937 / 0e12ded4-e6ee-476d-bb1d-6de7227f77be): keep the
+       dollar figures, shown as clearly LABELED ESTIMATES. Every rendered price sits under an
+       "Estimated cost" label with a basis/date line and a "not a quote" note, including the
+       comparison table. Test: ../tests/test_tool_testing_decoder.py (must pass before paste).
+     RE-CONFIRMED 2026-09-14 against the official pages:
+       FCTC written $50, prep class $25, CPAT $160, practice $30 (fctconline.org/feescholarship-info);
+       LAFD FCA $76 payable to Talogy, fee waivers for limited means (joinlafd.org/faqs and the
+         2026 FCA prep guide PDF); LAFD-listed Biddle BPAT sites $4.60 (CA resident) to $45
+         (joinlafd.org/candidate-physical-abilities-test);
+       NTN pricing page still publishes no numbers ("Pricing varies by test location, type of
+         test, and department job... will display during checkout").
+     RE-VERIFICATION PASS 2026-08-11 (all figures checked against official sources):
+       VERIFIED: FCTC written $50, prep class $25, 100 questions, 2.5 hours, 70% pass,
+         score valid 12 months (fctconline.org/feescholarship-info + written test FAQ PDF at
+         fctconline.org/media/uploads/writtentest_lastupdated_09.03.21.pdf);
+       VERIFIED: CPAT $160 incl. two orientations, practice $30 each, 8 events, 50-lb vest,
+         pass/fail, expiration set by department / 12 months default, SEL used by "over 170"
+         CA fire agencies (CPAT FAQ PDF fctconline.org/media/uploads/cpat_faqs_updated_07.24.2024.pdf
+         + fctconline.org/cpat/ + /becoming-a-firefighter/fctc-statewide-list);
+       VERIFIED: LAFD uses Biddle BPAT (not CPAT) for 2026, BPAT valid 12 months, site fees
+         $4.60-$45 (joinlafd.org/candidate-physical-abilities-test); FCA is a 4-hour computer
+         test, fee $76 with hardship waivers (joinlafd.org FCA fee waiver FAQ + LA City 2023 FF
+         FAQ PDF Q10); LAFD publishes no FCA percentage cutoff, so none is claimed here;
+       VERIFIED: NTN written scores good one year; departments decide use (NTN candidate FAQs);
+         FireTEAM = human relations video, mechanical, reading, math, approx 2 hours
+         (nationaltestingnetwork.com/publicsafetyjobs/ntn-test-firefighter.cfm);
+         Costa Mesa requires FireTEAM via NTN (costamesaca.gov recruitment pages);
+       VERIFIED: state exams free to apply via CalCareers (calcareers.ca.gov FAQ).
+       NOT VERIFIABLE against an official source: NTN dollar figures ($55-$100 typical total,
+         ~$12 per added department). NTN's own pricing page publishes no numbers. Figures
+         below come from secondary prep-site sources and are labeled as estimates on-page.
+       Removed 2026-08-11: claim that SF H-2 accepts either FCTC or FireTEAM (current
+         careers.sf.gov H002 postings list FCTC only); claim that LA City exams are free
+         (FCA is $76); FCA "70%" pass claim (unpublished by LA City).
+     Compiled 2026-07-09, figures re-verified 2026-08-11, fees re-confirmed 2026-09-14. -->
+<div class="gsf gsf-full">
+<div id="gsftd">
+  <style>
+    #gsftd{--nv:#101C33;--nv2:#0B1425;--ch:#1E2128;--br:#C08A2D;--brh:#D7A649;--em:#B23A2E;--bo:#F3EFE6;--dm:#B9BCC4;--fd:#9AA0AC;--ln:rgba(243,239,230,.13);
+      --disp:"Saira Condensed","Bahnschrift",system-ui,sans-serif;--body:"Public Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",Consolas,monospace;
+      max-width:760px;margin:0 auto;font-family:var(--body)}
+    #gsftd *{box-sizing:border-box}
+    #gsftd .card{background:var(--ch);border:1px solid var(--ln);border-radius:10px;padding:30px 28px}
+    #gsftd .eye{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--br);margin:0 0 6px}
+    #gsftd h3{font-family:var(--disp);text-transform:uppercase;font-weight:700;color:var(--bo);font-size:24px;line-height:1.05;margin:0 0 6px}
+    #gsftd p.sub{color:var(--dm);font-size:14px;margin:0 0 20px;line-height:1.55}
+    #gsftd .qlab{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--fd);margin:0 0 9px}
+    #gsftd .opt{display:block;width:100%;text-align:left;background:var(--nv);border:1px solid var(--ln);border-radius:6px;color:var(--bo);font-family:var(--body);font-size:15px;padding:14px 16px;margin:0 0 10px;cursor:pointer;transition:.14s}
+    #gsftd .opt:hover{border-color:var(--br);background:#16233d}
+    #gsftd .opt.sel{border-color:var(--br);background:rgba(192,138,45,.12)}
+    #gsftd .opt b{font-weight:600}
+    #gsftd .opt .sub2{display:block;color:var(--fd);font-size:12.5px;margin-top:3px;line-height:1.45}
+    #gsftd .go{font-family:var(--disp);text-transform:uppercase;font-weight:600;letter-spacing:.04em;font-size:15px;background:var(--em);color:var(--bo);border:0;border-radius:5px;padding:13px 22px;cursor:pointer;margin-top:6px}
+    #gsftd .go:hover{background:#c64b3e}
+    #gsftd .res{margin-top:24px;border-top:1px solid var(--ln);padding-top:22px}
+    #gsftd .res.hidden{display:none}
+    #gsftd .res h4{font-family:var(--disp);text-transform:uppercase;font-weight:700;color:var(--bo);font-size:20px;margin:0 0 4px}
+    #gsftd .res .tag{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--br);margin:0 0 14px}
+    #gsftd .block{background:var(--nv);border:1px solid var(--ln);border-radius:8px;padding:16px 18px;margin:0 0 12px}
+    #gsftd .block .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--fd);display:block;margin-bottom:5px}
+    #gsftd .block p{margin:0;color:var(--bo);font-size:14.5px;line-height:1.55}
+    #gsftd .block p + p{margin-top:8px}
+    #gsftd .cost{background:var(--nv2);border:1px solid var(--br);border-radius:8px;padding:15px 18px;margin:0 0 12px}
+    #gsftd .cost .row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+    #gsftd .cost .k{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--br)}
+    #gsftd .cost .v{font-family:var(--disp);font-weight:700;color:var(--br);font-size:26px;white-space:nowrap}
+    #gsftd .cost .basis{font-size:12.5px;color:var(--dm);line-height:1.5;margin:8px 0 0}
+    #gsftd .transfer{font-size:13.5px;color:var(--dm);line-height:1.55;margin:0}
+    #gsftd .transfer b{color:var(--bo)}
+    #gsftd .again{background:none;border:0;color:var(--fd);font-family:var(--body);font-size:14px;cursor:pointer;text-decoration:underline;margin-top:8px}
+    /* comparison table */
+    #gsftd .cmpwrap{margin-top:30px}
+    #gsftd .cmphead{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--br);margin:0 0 12px}
+    #gsftd .scroll{overflow-x:auto;border:1px solid var(--ln);border-radius:10px}
+    #gsftd table{border-collapse:collapse;width:100%;min-width:600px;font-size:13px}
+    #gsftd th,#gsftd td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--ln);vertical-align:top;color:var(--bo);line-height:1.5}
+    #gsftd thead th{background:var(--nv2);font-family:var(--disp);text-transform:uppercase;letter-spacing:.03em;font-weight:700;color:var(--br);font-size:13.5px;position:sticky;top:0}
+    #gsftd tbody th{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--fd);white-space:nowrap;background:var(--nv)}
+    #gsftd tbody tr:last-child td,#gsftd tbody tr:last-child th{border-bottom:0}
+    #gsftd .cmpnote{font-size:12.5px;color:var(--dm);line-height:1.55;margin:10px 0 0}
+    #gsftd .disc{background:var(--nv);border:1px solid var(--ln);border-radius:6px;padding:14px 16px;margin-top:26px}
+    #gsftd .disc p{font-family:var(--mono);font-size:11px;line-height:1.7;letter-spacing:.02em;color:var(--fd);margin:0}
+    #gsftd .disc p + p{margin-top:8px}
+    #gsftd .disc a{color:var(--br);text-decoration:none}
+    #gsftd .rmcta{margin-top:26px;border-top:1px solid var(--ln);padding-top:20px}
+    #gsftd .rmcta p{color:var(--dm);font-size:14.5px;margin:0 0 12px;line-height:1.5}
+    #gsftd .rmcta a{display:inline-block;font-family:var(--disp);text-transform:uppercase;font-weight:600;letter-spacing:.04em;font-size:15px;background:var(--br);color:var(--nv);border-radius:5px;padding:12px 20px;text-decoration:none}
+    #gsftd .rmcta a:hover{background:var(--brh)}
+    #gsftd a:focus-visible,#gsftd button:focus-visible{outline:3px solid var(--bo);outline-offset:2px}
+  </style>
+
+  <div class="card">
+    <p class="eye">California Firefighter Testing Decoder</p>
+    <h3>Which tests do you actually need?</h3>
+    <p class="sub">There is no single California firefighter test. Different departments use different systems, and a score in one usually does not count in another. Pick what you want to see and get a plain answer on what it involves, whether it transfers, and an estimate of what it costs.</p>
+
+    <p class="qlab">Show me</p>
+    <div id="gsftd-opts"></div>
+    <button class="go" id="gsftd-go">See what this involves</button>
+
+    <div class="res hidden" id="gsftd-res" role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></div>
+
+    <!-- Comparison table (always visible) -->
+    <div class="cmpwrap">
+      <p class="cmphead">Side by side, at a glance</p>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr><th>&nbsp;</th><th>FCTC</th><th>NTN / FireTEAM</th><th>Biddle (BPAT)</th><th>Department-run</th></tr>
+          </thead>
+          <tbody id="gsftd-tbody"></tbody>
+        </table>
+      </div>
+      <p class="cmpnote" id="gsftd-cmpnote"></p>
+    </div>
+
+    <div class="rmcta">
+      <p>Now you know which tests you need. Get the whole path on one page, in order, from your first test to the badge.</p>
+      <a href="/free-roadmap">Get the free EMT-to-Badge Roadmap &rarr;</a>
+    </div>
+
+    <div class="disc">
+      <p><b>Not affiliated.</b> Golden State Firefighter is an independent resource. We are not affiliated with FCTC, Cal-JAC, National Testing Network, CAL FIRE, or any fire department, and we do not administer any test.</p>
+      <p><b>Every cost here is an estimate, not a quote.</b> Fees and which departments use which system change often, and actual prices vary by testing provider, test site, location, and department. Confirm current costs and requirements on the official sites (<a href="https://www.fctconline.org" target="_blank" rel="noopener">fctconline.org</a>, <a href="https://nationaltestingnetwork.com" target="_blank" rel="noopener">nationaltestingnetwork.com</a>) and on each department's own jobs page before you register or apply.</p>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    // ===== DATA BLOCK - verify against official sources before each publish (see header comment) =====
+    var DATA = {
+      checked: 'September 2026',
+      fctc: {
+        writtenFee: 50, cpatFee: 160, practice: 30, prep: 25,
+        validityMo: 12, deptsNote: '170+ California fire departments'
+      },
+      // ntn low/high/perDept are ESTIMATES from secondary sources; NTN shows exact pricing only at checkout
+      ntn: { low: 55, high: 100, perDept: 12, validityMo: 12 },
+      lafd: { fcaFee: 76 },
+      bpat: { low: 4.60, high: 45 }
+    };
+    function usd(n){ return '$' + (n % 1 ? n.toFixed(2) : n.toLocaleString()); }
+    var NOT_QUOTE = 'Actual prices vary by provider, test site, and location. This is not a quote.';
+
+    // ===== The pickable paths =====
+    var OPTS = [
+      ['fctc','A role that names FCTC in its bulletin','Check the role, application stage and current department bulletin before booking a test.'],
+      ['ntn','A department that uses NTN / FireTEAM','For example Costa Mesa. A separate written-test vendor.'],
+      ['lafd','Los Angeles City (LAFD)','LAFD runs its own written exam and its own physical test.'],
+      ['calfire','CAL FIRE (state)','A separate state civil-service process, not FCTC.'],
+      ['physical','Just the physical test (CPAT vs Biddle)','Which physical test does my department accept?']
+    ];
+
+    // ===== Result content =====
+    // basis = where the estimate comes from and when it was checked (shown under the price)
+    var RES = {
+      fctc: {
+        tag:'The statewide system',
+        title:'FCTC: shared eligibility, department-specific hiring',
+        what:'FCTC runs two separate things. The <b>Written Test</b> is 100 multiple-choice questions in 2.5 hours (verbal/visual recall, mechanical reasoning, math, reading), taken in person, with a 70% minimum to pass. The <b>CPAT</b> is the eight-event, pass/fail physical test in a 50-lb vest. SEL requirements include age 18+, a valid driver license uploaded and kept current, high school diploma or equivalent recorded in the profile, a valid Cal-JAC CPAT and passing written score from the past 12 months. Complete the profile and required documentation for the <b>Statewide Eligibility List (SEL)</b>, a shared candidate-data pool used by '+DATA.fctc.deptsNote+'. Departments run and rank their own hiring processes.',
+        transferHtml:'<b>Transfers widely inside FCTC.</b> A current written score and CPAT can satisfy common screening requirements for many departments for '+DATA.fctc.validityMo+' months. The SEL is not one statewide ranked queue. It does <b>not</b> replace a department’s application, interview, background, or other selection steps, and it does not count at NTN-only departments, LAFD, or CAL FIRE.',
+        cost: 'About ' + usd(DATA.fctc.writtenFee + DATA.fctc.cpatFee),
+        basis: 'Based on FCTC’s published fee list, checked '+DATA.checked+'. '+NOT_QUOTE,
+        costNote:'FCTC lists the Written Test at '+usd(DATA.fctc.writtenFee)+' and the CPAT at '+usd(DATA.fctc.cpatFee)+', so plan on about '+usd(DATA.fctc.writtenFee+DATA.fctc.cpatFee)+' for the two required tests. Optional CPAT practice (about '+usd(DATA.fctc.practice)+' each) and a written prep course (about '+usd(DATA.fctc.prep)+') cost extra, and rescheduling late adds a fee. Hardship grants may cover FCTC fees. Confirm the current amount at fctconline.org before you pay.'
+      },
+      ntn: {
+        tag:'A separate vendor',
+        title:'NTN / FireTEAM: a different written test',
+        what:'Some departments (Costa Mesa, for example) require the <b>FireTEAM</b> written test through the National Testing Network. FireTEAM has four parts: video-based human relations, mechanical aptitude, reading, and math, and takes about two hours. You register on NTN’s site and choose which departments receive your scores. Which written test a department accepts is set by its current job bulletin, so read the bulletin before you pay for either system.',
+        transferHtml:'<b>Transfers inside NTN only.</b> One sitting can be sent to multiple NTN departments you select. It does <b>not</b> replace the FCTC written test at FCTC departments. Scores are generally good about '+DATA.ntn.validityMo+' months, but each department sets its own rules.',
+        cost: 'About ' + usd(DATA.ntn.low) + ' to ' + usd(DATA.ntn.high),
+        basis: 'NTN publishes no prices. This range comes from third-party candidate reports, checked '+DATA.checked+'. '+NOT_QUOTE,
+        costNote:'NTN does not publish a flat price. Its pricing page says the total varies by test location, type of test, and the department job you apply to, and shows the exact amount at checkout. Candidates commonly report a base test fee plus roughly '+usd(DATA.ntn.perDept)+' for each additional department you send scores to, with firefighter totals around '+usd(DATA.ntn.low)+' to '+usd(DATA.ntn.high)+'. Use that range to plan, and go by the checkout total.'
+      },
+      lafd: {
+        tag:'Department-run',
+        title:'LAFD: its own written and physical tests',
+        what:'Los Angeles City uses its own written exam, the <b>Firefighter Candidate Assessment (FCA)</b>, a roughly four-hour computer-based test (video reasoning, listening and written comprehension, arithmetic, and a biographical/self-description survey). You need a passing score to move on; LAFD does not rank higher scores above other passers, it draws passing candidates forward by sampling. For the physical, LAFD uses the <b>Biddle (BPAT)</b>, not the FCTC CPAT.',
+        transferHtml:'<b>Does not transfer.</b> The FCA counts only at LAFD. If you are also applying to FCTC or NTN departments, you will take their written tests separately.',
+        cost: 'About ' + usd(DATA.lafd.fcaFee) + ' (FCA)',
+        basis: 'Based on the fee LAFD lists for the FCA, checked '+DATA.checked+'. '+NOT_QUOTE,
+        costNote:'LAFD lists the FCA fee at '+usd(DATA.lafd.fcaFee)+', paid to the City’s testing vendor, and fee waivers are available for financial hardship. The Biddle physical is booked separately through approved test sites; the sites LAFD lists charged about '+usd(DATA.bpat.low)+' to '+usd(DATA.bpat.high)+' when we checked. Confirm current details on joinlafd.org and the LA City jobs page.'
+      },
+      calfire: {
+        tag:'State process',
+        title:'CAL FIRE: requirements depend on the classification',
+        what:'CAL FIRE uses a <b>classification-specific state hiring process</b>. Seasonal Fire Fighter I instructions describe application cutoffs and category placement based on returnee rights and documented training. Other classifications can require examination eligibility before a vacancy application. Do not assume every CAL FIRE role has the same written exam or eligibility list. Read the current <a href="https://www.joincalfire.com/classifications/fire-protection/firefighting-and-paramedics/fire-fighter-i" target="_blank" rel="noopener">Fire Fighter I instructions</a> or the exact classification and job bulletin.',
+        transferHtml:'<b>Separate track.</b> FCTC or NTN scores do not create eligibility for CAL FIRE classifications. When a state classification requires exam eligibility, follow its own examination and vacancy instructions.',
+        cost:'Usually $0 application / exam fee',
+        basis: 'Based on CalCareers guidance that state exams generally have no application fee, checked '+DATA.checked+'. Confirm on the current bulletin.',
+        costNote:'State job applications and examinations generally have no application fee. Review the exact role bulletin for its application window, examination eligibility and required credentials. Verify on joincalfire.com / CalCareers.'
+      },
+      physical: {
+        tag:'Physical test',
+        title:'CPAT vs Biddle: they are different tests',
+        what:'This is the most common mix-up. The <b>CPAT</b> (eight timed events, 50-lb vest, pass/fail) is required for FCTC SEL placement and is accepted by departments that name it in the role bulletin. The <b>Biddle / BPAT</b> is a different physical agility test used by LA City and some Southern California departments. Note: “Biddle” is a <b>physical</b> test, not a written one.',
+        transferHtml:'<b>Not interchangeable.</b> A department accepts the CPAT, the Biddle, or its own physical. An FCTC CPAT card may not satisfy a Biddle department, and vice versa. Check which one your department requires before you book.',
+        cost: 'About ' + usd(DATA.fctc.cpatFee) + ' (CPAT)',
+        basis: 'Based on FCTC’s published CPAT fee, checked '+DATA.checked+'. '+NOT_QUOTE,
+        costNote:'FCTC lists the CPAT at '+usd(DATA.fctc.cpatFee)+' (practice runs about '+usd(DATA.fctc.practice)+' each). Biddle fees are set by the administering test site; the sites LAFD lists charged about '+usd(DATA.bpat.low)+' to '+usd(DATA.bpat.high)+' when we checked. Verify with the department and at fctconline.org.'
+      }
+    };
+
+    // ===== Comparison table rows =====
+    var TABLE = [
+      ['What it is','Statewide written test + CPAT physical','National written test (FireTEAM)','Physical agility test','A department’s own written/physical'],
+      ['Who uses it','Participating agencies, for roles and hiring stages that name FCTC','Some CA departments (Costa Mesa, for example); the job bulletin names the test','LA City &amp; some SoCal departments','LAFD (FCA); CAL FIRE (classification-specific eligibility)'],
+      ['Written or physical','Both (separate tests)','Written','Physical only','Varies'],
+      ['Estimated cost', 'About '+usd(DATA.fctc.writtenFee)+' written / '+usd(DATA.fctc.cpatFee)+' CPAT', 'About '+usd(DATA.ntn.low)+' to '+usd(DATA.ntn.high)+' (NTN publishes no prices)','About '+usd(DATA.bpat.low)+' to '+usd(DATA.bpat.high)+', set by the test site','CAL FIRE usually $0; LAFD FCA about '+usd(DATA.lafd.fcaFee)],
+      ['Do scores transfer?','Yes, shared FCTC record/SEL eligibility for '+DATA.fctc.validityMo+' mo; departments rank separately','Within NTN departments you select','N/A (a physical, per department)','No, that department only'],
+      ['How long results last', DATA.fctc.validityMo+' months','~'+DATA.ntn.validityMo+' months (dept sets rules)','Per department','Per department / exam cycle']
+    ];
+
+    // ===== Render =====
+    var optsBox=document.getElementById('gsftd-opts');
+    var sel=null;
+    OPTS.forEach(function(o){
+      var b=document.createElement('button');b.className='opt';b.type='button';
+      b.setAttribute('data-key',o[0]);
+      b.setAttribute('aria-pressed','false');
+      b.setAttribute('aria-pressed','false');
+      b.innerHTML='<b>'+o[1]+'</b><span class="sub2">'+o[2]+'</span>';
+      b.onclick=function(){
+        sel=o[0];
+        Array.prototype.forEach.call(optsBox.children,function(c){c.classList.remove('sel');c.setAttribute('aria-pressed','false');});
+        b.classList.add('sel');b.setAttribute('aria-pressed','true');b.setAttribute('aria-pressed','true');
+      };
+      optsBox.appendChild(b);
+    });
+
+    var tb=document.getElementById('gsftd-tbody');
+    TABLE.forEach(function(row){
+      var tr=document.createElement('tr');
+      if(row[0]==='Estimated cost'){tr.className='costrow';}
+      var th=document.createElement('th');th.scope='row';th.innerHTML=row[0];tr.appendChild(th);
+      for(var i=1;i<row.length;i++){var td=document.createElement('td');td.innerHTML=row[i];tr.appendChild(td);}
+      tb.appendChild(tr);
+    });
+    document.getElementById('gsftd-cmpnote').innerHTML='<b>Costs are estimates, not quotes.</b> FCTC, LAFD, and Biddle site figures come from their published fee lists, checked '+DATA.checked+'. NTN publishes no prices, so its range comes from third-party candidate reports. Actual prices vary by provider, test site, location, and department, and can change at any time.';
+
+    var resBox=document.getElementById('gsftd-res');
+    document.getElementById('gsftd-go').addEventListener('click',function(){
+      var key=sel||'fctc';
+      var r=RES[key];
+      resBox.innerHTML=
+        '<p class="tag">'+r.tag+'</p>'+
+        '<h4>'+r.title+'</h4>'+
+        '<div class="block"><span class="k">What it involves</span><p>'+r.what+'</p></div>'+
+        '<div class="cost"><div class="row"><span class="k">Estimated cost</span><span class="v">'+r.cost+'</span></div><p class="basis">'+r.basis+'</p></div>'+
+        '<div class="block costnote"><span class="k">How we estimated this cost</span><p>'+r.costNote+'</p></div>'+
+        '<div class="block"><span class="k">Do scores transfer?</span><p class="transfer">'+r.transferHtml+'</p></div>'+
+        '<button class="again" type="button" id="gsftd-again">Check a different one</button>';
+      resBox.classList.remove('hidden');resBox.focus();resBox.focus();
+      document.getElementById('gsftd-again').onclick=function(){
+        resBox.classList.add('hidden');resBox.innerHTML='';
+        Array.prototype.forEach.call(optsBox.children,function(c){c.classList.remove('sel');c.setAttribute('aria-pressed','false');});
+        sel=null;
+        resBox.scrollIntoView({behavior:'smooth',block:'nearest'});
+      };
+      resBox.scrollIntoView({behavior:'smooth',block:'nearest'});
+    });
+  })();
+  </script>
+</div>
+</div>

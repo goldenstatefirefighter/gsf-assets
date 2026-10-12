@@ -1,0 +1,1505 @@
+[
+  {
+    "name": "Santa Clara County Fire Department",
+    "checked": "2026-10-12",
+    "sources": [
+      "https://www.sccfd.org/",
+      "https://www.sccfd.org/about-sccfd/contact-information-administrative-headquarters/"
+    ],
+    "observation": "County fire is a California fire protection district. The city website and city email belonged to a different agency. Keep the existing county careers destination.",
+    "changes": [
+      {
+        "field": "site",
+        "before": "https://www.santaclaraca.gov/our-city/departments-a-f/fire-department",
+        "after": "https://www.sccfd.org/"
+      },
+      {
+        "field": "email",
+        "before": "fire@santaclaraca.gov",
+        "after": "info@sccfd.org"
+      },
+      {
+        "field": "type",
+        "before": "Municipal",
+        "after": "Fire District"
+      },
+      {
+        "field": "sector",
+        "before": "Municipal",
+        "after": "Special District"
+      },
+      {
+        "field": "contact_source",
+        "before": null,
+        "after": "https://www.sccfd.org/about-sccfd/contact-information-administrative-headquarters/"
+      },
+      {
+        "field": "contact_checked",
+        "before": null,
+        "after": "2026-10-12"
+      }
+    ]
+  },
+  {
+    "name": "North County Fire Protection District (Monterey County)",
+    "checked": "2026-10-12",
+    "sources": [
+      "https://www.ncfpd.org/",
+      "https://www.ncfpd.org/administration",
+      "https://www.ncfpd.org/reserves"
+    ],
+    "observation": "The previous website and chief were the San Diego district. Do not turn its National Registry EMT/paramedic alternative into a generic California EMT-to-apply yes/no flag.",
+    "changes": [
+      {
+        "field": "site",
+        "before": "https://www.ncfireca.gov/",
+        "after": "https://www.ncfpd.org/"
+      },
+      {
+        "field": "chief",
+        "before": "Keith McReynolds",
+        "after": "Jess Cortez (Interim Fire Chief)"
+      },
+      {
+        "field": "chief_asof",
+        "before": "2026-05-18",
+        "after": "2026-10-12"
+      },
+      {
+        "field": "chief_source",
+        "before": null,
+        "after": "https://www.ncfpd.org/"
+      },
+      {
+        "field": "type",
+        "before": "County",
+        "after": "Fire District"
+      },
+      {
+        "field": "sector",
+        "before": "County",
+        "after": "Special District"
+      },
+      {
+        "field": "hiring",
+        "before": "The district promotes full-time firefighters out of its paid reserve firefighter program rather than hiring off the street.",
+        "after": "The reserve program has an entry selection process and can lead to full-time positions. Its current interest page asks for a current National Registry EMT or paramedic card, CPAT, driver license, high school diploma or GED, FF1 academy, and local residency within 30 minutes of a district station. An interest form provides notice when applications open; it is not an open application."
+      },
+      {
+        "field": "evidence_url",
+        "before": "https://www.fctconline.org/participating-departments/",
+        "after": "https://www.ncfpd.org/reserves"
+      },
+      {
+        "field": "hiring_asof",
+        "before": "2026-08-13",
+        "after": "2026-10-12"
+      },
+      {
+        "field": "requirements_scope",
+        "before": null,
+        "after": "Part-time reserve program, not every district role"
+      },
+      {
+        "field": "contact_source",
+        "before": null,
+        "after": "https://www.ncfpd.org/"
+      },
+      {
+        "field": "contact_checked",
+        "before": null,
+        "after": "2026-10-12"
+      }
+    ]
+  },
+  {
+    "name": "Madera Fire Department",
+    "checked": "2026-10-12",
+    "sources": [
+      "https://www.madera.gov/emergency-protective-services/fire-department/",
+      "https://www.joincalfire.com/"
+    ],
+    "observation": "The former contact was the Mariposa unit headquarters; official city page lists Madera stations and phone, and states CAL FIRE personnel management. Keep the older chief snapshot until it is verified.",
+    "changes": [
+      {
+        "field": "url",
+        "before": "https://www.governmentjobs.com/careers/madera",
+        "after": "https://www.joincalfire.com/"
+      },
+      {
+        "field": "emp",
+        "before": null,
+        "after": "CAL FIRE under a partnership with the City of Madera"
+      },
+      {
+        "field": "addr",
+        "before": "5366 Highway 49 North",
+        "after": "2558 Condor Drive (Fire Station 58)"
+      },
+      {
+        "field": "city",
+        "before": "Mariposa",
+        "after": "Madera"
+      },
+      {
+        "field": "zip",
+        "before": "95338",
+        "after": "93637"
+      },
+      {
+        "field": "tel",
+        "before": "(209) 966-3622",
+        "after": "(559) 661-5499"
+      },
+      {
+        "field": "hiring",
+        "before": "City of Madera posts fire openings on its governmentjobs portal.",
+        "after": "The city states that CAL FIRE manages fire personnel. Use CAL FIRE recruitment instructions for suppression careers and confirm the classification and assignment. City employment postings are a separate route for city positions."
+      },
+      {
+        "field": "evidence_url",
+        "before": "https://www.fctconline.org/participating-departments/",
+        "after": "https://www.madera.gov/emergency-protective-services/fire-department/"
+      },
+      {
+        "field": "hiring_asof",
+        "before": "2026-08-13",
+        "after": "2026-10-12"
+      },
+      {
+        "field": "contact_source",
+        "before": null,
+        "after": "https://www.madera.gov/emergency-protective-services/fire-department/"
+      },
+      {
+        "field": "contact_checked",
+        "before": null,
+        "after": "2026-10-12"
+      }
+    ]
+  },
+  {
+    "name": "San Mateo Consolidated Fire Department",
+    "checked": "2026-10-12",
+    "sources": [
+      "https://smcfire.ca.gov/",
+      "https://smcfire.ca.gov/become-a-firefighter",
+      "https://smcfire.ca.gov/command-staff"
+    ],
+    "observation": "Do not generalize the lateral paramedic requirement to entry-level candidates. The official entry page makes EMT due at appointment rather than application. Keep the lateral bulletin evidence as history, not a current opening.",
+    "changes": [
+      {
+        "field": "addr",
+        "before": "2121 S. El Camino Real Bld B",
+        "after": "2121 S. El Camino Real, Building B, Suite 100"
+      },
+      {
+        "field": "city",
+        "before": "Suite 200 Foster City",
+        "after": "San Mateo"
+      },
+      {
+        "field": "hiring",
+        "before": "Lateral Firefighter/Paramedic recruitment is open on CalOpps through September 2026 and is limited to experienced firefighter/paramedics.",
+        "after": "A previously linked lateral Firefighter/Paramedic bulletin was described as ending in September 2026; do not treat that window as open now. The current entry-level guidance requires FCTC SEL standing and a recent written score and CPAT by recruitment close, with EMT or paramedic credentials by appointment. Check the current CalOpps bulletin for the role and dates."
+      },
+      {
+        "field": "emt",
+        "before": "yes",
+        "after": "no"
+      },
+      {
+        "field": "medic",
+        "before": "required",
+        "after": "preferred"
+      },
+      {
+        "field": "evidence_url",
+        "before": "https://www.calopps.org/san-mateo-consolidated-fire-department/job-20543908",
+        "after": "https://smcfire.ca.gov/become-a-firefighter"
+      },
+      {
+        "field": "hiring_asof",
+        "before": "2024-09",
+        "after": "2026-10-12"
+      },
+      {
+        "field": "requirements_scope",
+        "before": null,
+        "after": "Entry-level Firefighter guidance: EMT or paramedic by appointment; FCTC and CPAT by recruitment close"
+      },
+      {
+        "field": "contact_source",
+        "before": null,
+        "after": "https://smcfire.ca.gov/"
+      },
+      {
+        "field": "contact_checked",
+        "before": null,
+        "after": "2026-10-12"
+      }
+    ]
+  },
+  {
+    "name": "Peninsula Fire Protection District",
+    "checked": "2026-10-12",
+    "sources": [
+      "https://www.peninsulafire.net/employment-with-peninsula-fire"
+    ],
+    "observation": "The public page still has the expired March deadline. Preserve the dated recruitment history and avoid claiming no future vacancy.",
+    "changes": [
+      {
+        "field": "hiring",
+        "before": "The district emails applications and resumes to its training address against a posted recruitment deadline, currently 2026-03-31 for Firefighter Paramedics and Per Diem Firefighter",
+        "after": "Historical recruitment: the official employment page gives a March 31, 2026 application deadline for Firefighter Paramedics and Per Diem Firefighters. That deadline has passed. Check the district employment page for a later announcement before sending an application."
+      },
+      {
+        "field": "evidence_url",
+        "before": "https://www.fctconline.org/participating-departments/",
+        "after": "https://www.peninsulafire.net/employment-with-peninsula-fire"
+      },
+      {
+        "field": "hiring_asof",
+        "before": "2026-08-13",
+        "after": "2026-10-12"
+      },
+      {
+        "field": "hiring_window_closed",
+        "before": null,
+        "after": true
+      }
+    ]
+  },
+  {
+    "name": "Montecito Fire Protection District",
+    "changes": [
+      {
+        "field": "chief",
+        "before": "David Neels",
+        "after": "Brian Fallon",
+        "source_url": "https://www.montecitofire.com/brian-fallon",
+        "purpose": "current department leadership",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "chief_asof",
+        "before": "2026-05-18",
+        "after": "2026-10-12",
+        "source_url": "https://www.montecitofire.com/brian-fallon",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "chief_source",
+        "before": null,
+        "after": "https://www.montecitofire.com/brian-fallon",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "hiring",
+        "before": "Openings are posted on the district's own NeoGov portal; zero jobs were listed at review.",
+        "after": "Firefighter/EMT and Firefighter/Paramedic applications are open October 1 through October 19, 2026 at 5 p.m.",
+        "source_url": "https://www.montecitofire.com/",
+        "observed_on": "2026-10-12",
+        "purpose": "current entry-firefighter recruitment"
+      },
+      {
+        "field": "evidence_url",
+        "before": "https://www.fctconline.org/participating-departments/",
+        "after": "https://www.montecitofire.com/",
+        "source_url": "Role-specific bulletin evidence",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "hiring_asof",
+        "before": "2026-08-13",
+        "after": "2026-10-12",
+        "source_url": "https://www.montecitofire.com/",
+        "observed_on": "2026-10-12",
+        "purpose": "Current check date, not reopening old recruitment"
+      },
+      {
+        "field": "hiring_window_closed",
+        "before": null,
+        "after": false,
+        "source_url": "https://www.montecitofire.com/",
+        "observed_on": "2026-10-12",
+        "purpose": "open recruitment flag"
+      }
+    ]
+  },
+  {
+    "name": "Santa Barbara County Fire Department",
+    "changes": [
+      {
+        "field": "chief",
+        "before": "Mark Hartwig",
+        "after": "Garrett Huff",
+        "source_url": "https://sbcfire.com/from-the-chief-new/",
+        "purpose": "current department leadership",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "chief_asof",
+        "before": "2026-05-18",
+        "after": "2026-10-12",
+        "source_url": "https://sbcfire.com/from-the-chief-new/",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "chief_source",
+        "before": null,
+        "after": "https://sbcfire.com/from-the-chief-new/",
+        "observed_on": "2026-10-12"
+      }
+    ]
+  },
+  {
+    "name": "Watsonville Fire Department",
+    "changes": [
+      {
+        "field": "chief",
+        "before": "Rudy Lopez",
+        "after": "Corey Shaefer",
+        "source_url": "https://www.watsonville.gov/2323/Fire",
+        "purpose": "current department leadership",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "chief_asof",
+        "before": "2026-05-18",
+        "after": "2026-10-12",
+        "source_url": "https://www.watsonville.gov/2323/Fire",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "chief_source",
+        "before": null,
+        "after": "https://www.watsonville.gov/2323/Fire",
+        "observed_on": "2026-10-12"
+      }
+    ]
+  },
+  {
+    "name": "Hemet Fire Department",
+    "changes": [
+      {
+        "field": "chief",
+        "before": "Kevin Kuhlman",
+        "after": "Ryon Dierck",
+        "source_url": "https://www.hemetca.gov/m/directory/department?did=31",
+        "purpose": "current department leadership",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "chief_asof",
+        "before": "2026-05-18",
+        "after": "2026-10-12",
+        "source_url": "https://www.hemetca.gov/m/directory/department?did=31",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "chief_source",
+        "before": null,
+        "after": "https://www.hemetca.gov/m/directory/department?did=31",
+        "observed_on": "2026-10-12"
+      }
+    ]
+  },
+  {
+    "name": "Ventura City Fire Department",
+    "changes": [
+      {
+        "field": "zip",
+        "before": "93060",
+        "after": "93003",
+        "source_url": "https://www.cityofventura.ca.gov/2096/Meet-Our-Team",
+        "purpose": "fire department headquarters contact address",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "url",
+        "before": "https://www.governmentjobs.com/careers/cityofventura",
+        "after": "https://www.cityofventura.ca.gov/jobs",
+        "source_url": "https://www.cityofventura.ca.gov/jobs",
+        "purpose": "stable city-owned careers entry point",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "contact_checked",
+        "before": null,
+        "after": "2026-10-12",
+        "source_url": "https://www.cityofventura.ca.gov/2096/Meet-Our-Team",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "contact_source",
+        "before": null,
+        "after": "https://www.cityofventura.ca.gov/2096/Meet-Our-Team",
+        "observed_on": "2026-10-12"
+      }
+    ]
+  },
+  {
+    "name": "Corona Fire Department",
+    "changes": [
+      {
+        "field": "zip",
+        "before": "92880",
+        "after": "92878",
+        "source_url": "https://www.coronaca.gov/departments/fire",
+        "purpose": "fire department headquarters contact address",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "contact_checked",
+        "before": null,
+        "after": "2026-10-12",
+        "source_url": "https://www.coronaca.gov/departments/fire",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "contact_source",
+        "before": null,
+        "after": "https://www.coronaca.gov/departments/fire",
+        "observed_on": "2026-10-12"
+      }
+    ]
+  },
+  {
+    "name": "Canyon Lake Fire Department",
+    "changes": [
+      {
+        "field": "addr",
+        "before": "31516 Railroad Canyon",
+        "after": "31516 Railroad Canyon Road",
+        "source_url": "https://www.canyonlakeca.gov/clfd",
+        "purpose": "municipal contact and mailing address, not a separately verified fire station address",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "city",
+        "before": "Road Canyon Lake",
+        "after": "Canyon Lake",
+        "source_url": "https://www.canyonlakeca.gov/clfd",
+        "purpose": "municipal contact and mailing address city",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "contact_purpose",
+        "before": null,
+        "after": "City municipal mailing address, not independently verified fire headquarters",
+        "source_url": "https://www.canyonlakeca.gov",
+        "purpose": "Qualify municipal contact",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "contact_checked",
+        "before": null,
+        "after": "2026-10-12",
+        "source_url": "https://www.canyonlakeca.gov/clfd",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "contact_source",
+        "before": null,
+        "after": "https://www.canyonlakeca.gov/clfd",
+        "observed_on": "2026-10-12"
+      }
+    ]
+  },
+  {
+    "name": "Pajaro Dunes CSA 4",
+    "changes": [
+      {
+        "field": "tel",
+        "before": "(831) 335-5355",
+        "after": "(831) 335-5353",
+        "source_url": "https://www.fire.ca.gov/about/resources/cal-fire-contacts",
+        "purpose": "CAL FIRE San Mateo-Santa Cruz Unit headquarters contact, not a local CSA office",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "contact_purpose",
+        "before": null,
+        "after": "CAL FIRE San Mateo-Santa Cruz Unit headquarters contact, not a local station or recruitment office",
+        "source_url": "https://www.fire.ca.gov/about/locations",
+        "purpose": "Identify the actual contact function",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "contact_checked",
+        "before": null,
+        "after": "2026-10-12",
+        "source_url": "https://www.fire.ca.gov/about/resources/cal-fire-contacts",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "contact_source",
+        "before": null,
+        "after": "https://www.fire.ca.gov/about/resources/cal-fire-contacts",
+        "observed_on": "2026-10-12"
+      }
+    ]
+  },
+  {
+    "name": "Pajaro Valley Fire Protection District",
+    "changes": [
+      {
+        "field": "tel",
+        "before": "(831) 335-5355",
+        "after": "(831) 335-5353",
+        "source_url": "https://www.fire.ca.gov/about/resources/cal-fire-contacts",
+        "purpose": "CAL FIRE San Mateo-Santa Cruz Unit headquarters contact, not a local district office",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "contact_purpose",
+        "before": null,
+        "after": "CAL FIRE San Mateo-Santa Cruz Unit headquarters contact, not a local station or recruitment office",
+        "source_url": "https://www.fire.ca.gov/about/locations",
+        "purpose": "Identify the actual contact function",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "contact_checked",
+        "before": null,
+        "after": "2026-10-12",
+        "source_url": "https://www.fire.ca.gov/about/resources/cal-fire-contacts",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "contact_source",
+        "before": null,
+        "after": "https://www.fire.ca.gov/about/resources/cal-fire-contacts",
+        "observed_on": "2026-10-12"
+      }
+    ]
+  },
+  {
+    "name": "Santa Cruz County CSA 48",
+    "changes": [
+      {
+        "field": "tel",
+        "before": "(831) 335-5355",
+        "after": "(831) 335-5353",
+        "source_url": "https://www.fire.ca.gov/about/resources/cal-fire-contacts",
+        "purpose": "CAL FIRE San Mateo-Santa Cruz Unit headquarters contact, not a local CSA office",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "contact_purpose",
+        "before": null,
+        "after": "CAL FIRE San Mateo-Santa Cruz Unit headquarters contact, not a local station or recruitment office",
+        "source_url": "https://www.fire.ca.gov/about/locations",
+        "purpose": "Identify the actual contact function",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "contact_checked",
+        "before": null,
+        "after": "2026-10-12",
+        "source_url": "https://www.fire.ca.gov/about/resources/cal-fire-contacts",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "contact_source",
+        "before": null,
+        "after": "https://www.fire.ca.gov/about/resources/cal-fire-contacts",
+        "observed_on": "2026-10-12"
+      }
+    ]
+  },
+  {
+    "name": "Coachella Fire Protection District",
+    "changes": [
+      {
+        "field": "addr",
+        "before": "210 W Jacinto Avenue",
+        "after": "210 W. San Jacinto Avenue",
+        "source_url": "https://www.fire.ca.gov/about/resources/cal-fire-contacts",
+        "purpose": "CAL FIRE Riverside Unit and Riverside County Fire administrative headquarters, not a Coachella-local station",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "tel",
+        "before": "(909) 940-6900",
+        "after": "(951) 940-6900",
+        "source_url": "https://www.fire.ca.gov/about/resources/cal-fire-contacts",
+        "purpose": "CAL FIRE Riverside Unit headquarters contact, not a Coachella-local station",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "contact_purpose",
+        "before": null,
+        "after": "CAL FIRE Riverside Unit headquarters in Perris, not Coachella local fire headquarters",
+        "source_url": "https://www.rvcfire.org/contact-us",
+        "purpose": "Identify unit rather than local contact",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "contact_checked",
+        "before": null,
+        "after": "2026-10-12",
+        "source_url": "https://www.fire.ca.gov/about/resources/cal-fire-contacts",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "contact_source",
+        "before": null,
+        "after": "https://www.fire.ca.gov/about/resources/cal-fire-contacts",
+        "observed_on": "2026-10-12"
+      }
+    ]
+  },
+  {
+    "name": "Ventura County Fire Protection District",
+    "changes": [
+      {
+        "field": "type",
+        "before": "County",
+        "after": "Fire District",
+        "source_url": "https://fire.venturacounty.gov/about-vcfd/",
+        "purpose": "legal organization type normalized to the directory enum",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "sector",
+        "before": "County",
+        "after": "Special District",
+        "source_url": "https://fire.venturacounty.gov/about-vcfd/",
+        "purpose": "legal sector classification normalized to the directory enum",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "addr",
+        "before": "165 Durley Avenue",
+        "after": "2400 Conejo Spectrum Street",
+        "source_url": "https://fire.venturacounty.gov/headquarters/",
+        "purpose": "current district administrative headquarters",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "city",
+        "before": "Camarillo",
+        "after": "Thousand Oaks",
+        "source_url": "https://fire.venturacounty.gov/headquarters/",
+        "purpose": "current district administrative headquarters city",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "zip",
+        "before": "93010",
+        "after": "91320",
+        "source_url": "https://fire.venturacounty.gov/contact/",
+        "purpose": "current district administrative headquarters ZIP code",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "contact_checked",
+        "before": null,
+        "after": "2026-10-12",
+        "source_url": "https://fire.venturacounty.gov/headquarters/",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "contact_source",
+        "before": null,
+        "after": "https://fire.venturacounty.gov/headquarters/",
+        "observed_on": "2026-10-12"
+      }
+    ]
+  },
+  {
+    "name": "Central Fire Department Santa Cruz",
+    "changes": [
+      {
+        "field": "name",
+        "before": "Central Fire Department Santa Cruz",
+        "after": "Central Fire District of Santa Cruz County",
+        "source_url": "https://www.centralfiresc.org/2156/Careers",
+        "purpose": "official department identity",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "former_name",
+        "before": null,
+        "after": "Central Fire Department Santa Cruz",
+        "source_url": "https://www.centralfiresc.org/2156/Careers",
+        "purpose": "Preserve historic agency name as a search alias",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "type",
+        "before": "Municipal",
+        "after": "Fire District",
+        "source_url": "https://www.centralfiresc.org/2156/Careers",
+        "purpose": "legal organization type normalized to the directory enum",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "sector",
+        "before": "Municipal",
+        "after": "Special District",
+        "source_url": "https://www.centralfiresc.org/2156/Careers",
+        "purpose": "legal sector classification normalized to the directory enum",
+        "observed_on": "2026-10-12"
+      }
+    ]
+  },
+  {
+    "name": "Chumash Fire Department",
+    "changes": [
+      {
+        "field": "fctc",
+        "before": "no",
+        "after": "unverified",
+        "source_url": "https://chumash.gov/fire",
+        "purpose": "Tribal status does not establish testing exclusion",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "fctc_basis",
+        "before": "Tribal department funded by the Santa Ynez Band of Chumash Indians; its own materials describe it as outside the FCTC/civil-service hiring system used by California city and district departments.",
+        "after": "Current official department page does not establish an FCTC requirement or exclusion. Tribal status is not evidence of a definitive no.",
+        "source_url": "https://chumash.gov/fire",
+        "purpose": "Remove unsupported negative inference",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "fctc_checked_on",
+        "before": null,
+        "after": "2026-10-12",
+        "source_url": "https://chumash.gov/fire",
+        "purpose": "Date only this rechecked assertion",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "type",
+        "before": "Municipal",
+        "after": "Tribal",
+        "source_url": "https://chumash.gov/fire",
+        "purpose": "Tribal government employer identity",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "sector",
+        "before": "Municipal",
+        "after": "Tribal Government",
+        "source_url": "https://chumash.gov/fire",
+        "purpose": "Tribal government employer identity",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "fctc_checked",
+        "before": "2026-08-13",
+        "after": "2026-10-12",
+        "source_url": "https://chumash.gov/fire",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "hiring",
+        "before": "Fire openings appear on the tribe's general careers portal; none were listed at review.",
+        "after": "Chumash Enterprises currently lists a full-time Fire Captain opening, ID 2026-3202, in Santa Ynez. No current Firefighter opening was verified.",
+        "source_url": "https://careers-chumashcareers.icims.com/jobs/3202/fire-captain/job",
+        "observed_on": "2026-10-12",
+        "purpose": "current recruitment scope without converting a captain opening into a firefighter opening"
+      },
+      {
+        "field": "evidence_url",
+        "before": "https://www.fctconline.org/participating-departments/",
+        "after": "https://careers-chumashcareers.icims.com/jobs/3202/fire-captain/job",
+        "source_url": "Role-specific bulletin evidence",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "hiring_asof",
+        "before": "2026-08-13",
+        "after": "2026-10-12",
+        "source_url": "https://careers-chumashcareers.icims.com/jobs/3202/fire-captain/job",
+        "observed_on": "2026-10-12",
+        "purpose": "Current check date, not reopening old recruitment"
+      }
+    ]
+  },
+  {
+    "name": "California Rehab Ctr",
+    "changes": [
+      {
+        "field": "note_status",
+        "before": null,
+        "after": "CDCR identifies California Rehabilitation Center as closed in October 2026. Retained as a historical institution record; the general CDCR careers link is not evidence of a current CRC vacancy. Residual staffing and the precise closure day are not established here.",
+        "source_url": "https://www.cdcr.ca.gov/facility-locator/crc/",
+        "purpose": "Preserve institution history without implying current hiring",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "agency_status",
+        "before": null,
+        "after": "closed institution, historical record",
+        "source_url": "https://www.cdcr.ca.gov/facility-locator/crc/",
+        "purpose": "Closed institution identification",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "type",
+        "before": "Municipal",
+        "after": "State Institution",
+        "source_url": "https://www.cdcr.ca.gov/facility-locator/crc/",
+        "purpose": "CDCR institution identity",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "sector",
+        "before": "Municipal",
+        "after": "State",
+        "source_url": "https://www.cdcr.ca.gov/facility-locator/crc/",
+        "purpose": "CDCR institution identity",
+        "observed_on": "2026-10-12"
+      }
+    ]
+  },
+  {
+    "name": "East Bay Regional Park District",
+    "changes": [
+      {
+        "field": "chief",
+        "before": "Aileen Theile",
+        "after": "Ray Iverson",
+        "source_url": "https://www.ebparks.org/board-and-staff/staff",
+        "observed_on": "2026-10-12",
+        "purpose": "current department leadership; interim status should remain visible in display context"
+      },
+      {
+        "field": "chief_source",
+        "before": null,
+        "after": "https://www.ebparks.org/board-and-staff/staff",
+        "source_url": "Official leadership evidence",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "chief_asof",
+        "before": "2026-05-18",
+        "after": "2026-10-12",
+        "source_url": "https://www.ebparks.org/board-and-staff/staff",
+        "observed_on": "2026-10-12",
+        "purpose": "Rechecked current assertion only"
+      },
+      {
+        "field": "chief_role",
+        "before": null,
+        "after": "Interim Fire Chief",
+        "source_url": "https://www.ebparks.org/board-and-staff/staff",
+        "observed_on": "2026-10-12",
+        "purpose": "Preserve command-role identity"
+      }
+    ]
+  },
+  {
+    "name": "Contra Costa County Fire Protection District",
+    "changes": [
+      {
+        "field": "chief",
+        "before": "Lewis Broschard",
+        "after": "Aaron McAlister",
+        "source_url": "https://www.cccfpd.org/",
+        "observed_on": "2026-10-12",
+        "purpose": "current department leadership"
+      },
+      {
+        "field": "chief_source",
+        "before": null,
+        "after": "https://www.cccfpd.org/",
+        "source_url": "Official leadership evidence",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "chief_asof",
+        "before": "2026-05-18",
+        "after": "2026-10-12",
+        "source_url": "https://www.cccfpd.org/",
+        "observed_on": "2026-10-12",
+        "purpose": "Rechecked current assertion only"
+      },
+      {
+        "field": "chief_effective_on",
+        "before": null,
+        "after": "2026-05-12",
+        "source_url": "https://www.cccfpd.org/",
+        "observed_on": "2026-10-12",
+        "purpose": "Preserve confirmed appointment date separately from check date"
+      }
+    ]
+  },
+  {
+    "name": "Marinwood Fire Department",
+    "changes": [
+      {
+        "field": "chief",
+        "before": "Robert Sinnott",
+        "after": "Abraham Roman",
+        "source_url": "https://www.marinwood.org/fire-department-staff",
+        "observed_on": "2026-10-12",
+        "purpose": "current shared-service leadership"
+      },
+      {
+        "field": "chief_source",
+        "before": null,
+        "after": "https://www.marinwood.org/fire-department-staff",
+        "source_url": "Official leadership evidence",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "chief_asof",
+        "before": "2026-05-18",
+        "after": "2026-10-12",
+        "source_url": "https://www.marinwood.org/fire-department-staff",
+        "observed_on": "2026-10-12",
+        "purpose": "Rechecked current assertion only"
+      },
+      {
+        "field": "chief_role",
+        "before": null,
+        "after": "Shared-service Fire Chief (San Rafael)",
+        "source_url": "https://www.marinwood.org/fire-department-staff",
+        "observed_on": "2026-10-12",
+        "purpose": "Preserve command-role identity"
+      }
+    ]
+  },
+  {
+    "name": "Greenfield Fire Department",
+    "changes": [
+      {
+        "field": "chief",
+        "before": "Guillermo Mixer",
+        "after": null,
+        "source_url": "https://www.greenfieldca.gov/m/directory/employee?eid=63",
+        "observed_on": "2026-10-12",
+        "purpose": "remove a cross-department leadership misattribution while preserving unknown as unknown"
+      },
+      {
+        "field": "chief_source",
+        "before": null,
+        "after": "https://www.greenfieldca.gov/m/directory/employee?eid=63",
+        "source_url": "Official leadership evidence",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "chief_asof",
+        "before": "2026-05-18",
+        "after": "2026-10-12",
+        "source_url": "https://www.greenfieldca.gov/m/directory/employee?eid=63",
+        "observed_on": "2026-10-12",
+        "purpose": "Rechecked current assertion only"
+      },
+      {
+        "field": "chief_status",
+        "before": null,
+        "after": "Current fire leadership not confirmed. The former directory attribution was a police chief, not a fire chief.",
+        "source_url": "https://www.greenfieldca.gov/m/directory/employee?eid=63",
+        "observed_on": "2026-10-12",
+        "purpose": "Unknown is explicit; no invented replacement"
+      }
+    ]
+  },
+  {
+    "name": "Marina Fire Department",
+    "changes": [
+      {
+        "field": "chief",
+        "before": "Mark Sweeney",
+        "after": "Kristan Maurer",
+        "source_url": "https://cityofmarina.org/m/newsflash/Archive/Item/1201?arcId=2646",
+        "observed_on": "2026-10-12",
+        "purpose": "current department leadership"
+      },
+      {
+        "field": "chief_source",
+        "before": null,
+        "after": "https://cityofmarina.org/m/newsflash/Archive/Item/1201?arcId=2646",
+        "source_url": "Official leadership evidence",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "chief_asof",
+        "before": "2026-05-18",
+        "after": "2026-10-12",
+        "source_url": "https://cityofmarina.org/m/newsflash/Archive/Item/1201?arcId=2646",
+        "observed_on": "2026-10-12",
+        "purpose": "Rechecked current assertion only"
+      }
+    ]
+  },
+  {
+    "name": "Hollister Fire Department",
+    "changes": [
+      {
+        "field": "chief",
+        "before": "Jonathan Goulding",
+        "after": "Stephen Healy",
+        "source_url": "https://hollister.ca.gov/government/fire/index.php",
+        "observed_on": "2026-10-12",
+        "purpose": "current department leadership; interim status should remain visible in display context"
+      },
+      {
+        "field": "chief_source",
+        "before": null,
+        "after": "https://hollister.ca.gov/government/fire/index.php",
+        "source_url": "Official leadership evidence",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "chief_asof",
+        "before": "2026-05-18",
+        "after": "2026-10-12",
+        "source_url": "https://hollister.ca.gov/government/fire/index.php",
+        "observed_on": "2026-10-12",
+        "purpose": "Rechecked current assertion only"
+      },
+      {
+        "field": "hiring",
+        "before": "Entry and lateral Firefighter/EMT recruitment requiring a current FCTC written score and Cal-JAC CPAT card, then written exam, oral boards, medical and background.",
+        "after": "The open-competitive Firefighter/EMT recruitment opened July 22 and closed September 30, 2026 at 11:59 p.m.; retain its eligibility-list and qualification details as historical recruitment information.",
+        "source_url": "https://www.governmentjobs.com/careers/hollisterca/jobs/5420493/firefighter-emt-entry-level",
+        "observed_on": "2026-10-12",
+        "purpose": "historical recruitment record and closed-window clarity"
+      },
+      {
+        "field": "evidence_url",
+        "before": "https://www.governmentjobs.com/careers/hollisterca/jobs/5420493/firefighter-emt-entry-level",
+        "after": "https://www.governmentjobs.com/careers/hollisterca/jobs/5420493/firefighter-emt-entry-level",
+        "source_url": "Role-specific bulletin evidence",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "hiring_asof",
+        "before": "2026-07-22",
+        "after": "2026-10-12",
+        "source_url": "https://www.governmentjobs.com/careers/hollisterca/jobs/5420493/firefighter-emt-entry-level",
+        "observed_on": "2026-10-12",
+        "purpose": "Current check date, not reopening old recruitment"
+      },
+      {
+        "field": "hiring_window_closed",
+        "before": null,
+        "after": true,
+        "source_url": "https://www.governmentjobs.com/careers/hollisterca/jobs/5420493/firefighter-emt-entry-level",
+        "observed_on": "2026-10-12",
+        "purpose": "closed recruitment flag"
+      },
+      {
+        "field": "chief_role",
+        "before": null,
+        "after": "Interim Fire Chief",
+        "source_url": "https://hollister.ca.gov/government/fire/index.php",
+        "observed_on": "2026-10-12",
+        "purpose": "Preserve command-role identity"
+      }
+    ]
+  },
+  {
+    "name": "Banning Fire Department",
+    "changes": [
+      {
+        "field": "chief",
+        "before": "Bill Weiser",
+        "after": "Todd Hopkins",
+        "source_url": "https://banningca.gov/24/Fire-Department",
+        "observed_on": "2026-10-12",
+        "purpose": "current local command contact for the contracted fire service"
+      },
+      {
+        "field": "chief_source",
+        "before": null,
+        "after": "https://banningca.gov/24/Fire-Department",
+        "source_url": "Official leadership evidence",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "chief_asof",
+        "before": "2026-05-18",
+        "after": "2026-10-12",
+        "source_url": "https://banningca.gov/24/Fire-Department",
+        "observed_on": "2026-10-12",
+        "purpose": "Rechecked current assertion only"
+      },
+      {
+        "field": "chief_role",
+        "before": null,
+        "after": "Division Chief",
+        "source_url": "https://banningca.gov/24/Fire-Department",
+        "observed_on": "2026-10-12",
+        "purpose": "Preserve command-role identity"
+      }
+    ]
+  },
+  {
+    "name": "Kentfield Fire Protection District",
+    "changes": [
+      {
+        "field": "hiring",
+        "before": "Full-time, apprentice and seasonal firefighter recruitments posted as PDF announcements on the District employment page, with applications accepted year-round.",
+        "after": "The district's 2025 Entry Level Firefighter/EMT recruitment had a final filing deadline of November 7, 2025 at noon and is closed; retain the posting as historical recruitment evidence.",
+        "source_url": "https://kentfieldfire.org/component/fileman/?view=file&routed=1&name=Full-Time%20Firefighter%20Recruitment.pdf&container=fileman-attachments",
+        "observed_on": "2026-10-12",
+        "purpose": "historical recruitment record and closed-window clarity"
+      },
+      {
+        "field": "evidence_url",
+        "before": "https://kentfieldfire.org/component/fileman/?view=file&routed=1&name=Full-Time%20Firefighter%20Recruitment.pdf&container=fileman-attachments",
+        "after": "https://kentfieldfire.org/component/fileman/?view=file&routed=1&name=Full-Time%20Firefighter%20Recruitment.pdf&container=fileman-attachments",
+        "source_url": "Role-specific bulletin evidence",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "hiring_asof",
+        "before": "2025-11-07",
+        "after": "2026-10-12",
+        "source_url": "https://kentfieldfire.org/component/fileman/?view=file&routed=1&name=Full-Time%20Firefighter%20Recruitment.pdf&container=fileman-attachments",
+        "observed_on": "2026-10-12",
+        "purpose": "Current check date, not reopening old recruitment"
+      },
+      {
+        "field": "hiring_window_closed",
+        "before": null,
+        "after": true,
+        "source_url": "https://kentfieldfire.org/component/fileman/?view=file&routed=1&name=Full-Time%20Firefighter%20Recruitment.pdf&container=fileman-attachments",
+        "observed_on": "2026-10-12",
+        "purpose": "closed recruitment flag"
+      }
+    ]
+  },
+  {
+    "name": "City of Albany Fire Department",
+    "changes": [
+      {
+        "field": "hiring",
+        "before": "Entry-level Firefighter/Paramedic recruitments posted on the City of Albany NEOGOV portal.",
+        "after": "The city's 2026 Firefighter/Paramedic recruitment opened March 2 and closed April 10, 2026; the posting required at least six months as a full-time firefighter/paramedic in a 911 transporting agency despite its entry-level title.",
+        "source_url": "https://www.governmentjobs.com/careers/albanyca/jobs/newprint/5247036",
+        "observed_on": "2026-10-12",
+        "purpose": "historical recruitment record and closed-window clarity"
+      },
+      {
+        "field": "evidence_url",
+        "before": "https://www.governmentjobs.com/careers/albanyca/jobs/newprint/5247036",
+        "after": "https://www.governmentjobs.com/careers/albanyca/jobs/newprint/5247036",
+        "source_url": "Role-specific bulletin evidence",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "hiring_asof",
+        "before": "2026-03-02",
+        "after": "2026-10-12",
+        "source_url": "https://www.governmentjobs.com/careers/albanyca/jobs/newprint/5247036",
+        "observed_on": "2026-10-12",
+        "purpose": "Current check date, not reopening old recruitment"
+      },
+      {
+        "field": "hiring_window_closed",
+        "before": null,
+        "after": true,
+        "source_url": "https://www.governmentjobs.com/careers/albanyca/jobs/newprint/5247036",
+        "observed_on": "2026-10-12",
+        "purpose": "closed recruitment flag"
+      }
+    ]
+  },
+  {
+    "name": "Novato Fire Protection District",
+    "changes": [
+      {
+        "field": "hiring",
+        "before": "Entry-level and lateral Firefighter/Paramedic recruitments on the District's own NEOGOV portal, typically opening in January.",
+        "after": "The district's 2026 entry-level Firefighter/Paramedic recruitment opened January 1 and closed January 21, 2026 at 5 p.m.; preserve it as a dated historical posting without implying an annual January cycle.",
+        "source_url": "https://www.governmentjobs.com/careers/novatofire/jobs/5176146-0/firefighter-paramedic-entry-level",
+        "observed_on": "2026-10-12",
+        "purpose": "historical recruitment record and closed-window clarity"
+      },
+      {
+        "field": "evidence_url",
+        "before": "https://www.governmentjobs.com/careers/novatofire/jobs/5176146-0/firefighter-paramedic-entry-level",
+        "after": "https://www.governmentjobs.com/careers/novatofire/jobs/5176146-0/firefighter-paramedic-entry-level",
+        "source_url": "Role-specific bulletin evidence",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "hiring_asof",
+        "before": "2026-01-01",
+        "after": "2026-10-12",
+        "source_url": "https://www.governmentjobs.com/careers/novatofire/jobs/5176146-0/firefighter-paramedic-entry-level",
+        "observed_on": "2026-10-12",
+        "purpose": "Current check date, not reopening old recruitment"
+      },
+      {
+        "field": "hiring_window_closed",
+        "before": null,
+        "after": true,
+        "source_url": "https://www.governmentjobs.com/careers/novatofire/jobs/5176146-0/firefighter-paramedic-entry-level",
+        "observed_on": "2026-10-12",
+        "purpose": "closed recruitment flag"
+      }
+    ]
+  },
+  {
+    "name": "Ross Valley Fire Department",
+    "changes": [
+      {
+        "field": "hiring",
+        "before": "Entry-level and lateral Firefighter/Paramedic recruitments posted through the Town of San Anselmo NEOGOV portal.",
+        "after": "The 2026 entry and lateral Firefighter/Paramedic recruitment opened August 3 and closed August 28, 2026 at 5 p.m.; retain the posting as historical recruitment evidence.",
+        "source_url": "https://www.governmentjobs.com/careers/townofsananselmo/jobs/5429933/firefighter-paramedic",
+        "observed_on": "2026-10-12",
+        "purpose": "historical recruitment record and closed-window clarity"
+      },
+      {
+        "field": "evidence_url",
+        "before": "https://www.governmentjobs.com/careers/townofsananselmo/jobs/5429933/firefighter-paramedic",
+        "after": "https://www.governmentjobs.com/careers/townofsananselmo/jobs/5429933/firefighter-paramedic",
+        "source_url": "Role-specific bulletin evidence",
+        "observed_on": "2026-10-12"
+      },
+      {
+        "field": "hiring_asof",
+        "before": "2026-08-03",
+        "after": "2026-10-12",
+        "source_url": "https://www.governmentjobs.com/careers/townofsananselmo/jobs/5429933/firefighter-paramedic",
+        "observed_on": "2026-10-12",
+        "purpose": "Current check date, not reopening old recruitment"
+      },
+      {
+        "field": "hiring_window_closed",
+        "before": null,
+        "after": true,
+        "source_url": "https://www.governmentjobs.com/careers/townofsananselmo/jobs/5429933/firefighter-paramedic",
+        "observed_on": "2026-10-12",
+        "purpose": "closed recruitment flag"
+      },
+      {
+        "field": "requirements_scope",
+        "before": null,
+        "after": "The cited closed 2026 Firefighter/Paramedic bulletin allowed paramedic students to apply and required licensure by appointment; lateral applicants needed one year of comparable paid experience. This is historical role guidance, not an open application.",
+        "source_url": "https://www.governmentjobs.com/careers/townofsananselmo/jobs/5429933/firefighter-paramedic",
+        "observed_on": "2026-10-12",
+        "purpose": "Credential timing and historical role scope"
+      }
+    ]
+  },
+  {
+    "name": "Marin County Fire Department",
+    "changes": [
+      {
+        "field": "medic",
+        "before": "required",
+        "after": "after-hire",
+        "source_url": "https://www.governmentjobs.com/careers/marincounty/jobs/newprint/5093249",
+        "observed_on": "2026-10-12",
+        "purpose": "Do not require paramedic licensure at application for the cited trainee role"
+      },
+      {
+        "field": "requirements_scope",
+        "before": null,
+        "after": "Historical FIRE Foundry Firefighter Paramedic Trainee bulletin: California EMT and FF I academy or certificate at application, current FCTC SEL/written/CPAT before hire, paramedic program enrollment within six months and California paramedic licensure/Marin accreditation within 24 months. Other classifications require separate applications.",
+        "source_url": "https://www.governmentjobs.com/careers/marincounty/jobs/newprint/5093249",
+        "observed_on": "2026-10-12",
+        "purpose": "Role and deadline semantics"
+      },
+      {
+        "field": "hiring",
+        "before": "Firefighter, Firefighter Paramedic and seasonal firefighter recruitments posted on the County of Marin NEOGOV portal, typically opening in January and October.",
+        "after": "The cited FIRE Foundry trainee bulletin has a November 18, 2025 closing date despite open-continuous boilerplate. It is historical evidence, not proof of a current opening or a recurring January/October cycle.",
+        "source_url": "https://www.governmentjobs.com/careers/marincounty/jobs/newprint/5093249",
+        "observed_on": "2026-10-12",
+        "purpose": "Avoid invented recurring hiring schedule"
+      },
+      {
+        "field": "hiring_window_closed",
+        "before": null,
+        "after": true,
+        "source_url": "https://www.governmentjobs.com/careers/marincounty/jobs/newprint/5093249",
+        "observed_on": "2026-10-12",
+        "purpose": "Dated bulletin, not all future department jobs"
+      },
+      {
+        "field": "hiring_asof",
+        "before": "2025-10-01",
+        "after": "2026-10-12",
+        "source_url": "https://www.governmentjobs.com/careers/marincounty/jobs/newprint/5093249",
+        "observed_on": "2026-10-12",
+        "purpose": "Rechecked historical bulletin"
+      }
+    ]
+  },
+  {
+    "name": "Cambria CSD Fire Department",
+    "changes": [
+      {
+        "field": "medic",
+        "before": "preferred",
+        "after": "no",
+        "source_url": "https://www.cambriacsd.org/safer-firefighter-recruitment-05b766f",
+        "observed_on": "2026-10-12",
+        "purpose": "EMT or paramedic are alternatives; preference unsupported"
+      },
+      {
+        "field": "requirements_scope",
+        "before": null,
+        "after": "Continuous SAFER Firefighter eligibility list: California or National Registry EMT OR eligible paramedic credential; NREMT-P requires SLO County accreditation within six months of appointment. FF I is required. Three positions have three years of grant funding and may end without additional funding.",
+        "source_url": "https://www.cambriacsd.org/safer-firefighter-recruitment-05b766f",
+        "observed_on": "2026-10-12",
+        "purpose": "Explicit OR qualification and limited funding term"
+      },
+      {
+        "field": "hiring_asof",
+        "before": "2026-08-13",
+        "after": "2026-10-12",
+        "source_url": "https://www.cambriacsd.org/safer-firefighter-recruitment-05b766f",
+        "observed_on": "2026-10-12",
+        "purpose": "Current role recheck"
+      }
+    ]
+  },
+  {
+    "name": "Scotts Valley Fire Protection District",
+    "changes": [
+      {
+        "field": "medic",
+        "before": "preferred",
+        "after": "required",
+        "source_url": "https://www.scottsvalleyfire.com/wp-content/uploads/2026/09/SVFPD-Employment-Information-and-Application-Fillable-10-2026.pdf",
+        "observed_on": "2026-10-12",
+        "purpose": "Entry-level California paramedic license requirement verified in current linked packet"
+      },
+      {
+        "field": "requirements_scope",
+        "before": null,
+        "after": "The September 2026 entry/lateral Firefighter/Paramedic packet closed October 9, 2026. Entry applicants needed a current California paramedic license; lateral applicants needed paramedic education and ability to license in California by appointment plus 24 months paid fire experience. CPAT within six months at exam; academy is desirable for entry, with training after hire for eligible candidates.",
+        "source_url": "https://www.scottsvalleyfire.com/wp-content/uploads/2026/09/SVFPD-Employment-Information-and-Application-Fillable-10-2026.pdf",
+        "observed_on": "2026-10-12",
+        "purpose": "Historical role-specific eligibility"
+      },
+      {
+        "field": "hiring",
+        "before": "The district posts combined entry and lateral Firefighter/Paramedic eligibility-list recruitments on its own site, applied for by paper packet.",
+        "after": "The linked September 2026 entry/lateral packet closed October 9, 2026. It anticipates up to four vacancies over six to twelve months and a one-year list. Email, mail and in-person submissions were accepted. The live openings page still displays the role; confirm any new application window directly.",
+        "source_url": "https://www.scottsvalleyfire.com/wp-content/uploads/2026/09/SVFPD-Employment-Information-and-Application-Fillable-10-2026.pdf",
+        "observed_on": "2026-10-12",
+        "purpose": "Closed-cycle and homepage mismatch made visible"
+      },
+      {
+        "field": "hiring_window_closed",
+        "before": null,
+        "after": true,
+        "source_url": "https://www.scottsvalleyfire.com/wp-content/uploads/2026/09/SVFPD-Employment-Information-and-Application-Fillable-10-2026.pdf",
+        "observed_on": "2026-10-12",
+        "purpose": "Specific packet is closed"
+      },
+      {
+        "field": "evidence_url",
+        "before": "https://www.scottsvalleyfire.com/wp-content/uploads/2026/02/SVFPD-Employment-Information-and-Application-Fillable-1.pdf",
+        "after": "https://www.scottsvalleyfire.com/wp-content/uploads/2026/09/SVFPD-Employment-Information-and-Application-Fillable-10-2026.pdf",
+        "source_url": "https://www.scottsvalleyfire.com/wp-content/uploads/2026/09/SVFPD-Employment-Information-and-Application-Fillable-10-2026.pdf",
+        "observed_on": "2026-10-12",
+        "purpose": "New September packet, replacing February cycle"
+      },
+      {
+        "field": "hiring_asof",
+        "before": "2026-02",
+        "after": "2026-10-12",
+        "source_url": "https://www.scottsvalleyfire.com/wp-content/uploads/2026/09/SVFPD-Employment-Information-and-Application-Fillable-10-2026.pdf",
+        "observed_on": "2026-10-12",
+        "purpose": "Fresh packet verification"
+      }
+    ]
+  },
+  {
+    "name": "Alameda County Fire Department",
+    "changes": [
+      {
+        "field": "evidence_url",
+        "before": "https://www.jobapscloud.com/Alameda/sup/BulPreview.asp?R1=25&R2=8137&R3=01",
+        "after": "https://www.jobapscloud.com/Alameda/sup/bulpreview.asp?R1=26&R2=8137&R3=01",
+        "source_url": "https://www.jobapscloud.com/Alameda/sup/bulpreview.asp?R1=26&R2=8137&R3=01",
+        "observed_on": "2026-10-12",
+        "purpose": "Current recruitment, replacing older cycle"
+      },
+      {
+        "field": "hiring",
+        "before": "Periodic Firefighter Recruit (EMT) and Firefighter Recruit (Paramedic) openings posted on the County of Alameda JobAPS site, filled from the FCTC Statewide Eligibility List.",
+        "after": "Recruitment 26-8137-01 Firefighter Recruit-EMT opened September 28 and closes November 13, 2026 at 5 p.m. Confirm current status in the official bulletin.",
+        "source_url": "https://www.jobapscloud.com/Alameda/sup/bulpreview.asp?R1=26&R2=8137&R3=01",
+        "observed_on": "2026-10-12",
+        "purpose": "Date-bounded current recruitment"
+      },
+      {
+        "field": "requirements_scope",
+        "before": null,
+        "after": "An accepted active California EMT/AEMT, California paramedic, National Registry EMT or National Registry paramedic credential is required at filing. Eligible National Registry applicants must obtain the specified California credential within 90 days of a conditional offer. Current FCTC SEL and CPAT within 12 months at filing; FF I course is desirable, not a minimum requirement.",
+        "source_url": "https://www.jobapscloud.com/Alameda/sup/bulpreview.asp?R1=26&R2=8137&R3=01",
+        "observed_on": "2026-10-12",
+        "purpose": "Accepted credential alternatives and timing"
+      },
+      {
+        "field": "hiring_asof",
+        "before": "2026-08-13",
+        "after": "2026-10-12",
+        "source_url": "https://www.jobapscloud.com/Alameda/sup/bulpreview.asp?R1=26&R2=8137&R3=01",
+        "observed_on": "2026-10-12",
+        "purpose": "Current role recheck"
+      }
+    ]
+  },
+  {
+    "name": "Stockton Fire Department",
+    "changes": [
+      {
+        "field": "emt",
+        "before": "unverified",
+        "after": "yes",
+        "source_url": "https://www.governmentjobs.com/careers/stockton/jobs/5379384/firefighter-trainee-emt",
+        "observed_on": "2026-10-12",
+        "purpose": "EMT required at application for cited historical EMT trainee cycle"
+      },
+      {
+        "field": "evidence_url",
+        "before": "https://www.fctconline.org/participating-departments/",
+        "after": "https://www.governmentjobs.com/careers/stockton/jobs/5379384/firefighter-trainee-emt",
+        "source_url": "https://www.governmentjobs.com/careers/stockton/jobs/5379384/firefighter-trainee-emt",
+        "observed_on": "2026-10-12",
+        "purpose": "Direct role bulletin"
+      },
+      {
+        "field": "hiring",
+        "before": "Firefighter recruitments are posted on the City of Stockton NeoGov portal.",
+        "after": "The July 2026 Firefighter Trainee/EMT cycle closed after its applicant limit was reached. It is historical recruitment evidence; do not infer the requirements or dates of a future cycle.",
+        "source_url": "https://www.governmentjobs.com/careers/stockton/jobs/5379384/firefighter-trainee-emt",
+        "observed_on": "2026-10-12",
+        "purpose": "Closed historical bulletin"
+      },
+      {
+        "field": "hiring_window_closed",
+        "before": null,
+        "after": true,
+        "source_url": "https://www.governmentjobs.com/careers/stockton/jobs/5379384/firefighter-trainee-emt",
+        "observed_on": "2026-10-12",
+        "purpose": "Specific historical cycle, not all future roles"
+      },
+      {
+        "field": "requirements_scope",
+        "before": null,
+        "after": "The July 2026 Trainee/EMT bulletin required California or National Registry EMT at application, FCTC SEL/written and CPAT within its specified dates. The separate paramedic track had different licensure requirements.",
+        "source_url": "https://www.governmentjobs.com/careers/stockton/jobs/5379384/firefighter-trainee-emt",
+        "observed_on": "2026-10-12",
+        "purpose": "Role and cycle specific"
+      },
+      {
+        "field": "hiring_asof",
+        "before": "2026-08-13",
+        "after": "2026-10-12",
+        "source_url": "https://www.governmentjobs.com/careers/stockton/jobs/5379384/firefighter-trainee-emt",
+        "observed_on": "2026-10-12",
+        "purpose": "Current check of historical cycle"
+      }
+    ]
+  }
+]

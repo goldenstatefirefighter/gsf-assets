@@ -1,0 +1,20 @@
+PASS 457 midyear calculation uses YTD and remaining checks
+PASS 457 age boundaries preserve 2026 catch-up limits
+PASS 457 reached limit, no checks, and excess states are explicit
+PASS 457 rejects missing YTD and impossible remaining-check counts
+PASS qualified OT contains all 7 through 28 day work periods
+PASS qualified OT normal and phaseout boundary arithmetic
+PASS qualified OT supports 21-day threshold and uses entered regular rate
+PASS qualified OT rejects negative hours but permits negative MAGI
+PASS qualified OT MFS branch and 2025 through 2028 notice remain explicit
+PASS qualified OT preserves the FLSA minimum inside double-time pay
+PASS qualified OT annual-hours input includes qualifying double-time hours
+PASS fee drag normal arithmetic still matches independent monthly model
+PASS fee drag rejects either blank fee and accepts explicit zero
+PASS fee drag equal-fee and negative-fee boundaries
+PASS all tools expose semantic forms, live errors, live results, and linked labels
+PASS 457 positive future contributions and compensation ceiling affect all outputs
+PASS pension ages, completed quarters, caps and eligibility remain explicit
+PASS fee equality yields zero investment growth while contributions increase balance
+
+18 test groups passed.

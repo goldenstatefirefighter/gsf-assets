@@ -1,0 +1,230 @@
+<!-- GOLDEN STATE FIREFIGHTER - Fee Drag Calculator. Paste into a CODE BLOCK. Self-contained.
+     Pairs with /learn/457b-fees-annuity-audit. Hypothetical illustration only, not a projection or advice.
+     No external libraries; chart is vanilla canvas. -->
+<div class="gsf gsf-full">
+<div id="gsffee">
+  <style>
+    #gsffee{--nv:#101C33;--nv2:#0B1425;--ch:#1E2128;--br:#C08A2D;--brh:#D7A649;--em:#B23A2E;--bo:#F3EFE6;--dm:#B9BCC4;--fd:#8A909C;--ln:rgba(243,239,230,.13);
+      --disp:"Saira Condensed","Bahnschrift",system-ui,sans-serif;--body:"Public Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",Consolas,monospace;max-width:640px;margin:0 auto;font-family:var(--body)}
+    #gsffee *{box-sizing:border-box}
+    #gsffee .card{background:var(--ch);border:1px solid var(--ln);border-radius:10px;padding:30px 28px}
+    #gsffee .eye{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--br);margin:0 0 6px}
+    #gsffee h3{font-family:var(--disp);text-transform:uppercase;font-weight:700;color:var(--bo);font-size:23px;margin:0 0 6px;line-height:1.05}
+    #gsffee p.sub{color:var(--dm);font-size:14px;margin:0 0 18px;line-height:1.5}
+    #gsffee .punch{background:var(--nv2);border:1px solid var(--br);border-radius:8px;padding:13px 16px;margin:0 0 22px}
+    #gsffee .punch p{margin:0;font-family:var(--disp);text-transform:uppercase;font-weight:600;letter-spacing:.04em;color:var(--bo);font-size:16px;line-height:1.3}
+    #gsffee .fld{margin:0 0 17px}
+    #gsffee label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dm);margin:0 0 7px}
+    #gsffee label .hint{text-transform:none;letter-spacing:0;color:var(--fd);font-size:11px}
+    #gsffee label .liveval{float:right;color:var(--br);letter-spacing:.04em}
+    #gsffee select,#gsffee input[type=number]{width:100%;background:var(--nv);border:1px solid var(--ln);border-radius:6px;color:var(--bo);font-family:var(--body);font-size:16px;padding:12px 14px}
+    #gsffee select:focus-visible,#gsffee input:focus-visible,#gsffee .go:focus-visible{outline:2px solid var(--brh);outline-offset:2px;border-color:var(--brh)}
+    #gsffee [aria-invalid="true"]{border-color:#FF9B90}
+    #gsffee input[type=range]{width:100%;accent-color:var(--br);margin:4px 0 0;background:transparent}
+    #gsffee .row{display:flex;gap:14px}
+    #gsffee .row .fld{flex:1}
+    #gsffee .go{font-family:var(--disp);text-transform:uppercase;font-weight:600;letter-spacing:.04em;font-size:15px;background:var(--em);color:var(--bo);border:0;border-radius:5px;padding:14px 22px;cursor:pointer;margin-top:8px}
+    #gsffee .go:hover{background:#c64b3e}
+    #gsffee .res{margin-top:24px;border-top:1px solid var(--ln);padding-top:22px}
+    #gsffee .res.hidden,#gsffee .hidden{display:none}
+    #gsffee .stat{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--ln)}
+    #gsffee .stat .l{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fd)}
+    #gsffee .stat .v{font-family:var(--disp);font-weight:700;color:var(--br);font-size:24px;text-align:right}
+    #gsffee .stat.big .v{font-size:30px;color:var(--brh)}
+    #gsffee .stat.loss .v{color:var(--em)}
+    #gsffee .chartwrap{margin:18px 0 4px}
+    #gsffee canvas{width:100%;height:230px;display:block}
+    #gsffee .legend{display:flex;gap:18px;flex-wrap:wrap;margin:8px 0 0}
+    #gsffee .legend span{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--dm)}
+    #gsffee .legend i{display:inline-block;width:18px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px}
+    #gsffee .flag{background:rgba(192,138,45,.10);border:1px solid var(--br);border-radius:8px;padding:12px 15px;margin:16px 0 0}
+    #gsffee .flag .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--br);display:block;margin-bottom:5px}
+    #gsffee .flag p{margin:0 0 7px;color:var(--bo);font-size:13px;line-height:1.5}
+    #gsffee .flag p:last-child{margin:0}
+    #gsffee .err{color:#FF9B90;font-family:var(--body);font-size:14px;margin:10px 0 0}
+    #gsffee .fine{font-family:var(--mono);font-size:10.5px;color:var(--fd);line-height:1.65;letter-spacing:.02em;margin-top:20px}
+    #gsffee .fine strong{color:var(--dm)}
+    @media (max-width:520px){#gsffee .row{flex-direction:column;gap:0}#gsffee .card{padding:24px 18px}}
+  </style>
+  <div class="card">
+    <p class="eye">Fee drag calculator</p>
+    <h3>What your plan's fees really cost</h3>
+    <p class="sub">Compare your plan's all-in annual fee against a low-cost alternative over your remaining career. Same money in, same market, different fee.</p>
+    <div class="punch"><p>A 1% fee sounds small. Compounded over a career it is not.</p></div>
+
+    <form id="gsffee-form" novalidate>
+    <div class="row">
+      <div class="fld">
+        <label for="gsffee-bal">Current balance <span class="hint">($)</span></label>
+        <input id="gsffee-bal" type="number" inputmode="numeric" step="1000" min="0" placeholder="e.g. 40000" aria-describedby="gsffee-err">
+      </div>
+      <div class="fld">
+        <label for="gsffee-mo">Monthly contribution <span class="hint">($)</span></label>
+        <input id="gsffee-mo" type="number" inputmode="numeric" step="50" min="0" placeholder="e.g. 800" aria-describedby="gsffee-err">
+      </div>
+    </div>
+
+    <div class="fld">
+      <label for="gsffee-yrs">Years until retirement <span class="liveval" id="gsffee-yrsval">20 years</span></label>
+      <input id="gsffee-yrs" type="range" min="1" max="40" step="1" value="20">
+    </div>
+
+    <div class="row">
+      <div class="fld">
+        <label for="gsffee-fee1">Your plan's all-in annual fee <span class="hint">(%)</span></label>
+        <input id="gsffee-fee1" type="number" inputmode="decimal" step="0.05" min="0" max="5" value="1.2" required aria-describedby="gsffee-err">
+      </div>
+      <div class="fld">
+        <label for="gsffee-fee2">Comparison fee <span class="hint">(%)</span></label>
+        <input id="gsffee-fee2" type="number" inputmode="decimal" step="0.05" min="0" max="5" value="0.10" required aria-describedby="gsffee-err">
+      </div>
+    </div>
+
+    <div class="fld">
+      <label for="gsffee-ret">Assumed gross annual return <span class="hint">(illustration only, returns are not guaranteed)</span> <span class="liveval" id="gsffee-retval">6%</span></label>
+      <input id="gsffee-ret" type="range" min="3" max="9" step="0.5" value="6">
+    </div>
+
+    <button class="go" id="gsffee-go" type="submit" aria-controls="gsffee-res">Show the drag</button>
+    <p class="err hidden" id="gsffee-err" role="alert" aria-live="assertive"></p>
+    </form>
+
+    <div class="res hidden" id="gsffee-res" role="status" aria-live="polite" aria-atomic="true" tabindex="-1">
+      <div class="stat"><span class="l">Ending balance at <span id="gsffee-lowlbl"></span> fee</span><span class="v" id="gsffee-low"></span></div>
+      <div class="stat"><span class="l">Ending balance at <span id="gsffee-hilbl"></span> fee</span><span class="v" id="gsffee-hi"></span></div>
+      <div class="stat big loss"><span class="l">Cost of the higher fee</span><span class="v" id="gsffee-diff"></span></div>
+      <div class="stat" id="gsffee-yrsrow"><span class="l">That equals</span><span class="v" id="gsffee-yrseq"></span></div>
+      <div class="chartwrap"><canvas id="gsffee-chart"></canvas></div>
+      <div class="legend">
+        <span><i style="background:#C08A2D"></i><span id="gsffee-leg1"></span></span>
+        <span><i style="background:#B23A2E"></i><span id="gsffee-leg2"></span></span>
+      </div>
+      <div class="flag hidden" id="gsffee-flags"></div>
+      <p class="fine" id="gsffee-fine"></p>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var $=function(id){return document.getElementById(id);};
+    function money(n){return '$'+Math.round(n).toLocaleString('en-US');}
+    function num(id){var v=parseFloat($(id).value); return isNaN(v)?0:v;}
+    function clearErr(){
+      var e=$('gsffee-err'); e.classList.add('hidden'); e.textContent='';
+      ['gsffee-bal','gsffee-mo','gsffee-fee1','gsffee-fee2','gsffee-yrs','gsffee-ret'].forEach(function(id){$(id).removeAttribute('aria-invalid');});
+    }
+    function showErr(msg,id){
+      var e=$('gsffee-err'); e.textContent=msg; e.classList.remove('hidden'); $('gsffee-res').classList.add('hidden');
+      if(id){$(id).setAttribute('aria-invalid','true'); $(id).focus();}
+    }
+
+    // live slider labels
+    $('gsffee-yrs').addEventListener('input',function(){ $('gsffee-yrsval').textContent=this.value+(this.value==='1'?' year':' years'); });
+    $('gsffee-ret').addEventListener('input',function(){ $('gsffee-retval').textContent=parseFloat(this.value)+'%'; });
+
+    // yearly balance path with monthly compounding at net return (gross - fee)
+    function path(bal,mo,years,netPct){
+      var r=netPct/100/12, out=[bal], b=bal;
+      for(var y=1;y<=years;y++){
+        for(var m=0;m<12;m++){ b=b*(1+r)+mo; }
+        out.push(b);
+      }
+      return out;
+    }
+
+    function drawChart(lo,hi,years){
+      var cv=$('gsffee-chart'), dpr=window.devicePixelRatio||1;
+      var w=cv.clientWidth||560, h=230;
+      cv.width=w*dpr; cv.height=h*dpr;
+      var cx=cv.getContext('2d'); cx.scale(dpr,dpr); cx.clearRect(0,0,w,h);
+      var padL=8,padR=8,padT=14,padB=24;
+      var maxV=Math.max(Math.max.apply(null,lo),Math.max.apply(null,hi),1);
+      function X(i){return padL+(w-padL-padR)*(i/years);}
+      function Y(v){return padT+(h-padT-padB)*(1-v/maxV);}
+      // gridlines at 0, mid, max value
+      cx.strokeStyle='rgba(243,239,230,.10)'; cx.lineWidth=1;
+      [0,.5,1].forEach(function(f){
+        var y=Y(maxV*f); cx.beginPath(); cx.moveTo(padL,y); cx.lineTo(w-padR,y); cx.stroke();
+      });
+      // year labels
+      cx.fillStyle='#8A909C'; cx.font='10px "IBM Plex Mono",Consolas,monospace'; cx.textAlign='center';
+      [0,Math.round(years/2),years].forEach(function(yr){ cx.fillText(yr===0?'now':('yr '+yr),X(yr),h-8); });
+      // two lines
+      function line(arr,color){
+        cx.strokeStyle=color; cx.lineWidth=2.5; cx.beginPath();
+        arr.forEach(function(v,i){ var x=X(i),y=Y(v); if(i===0)cx.moveTo(x,y); else cx.lineTo(x,y); });
+        cx.stroke();
+        cx.fillStyle=color; cx.beginPath(); cx.arc(X(arr.length-1),Y(arr[arr.length-1]),3.5,0,Math.PI*2); cx.fill();
+      }
+      line(hi,'#B23A2E');  // higher-fee scenario, ember
+      line(lo,'#C08A2D');  // lower-fee scenario, brass
+    }
+
+    $('gsffee-form').addEventListener('submit',function(event){
+      event.preventDefault(); clearErr();
+      var bal=num('gsffee-bal'), mo=num('gsffee-mo'), years=parseInt($('gsffee-yrs').value,10);
+      if($('gsffee-fee1').value.trim()===''){ return showErr('Enter your plan\'s all-in annual fee. Enter 0 only if the documented fee is zero.','gsffee-fee1'); }
+      if($('gsffee-fee2').value.trim()===''){ return showErr('Enter the comparison annual fee. Enter 0 only if the documented fee is zero.','gsffee-fee2'); }
+      var fee1=num('gsffee-fee1'), fee2=num('gsffee-fee2'), gross=num('gsffee-ret');
+      if(!isFinite(bal)||!isFinite(mo)||!isFinite(fee1)||!isFinite(fee2)){return showErr('Enter finite amounts and annual fee percentages.','gsffee-bal');}
+      if(!isFinite(years)||years<1||years>40||years!==Math.floor(years)){return showErr('Choose a horizon from 1 through 40 years.','gsffee-yrs');}
+      if(!isFinite(gross)||gross<3||gross>9){return showErr('Choose an illustrative gross return from 3% through 9%.','gsffee-ret');}
+      if(fee1>5){return showErr('This illustration supports an annual fee from 0% through 5%.','gsffee-fee1');}
+      if(fee2>5){return showErr('This illustration supports an annual fee from 0% through 5%.','gsffee-fee2');}
+      if(bal<0){ return showErr('Current balance cannot be negative.','gsffee-bal'); }
+      if(mo<0){ return showErr('Monthly contribution cannot be negative.','gsffee-mo'); }
+      if(bal===0&&mo===0){ return showErr('Enter a current balance, a monthly contribution, or both.','gsffee-bal'); }
+      if(fee1<0){ return showErr('Your plan fee cannot be negative.','gsffee-fee1'); }
+      if(fee2<0){ return showErr('The comparison fee cannot be negative.','gsffee-fee2'); }
+      var flags=[];
+
+      var lowFee=Math.min(fee1,fee2), highFee=Math.max(fee1,fee2);
+      var pLo=path(bal,mo,years,gross-lowFee);
+      var pHi=path(bal,mo,years,gross-highFee);
+      var endLo=pLo[pLo.length-1], endHi=pHi[pHi.length-1];
+      var diff=endLo-endHi;
+
+      if(fee1<fee2){
+        flags.push(['Your fee is the lower one','You entered a plan fee below the comparison fee. That is a good position. The chart still shows both paths; the brass line is the lower fee.']);
+      }
+      if(gross-highFee<=0){
+        flags.push(['Fee exceeds the return','The higher fee is as large as the assumed return or larger, so investment growth before contributions is zero or negative in that scenario. Contributions can still increase the balance. If that reflects a real plan, review the actual fee disclosures carefully.']);
+      }
+
+      $('gsffee-lowlbl').textContent=lowFee+'%';
+      $('gsffee-hilbl').textContent=highFee+'%';
+      $('gsffee-low').textContent=money(endLo);
+      $('gsffee-hi').textContent=money(endHi);
+      $('gsffee-diff').textContent=money(diff);
+      $('gsffee-leg1').textContent=lowFee+'% fee';
+      $('gsffee-leg2').textContent=highFee+'% fee';
+
+      // difference expressed as years of contributions
+      if(mo>0&&diff>0){
+        var yrsEq=diff/(mo*12);
+        $('gsffee-yrseq').textContent=yrsEq.toFixed(1)+' yrs of contributions';
+        $('gsffee-yrsrow').style.display='flex';
+      } else {
+        $('gsffee-yrsrow').style.display='none';
+      }
+
+      var fb=$('gsffee-flags');
+      if(flags.length){ fb.classList.remove('hidden'); fb.innerHTML=flags.map(function(f){return '<span class="k">'+f[0]+'</span><p>'+f[1]+'</p>';}).join(''); }
+      else { fb.classList.add('hidden'); fb.innerHTML=''; }
+
+      $('gsffee-fine').innerHTML='Hypothetical illustration only, not a projection, a forecast, or advice. It assumes a constant '+gross+'% gross annual return, subtracts each flat annual fee from that return, compounds monthly, and adds level monthly contributions. Actual fees may be assessed at different times and in several layers, so plan results will differ. Real returns vary and can be negative, and past performance guarantees nothing. The pre-filled fee values are illustrative examples, not any plan\'s actual fees; your plan\'s all-in cost is in its fee disclosures. <strong>Education only, not tax, legal, or investment advice. Review your actual fee disclosures with a licensed advisor or CPA. Golden State Firefighter is not affiliated with any government agency, department, retirement system, or plan provider.</strong>';
+
+      $('gsffee-res').classList.remove('hidden');
+      $('gsffee-res').focus();
+      drawChart(pLo,pHi,years);
+    });
+  })();
+  </script>
+</div>
+</div>
+<!-- REVIEW NOTE 2026-08-11 (launch-readiness pass; OWNER RELEASED THE MONEY-CLUSTER HOLD 2026-08-11, cleared for publish):
+     Core claim (a ~1% fee materially reduces ending value over 20 yrs) verified against SEC investor.gov "Understanding Fees"
+     ($100K, 4%, 20 yrs: ~$208K at 0.25% fee vs ~$179K at 1.00% fee). Compounding loop re-derived by hand and matches
+     closed-form FV to the dollar (e.g. $40K + $800/mo, 20 yrs, 6% gross: $495,084 at 0.10% vs $425,608 at 1.2%, diff $69,476).
+     All fee/return inputs are user-set assumptions and labeled as such. Fixes this pass: chart y-scale now spans full paths
+     (declining-balance edge case drew off-canvas), removed unsupported "Figures verified" line, em-dash in header comment. -->

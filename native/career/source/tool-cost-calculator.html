@@ -1,0 +1,92 @@
+<!-- GOLDEN STATE FIREFIGHTER — Cost + Timeline calculator. Paste into a CODE BLOCK. Self-contained.
+     Estimates only; costs vary widely by program and region. -->
+<div class="gsf gsf-full">
+<div id="gsfcalc">
+  <style>
+    #gsfcalc{--nv:#101C33;--nv2:#0B1425;--ch:#1E2128;--br:#C08A2D;--brh:#D7A649;--em:#B23A2E;--bo:#F3EFE6;--dm:#B9BCC4;--fd:#9AA0AC;--ln:rgba(243,239,230,.13);
+      --disp:"Saira Condensed","Bahnschrift",system-ui,sans-serif;--body:"Public Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",Consolas,monospace;max-width:640px;margin:0 auto;font-family:var(--body)}
+    #gsfcalc *{box-sizing:border-box}
+    #gsfcalc .card{background:var(--ch);border:1px solid var(--ln);border-radius:10px;padding:30px 28px}
+    #gsfcalc .eye{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--br);margin:0 0 6px}
+    #gsfcalc h3{font-family:var(--disp);text-transform:uppercase;font-weight:700;color:var(--bo);font-size:23px;margin:0 0 6px}
+    #gsfcalc p.sub{color:var(--dm);font-size:14px;margin:0 0 20px}
+    #gsfcalc .tog{display:block;width:100%;text-align:left;background:var(--nv);border:1px solid var(--ln);border-radius:6px;color:var(--bo);font-family:var(--body);font-size:15px;padding:13px 15px;margin:0 0 10px;cursor:pointer;transition:.14s;position:relative}
+    #gsfcalc .tog:hover{border-color:var(--br)}
+    #gsfcalc .tog.on{border-color:var(--br);background:rgba(192,138,45,.12)}
+    #gsfcalc .tog .bx{float:right;font-family:var(--mono);font-size:12px;color:var(--fd)}
+    #gsfcalc .tog.on .bx{color:var(--br)}
+    #gsfcalc .go{font-family:var(--disp);text-transform:uppercase;font-weight:600;letter-spacing:.04em;font-size:15px;background:var(--em);color:var(--bo);border:0;border-radius:5px;padding:14px 22px;cursor:pointer;margin-top:8px}
+    #gsfcalc .go:hover{background:#c64b3e}
+    #gsfcalc .res{margin-top:22px;border-top:1px solid var(--ln);padding-top:20px}
+    #gsfcalc .res.hidden{display:none}
+    #gsfcalc .stat{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--ln)}
+    #gsfcalc .stat .l{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fd)}
+    #gsfcalc .stat .v{font-family:var(--disp);font-weight:700;color:var(--br);font-size:24px}
+    #gsfcalc .nextbox{background:var(--nv2);border:1px solid var(--br);border-radius:8px;padding:15px 17px;margin:16px 0}
+    #gsfcalc .nextbox .k{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--br);display:block;margin-bottom:5px}
+    #gsfcalc .nextbox p{margin:0;color:var(--bo);font-size:15px}
+    #gsfcalc .breakdown{margin:14px 0;color:var(--dm);font-size:12.5px;line-height:1.55}
+    #gsfcalc .breakdown p{margin:0 0 8px}
+    #gsfcalc .fine{font-family:var(--mono);font-size:10.5px;color:var(--fd);line-height:1.6;letter-spacing:.03em;margin-top:14px}
+    #gsfcalc .fine a{color:var(--br);text-decoration:underline}
+    #gsfcalc .asof{font-family:var(--mono);font-size:10.5px;color:var(--fd);letter-spacing:.03em;margin:0 0 16px}
+    #gsfcalc .asof a{color:var(--br);text-decoration:underline}
+    #gsfcalc .rmcta{margin-top:20px;border-top:1px solid var(--ln);padding-top:18px}
+    #gsfcalc .rmcta p{color:var(--dm);font-size:14.5px;margin:0 0 12px;line-height:1.5}
+    #gsfcalc .rmcta a{display:inline-block;font-family:var(--disp);text-transform:uppercase;font-weight:600;letter-spacing:.04em;font-size:15px;background:var(--br);color:var(--nv);border-radius:5px;padding:12px 20px;text-decoration:none}
+    #gsfcalc .rmcta a:hover{background:var(--brh)}
+    #gsfcalc button:focus-visible,#gsfcalc a:focus-visible{outline:3px solid var(--bo);outline-offset:2px}
+  </style>
+  <div class="card">
+    <p class="eye">Cost + timeline estimator</p>
+    <h3>Your path to a badge</h3>
+    <p class="sub">Tap everything you have already finished. We will estimate what is left.</p>
+    <p class="asof">Named California examples checked October 12, 2026. Verify current fees before enrolling. Sources: <a href="https://www.fctconline.org/feescholarship-info/" target="_blank" rel="noopener">FCTC fees</a>, <a href="https://www.palomar.edu/eme/fees/" target="_blank" rel="noopener">Palomar EMT</a>, <a href="https://www.venturacollege.edu/departments/academic/emergency-medical-technician/emt-program-costs" target="_blank" rel="noopener">Ventura EMT</a>, <a href="https://www.elcamino.edu/academics/divisions/kinesiology-athletics-and-public-safety/fire-academy/classes.php" target="_blank" rel="noopener">El Camino academy</a>, <a href="https://theacademy.ca.gov/firefighter_1_academy/" target="_blank" rel="noopener">South Bay academy</a>.</p>
+    <div id="gsfcalc-togs"></div>
+    <button class="go" id="gsfcalc-go">Estimate my path</button>
+    <div class="res hidden" id="gsfcalc-res" role="status" aria-live="polite" aria-atomic="true">
+      <div class="stat"><span class="l">Named-example subtotal</span><span class="v" id="gsfcalc-cost"></span></div>
+      <div class="stat"><span class="l">Prep time left</span><span class="v" id="gsfcalc-time"></span></div>
+      <div class="nextbox"><span class="k">Your next step</span><p id="gsfcalc-next"></p></div>
+      <div class="breakdown" id="gsfcalc-breakdown"></div>
+      <p class="fine" id="gsfcalc-fine"></p>
+      <div class="rmcta">
+        <p>Get the two-page EMT-to-Badge roadmap to compare the steps and plan your next move.</p>
+        <a href="/free-roadmap">Get the free EMT-to-Badge Roadmap &rarr;</a>
+      </div>
+    </div>
+  </div>
+  <script>
+  (function(){
+    // ordered steps; each: key,label,costLo,costHi,moLo,moHi,next
+    var STEPS=[
+      {key:'emt',label:'EMT certification',cl:800,ch:1475,ml:2,mh:4,basis:'Palomar publishes an estimated $800 course total. Its list does not establish every outside certification charge; confirm exam, fingerprint and local certification fees separately. Ventura lists $1,163 for its program plus $104 NREMT, $75 Live Scan, and $133 California certification, or $1,475 from the listed items.',next:'Check your target departments, then complete EMT if they require it. EMT is a common entry credential, but it is not universal at application.'},
+      {key:'academy',label:'Fire academy / Firefighter I',cl:4000,ch:7929,ml:3,mh:6,basis:'El Camino publishes a $4,000 to $5,000 academy estimate. South Bay lists $7,730 for academy, PPE and uniform plus its mandatory $199 preparation course, or $7,929 before conditional Visa/Mastercard charges. Its listed full-time and part-time schedules differ; the October 3, 2026 to March 26, 2027 part-time academy is about six months. This range compares named programs and is not a statewide market range.',next:'Check each target department before self-sponsoring an academy. Some require Firefighter I before application; others put recruits through a paid department academy.'},
+      {key:'cpat',label:'CPAT (physical test)',cl:160,ch:160,ml:1,mh:2,basis:'FCTC lists the CPAT at $160. Retests, optional practice, travel, and non-CPAT physical tests are not included.',next:'If your target departments use CPAT, train for and pass the $160 test, then keep the card current. Some departments use Biddle, BPAT, VCPAT, or another physical test instead.'},
+      {key:'fctc',label:'FCTC written test / SEL eligibility',cl:50,ch:50,ml:0,mh:1,basis:'FCTC lists the written test at $50. Optional preparation, retests, and travel are not included.',next:'For FCTC departments, pass the written test, hold a current CPAT, complete your profile, and keep every required document current for SEL eligibility.'}
+    ];
+    var togs=document.getElementById('gsfcalc-togs'),state={};
+    STEPS.forEach(function(s){
+      state[s.key]=false;
+      var b=document.createElement('button');b.className='tog';b.type='button';b.setAttribute('aria-pressed','false');
+      b.innerHTML='<span>'+s.label+'</span><span class="bx">not yet</span>';
+      b.onclick=function(){state[s.key]=!state[s.key];b.classList.toggle('on',state[s.key]);b.setAttribute('aria-pressed',state[s.key]?'true':'false');b.querySelector('.bx').textContent=state[s.key]?'done':'not yet';};
+      togs.appendChild(b);
+    });
+    function money(n){return '$'+n.toLocaleString();}
+    document.getElementById('gsfcalc-go').addEventListener('click',function(){
+      var cl=0,ch=0,ml=0,mh=0,next=null,remaining=[];
+      STEPS.forEach(function(s){ if(!state[s.key]){ cl+=s.cl;ch+=s.ch;ml+=s.ml;mh+=s.mh;remaining.push(s);if(!next)next=s.next; } });
+      document.getElementById('gsfcalc-cost').textContent = (ch===0)? '$0' : (cl===ch)? money(cl) : money(cl)+' to '+money(ch);
+      document.getElementById('gsfcalc-time').textContent = (mh===0)? 'None' : (ml===mh)? ml+' mo' : ml+' to '+mh+' mo';
+      document.getElementById('gsfcalc-next').textContent = next || 'You have completed these four preparation steps. Now follow each department’s current bulletin, apply broadly, and prepare for its own interviews and background process.';
+      document.getElementById('gsfcalc-breakdown').innerHTML = remaining.length
+        ? remaining.map(function(s){return '<p><b>'+s.label+': '+(s.cl===s.ch?money(s.cl):money(s.cl)+' to '+money(s.ch))+'.</b> '+s.basis+'</p>';}).join('')
+        : '<p>No fees from these four preparation steps remain in the estimate.</p>';
+      document.getElementById('gsfcalc-fine').innerHTML = 'Named examples checked October 12, 2026. Subtotal for these four steps: $5,010 to $9,614. The low combines Palomar EMT, El Camino academy, FCTC written, and CPAT. The high combines Ventura EMT with its listed external certification fees, South Bay academy, FCTC written, and CPAT. The low EMT example does not establish every outside certification charge. The mandatory South Bay preparation course is included; its conditional 3% Visa/Mastercard payment charge is excluded. Excludes paramedic school, living costs, lost wages, travel, retests, and department-specific expenses. Verify every current fee with the provider.';
+      document.getElementById('gsfcalc-res').classList.remove('hidden');
+    });
+  })();
+  </script>
+</div>
+</div>

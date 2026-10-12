@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-12",
+  "baseline": "4de672f3d092fb55d16355750f218fca05a2d57c",
+  "branch": "fix/confirmed-audit-2026-10-12",
+  "directory_records_changed": 36,
+  "total_records": 371,
+  "article_edits": 18,
+  "articles": 10,
+  "production_release": false,
+  "police_healthcare_excluded": true
+}

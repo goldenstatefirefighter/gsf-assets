@@ -1,0 +1,38 @@
+{
+  "not_completed": [
+    {
+      "scope": "Authenticated CMS publication and browser QA",
+      "blocker": "Shared browser turn has not been granted; exact native/current-block parity must be reconciled."
+    },
+    {
+      "scope": "Financial/legal article assertions beyond the18 exact prepared edits",
+      "blocker": "Remaining F03/F05/F07/F08/F10 and legal disclosure/medical-offer passages need complete exact before/after and source review; no clearance to publish."
+    },
+    {
+      "scope": "SB296 current status/operative details",
+      "blocker": "Fresh signing/operative text review required. Preserve September27 AB1054 veto correction. No legislative edits staged from inaccessible text."
+    },
+    {
+      "scope": "Directory remaining role/contact/identity candidates",
+      "blocker": "Only source-verified fields were changed. Lompoc leadership inaccessible; Albany/SouthernMarin effective-date conflicts, Calimesa conflict, Cathedral current bulletin, LosOsos/Guadalupe/contact-purpose remainder and truncated180character notes await complete worksheets."
+    },
+    {
+      "scope": "Resources/discounts/roadmap/editorial claims and trust/alt/nav/cart",
+      "blocker": "These findings are outside this verified code batch and still need exact current-block edits or unavailable product evidence. Earlier staged September proposals were not blindly applied."
+    },
+    {
+      "scope": "NTN fee removal recommendation",
+      "blocker": "Conflicts with owner September14 decision to KEEP clearly labeled estimated fees. Existing approved estimates preserved; needs explicit decision change."
+    }
+  ],
+  "partially_completed": [
+    "GSF007–009: current source-backed exact article plan and Alameda/Stockton directory role guidance, CMS pending",
+    "GSF010/020/021: derived tri-state counts, visible sources and fallback; all truncated requirement notes not reconstructed",
+    "GSF011/033/034–043: verified agency/contact/chief/recruitment/role fields; unresolved candidates retained",
+    "GSF014: benefit-specific GI Bill exact edits prepared",
+    "GSF019: quiz state/back/reset bug fixed and tested",
+    "GSF024: safety-qualified question timing drafted, primary-source access/final review pending",
+    "Financial calculators:457 future/YTD/comp limits,7(k) route/regular-rate/double-time/comp-time/reporting,fee equality/bounds,pension age/quarter/cap/eligibility implemented and tested; native CMS pending"
+  ],
+  "no_audit_closure": true
+}

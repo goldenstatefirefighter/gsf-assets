@@ -1,0 +1,260 @@
+<!-- GOLDEN STATE FIREFIGHTER - Qualified Overtime Estimator (2026), IRC Sec. 225 education tool. Paste into a CODE BLOCK. Self-contained.
+     Pairs with /learn/no-tax-on-overtime-firefighters. Education only. Not affiliated with the IRS or any department. Not tax advice.
+     Rules: 26 USC 225 and current IRS qualified-overtime guidance (caps $12,500/$25,000; phaseout $100 per whole $1,000 of MAGI over $150k/$300k);
+     29 CFR 553.230 / DOL Fact Sheet #8 (FLSA 7(k) work periods may run 7 through 28 days). W-2 Box 12 code TT controls 2026 returns.
+     REVIEW 2026-08-11: all figures re-verified against 26 USC 225, Schedule 1-A instructions (phaseout rounds DOWN to whole $1,000), 29 CFR 553.230,
+     and IRS 2026 W-2/Pub 15-T guidance. Withholding sentence corrected (2026 W-4 Step 4(b) CAN account for the deduction).
+     OWNER RELEASED THE MONEY-CLUSTER HOLD 2026-08-11: cleared for publish. -->
+<div class="gsf gsf-full">
+<div id="gsfqot">
+  <style>
+    #gsfqot{--nv:#101C33;--nv2:#0B1425;--ch:#1E2128;--br:#C08A2D;--brh:#D7A649;--em:#B23A2E;--bo:#F3EFE6;--dm:#B9BCC4;--fd:#8A909C;--ln:rgba(243,239,230,.13);
+      --disp:"Saira Condensed","Bahnschrift",system-ui,sans-serif;--body:"Public Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",Consolas,monospace;max-width:640px;margin:0 auto;font-family:var(--body)}
+    #gsfqot *{box-sizing:border-box}
+    #gsfqot .card{background:var(--ch);border:1px solid var(--ln);border-radius:10px;padding:30px 28px}
+    #gsfqot .eye{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--br);margin:0 0 6px}
+    #gsfqot h3{font-family:var(--disp);text-transform:uppercase;font-weight:700;color:var(--bo);font-size:23px;margin:0 0 6px;line-height:1.05}
+    #gsfqot p.sub{color:var(--dm);font-size:14px;margin:0 0 22px;line-height:1.5}
+    #gsfqot .warn{background:rgba(178,58,46,.10);border:1px solid rgba(178,58,46,.5);border-radius:8px;padding:12px 15px;margin:0 0 22px}
+    #gsfqot .warn p{margin:0 0 6px;color:var(--bo);font-size:12.5px;line-height:1.55}
+    #gsfqot .warn p:last-child{margin:0}
+    #gsfqot .fld{margin:0 0 17px}
+    #gsfqot label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dm);margin:0 0 7px}
+    #gsfqot label .hint{text-transform:none;letter-spacing:0;color:var(--fd);font-size:11px}
+    #gsfqot .cap{color:var(--fd);font-size:12px;line-height:1.5;margin:7px 0 0}
+    #gsfqot select,#gsfqot input{width:100%;background:var(--nv);border:1px solid var(--ln);border-radius:6px;color:var(--bo);font-family:var(--body);font-size:16px;padding:12px 14px}
+    #gsfqot select:focus-visible,#gsfqot input:focus-visible,#gsfqot .go:focus-visible{outline:2px solid var(--brh);outline-offset:2px;border-color:var(--brh)}
+    #gsfqot [aria-invalid="true"]{border-color:#FF9B90}
+    #gsfqot .row{display:flex;gap:14px}
+    #gsfqot .row .fld{flex:1}
+    #gsfqot .go{font-family:var(--disp);text-transform:uppercase;font-weight:600;letter-spacing:.04em;font-size:15px;background:var(--em);color:var(--bo);border:0;border-radius:5px;padding:14px 22px;cursor:pointer;margin-top:8px}
+    #gsfqot .go:hover{background:#c64b3e}
+    #gsfqot .res{margin-top:24px;border-top:1px solid var(--ln);padding-top:22px}
+    #gsfqot .res.hidden,#gsfqot .hidden{display:none}
+    #gsfqot .stat{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--ln)}
+    #gsfqot .stat .l{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fd)}
+    #gsfqot .stat .v{font-family:var(--disp);font-weight:700;color:var(--br);font-size:24px;text-align:right}
+    #gsfqot .stat.big .v{font-size:30px;color:var(--brh)}
+    #gsfqot .noel{font-family:var(--disp);text-transform:uppercase;font-weight:700;color:#FF9B90;font-size:24px;margin:0 0 8px}
+    #gsfqot .flag{background:rgba(192,138,45,.10);border:1px solid var(--br);border-radius:8px;padding:12px 15px;margin:16px 0 0}
+    #gsfqot .flag .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--br);display:block;margin-bottom:5px}
+    #gsfqot .flag p{margin:0 0 7px;color:var(--bo);font-size:13px;line-height:1.5}
+    #gsfqot .flag p:last-child{margin:0}
+    #gsfqot .must{background:var(--nv2);border:1px solid var(--em);border-radius:8px;padding:13px 16px;margin:18px 0 0}
+    #gsfqot .must .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#FF9B90;display:block;margin-bottom:6px}
+    #gsfqot .must p{margin:0 0 7px;color:var(--bo);font-size:13px;line-height:1.55}
+    #gsfqot .must p:last-child{margin:0}
+    #gsfqot .err{color:#FF9B90;font-family:var(--body);font-size:14px;margin:10px 0 0}
+    #gsfqot .fine{font-family:var(--mono);font-size:10.5px;color:var(--fd);line-height:1.65;letter-spacing:.02em;margin-top:20px}
+    #gsfqot .fine strong{color:var(--dm)}
+    @media (max-width:520px){#gsfqot .row{flex-direction:column;gap:0}#gsfqot .card{padding:24px 18px}}
+  </style>
+  <div class="card">
+    <p class="eye">Qualified overtime estimator, 2026</p>
+    <h3>How much of your OT actually qualifies</h3>
+    <p class="sub">The "no tax on overtime" deduction (IRC Section 225) only counts the premium half of overtime the FLSA itself requires, and fire protection runs under the special 7(k) rules. Run your numbers and see what actually qualifies.</p>
+    <div class="warn"><p>Contract or MOU overtime below the applicable FLSA 7(k) ceiling does not qualify. A paystub label alone is not enough to identify qualified hours, so confirm the count with payroll.</p><p>The federal deduction is temporary for tax years 2025 through 2028 under current law. This calculator uses 2026 rules and reporting.</p></div>
+
+    <form id="gsfqot-form" novalidate>
+    <div class="row">
+      <div class="fld">
+        <label for="gsfqot-fs">Filing status</label>
+        <select id="gsfqot-fs" aria-describedby="gsfqot-err">
+          <option value="single" selected>Single (or head of household)</option>
+          <option value="joint">Married filing jointly</option>
+          <option value="mfs">Married filing separately</option>
+        </select>
+      </div>
+      <div class="fld">
+        <label for="gsfqot-magi">Estimated 2026 MAGI <span class="hint">($)</span></label>
+        <input id="gsfqot-magi" type="number" inputmode="numeric" step="1000" placeholder="e.g. 165000" required aria-describedby="gsfqot-err">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="fld">
+        <label for="gsfqot-wp">Your department's work period</label>
+        <select id="gsfqot-wp" aria-describedby="gsfqot-wp-help gsfqot-err">
+          <option value="28" selected>28 days (ceiling: 212 hours)</option>
+          <option value="27">27 days (ceiling: 204 hours)</option>
+          <option value="26">26 days (ceiling: 197 hours)</option>
+          <option value="25">25 days (ceiling: 189 hours)</option>
+          <option value="24">24 days (ceiling: 182 hours)</option>
+          <option value="23">23 days (ceiling: 174 hours)</option>
+          <option value="22">22 days (ceiling: 167 hours)</option>
+          <option value="21">21 days (ceiling: 159 hours)</option>
+          <option value="20">20 days (ceiling: 151 hours)</option>
+          <option value="19">19 days (ceiling: 144 hours)</option>
+          <option value="18">18 days (ceiling: 136 hours)</option>
+          <option value="17">17 days (ceiling: 129 hours)</option>
+          <option value="16">16 days (ceiling: 121 hours)</option>
+          <option value="15">15 days (ceiling: 114 hours)</option>
+          <option value="14">14 days (ceiling: 106 hours)</option>
+          <option value="13">13 days (ceiling: 98 hours)</option>
+          <option value="12">12 days (ceiling: 91 hours)</option>
+          <option value="11">11 days (ceiling: 83 hours)</option>
+          <option value="10">10 days (ceiling: 76 hours)</option>
+          <option value="9">9 days (ceiling: 68 hours)</option>
+          <option value="8">8 days (ceiling: 61 hours)</option>
+          <option value="7">7 days (ceiling: 53 hours)</option>
+        </select>
+        <p class="cap" id="gsfqot-wp-help">This route assumes a nonexempt employee engaged in fire protection activities and a valid employer-adopted 7(k) work period of 7 through 28 days. If your employer uses ordinary 40-hour FLSA overtime or your exemption/activity status differs, this route does not apply. Confirm with payroll before using these thresholds.</p>
+      </div>
+      <div class="fld">
+        <label for="gsfqot-hrs">Hours worked in a typical work period</label>
+        <input id="gsfqot-hrs" type="number" inputmode="numeric" step="1" min="0" placeholder="e.g. 224" aria-describedby="gsfqot-err">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="fld">
+        <label for="gsfqot-rate">FLSA regular rate for these work periods <span class="hint">($)</span></label>
+        <input id="gsfqot-rate" type="number" inputmode="decimal" step="0.01" min="0" placeholder="e.g. 48" required aria-describedby="gsfqot-rate-help gsfqot-err">
+        <p class="cap" id="gsfqot-rate-help">This is not always base hourly pay. The FLSA regular rate can include other remuneration. Use the rate payroll applies to the affected work periods.</p>
+      </div>
+      <div class="fld">
+        <label for="gsfqot-brkt">Your federal marginal bracket <span class="hint">(if you know it)</span></label>
+        <select id="gsfqot-brkt">
+          <option value="12">12%</option>
+          <option value="22" selected>22%</option>
+          <option value="24">24%</option>
+          <option value="32">32%</option>
+          <option value="35">35%</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="fld">
+      <label for="gsfqot-above">Estimated annual hours above the FLSA ceiling that required an overtime premium</label>
+      <input id="gsfqot-above" type="number" inputmode="numeric" step="10" min="0" placeholder="e.g. 150" required aria-describedby="gsfqot-above-help gsfqot-err">
+      <p class="cap" id="gsfqot-above-help">Ask payroll for the hours above your federal 7(k) ceiling that required an FLSA overtime premium. Count a qualifying hour even if it was paid at double time; this tool applies only the potentially qualified minimum half-rate premium. Contract or MOU overtime below the ceiling does not count.</p>
+    </div>
+
+    <button class="go" id="gsfqot-go" type="submit" aria-controls="gsfqot-res">Estimate my qualified OT</button>
+    <p class="err hidden" id="gsfqot-err" role="alert" aria-live="assertive"></p>
+    </form>
+
+    <div class="res hidden" id="gsfqot-res" role="status" aria-live="polite" aria-atomic="true" tabindex="-1">
+      <div id="gsfqot-noel" class="hidden">
+        <p class="noel">Not eligible</p>
+        <div class="flag"><span class="k">Married filing separately</span><p>MFS filers cannot claim the qualified overtime deduction under IRC Section 225. If your filing status is a choice rather than a given, that is a conversation for your CPA, not a reason to change it on its own.</p></div>
+      </div>
+      <div id="gsfqot-nums">
+        <div class="stat"><span class="l">Estimated qualified overtime</span><span class="v" id="gsfqot-qual"></span></div>
+        <div class="stat big"><span class="l">Estimated deduction after cap + phaseout</span><span class="v" id="gsfqot-ded"></span></div>
+        <div class="stat"><span class="l">Rough federal benefit at <span id="gsfqot-brktlbl"></span></span><span class="v" id="gsfqot-ben"></span></div>
+        <div class="flag hidden" id="gsfqot-flags"></div>
+      </div>
+      <div class="must">
+        <span class="k">Read before you use this number</span>
+        <p>Use the employer-reported 2026 W-2 Box 12 code TT amount when it is accurate. Ask the employer to correct inaccurate reporting and follow current IRS instructions; this estimate cannot resolve reporting errors.</p>
+        <p>California does not conform. Your CA return sees no benefit.</p>
+        <p>Education only. Confirm with a CPA.</p>
+      </div>
+      <p class="fine" id="gsfqot-fine"></p>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    // 2026 figures per 26 USC 225 and current IRS guidance: caps $12,500 single / $25,000 joint;
+    // phaseout $100 per completed $1,000 of MAGI over $150,000 / $300,000; MFS ineligible.
+    // FLSA 7(k) ceilings for fire protection personnel, 7 through 28 days, per 29 CFR 553.230.
+    var CAP={single:12500,joint:25000}, THRESH={single:150000,joint:300000};
+    var CEIL={'28':212,'27':204,'26':197,'25':189,'24':182,'23':174,'22':167,'21':159,'20':151,'19':144,'18':136,'17':129,'16':121,'15':114,'14':106,'13':98,'12':91,'11':83,'10':76,'9':68,'8':61,'7':53};
+
+    var $=function(id){return document.getElementById(id);};
+    function money(n){return '$'+Math.round(n).toLocaleString('en-US');}
+    function num(id){return parseFloat($(id).value);}
+    function clearErr(){
+      var e=$('gsfqot-err'); e.classList.add('hidden'); e.textContent='';
+      ['gsfqot-fs','gsfqot-magi','gsfqot-wp','gsfqot-hrs','gsfqot-rate','gsfqot-brkt','gsfqot-above'].forEach(function(id){$(id).removeAttribute('aria-invalid');});
+    }
+    function showErr(msg,id){
+      var e=$('gsfqot-err'); e.textContent=msg; e.classList.remove('hidden'); $('gsfqot-res').classList.add('hidden');
+      if(id){$(id).setAttribute('aria-invalid','true'); $(id).focus();}
+    }
+
+    $('gsfqot-form').addEventListener('submit',function(event){
+      event.preventDefault(); clearErr();
+      var fs=$('gsfqot-fs').value;
+
+      // MFS: ineligible, full stop.
+      if(fs==='mfs'){
+        $('gsfqot-noel').classList.remove('hidden');
+        $('gsfqot-nums').classList.add('hidden');
+        $('gsfqot-fine').innerHTML=fineText();
+        $('gsfqot-res').classList.remove('hidden');
+        $('gsfqot-res').focus();
+        return;
+      }
+      $('gsfqot-noel').classList.add('hidden');
+      $('gsfqot-nums').classList.remove('hidden');
+
+      var magi=num('gsfqot-magi'), wp=$('gsfqot-wp').value;
+      var typ=$('gsfqot-hrs').value===''?0:num('gsfqot-hrs');
+      var rate=num('gsfqot-rate'), above=num('gsfqot-above'), brkt=parseFloat($('gsfqot-brkt').value);
+      if(!$('gsfqot-magi').value||!isFinite(magi)){ return showErr('Enter your estimated 2026 MAGI. A negative amount is allowed if that is your estimate.','gsfqot-magi'); }
+      if(!isFinite(typ)||typ<0){ return showErr('Typical work-period hours must be 0 or more.','gsfqot-hrs'); }
+      if(!isFinite(rate)||rate<=0){ return showErr('Enter the positive FLSA regular rate payroll applies to these work periods.','gsfqot-rate'); }
+      if(!$('gsfqot-above').value||!isFinite(above)){ return showErr('Enter estimated annual hours above the FLSA ceiling. Enter 0 if you never cross it.','gsfqot-above'); }
+      if(above<0){ return showErr('Annual hours above the FLSA ceiling cannot be negative. Enter 0 if you never cross it.','gsfqot-above'); }
+      var ceil=CEIL[wp], ppy=364/parseInt(wp,10);
+      if(!ceil){ return showErr('Choose a valid FLSA work period from 7 through 28 days.','gsfqot-wp'); }
+      var flags=[];
+
+      // schedule cross-check from typical hours worked
+      if(typ>0){
+        if(typ<=ceil){
+          flags.push(['Your typical period stays under the ceiling','You entered '+typ+' hours in a typical '+wp+'-day period, and the FLSA ceiling is '+ceil+'. In a typical period you never cross it, so only extra hours beyond '+ceil+' (holds, strike teams, callbacks stacked on top of your schedule) can generate qualified overtime. Your paystub OT below that line is real money, but for this deduction it is just wages.']);
+        } else {
+          var perPeriod=typ-ceil, annualized=Math.round(perPeriod*ppy);
+          flags.push(['Schedule cross-check','You entered '+typ+' hours in a typical '+wp+'-day period, which is '+perPeriod+' hours over the '+ceil+'-hour ceiling. Across a 52-week year that is about '+annualized.toLocaleString('en-US')+' hours above the ceiling from your schedule alone. Compare that against the annual figure you entered ('+above.toLocaleString('en-US')+' hours) as a sanity check.']);
+        }
+      }
+
+      // qualified amount = premium half of time-and-a-half on hours above the ceiling
+      var qual=above*rate*0.5;
+
+      // cap, then phaseout: $100 per $1,000 of MAGI over the threshold, floor 0
+      var cap=CAP[fs], thresh=THRESH[fs];
+      var afterCap=Math.min(qual,cap);
+      var over=Math.max(0,magi-thresh);
+      var reduction=Math.floor(over/1000)*100;
+      var ded=Math.max(0,afterCap-reduction);
+      var ben=ded*brkt/100;
+
+      if(qual>cap){
+        flags.push(['Cap applied','Your estimated qualified overtime ('+money(qual)+') exceeds the '+money(cap)+' cap for your filing status, so the deduction starts from the cap.']);
+      }
+      if(reduction>0&&ded>0){
+        flags.push(['Phaseout applied','Your MAGI is about '+money(over)+' over the '+money(thresh)+' threshold, which trims the deduction by '+money(Math.min(reduction,afterCap))+' ($100 for each whole $1,000 over; a partial $1,000 is disregarded). The deduction does not reduce MAGI, so it cannot pull you back under. Eligible traditional pre-tax 457(b) deferrals may reduce MAGI; Roth deferrals do not.']);
+      }
+      if(reduction>0&&ded===0&&afterCap>0){
+        flags.push(['Phased out entirely','At your MAGI the phaseout ($100 for each whole $1,000 over '+money(thresh)+') wipes out the full deduction. The people with the biggest OT lines are exactly who the phaseout targets. Any planning adjustment depends on your actual eligibility and taxes, including the difference between traditional pre-tax and Roth deferrals.']);
+      }
+      if(above===0){
+        flags.push(['Nothing above the ceiling','With zero hours above the FLSA ceiling, your qualified overtime is $0 no matter what your paystub OT line says. That is the trap in the headline. Contract and MOU overtime below the 7(k) line does not count.']);
+      }
+
+      $('gsfqot-qual').textContent=money(qual);
+      $('gsfqot-ded').textContent=money(ded);
+      $('gsfqot-brktlbl').textContent=brkt+'%';
+      $('gsfqot-ben').textContent=money(ben);
+
+      var fb=$('gsfqot-flags');
+      if(flags.length){ fb.classList.remove('hidden'); fb.innerHTML=flags.map(function(f){return '<span class="k">'+f[0]+'</span><p>'+f[1]+'</p>';}).join(''); }
+      else { fb.classList.add('hidden'); fb.innerHTML=''; }
+
+      $('gsfqot-fine').innerHTML=fineText();
+      $('gsfqot-res').classList.remove('hidden');
+      $('gsfqot-res').focus();
+    });
+
+    function fineText(){
+      return 'Estimate only. Math per 26 USC 225 and current IRS guidance: qualified overtime = the premium half of time-and-a-half on hours above the applicable FLSA 7(k) ceiling in the 7-through-28-day table at 29 CFR 553.230; capped at $12,500 single / $25,000 joint per return; reduced $100 for each whole $1,000 of MAGI over $150,000 / $300,000 (partial $1,000 disregarded); MFS ineligible. The FLSA regular rate, not necessarily base hourly pay, controls the premium calculation. If a qualifying FLSA overtime hour is paid at double time, the minimum half-rate premium can still qualify; only the extra premium beyond the FLSA minimum is excluded. Holiday or weekend premium pay for hours that are not FLSA overtime is excluded. Comp time used as paid leave generally is not qualified overtime compensation. A cash payment for accrued unused comp time can qualify to the extent it represents the required FLSA premium; this hours-based route does not model a comp-time payout. The deduction is temporary for tax years 2025 through 2028 under current law. This build uses 2026 reporting. The deduction is federal income tax only: no FICA effect and no California benefit. Withholding does not adjust on its own; the 2026 Form W-4 lets you account for the expected deduction in Step 4(b), otherwise the benefit arrives when you file. <strong>Education only, not tax, legal, or investment advice. Use accurate employer-reported qualified overtime and current IRS instructions, requesting corrected reporting when needed; confirm your work period, regular rate, and situation with payroll and a licensed CPA. Golden State Firefighter is not affiliated with the IRS or any government agency, department, or retirement system.</strong>';
+    }
+  })();
+  </script>
+</div>
+</div>

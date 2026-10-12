@@ -1,0 +1,52 @@
+[
+  {
+    "file": "tests/test-parser.py",
+    "before": "('Fire Engineer','This is an internal recruitment for current employees only.','Open','internal'),",
+    "after": "('Fire Engineer','This is an internal recruitment for current employees only.','Open','internal'),\n   ('Fire Captain (Open & Promotional)','This recruitment is only open to current County Fire employees.','Open & Promotional','internal'),\n   ('Firefighter-Paramedic','','Promotional','promotional'),"
+  },
+  {
+    "file": "native/financial/tool-pension-estimator.html",
+    "before": "      <input id=\"gsfp-custom\" type=\"number\" inputmode=\"decimal\" step=\"0.001\" min=\"0\" max=\"4\" placeholder=\"e.g. 2.500\">",
+    "after": "      <input id=\"gsfp-custom\" type=\"number\" inputmode=\"decimal\" step=\"0.001\" min=\"0\" max=\"4\" placeholder=\"e.g. 2.500\">\n      <label for=\"gsfp-custommin\">Minimum retirement age confirmed for your system and circumstances</label>\n      <input id=\"gsfp-custommin\" type=\"number\" min=\"30\" max=\"75\" step=\"0.25\" placeholder=\"Enter the verified eligible minimum age\">"
+  },
+  {
+    "file": "native/financial/tool-pension-estimator.html",
+    "before": "(min 50)",
+    "after": "(CalPERS formulas: min 50; custom: verify eligibility)"
+  },
+  {
+    "file": "native/financial/tool-pension-estimator.html",
+    "before": "id=\"gsfp-age\" type=\"number\" inputmode=\"decimal\" step=\"0.25\" min=\"50\"",
+    "after": "id=\"gsfp-age\" type=\"number\" inputmode=\"decimal\" step=\"0.25\" min=\"30\""
+  },
+  {
+    "file": "native/financial/tool-pension-estimator.html",
+    "before": "      if(key!=='custom' && !FACT[key])",
+    "after": "      if(yos>45){return showErr('This illustration supports up to 45 years of service.');}\n      if(age>75||age<30){return showErr('This illustration supports ages 30 through 75; your actual minimum eligibility still applies.');}\n      if(key!=='custom' && !FACT[key])"
+  },
+  {
+    "file": "native/financial/tool-pension-estimator.html",
+    "before": "        tierLabel='Your entered factor",
+    "after": "        if(factor>4){return showErr('This illustration supports a verified custom factor above 0% and no more than 4%.');}\n        var minimum=num('gsfp-custommin');\n        if(!$('gsfp-custommin').value||!isFinite(minimum)||minimum<30||minimum>75){return showErr('Enter the verified minimum retirement age for your system from 30 through 75.');}\n        if(age<minimum){return showErr('Your entered age is below the minimum retirement age you confirmed for this custom system.');}\n        flags.push(['Custom eligibility not established','Confirm your system-specific service, membership, minimum age and benefit eligibility. Entering a factor and minimum age does not establish a payable benefit.']);\n        tierLabel='Your entered factor"
+  },
+  {
+    "file": "native/financial/tool-pension-estimator.html",
+    "before": "if(yos<5){ flags.push",
+    "after": "if(key!=='custom' && yos<5){ flags.push"
+  },
+  {
+    "file": "native/financial/tool-pension-estimator.html",
+    "before": "      var prem = num('gsfp-medic')+num('gsfp-edu')+num('gsfp-biling');",
+    "after": "      var premiums=['gsfp-medic','gsfp-edu','gsfp-biling'].map(num);\n      if(premiums.some(function(v){return !isFinite(v)||v<0;})){return showErr('Optional premiums must be finite amounts of 0 or more.');}\n      var prem = premiums.reduce(function(a,b){return a+b;},0);"
+  },
+  {
+    "file": "native/financial/tool-pension-estimator.html",
+    "before": "      $('gsfp-res').classList.remove('hidden');",
+    "after": "      $('gsfp-res').classList.remove('hidden');$('gsfp-res').focus();"
+  },
+  {
+    "file": "native/financial/test-financial-tools.cjs",
+    "before": "process.on('exit', () => {",
+    "after": "test('457 positive future contributions and compensation ceiling affect all outputs',()=>{\n const t=loadTool('tool-457b-maximizer.html');\n t.set({'gsf457-age':38,'gsf457-pp':26,'gsf457-cur':500,'gsf457-ytd':10000,'gsf457-left':10,'gsf457-future':4500,'gsf457-comp':100000,'gsf457-wage':'no'});t.submit('gsf457-form');\n assert.equal(dollars(t.el('gsf457-remaining').textContent),10000);assert.equal(dollars(t.el('gsf457-need').textContent),1000);assert.match(t.el('gsf457-flags').innerHTML,/expected employer/other contributions/);\n t.set({'gsf457-future':14500});t.submit('gsf457-form');assert.equal(dollars(t.el('gsf457-remaining').textContent),0);assert.match(t.el('gsf457-flags').innerHTML,/YTD plus expected remaining/);assert.doesNotMatch(t.el('gsf457-flags').innerHTML,/year-to-date amount has reached/);\n t.set({'gsf457-future':0,'gsf457-comp':15000});t.submit('gsf457-form');assert.equal(dollars(t.el('gsf457-limit').textContent),15000);assert.equal(dollars(t.el('gsf457-need').textContent),500);\n});\nfunction pension(values={}){const t=loadTool('tool-pension-estimator.html');t.set({'gsfp-tier':'pepra','gsfp-yos':28,'gsfp-age':57,'gsfp-comp':120000,'gsfp-ss':'yes','gsfp-custom':2.5,'gsfp-custommin':50,'gsfp-medic':0,'gsfp-edu':0,'gsfp-biling':0,...values});t.el('gsfp-go').dispatch('click');return t;}\ntest('pension ages, completed quarters, caps and eligibility remain explicit',()=>{\n assert.match(pension({'gsfp-age':49}).el('gsfp-err').textContent,/starts at age 50/);\n for(const [age,want]of [[56.74,89040],[56.75,89880],[57,90720]])assert.equal(dollars(pension({'gsfp-age':age}).el('gsfp-annual').textContent),want);\n assert.equal(dollars(pension({'gsfp-comp':200000}).el('gsfp-annual').textContent),120758);\n assert.equal(dollars(pension({'gsfp-comp':200000,'gsfp-ss':'no'}).el('gsfp-annual').textContent),144909);\n assert.match(pension({'gsfp-yos':4}).el('gsfp-flags').innerHTML,/Eligibility not established/);\n for(const vals of [{'gsfp-yos':46},{'gsfp-age':76},{'gsfp-tier':'custom','gsfp-custom':100},{'gsfp-tier':'custom','gsfp-age':49}])assert.ok(pension(vals).el('gsfp-err').textContent);\n const custom=pension({'gsfp-tier':'custom','gsfp-age':49,'gsfp-custommin':45,'gsfp-yos':4});assert.equal(custom.el('gsfp-err').textContent,'');assert.match(custom.el('gsfp-flags').innerHTML,/Custom eligibility not established/);assert.doesNotMatch(custom.el('gsfp-flags').innerHTML,/CalPERS service retirement/);\n const pay=pension({'gsfp-comp':132000,'gsfp-medic':12000});assert.equal(dollars(pay.el('gsfp-annual').textContent),99792);assert.equal(dollars(pay.el('gsfp-gross').textContent),12000);\n});\ntest('fee equality yields zero investment growth while contributions increase balance',()=>{\n const t=loadTool('tool-fee-drag.html');t.set({'gsffee-bal':100000,'gsffee-mo':550,'gsffee-yrs':20,'gsffee-fee1':3,'gsffee-fee2':0.1,'gsffee-ret':3});t.submit('gsffee-form');assert.equal(dollars(t.el('gsffee-hi').textContent),232000);assert.match(t.el('gsffee-flags').innerHTML,/Contributions can still increase/);assert.doesNotMatch(t.el('gsffee-flags').innerHTML,/loses ground every year/);\n t.set({'gsffee-fee1':5.01});t.submit('gsffee-form');assert.match(t.el('gsffee-err').textContent,/0% through 5%/);\n});\nprocess.on('exit', () => {"
+  }
+]

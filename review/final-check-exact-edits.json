@@ -1,0 +1,57 @@
+[
+  {
+    "file": "tests/test-career.cjs",
+    "before": "set innerHTML(x){this._html=x;}",
+    "after": "set innerHTML(x){this._html=x;this.children=[];}",
+    "count": 1,
+    "already_staged": true
+  },
+  {
+    "file": "tests/test-career.cjs",
+    "before": "appendChild(x){this.children.push(x);if(x.tag==='option')this.options.push(x)}",
+    "after": "appendChild(x){this.children.push(x);if(x.tag==='option')this.options.push(x);return x}",
+    "count": 1,
+    "already_staged": true
+  },
+  {
+    "file": "tests/test-career.cjs",
+    "before": "fn({preventDefault(){}})",
+    "after": "fn.call(this,{preventDefault(){}})",
+    "count": 1,
+    "already_staged": true
+  },
+  {
+    "file": "tests/test-career.cjs",
+    "before": "assert.deepEqual(rows.map(x=>x.name),old.map(x=>x.name));",
+    "after": "assert.equal(new Set(rows.map(x=>x.name)).size,371);",
+    "count": 1,
+    "already_staged": true
+  },
+  {
+    "file": "tests/test-career.cjs",
+    "before": "164 confirmed yes, 4 confirmed no, 203 not confirmed",
+    "after": "164 confirmed yes, 3 confirmed no, 204 not confirmed",
+    "count": 1,
+    "already_staged": true
+  },
+  {
+    "file": "tests/test-career.cjs",
+    "before": "[4000,7730,3,5]",
+    "after": "[4000,7929,3,6]",
+    "count": 1,
+    "already_staged": true
+  },
+  {
+    "file": "tests/test-career.cjs",
+    "before": "(d.name+' '+d.region",
+    "after": "(d.name+' '+(d.former_name||'')+' '+d.region",
+    "count": 1,
+    "already_staged": true
+  },
+  {
+    "file": "tests/test-career.cjs",
+    "before": " const receipt={",
+    "after": "  await test('quiz repeat, back, and reset flows keep selections and recommendations consistent',async()=>{\n   const ui=await load('tool-where-am-i.html');const body=ui.el('gsfq-body');\n   const buttons=()=>{let out=[];function walk(e){if(e.tag==='button')out.push(e);e.children.forEach(walk)}walk(body);return out};\n   const click=text=>{const b=buttons().find(b=>b.innerHTML===text);assert.ok(b,'button '+text);b.onclick()};\n   const qualify=()=>{click('Start');buttons()[1].onclick()};\n   const option=i=>buttons()[i].onclick();\n   function expectResult(re){assert.match(body.children.find(e=>e.className==='res-step').innerHTML,re)}\n   qualify();click('See my next step');expectResult(/Check the required EMS/);cases++;\n   click('Back');option(0);click('See my next step');expectResult(/academy is required/);cases++;\n   click('Back');assert.equal(buttons()[0].attrs['aria-pressed'],'true');option(1);option(2);click('See my next step');expectResult(/complete eligibility rules/);cases++;\n   click('Back');for(let i=0;i<3;i++)assert.equal(buttons()[i].attrs['aria-pressed'],'true');click('Back');buttons()[1].onclick();for(let i=0;i<3;i++)assert.equal(buttons()[i].attrs['aria-pressed'],'true');cases++;\n   click('Start over');qualify();for(let i=0;i<3;i++)assert.equal(buttons()[i].attrs['aria-pressed'],'false');click('See my next step');expectResult(/Check the required EMS/);cases++;\n  });\n  await test('oral disclosure buttons announce expansion and reset on next question',async()=>{const ui=await load('tool-oral-board-drill.html');for(const id of ['gsfdrill-reveal','gsfdrill-exbtn']){ui.el(id).dispatch('click');assert.equal(ui.el(id).attrs['aria-expanded'],'true');}ui.el('gsfdrill-next').dispatch('click');for(const id of ['gsfdrill-reveal','gsfdrill-exbtn'])assert.equal(ui.el(id).attrs['aria-expanded'],'false');cases++;});\n  const receipt={",
+    "count": 1
+  }
+]

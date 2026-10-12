@@ -1,0 +1,276 @@
+{
+  "schema": 1,
+  "status": "prepared only, not published",
+  "baseline": "current public HTML captured October12; authenticated original must be compared before mutation",
+  "edits": [
+    {
+      "finding": "GSF007",
+      "slug": "do-you-need-emt-before-applying-firefighter-california",
+      "url": "https://www.goldenstatefirefighter.com/learn/do-you-need-emt-before-applying-firefighter-california",
+      "old": "Stockton Fire Department:</strong> EMT can be obtained within one year of employment.",
+      "new": "Stockton Fire Department:</strong> The closed July 2026 Trainee/EMT cycle required California or National Registry EMT certification at application. That bulletin does not establish the rule for a future cycle.",
+      "expected_count": 1,
+      "sources": [
+        "https://www.governmentjobs.com/careers/stockton/jobs/5379384/firefighter-trainee-emt"
+      ],
+      "observed_on": "2026-10-12",
+      "risk": "career factual correction",
+      "status": "prepared only; authenticated body comparison and publication gate required"
+    },
+    {
+      "finding": "GSF007",
+      "slug": "do-you-need-emt-before-applying-firefighter-california",
+      "url": "https://www.goldenstatefirefighter.com/learn/do-you-need-emt-before-applying-firefighter-california",
+      "old": "Alameda County Fire Department:</strong> For the Firefighter Recruit-EMT path, the EMT may be obtained within 90 days after a conditional offer.",
+      "new": "Alameda County Fire Department:</strong> Recruitment 26-8137-01 requires an accepted active EMT, AEMT or paramedic credential by the filing deadline. The 90-day California credential step applies to eligible National Registry applicants after a conditional offer; it does not allow an uncertified application.",
+      "expected_count": 1,
+      "sources": [
+        "https://www.jobapscloud.com/Alameda/sup/bulpreview.asp?R1=26&R2=8137&R3=01"
+      ],
+      "observed_on": "2026-10-12",
+      "risk": "career factual correction",
+      "status": "prepared only; authenticated body comparison and publication gate required"
+    },
+    {
+      "finding": "GSF007",
+      "slug": "do-you-need-emt-before-applying-firefighter-california",
+      "url": "https://www.goldenstatefirefighter.com/learn/do-you-need-emt-before-applying-firefighter-california",
+      "old": "LAFD, Fresno, Stockton, and Alameda County are examples that do not require EMT at application, based on their published processes. This can change, so verify on the department's careers page.",
+      "new": "Requirements depend on the role and recruitment. Alameda County recruitment 26-8137-01 requires an accepted active EMS credential at filing, and Stockton's closed July 2026 Trainee/EMT cycle required EMT at application. Check each current bulletin before relying on a later certification deadline.",
+      "expected_count": 1,
+      "sources": [
+        "https://www.jobapscloud.com/Alameda/sup/bulpreview.asp?R1=26&R2=8137&R3=01",
+        "https://www.governmentjobs.com/careers/stockton/jobs/5379384/firefighter-trainee-emt"
+      ],
+      "observed_on": "2026-10-12",
+      "risk": "career factual correction",
+      "status": "prepared only; authenticated body comparison and publication gate required"
+    },
+    {
+      "finding": "GSF008",
+      "slug": "how-to-become-a-firefighter-in-california",
+      "url": "https://www.goldenstatefirefighter.com/learn/how-to-become-a-firefighter-in-california",
+      "old": "As of 2026, LAFD, Fresno, Stockton, and Alameda County are examples that do not require EMT at application, while many others do.",
+      "new": "Alameda County recruitment 26-8137-01 requires an accepted active EMS credential by filing; Stockton's closed July 2026 Trainee/EMT cycle required EMT at application. A later California credential deadline for an eligible National Registry applicant does not mean an uncertified applicant qualifies.",
+      "expected_count": 1,
+      "sources": [
+        "https://www.jobapscloud.com/Alameda/sup/bulpreview.asp?R1=26&R2=8137&R3=01",
+        "https://www.governmentjobs.com/careers/stockton/jobs/5379384/firefighter-trainee-emt"
+      ],
+      "observed_on": "2026-10-12",
+      "risk": "career factual correction",
+      "status": "prepared only; authenticated body comparison and publication gate required"
+    },
+    {
+      "finding": "GSF009",
+      "slug": "cal-fire-vs-city-vs-county",
+      "url": "https://www.goldenstatefirefighter.com/learn/cal-fire-vs-city-vs-county",
+      "old": "(Alameda County allows EMT within 90 days of a conditional offer; Stockton allows it within a year of employment).",
+      "new": "(Alameda County's 90-day California credential step applies to eligible National Registry applicants who already hold an accepted credential at filing). Stockton's closed July 2026 Trainee/EMT cycle required EMT at application.",
+      "expected_count": 1,
+      "sources": [
+        "https://www.jobapscloud.com/Alameda/sup/bulpreview.asp?R1=26&R2=8137&R3=01",
+        "https://www.governmentjobs.com/careers/stockton/jobs/5379384/firefighter-trainee-emt"
+      ],
+      "observed_on": "2026-10-12",
+      "risk": "career factual correction",
+      "status": "prepared only; authenticated body comparison and publication gate required"
+    },
+    {
+      "finding": "GSF009",
+      "slug": "cal-fire-vs-city-vs-county",
+      "url": "https://www.goldenstatefirefighter.com/learn/cal-fire-vs-city-vs-county",
+      "old": "(EMT or paramedic within 90 days of a conditional offer)",
+      "new": "(accepted active EMS credential at filing; role-specific California credential deadline)",
+      "expected_count": 1,
+      "sources": [
+        "https://www.jobapscloud.com/Alameda/sup/bulpreview.asp?R1=26&R2=8137&R3=01"
+      ],
+      "observed_on": "2026-10-12",
+      "risk": "career factual correction",
+      "status": "prepared only; authenticated body comparison and publication gate required"
+    },
+    {
+      "finding": "GSF-F02",
+      "slug": "457b-california-firefighters",
+      "url": "https://www.goldenstatefirefighter.com/learn/457b-california-firefighters",
+      "old": "Roth contributions pay tax now and skip it later.",
+      "new": "Roth contributions are after-tax. Earnings are tax-free only on a qualified distribution after five tax years of participation and age 59½, death or disability. Native governmental 457(b) penalty treatment does not by itself make Roth earnings tax-free.",
+      "expected_count": 1,
+      "sources": [
+        "https://www.irs.gov/publications/p575"
+      ],
+      "observed_on": "2026-10-12",
+      "risk": "financial, explicit owner publication clearance required",
+      "status": "prepared only; authenticated body comparison and publication gate required"
+    },
+    {
+      "finding": "GSF-F06",
+      "slug": "retired-firefighter-tax-breaks",
+      "url": "https://www.goldenstatefirefighter.com/learn/retired-firefighter-tax-breaks",
+      "old": "Retirement can be by service or disability.",
+      "new": "Eligibility requires retirement because of disability or reaching normal retirement age, and the distribution must come from an eligible plan maintained by the employer from which you retired as a public safety officer. Any service separation is not enough.",
+      "expected_count": 1,
+      "sources": [
+        "https://www.irs.gov/publications/p575"
+      ],
+      "observed_on": "2026-10-12",
+      "risk": "financial, explicit owner publication clearance required",
+      "status": "prepared only; authenticated body comparison and publication gate required"
+    },
+    {
+      "finding": "GSF-F01",
+      "slug": "firefighter-side-business-taxes",
+      "url": "https://www.goldenstatefirefighter.com/learn/firefighter-side-business-taxes",
+      "old": "your W-2 wages count against that base first on Schedule SE.",
+      "new": "only wages subject to Social Security count against that base on Schedule SE. Noncovered public-safety wages do not use up the Social Security base for your side business. Check W-2 Box 3 and Schedule SE, not total W-2 income.",
+      "expected_count": 1,
+      "sources": [
+        "https://www.irs.gov/instructions/i1040sse",
+        "https://www.irs.gov/publications/p15"
+      ],
+      "observed_on": "2026-10-12",
+      "risk": "financial, explicit owner publication clearance required",
+      "status": "prepared only; authenticated body comparison and publication gate required"
+    },
+    {
+      "finding": "GSF-F01",
+      "slug": "firefighter-side-business-taxes",
+      "url": "https://www.goldenstatefirefighter.com/learn/firefighter-side-business-taxes",
+      "old": "with $170,000 in W-2 wages and a $40,000 side-business profit.",
+      "new": "with $170,000 in Social Security-covered wages and a $40,000 side-business profit. At 92.35%, net earnings for this illustration are $36,940. If the $170,000 is noncovered fire wages, all $36,940 remains exposed to the Social Security component, increasing that component by $2,782.56 compared with this covered-wage example.",
+      "expected_count": 1,
+      "sources": [
+        "https://www.irs.gov/instructions/i1040sse",
+        "https://www.irs.gov/publications/p15"
+      ],
+      "observed_on": "2026-10-12",
+      "risk": "financial, explicit owner publication clearance required",
+      "status": "prepared only; authenticated body comparison and publication gate required"
+    },
+    {
+      "finding": "GSF-F01",
+      "slug": "firefighter-side-business-taxes",
+      "url": "https://www.goldenstatefirefighter.com/learn/firefighter-side-business-taxes",
+      "old": "If your W-2 wages already exceed the 2026 Social Security wage base",
+      "new": "If your Social Security-covered W-2 wages already exceed the 2026 Social Security wage base",
+      "expected_count": 1,
+      "sources": [
+        "https://www.irs.gov/instructions/i1040sse",
+        "https://www.irs.gov/publications/p15"
+      ],
+      "observed_on": "2026-10-12",
+      "risk": "financial, explicit owner publication clearance required",
+      "status": "prepared only; authenticated body comparison and publication gate required"
+    },
+    {
+      "finding": "GSF-F01",
+      "slug": "firefighter-side-business-taxes",
+      "url": "https://www.goldenstatefirefighter.com/learn/firefighter-side-business-taxes",
+      "old": "whose W-2 already clears the wage base",
+      "new": "whose Social Security-covered W-2 wages already clear the wage base",
+      "expected_count": 1,
+      "sources": [
+        "https://www.irs.gov/instructions/i1040sse",
+        "https://www.irs.gov/publications/p15"
+      ],
+      "observed_on": "2026-10-12",
+      "risk": "financial, explicit owner publication clearance required",
+      "status": "prepared only; authenticated body comparison and publication gate required"
+    },
+    {
+      "finding": "GSF-F01",
+      "slug": "firefighter-side-business-taxes",
+      "url": "https://www.goldenstatefirefighter.com/learn/firefighter-side-business-taxes",
+      "old": "if your W-2 wages are high, the self-employment tax on your side income is far lower than the 15.3% number that scares people off.",
+      "new": "high wages reduce the Social Security part of self-employment tax only when those wages are Social Security-covered. A firefighter in a noncovered system cannot infer that reduction from a high W-2 total.",
+      "expected_count": 1,
+      "sources": [
+        "https://www.irs.gov/instructions/i1040sse",
+        "https://www.irs.gov/publications/p15"
+      ],
+      "observed_on": "2026-10-12",
+      "risk": "financial, explicit owner publication clearance required",
+      "status": "prepared only; authenticated body comparison and publication gate required"
+    },
+    {
+      "finding": "GSF014",
+      "slug": "military-to-firefighter-california",
+      "url": "https://www.goldenstatefirefighter.com/learn/military-to-firefighter-california",
+      "old": "The general rule is that you separated within the last 10 years or are an active reservist,",
+      "new": "Expiration depends on the benefit program. For Post-9/11 benefits, service ending on or after January 1, 2013 has no expiration; earlier separations generally have a 15-year window. Chapter 30 and Selected Reserve eligibility follow their own rules. Confirm your actual benefit with the VA",
+      "expected_count": 1,
+      "sources": [
+        "https://www.va.gov/education/about-gi-bill-benefits/post-9-11/"
+      ],
+      "observed_on": "2026-10-12",
+      "risk": "career factual correction",
+      "status": "prepared only; authenticated body comparison and publication gate required"
+    },
+    {
+      "finding": "GSF014",
+      "slug": "military-to-firefighter-california",
+      "url": "https://www.goldenstatefirefighter.com/learn/military-to-firefighter-california",
+      "old": "Chapters 30, 33, 1606; 10-year separation rule; monthly certification",
+      "new": "Chapters 30, 33, 1606; benefit-specific eligibility and expiration; monthly certification",
+      "expected_count": 1,
+      "sources": [
+        "https://www.va.gov/education/about-gi-bill-benefits/post-9-11/"
+      ],
+      "observed_on": "2026-10-12",
+      "risk": "career factual correction",
+      "status": "prepared only; authenticated body comparison and publication gate required"
+    },
+    {
+      "finding": "GSF-F09",
+      "slug": "firefighter-taxes-california",
+      "url": "https://www.goldenstatefirefighter.com/learn/firefighter-taxes-california",
+      "old": "<p>First, California's brackets bite early. A single filer sits in the 9.3% marginal bracket starting around $73,000 of taxable income, and that bracket runs all the way to roughly $371,000 (2025 figures from third-party transcriptions of the <a href=\"https://www.ftb.ca.gov/file/personal/tax-calculator-tables-rates.asp\">FTB rate schedules</a>; the official 2026 bracket dollars publish in fall 2026, so treat the exact cutoffs as approximate until then). Practically, that means nearly every overtime dollar a mid-career firefighter earns gets taxed at 9.3% by the state on top of federal tax.</p>",
+      "new": "<p>For 2026, a single or married/RDP separate filer enters California's 9.3% marginal bracket above $75,197 of taxable income, through $384,109. The standard deduction is $5,900 for single or separate filers and $11,800 for joint, surviving-spouse or head-of-household filers. Use the <a href=\"https://www.ftb.ca.gov/about-ftb/newsroom/tax-news/index.html\">FTB's 2026 figures</a> and taxable income, rather than gross salary, for a same-year comparison.</p>",
+      "expected_count": 1,
+      "sources": [
+        "https://www.ftb.ca.gov/about-ftb/newsroom/tax-news/index.html"
+      ],
+      "observed_on": "2026-10-12",
+      "risk": "financial, explicit owner publication clearance required",
+      "status": "prepared only; authenticated body comparison and publication gate required"
+    },
+    {
+      "finding": "GSF024",
+      "slug": "fire-station-etiquette",
+      "url": "https://www.goldenstatefirefighter.com/learn/fire-station-etiquette",
+      "old": "Ask questions at the right time.</strong> Not during a call, not when the officer is busy, not in the middle of a task. Save them for downtime and make them good questions that show you were paying attention.",
+      "new": "Ask questions when they are needed.</strong> Raise an immediate hazard, unclear assignment or patient-safety concern promptly through your crew's procedures. Save nonurgent learning questions for a suitable pause or downtime.",
+      "expected_count": 1,
+      "sources": [
+        "https://www.everyonegoeshome.com/16-initiatives/4-empowerment/"
+      ],
+      "observed_on": "2026-10-12",
+      "risk": "safety, primary source access and final review required",
+      "status": "prepared only; authenticated body comparison and publication gate required"
+    },
+    {
+      "finding": "GSF024",
+      "slug": "surviving-firefighter-probation",
+      "url": "https://www.goldenstatefirefighter.com/learn/surviving-firefighter-probation",
+      "old": "Ask good questions at the right time, not during a call or a busy moment.",
+      "new": "Raise an immediate hazard, unclear assignment or patient-safety concern promptly through your crew's procedures. Save nonurgent learning questions for a suitable pause or downtime.",
+      "expected_count": 1,
+      "sources": [
+        "https://www.everyonegoeshome.com/16-initiatives/4-empowerment/"
+      ],
+      "observed_on": "2026-10-12",
+      "risk": "safety, primary source access and final review required",
+      "status": "prepared only; authenticated body comparison and publication gate required"
+    }
+  ],
+  "structural_check": "div and image counts unchanged; targeted text edits only",
+  "required_gates": [
+    "Current authenticated full-body backup",
+    "Type1337 html/source parity",
+    "Every exact anchor appears once",
+    "Preserve all author/collection/state/date/title/media fields",
+    "Independent source and owner clearance for financial/legal passages",
+    "GET verification and signed-out public verification"
+  ]
+}

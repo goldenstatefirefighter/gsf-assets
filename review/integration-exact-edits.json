@@ -1,0 +1,146 @@
+[
+  {
+    "file": "native/career/data/jobboard/fetch_listings.py",
+    "before": "    r\"\\bcurrent\\s+[^.]{0,90}\\s+employees?\\s+only\\b\",",
+    "after": "    r\"\\bcurrent\\s+[^.]{0,90}\\s+employees?\\s+only\\b|\"\n    r\"\\bonly\\s+open\\s+to\\s+current\\s+[^.]{0,90}\\s+employees?\\b\",",
+    "count": 1
+  },
+  {
+    "file": "native/career/data/jobboard/fetch_listings.py",
+    "before": "    if normalized_exam in {\"open\",",
+    "after": "    if normalized_exam in {\"promotional\", \"promotional only\"}:\n        return \"promotional\", restriction_excerpt(description)\n    if normalized_exam in {\"open\",",
+    "count": 1
+  },
+  {
+    "file": "native/career/source/tool-where-am-i.html",
+    "before": "    function q1(){",
+    "after": "    function navigation(back){\n      var a=el('div','q-actions');\n      if(back){var b=el('button','lnk','Back');b.onclick=back;a.appendChild(b);}\n      var reset=el('button','lnk','Start over');reset.onclick=screenStart;a.appendChild(reset);\n      body.appendChild(a);body.focus();\n    }\n\n    function q1(){",
+    "count": 1
+  },
+  {
+    "file": "native/career/source/tool-where-am-i.html",
+    "before": "        body.appendChild(btn);\n      });\n    }\n\n    function route1",
+    "after": "        body.appendChild(btn);\n      });\n      navigation(null);\n    }\n\n    function route1",
+    "count": 1
+  },
+  {
+    "file": "native/career/source/tool-where-am-i.html",
+    "before": "        body.appendChild(btn);\n      });\n    }\n\n    var RESULTS",
+    "after": "        body.appendChild(btn);\n      });\n      navigation(q1);\n    }\n\n    var RESULTS",
+    "count": 1
+  },
+  {
+    "file": "native/career/source/tool-where-am-i.html",
+    "before": "      a.appendChild(b);\n      body.appendChild(a);\n      body.focus();\n    }\n\n    function q2apply",
+    "after": "      a.appendChild(b);\n      body.appendChild(a);\n      navigation(q1);\n    }\n\n    function q2apply",
+    "count": 1
+  },
+  {
+    "file": "native/career/source/tool-where-am-i.html",
+    "before": "      a.appendChild(b);a.appendChild(again);",
+    "after": "      var back=el('button','lnk','Back');back.onclick=function(){if(state.path==='qualify')q2qualify();else if(state.path==='apply')q2apply();else q1();};\n      a.appendChild(b);a.appendChild(back);a.appendChild(again);",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-fee-drag.html",
+    "before": "      if(bal<0){",
+    "after": "      if(!isFinite(bal)||!isFinite(mo)||!isFinite(fee1)||!isFinite(fee2)){return showErr('Enter finite amounts and annual fee percentages.','gsffee-bal');}\n      if(!isFinite(years)||years<1||years>40||years!==Math.floor(years)){return showErr('Choose a horizon from 1 through 40 years.','gsffee-yrs');}\n      if(!isFinite(gross)||gross<3||gross>9){return showErr('Choose an illustrative gross return from 3% through 9%.','gsffee-ret');}\n      if(fee1>5){return showErr('This illustration supports an annual fee from 0% through 5%.','gsffee-fee1');}\n      if(fee2>5){return showErr('This illustration supports an annual fee from 0% through 5%.','gsffee-fee2');}\n      if(bal<0){",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-fee-drag.html",
+    "before": "['gsffee-bal','gsffee-mo','gsffee-fee1','gsffee-fee2']",
+    "after": "['gsffee-bal','gsffee-mo','gsffee-fee1','gsffee-fee2','gsffee-yrs','gsffee-ret']",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-457b-maximizer.html",
+    "before": "Annual limit reached",
+    "after": "Illustrated room already allocated",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-457b-maximizer.html",
+    "before": "Your entered year-to-date amount has reached the ",
+    "after": "Your entered YTD plus expected remaining employer/other amounts have allocated the ",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-457b-maximizer.html",
+    "before": "+' credited and '+checksLeft",
+    "after": "+' credited plus '+money2(future)+' expected employer/other contributions and '+checksLeft",
+    "count": 4
+  },
+  {
+    "file": "native/financial/tool-pension-estimator.html",
+    "before": "Add common premiums to see your rough current gross pay.",
+    "after": "Enter optional premiums to see their separate annual total.",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-pension-estimator.html",
+    "before": "Optional: current pay picture",
+    "after": "Optional: premium total",
+    "count": 1
+  },
+  {
+    "file": "native/financial/page-pension-estimator.html",
+    "before": "Those feed a separate current gross pay line only. They are never added to the pension estimate, because many premiums are not pensionable and the rules vary by memorandum of understanding.",
+    "after": "Those feed a separate premium total. Include any eligible pensionable portion in the verified final compensation input. The tool does not automatically add optional premiums to the pension estimate or assume their eligibility.",
+    "count": 1
+  },
+  {
+    "file": "native/financial/page-pension-estimator.html",
+    "before": "<strong>Overtime is out.</strong>",
+    "after": "<strong>Use verified reportable compensation.</strong>",
+    "count": 1
+  },
+  {
+    "file": "native/financial/page-pension-estimator.html",
+    "before": "The overtime that inflates your W-2 generally does nothing for the pension calculation, which is one reason the two numbers feel so far apart.",
+    "after": "Overtime is generally excluded, with specific exceptions such as applicable 7(k) compensation. Verify the applicable rule rather than deciding from the paystub label alone.",
+    "count": 1
+  },
+  {
+    "file": "native/financial/page-pension-estimator.html",
+    "before": "Nothing you type is saved or sent anywhere. No email field, no account. Reload the page and it has forgotten you.",
+    "after": "This calculator runs its calculations in your browser and does not itself submit or store these inputs. This statement concerns the calculator code; the surrounding site may have its own analytics and network requests.",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-qualified-ot-estimator.html",
+    "before": "Choose the 7(k) work period formally adopted by your department, not your shift rotation.",
+    "after": "This route assumes a nonexempt employee engaged in fire protection activities and a valid employer-adopted 7(k) work period of 7 through 28 days. If your employer uses ordinary 40-hour FLSA overtime or your exemption/activity status differs, this route does not apply. Confirm with payroll before using these thresholds.",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-qualified-ot-estimator.html",
+    "before": "Your employer's W-2 Box 12 code TT figure is the controlling number, not this estimate.",
+    "after": "Use the employer-reported 2026 W-2 Box 12 code TT amount when it is accurate. Ask the employer to correct inaccurate reporting and follow current IRS instructions; this estimate cannot resolve reporting errors.",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-qualified-ot-estimator.html",
+    "before": "Holiday or weekend premium pay for hours that are not FLSA overtime, and comp time not yet paid out, are excluded.",
+    "after": "Holiday or weekend premium pay for hours that are not FLSA overtime is excluded. Comp time used as paid leave generally is not qualified overtime compensation. A cash payment for accrued unused comp time can qualify to the extent it represents the required FLSA premium; this hours-based route does not model a comp-time payout.",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-qualified-ot-estimator.html",
+    "before": "Your 2026 W-2 Box 12 code TT figure controls your return;",
+    "after": "Use accurate employer-reported qualified overtime and current IRS instructions, requesting corrected reporting when needed;",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-qualified-ot-estimator.html",
+    "before": "Deferring more into your 457(b) can.",
+    "after": "Eligible traditional pre-tax 457(b) deferrals may reduce MAGI; Roth deferrals do not.",
+    "count": 1
+  },
+  {
+    "file": "native/financial/tool-qualified-ot-estimator.html",
+    "before": "Your levers are elsewhere; start with the 457(b).",
+    "after": "Any planning adjustment depends on your actual eligibility and taxes, including the difference between traditional pre-tax and Roth deferrals.",
+    "count": 1
+  }
+]

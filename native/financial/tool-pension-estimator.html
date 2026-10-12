@@ -1,0 +1,252 @@
+<!-- Benefit factors: CalPERS Local Safety charts (Feb 2021). PEPRA comp cap: CalPERS Circular Letter 200-001-26 (2026). -->
+<div class="gsf gsf-full">
+<div id="gsfpens">
+  <style>
+    #gsfpens{--nv:#101C33;--nv2:#0B1425;--ch:#1E2128;--br:#C08A2D;--brh:#D7A649;--em:#B23A2E;--bo:#F3EFE6;--dm:#B9BCC4;--fd:#8A909C;--ln:rgba(243,239,230,.13);
+      --disp:"Saira Condensed","Bahnschrift",system-ui,sans-serif;--body:"Public Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",Consolas,monospace;max-width:640px;margin:0 auto;font-family:var(--body)}
+    #gsfpens *{box-sizing:border-box}
+    #gsfpens .card{background:var(--ch);border:1px solid var(--ln);border-radius:10px;padding:30px 28px}
+    #gsfpens .eye{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--br);margin:0 0 6px}
+    #gsfpens h3{font-family:var(--disp);text-transform:uppercase;font-weight:700;color:var(--bo);font-size:23px;margin:0 0 6px;line-height:1.05}
+    #gsfpens p.sub{color:var(--dm);font-size:14px;margin:0 0 22px;line-height:1.5}
+    #gsfpens .warn{background:rgba(178,58,46,.10);border:1px solid rgba(178,58,46,.5);border-radius:8px;padding:12px 15px;margin:0 0 22px}
+    #gsfpens .warn p{margin:0;color:var(--bo);font-size:12.5px;line-height:1.55}
+    #gsfpens .fld{margin:0 0 17px}
+    #gsfpens label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dm);margin:0 0 7px}
+    #gsfpens label .hint{text-transform:none;letter-spacing:0;color:var(--fd);font-size:11px}
+    #gsfpens select,#gsfpens input{width:100%;background:var(--nv);border:1px solid var(--ln);border-radius:6px;color:var(--bo);font-family:var(--body);font-size:15px;padding:12px 14px}
+    #gsfpens select:focus,#gsfpens input:focus{outline:none;border-color:var(--br)}
+    #gsfpens .row{display:flex;gap:14px}
+    #gsfpens .row .fld{flex:1}
+    #gsfpens .prem{border-top:1px solid var(--ln);margin-top:6px;padding-top:18px}
+    #gsfpens .prem .plab{font-family:var(--disp);text-transform:uppercase;font-weight:600;color:var(--bo);font-size:15px;letter-spacing:.03em;margin:0 0 3px}
+    #gsfpens .prem .pnote{color:var(--fd);font-size:12px;margin:0 0 14px;line-height:1.5}
+    #gsfpens .go{font-family:var(--disp);text-transform:uppercase;font-weight:600;letter-spacing:.04em;font-size:15px;background:var(--em);color:var(--bo);border:0;border-radius:5px;padding:14px 22px;cursor:pointer;margin-top:8px}
+    #gsfpens .go:hover{background:#c64b3e}
+    #gsfpens .res{margin-top:24px;border-top:1px solid var(--ln);padding-top:22px}
+    #gsfpens .hidden{display:none!important}
+    #gsfpens .stat{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--ln)}
+    #gsfpens .stat .l{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fd)}
+    #gsfpens .stat .v{font-family:var(--disp);font-weight:700;color:var(--br);font-size:24px;text-align:right}
+    #gsfpens .stat.big .v{font-size:30px;color:var(--brh)}
+    #gsfpens .flag{background:rgba(192,138,45,.10);border:1px solid var(--br);border-radius:8px;padding:12px 15px;margin:16px 0 0}
+    #gsfpens .flag .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--br);display:block;margin-bottom:5px}
+    #gsfpens .flag p{margin:0 0 7px;color:var(--bo);font-size:13px;line-height:1.5}
+    #gsfpens .flag p:last-child{margin:0}
+    #gsfpens .err{color:var(--em);font-family:var(--body);font-size:13px;margin:10px 0 0}
+    #gsfpens .fine{font-family:var(--mono);font-size:10.5px;color:var(--fd);line-height:1.65;letter-spacing:.02em;margin-top:20px}
+    #gsfpens .fine a{color:var(--br);text-decoration:underline}
+    #gsfpens .fine strong{color:var(--dm)}
+  </style>
+  <div class="card">
+    <p class="eye">California firefighter pension estimator</p>
+    <h3>Estimate your CalPERS safety pension</h3>
+    <p class="sub">Pick your retirement formula, enter your numbers, and get a rough annual and monthly estimate. This is an independent tool, not affiliated with CalPERS or any department, and it is not financial advice. Always confirm with your own retirement system.</p>
+
+    <form id="gsfp-form" novalidate>
+    <div class="fld">
+      <label for="gsfp-tier">Retirement formula (tier)</label>
+      <select id="gsfp-tier">
+        <option value="3at50">Classic 3% at 50 (confirm your membership/formula)</option>
+        <option value="3at55">Classic 3% at 55</option>
+        <option value="pepra" selected>PEPRA 2.7% at 57 (most new firefighters)</option>
+        <option value="custom">Enter my own benefit factor (county / city system)</option>
+      </select>
+    </div>
+
+    <div class="fld hidden" id="gsfp-customwrap">
+      <label for="gsfp-custom">Your benefit factor <span class="hint">(percent per year, from your system's chart)</span></label>
+      <input id="gsfp-custom" type="number" inputmode="decimal" step="0.001" min="0" max="4" placeholder="e.g. 2.500">
+      <label for="gsfp-custommin">Minimum retirement age confirmed for your system and circumstances</label>
+      <input id="gsfp-custommin" type="number" min="30" max="75" step="0.25" placeholder="Enter the verified eligible minimum age">
+    </div>
+
+    <div class="row">
+      <div class="fld">
+        <label for="gsfp-yos">Years of service</label>
+        <input id="gsfp-yos" type="number" inputmode="decimal" step="0.5" min="0" max="45" placeholder="e.g. 28">
+      </div>
+      <div class="fld">
+        <label for="gsfp-age">Retirement age <span class="hint">(CalPERS formulas: min 50; custom: verify eligibility)</span></label>
+        <input id="gsfp-age" type="number" inputmode="decimal" step="0.25" min="30" max="75" placeholder="e.g. 56.75">
+      </div>
+    </div>
+
+    <div class="fld">
+      <label for="gsfp-comp">Final compensation <span class="hint">(verified tier-eligible pensionable pay, including eligible special pay)</span></label>
+      <input id="gsfp-comp" type="number" inputmode="numeric" step="1000" min="0" placeholder="e.g. 120000">
+    </div>
+
+    <div class="fld">
+      <label for="gsfp-ss">Does this position participate in Social Security? <span class="hint">(PEPRA cap only)</span></label>
+      <select id="gsfp-ss">
+        <option value="" selected>Choose one</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+    </div>
+
+    <div class="prem">
+      <p class="plab">Optional: premium total</p>
+      <p class="pnote">Enter optional premiums to see their separate annual total. These vary by MOU and retirement tier. Include any eligible pensionable portion in your verified final compensation above. These optional entries are shown as a separate premium total and are not automatically added to the pension estimate.</p>
+      <div class="row">
+        <div class="fld">
+          <label for="gsfp-medic">Paramedic premium <span class="hint">$/yr</span></label>
+          <input id="gsfp-medic" type="number" inputmode="numeric" step="500" min="0" placeholder="0">
+        </div>
+        <div class="fld">
+          <label for="gsfp-edu">Education premium <span class="hint">$/yr</span></label>
+          <input id="gsfp-edu" type="number" inputmode="numeric" step="500" min="0" placeholder="0">
+        </div>
+      </div>
+      <div class="fld">
+        <label for="gsfp-biling">Bilingual premium <span class="hint">$/yr</span></label>
+        <input id="gsfp-biling" type="number" inputmode="numeric" step="250" min="0" placeholder="0">
+      </div>
+    </div>
+
+    <button class="go" id="gsfp-go" type="submit" aria-controls="gsfp-res">Estimate my pension</button>
+    <p class="err hidden" id="gsfp-err" role="alert" aria-live="assertive" tabindex="-1"></p>
+    </form>
+
+    <div class="res hidden" id="gsfp-res" role="status" aria-live="polite" tabindex="-1">
+      <div class="stat"><span class="l">Percent of final compensation</span><span class="v" id="gsfp-pct"></span></div>
+      <div class="stat big"><span class="l">Estimated annual pension</span><span class="v" id="gsfp-annual"></span></div>
+      <div class="stat"><span class="l">Estimated monthly pension</span><span class="v" id="gsfp-monthly"></span></div>
+      <div class="stat hidden" id="gsfp-grossrow"><span class="l">Optional entered premium total</span><span class="v" id="gsfp-gross"></span></div>
+      <div class="flag" id="gsfp-flags"></div>
+      <p class="fine" id="gsfp-fine"></p>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    // Official CalPERS Local Safety benefit factors (Feb 2021 charts), including quarter-year ages.
+    // 3% at 50: flat 3.000 at every age 50+. Max 90%.
+    // 3% at 55: ramps 2.400 (50) -> 3.000 (55+). Max 90%.
+    // 2.7% at 57 (PEPRA): ramps 2.000 (50) -> 2.700 (57+). No 90% cap on chart.
+    var FACT={
+      '3at50':{start:50,startFactor:3.000,quarterStep:0,maxAge:50,cap:90,minAge:50,label:'Classic 3% at 50'},
+      '3at55':{start:50,startFactor:2.400,quarterStep:0.030,maxAge:55,cap:90,minAge:50,label:'Classic 3% at 55'},
+      'pepra':{start:50,startFactor:2.000,quarterStep:0.025,maxAge:57,cap:null,minAge:50,label:'PEPRA 2.7% at 57'}
+    };
+    // 2026 PEPRA pensionable compensation caps (CalPERS Circular Letter 200-001-26).
+    var PEPRA_CAP_SS=159733, PEPRA_CAP_NOSS=191679;
+
+    var $=function(id){return document.getElementById(id);};
+    function money(n){return '$'+Math.round(n).toLocaleString();}
+
+    // show/hide custom factor field
+    var tier=$('gsfp-tier');
+    tier.addEventListener('change',function(){
+      $('gsfp-customwrap').classList.toggle('hidden', tier.value!=='custom');
+    });
+
+    // CalPERS charts publish completed quarter-year factors. Ignore partial quarters.
+    function lookupFactor(key,age){
+      var t=FACT[key];
+      if(age<=t.start) return t.startFactor;
+      if(age>=t.maxAge) age=t.maxAge;
+      var completedQuarters=Math.floor((age-t.start)*4+1e-8);
+      return t.startFactor+(completedQuarters*t.quarterStep);
+    }
+
+    function num(id){var v=parseFloat($(id).value); return isNaN(v)?0:v;}
+
+    $('gsfp-form').addEventListener('submit',function(event){
+      event.preventDefault();
+      var err=$('gsfp-err'); err.classList.add('hidden'); err.textContent='';
+      var key=tier.value;
+      var yos=num('gsfp-yos'), age=num('gsfp-age'), comp=num('gsfp-comp');
+      var flags=[];
+
+      // validation
+      if(yos<=0){ return showErr('Enter your years of service.'); }
+      if(!isFinite(yos)||yos<=0){ return showErr('Enter finite positive years of service.'); }
+      if(!isFinite(comp)||comp<=0){ return showErr('Enter finite positive pensionable final compensation verified by your retirement system.'); }
+      if(!isFinite(age)||age<=0){ return showErr('Enter a finite positive retirement age.'); }
+      if(yos>45){return showErr('This illustration supports up to 45 years of service.');}
+      if(age>75||age<30){return showErr('This illustration supports ages 30 through 75; your actual minimum eligibility still applies.');}
+      if(key!=='custom' && !FACT[key]){ return showErr('Choose a supported retirement formula.'); }
+      if(!$('gsfp-age').value){ return showErr('Enter your retirement age.'); }
+      if(key==='pepra' && !$('gsfp-ss').value){ return showErr('Choose whether this position participates in Social Security so the correct PEPRA compensation cap can be applied.'); }
+
+      var factor, cap=null, tierLabel;
+      if(key==='custom'){
+        factor=num('gsfp-custom');
+        if(!isFinite(factor)||factor<=0){ return showErr('Enter your benefit factor from your system’s chart.'); }
+        if(factor>4){return showErr('This illustration supports a verified custom factor above 0% and no more than 4%.');}
+        var minimum=num('gsfp-custommin');
+        if(!$('gsfp-custommin').value||!isFinite(minimum)||minimum<30||minimum>75){return showErr('Enter the verified minimum retirement age for your system from 30 through 75.');}
+        if(age<minimum){return showErr('Your entered age is below the minimum retirement age you confirmed for this custom system.');}
+        flags.push(['Custom eligibility not established','Confirm your system-specific service, membership, minimum age and benefit eligibility. Entering a factor and minimum age does not establish a payable benefit.']);
+        tierLabel='Your entered factor ('+factor.toFixed(3)+'%)';
+        flags.push(['Custom factor','You entered your own benefit factor, so no formula cap is applied here. Check whether your system caps the benefit (many cap at 90% of final compensation) and confirm the factor for your exact age.']);
+      } else {
+        var t=FACT[key]; tierLabel=t.label; cap=t.cap;
+        if(age<t.minAge){
+          return showErr('This formula starts at age '+t.minAge+'. Enter an eligible retirement age; an age-49 input is not an age-50 estimate.');
+        }
+        factor=lookupFactor(key,age);
+        // note when the max factor is not yet reached
+        var head = key==='pepra'?57:(key==='3at55'?55:50);
+        if(age<head){
+          flags.push(['Reduced factor','You are retiring before the formula’s full age ('+head+'). Your factor is '+factor.toFixed(3)+'% instead of the headline '+ (key==='pepra'?'2.7':'3.0') +'%. Retiring earlier lowers your factor for life.']);
+        }
+      }
+
+      if(key!=='custom' && yos<5){ flags.push(["Eligibility not established","CalPERS service retirement generally requires five years of service credit, with exceptions such as qualifying reciprocity. This formula illustration does not establish that you can receive a pension. Confirm eligibility with your system."]); }
+      var pct = yos * factor;              // percent of final comp
+      var capped=false;
+      if(cap!==null && pct>cap){ pct=cap; capped=true; }
+      var pensionComp=comp;
+      if(key==='pepra'){
+        var pepraCap=$('gsfp-ss').value==='yes'?PEPRA_CAP_SS:PEPRA_CAP_NOSS;
+        pensionComp=Math.min(comp,pepraCap);
+        if(comp>pepraCap){
+          flags.push(['PEPRA pay cap applied','The estimate uses '+money(pepraCap)+' of pensionable compensation, the 2026 cap for a position that '+($('gsfp-ss').value==='yes'?'does':'does not')+' participate in Social Security. The '+money(comp-pepraCap)+' entered above that cap is excluded.']);
+        }
+      }
+      var annual = pensionComp * pct/100;
+      if(!isFinite(annual)){ return showErr("The entered values exceed the supported calculation range."); }
+      var monthly = annual/12;
+
+      if(capped){
+        flags.push(['90% maximum reached','This formula caps the benefit at 90% of final compensation, so the estimate is held at 90%. More service years past this point do not raise the percentage.']);
+      }
+
+      // premiums -> current pay picture only (never added to pension)
+      var premiums=['gsfp-medic','gsfp-edu','gsfp-biling'].map(num);
+      if(premiums.some(function(v){return !isFinite(v)||v<0;})){return showErr('Optional premiums must be finite amounts of 0 or more.');}
+      var prem = premiums.reduce(function(a,b){return a+b;},0);
+      if(prem>0){
+        $('gsfp-gross').textContent = money(prem);
+        $('gsfp-grossrow').classList.remove('hidden');
+      } else {
+        $('gsfp-grossrow').classList.add('hidden');
+      }
+
+      // render
+      $('gsfp-pct').textContent = pct.toFixed(1)+'%';
+      $('gsfp-annual').textContent = money(annual);
+      $('gsfp-monthly').textContent = money(monthly);
+
+      var fb=$('gsfp-flags');
+      if(flags.length){
+        fb.style.display='block';
+        fb.innerHTML = flags.map(function(f){return '<span class="k">'+f[0]+'</span><p>'+f[1]+'</p>';}).join('');
+      } else { fb.style.display='none'; fb.innerHTML=''; }
+
+      $('gsfp-fine').innerHTML = 'Estimate only, based on the formula '+tierLabel+' ('+yos+' years × '+factor.toFixed(3)+'% factor) and '+money(pensionComp)+' of pensionable compensation. CalPERS factors use completed quarter-year ages. This is the unmodified allowance before any survivor option, taxes, or health premiums. Use reportable final compensation confirmed for your tier, including eligible special pay. Overtime is generally excluded, with specific exceptions such as applicable 7(k) compensation; do not infer pensionability solely from a paystub label. Final compensation rules differ (PEPRA uses a 36-month average; some Classic contracts allow a single highest year). County systems (LACERA, OCERS, SDCERA) and city systems (LAFPP) use their own factors. <strong>This is an independent resource, not affiliated with CalPERS or any department, and nothing here is financial or retirement advice. Confirm your membership date, tier, Social Security coverage, factor, pensionable compensation, and estimate with your retirement system before relying on any number.</strong> Benefit factors from CalPERS Local Safety charts; 2026 PEPRA pay caps from CalPERS Circular Letter 200-001-26.';
+
+      $('gsfp-res').classList.remove('hidden');$('gsfp-res').focus();
+    });
+
+    function showErr(msg){
+      var e=$('gsfp-err'); e.textContent=msg; e.classList.remove('hidden');e.focus();
+      $('gsfp-res').classList.add('hidden');
+    }
+  })();
+  </script>
+</div>
+</div>
