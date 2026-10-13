@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-10-12T05:38:23",
-    "count": 36,
+    "generated": "2026-10-13T05:38:26",
+    "count": 37,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
@@ -11,7 +11,7 @@
       "region": "Bay Area",
       "open_date": "2026-09-28",
       "close_date": "2026-10-19",
-      "source_url": "https://www.governmentjobs.com/careers/berkeley/jobs/5487103",
+      "source_url": "https://www.governmentjobs.com/careers/berkeley/jobs/5487103-0",
       "source": "governmentjobs"
     },
     {
@@ -20,7 +20,7 @@
       "region": "Bay Area",
       "open_date": "2026-10-05",
       "close_date": "2026-10-26",
-      "source_url": "https://www.governmentjobs.com/careers/fairfield/jobs/5499710",
+      "source_url": "https://www.governmentjobs.com/careers/fairfield/jobs/5499710-0",
       "source": "governmentjobs"
     },
     {
@@ -29,7 +29,7 @@
       "region": "Bay Area",
       "open_date": "2026-09-23",
       "close_date": "2026-10-23",
-      "source_url": "https://www.governmentjobs.com/careers/vallejo/jobs/5493544",
+      "source_url": "https://www.governmentjobs.com/careers/vallejo/jobs/5493544-0",
       "source": "governmentjobs"
     },
     {
@@ -38,7 +38,7 @@
       "region": "Sacramento/Central Valley",
       "open_date": "2026-09-14",
       "close_date": "2026-10-26",
-      "source_url": "https://www.governmentjobs.com/careers/bakersfield/jobs/5480502",
+      "source_url": "https://www.governmentjobs.com/careers/bakersfield/jobs/5480502-0",
       "source": "governmentjobs"
     },
     {
@@ -47,7 +47,7 @@
       "region": "Los Angeles/SoCal",
       "open_date": "2026-10-07",
       "close_date": "2026-10-23",
-      "source_url": "https://www.governmentjobs.com/careers/lacounty/jobs/5491217",
+      "source_url": "https://www.governmentjobs.com/careers/lacounty/jobs/5491217-0",
       "source": "governmentjobs"
     },
     {
@@ -56,7 +56,7 @@
       "region": "Los Angeles/SoCal",
       "open_date": "2025-06-03",
       "close_date": null,
-      "source_url": "https://www.governmentjobs.com/careers/lacounty/jobs/4830530",
+      "source_url": "https://www.governmentjobs.com/careers/lacounty/jobs/4830530-0",
       "source": "governmentjobs"
     },
     {
@@ -65,7 +65,7 @@
       "region": "Los Angeles/SoCal",
       "open_date": "2026-08-27",
       "close_date": "2026-11-22",
-      "source_url": "https://www.governmentjobs.com/careers/monrovia/jobs/5464473",
+      "source_url": "https://www.governmentjobs.com/careers/monrovia/jobs/5464473-0",
       "source": "governmentjobs"
     },
     {
@@ -74,7 +74,7 @@
       "region": "Los Angeles/SoCal",
       "open_date": "2026-10-01",
       "close_date": "2026-10-22",
-      "source_url": "https://www.governmentjobs.com/careers/montebello/jobs/5456352",
+      "source_url": "https://www.governmentjobs.com/careers/montebello/jobs/5456352-0",
       "source": "governmentjobs"
     },
     {
@@ -83,7 +83,7 @@
       "region": "Los Angeles/SoCal",
       "open_date": "2026-09-29",
       "close_date": "2026-10-18",
-      "source_url": "https://www.governmentjobs.com/careers/fullerton/jobs/5488730",
+      "source_url": "https://www.governmentjobs.com/careers/fullerton/jobs/5488730-0",
       "source": "governmentjobs"
     },
     {
@@ -92,7 +92,7 @@
       "region": "Los Angeles/SoCal",
       "open_date": "2026-08-03",
       "close_date": null,
-      "source_url": "https://www.governmentjobs.com/careers/fullerton/jobs/5430126",
+      "source_url": "https://www.governmentjobs.com/careers/fullerton/jobs/5430126-0",
       "source": "governmentjobs"
     },
     {
@@ -101,7 +101,7 @@
       "region": "Central Coast",
       "open_date": "2023-09-15",
       "close_date": null,
-      "source_url": "https://www.governmentjobs.com/careers/Watsonville/jobs/4207058",
+      "source_url": "https://www.governmentjobs.com/careers/Watsonville/jobs/4207058-0",
       "source": "governmentjobs"
     },
     {
@@ -110,7 +110,7 @@
       "region": "San Diego",
       "open_date": "2026-05-01",
       "close_date": "2026-11-27",
-      "source_url": "https://www.governmentjobs.com/careers/oceansideca/jobs/5329377",
+      "source_url": "https://www.governmentjobs.com/careers/oceansideca/jobs/5329377-0",
       "source": "governmentjobs"
     },
     {
@@ -119,7 +119,7 @@
       "region": "San Diego",
       "open_date": "2024-11-27",
       "close_date": null,
-      "source_url": "https://www.governmentjobs.com/careers/santee/jobs/4744205",
+      "source_url": "https://www.governmentjobs.com/careers/santee/jobs/4744205-0",
       "source": "governmentjobs"
     },
     {
@@ -128,7 +128,7 @@
       "region": "Inland Empire",
       "open_date": "2026-10-10",
       "close_date": "2026-10-19",
-      "source_url": "https://www.governmentjobs.com/careers/sanbernardino/jobs/5498865",
+      "source_url": "https://www.governmentjobs.com/careers/sanbernardino/jobs/5498865-0",
       "source": "governmentjobs"
     },
     {
@@ -137,7 +137,7 @@
       "region": "Inland Empire",
       "open_date": "2026-03-07",
       "close_date": null,
-      "source_url": "https://www.governmentjobs.com/careers/sanbernardino/jobs/5257223",
+      "source_url": "https://www.governmentjobs.com/careers/sanbernardino/jobs/5257223-0",
       "source": "governmentjobs"
     },
     {
@@ -146,7 +146,7 @@
       "region": "Imperial Valley",
       "open_date": "2026-01-01",
       "close_date": null,
-      "source_url": "https://www.governmentjobs.com/careers/elcentro/jobs/5183105",
+      "source_url": "https://www.governmentjobs.com/careers/elcentro/jobs/5183105-0",
       "source": "governmentjobs"
     },
     {
@@ -155,7 +155,16 @@
       "region": "Bay Area",
       "open_date": "2026-09-28",
       "close_date": "2026-10-19",
-      "source_url": "https://www.governmentjobs.com/careers/healdsburgca/jobs/5497341",
+      "source_url": "https://www.governmentjobs.com/careers/healdsburgca/jobs/5497341-0",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Santa Clara Fire Department",
+      "title": "Firefighter/Engineer - Paramedic",
+      "region": "Bay Area",
+      "open_date": "2026-10-12",
+      "close_date": "2026-11-13",
+      "source_url": "https://www.governmentjobs.com/careers/sccfd/jobs/5509366-0",
       "source": "governmentjobs"
     },
     {
@@ -164,7 +173,7 @@
       "region": "Central Coast",
       "open_date": "2026-09-24",
       "close_date": "2026-10-19",
-      "source_url": "https://www.governmentjobs.com/careers/montecitofire/jobs/5494950",
+      "source_url": "https://www.governmentjobs.com/careers/montecitofire/jobs/5494950-0",
       "source": "governmentjobs"
     },
     {
@@ -173,7 +182,7 @@
       "region": "Central Coast",
       "open_date": "2026-09-24",
       "close_date": "2026-10-19",
-      "source_url": "https://www.governmentjobs.com/careers/montecitofire/jobs/5494741",
+      "source_url": "https://www.governmentjobs.com/careers/montecitofire/jobs/5494741-0",
       "source": "governmentjobs"
     },
     {
@@ -182,7 +191,7 @@
       "region": "Central Coast",
       "open_date": "2026-09-21",
       "close_date": "2026-10-19",
-      "source_url": "https://www.governmentjobs.com/careers/cityofoxnard/jobs/5477977",
+      "source_url": "https://www.governmentjobs.com/careers/cityofoxnard/jobs/5477977-0",
       "source": "governmentjobs"
     },
     {
@@ -191,7 +200,7 @@
       "region": "Inland Empire",
       "open_date": "2026-08-04",
       "close_date": null,
-      "source_url": "https://www.governmentjobs.com/careers/barstowca/jobs/5415454",
+      "source_url": "https://www.governmentjobs.com/careers/barstowca/jobs/5415454-0",
       "source": "governmentjobs"
     },
     {
@@ -200,7 +209,7 @@
       "region": "Inland Empire",
       "open_date": "2026-06-02",
       "close_date": null,
-      "source_url": "https://www.governmentjobs.com/careers/barstowca/jobs/5210932",
+      "source_url": "https://www.governmentjobs.com/careers/barstowca/jobs/5210932-0",
       "source": "governmentjobs"
     },
     {
@@ -209,7 +218,7 @@
       "region": "Inland Empire",
       "open_date": "2026-09-02",
       "close_date": null,
-      "source_url": "https://www.governmentjobs.com/careers/cathedralcityca/jobs/5471008",
+      "source_url": "https://www.governmentjobs.com/careers/cathedralcityca/jobs/5471008-0",
       "source": "governmentjobs"
     },
     {
@@ -218,7 +227,7 @@
       "region": "Inland Empire",
       "open_date": "2026-05-11",
       "close_date": null,
-      "source_url": "https://www.governmentjobs.com/careers/cathedralcityca/jobs/5338561",
+      "source_url": "https://www.governmentjobs.com/careers/cathedralcityca/jobs/5338561-0",
       "source": "governmentjobs"
     },
     {
@@ -227,7 +236,7 @@
       "region": "Inland Empire",
       "open_date": "2026-05-19",
       "close_date": null,
-      "source_url": "https://www.governmentjobs.com/careers/cityofmontclair/jobs/5349138",
+      "source_url": "https://www.governmentjobs.com/careers/cityofmontclair/jobs/5349138-0",
       "source": "governmentjobs"
     },
     {
@@ -236,7 +245,7 @@
       "region": "Inland Empire",
       "open_date": "2023-04-25",
       "close_date": null,
-      "source_url": "https://www.governmentjobs.com/careers/cityofmontclair/jobs/3940529",
+      "source_url": "https://www.governmentjobs.com/careers/cityofmontclair/jobs/3940529-0",
       "source": "governmentjobs"
     },
     {
@@ -245,7 +254,7 @@
       "region": "Inland Empire",
       "open_date": "2023-04-25",
       "close_date": null,
-      "source_url": "https://www.governmentjobs.com/careers/cityofmontclair/jobs/3940420",
+      "source_url": "https://www.governmentjobs.com/careers/cityofmontclair/jobs/3940420-0",
       "source": "governmentjobs"
     },
     {
@@ -254,7 +263,7 @@
       "region": "Los Angeles/SoCal",
       "open_date": "2026-09-21",
       "close_date": "2026-10-18",
-      "source_url": "https://www.governmentjobs.com/careers/ocfa/jobs/5490286",
+      "source_url": "https://www.governmentjobs.com/careers/ocfa/jobs/5490286-0",
       "source": "governmentjobs"
     },
     {
@@ -263,7 +272,7 @@
       "region": "Los Angeles/SoCal",
       "open_date": "2026-09-21",
       "close_date": "2026-10-18",
-      "source_url": "https://www.governmentjobs.com/careers/ocfa/jobs/5490264",
+      "source_url": "https://www.governmentjobs.com/careers/ocfa/jobs/5490264-0",
       "source": "governmentjobs"
     },
     {
@@ -272,7 +281,7 @@
       "region": "Sacramento/Central Valley",
       "open_date": "2026-10-01",
       "close_date": "2026-10-31",
-      "source_url": "https://www.governmentjobs.com/careers/ntfire/jobs/5497004",
+      "source_url": "https://www.governmentjobs.com/careers/ntfire/jobs/5497004-0",
       "source": "governmentjobs"
     },
     {
@@ -281,7 +290,7 @@
       "region": "Sacramento/Central Valley",
       "open_date": "2026-07-29",
       "close_date": null,
-      "source_url": "https://www.governmentjobs.com/careers/lindsayca/jobs/5430171",
+      "source_url": "https://www.governmentjobs.com/careers/lindsayca/jobs/5430171-0",
       "source": "governmentjobs"
     },
     {
@@ -290,7 +299,7 @@
       "region": "Sacramento/Central Valley",
       "open_date": "2026-07-08",
       "close_date": null,
-      "source_url": "https://www.governmentjobs.com/careers/rocklinca/jobs/5406709",
+      "source_url": "https://www.governmentjobs.com/careers/rocklinca/jobs/5406709-0",
       "source": "governmentjobs"
     },
     {
@@ -299,7 +308,7 @@
       "region": "Sacramento/Central Valley",
       "open_date": "2026-07-08",
       "close_date": null,
-      "source_url": "https://www.governmentjobs.com/careers/rocklinca/jobs/5403075",
+      "source_url": "https://www.governmentjobs.com/careers/rocklinca/jobs/5403075-0",
       "source": "governmentjobs"
     },
     {
@@ -308,7 +317,7 @@
       "region": "Sacramento/Central Valley",
       "open_date": "2022-09-27",
       "close_date": null,
-      "source_url": "https://www.governmentjobs.com/careers/tulareca/jobs/3739748",
+      "source_url": "https://www.governmentjobs.com/careers/tulareca/jobs/3739748-0",
       "source": "governmentjobs"
     },
     {
@@ -317,7 +326,7 @@
       "region": "San Diego",
       "open_date": "2026-04-02",
       "close_date": null,
-      "source_url": "https://www.governmentjobs.com/careers/imperialcounty/jobs/5295354",
+      "source_url": "https://www.governmentjobs.com/careers/imperialcounty/jobs/5295354-0",
       "source": "governmentjobs"
     },
     {
@@ -326,7 +335,7 @@
       "region": "San Diego",
       "open_date": "2026-10-08",
       "close_date": "2026-10-25",
-      "source_url": "https://www.governmentjobs.com/careers/lamesa/jobs/5507988",
+      "source_url": "https://www.governmentjobs.com/careers/lamesa/jobs/5507988-0",
       "source": "governmentjobs"
     }
   ]
