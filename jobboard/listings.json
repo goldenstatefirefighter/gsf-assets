@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-10-13T05:38:26",
-    "count": 37,
+    "generated": "2026-10-15T05:37:31",
+    "count": 38,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
@@ -43,20 +43,20 @@
     },
     {
       "department": "Los Angeles County Fire Department",
-      "title": "FIRE FIGHTER TRAINEE (PARAMEDIC)",
-      "region": "Los Angeles/SoCal",
-      "open_date": "2026-10-07",
-      "close_date": "2026-10-23",
-      "source_url": "https://www.governmentjobs.com/careers/lacounty/jobs/5491217-0",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Los Angeles County Fire Department",
       "title": "CALL FIRE FIGHTER, NON-COMPETITIVE (AS NEEDED)",
       "region": "Los Angeles/SoCal",
       "open_date": "2025-06-03",
       "close_date": null,
       "source_url": "https://www.governmentjobs.com/careers/lacounty/jobs/4830530-0",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Los Angeles County Fire Department",
+      "title": "FIRE FIGHTER TRAINEE (PARAMEDIC)",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2026-10-07",
+      "close_date": "2026-10-23",
+      "source_url": "https://www.governmentjobs.com/careers/lacounty/jobs/5491217-0",
       "source": "governmentjobs"
     },
     {
@@ -255,6 +255,15 @@
       "open_date": "2023-04-25",
       "close_date": null,
       "source_url": "https://www.governmentjobs.com/careers/cityofmontclair/jobs/3940420-0",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Orange County Fire Authority",
+      "title": "Fire Apparatus Engineer Academy 44 & 45 Coordinator",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2026-10-14",
+      "close_date": "2026-10-29",
+      "source_url": "https://www.governmentjobs.com/careers/ocfa/jobs/5383119-0",
       "source": "governmentjobs"
     },
     {
