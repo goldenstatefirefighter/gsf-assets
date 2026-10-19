@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-10-18T05:39:39",
-    "count": 38,
+    "generated": "2026-10-19T05:38:02",
+    "count": 35,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
@@ -75,15 +75,6 @@
       "open_date": "2026-10-01",
       "close_date": "2026-10-22",
       "source_url": "https://www.governmentjobs.com/careers/montebello/jobs/5456352-0",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Fullerton Fire Department",
-      "title": "Firefighter Trainee",
-      "region": "Los Angeles/SoCal",
-      "open_date": "2026-09-29",
-      "close_date": "2026-10-18",
-      "source_url": "https://www.governmentjobs.com/careers/fullerton/jobs/5488730-0",
       "source": "governmentjobs"
     },
     {
@@ -264,24 +255,6 @@
       "open_date": "2026-10-14",
       "close_date": "2026-10-29",
       "source_url": "https://www.governmentjobs.com/careers/ocfa/jobs/5383119-0",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Orange County Fire Authority",
-      "title": "Firefighter Paramedic - Professional Experience",
-      "region": "Los Angeles/SoCal",
-      "open_date": "2026-09-21",
-      "close_date": "2026-10-18",
-      "source_url": "https://www.governmentjobs.com/careers/ocfa/jobs/5490286-0",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Orange County Fire Authority",
-      "title": "Firefighter Paramedic - Trainee",
-      "region": "Los Angeles/SoCal",
-      "open_date": "2026-09-21",
-      "close_date": "2026-10-18",
-      "source_url": "https://www.governmentjobs.com/careers/ocfa/jobs/5490264-0",
       "source": "governmentjobs"
     },
     {
