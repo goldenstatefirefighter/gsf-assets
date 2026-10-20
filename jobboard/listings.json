@@ -1,19 +1,10 @@
 {
   "meta": {
-    "generated": "2026-10-19T05:38:02",
-    "count": 35,
+    "generated": "2026-10-20T05:38:16",
+    "count": 32,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
-    {
-      "department": "Berkeley Fire Department",
-      "title": "Firefighter Paramedic",
-      "region": "Bay Area",
-      "open_date": "2026-09-28",
-      "close_date": "2026-10-19",
-      "source_url": "https://www.governmentjobs.com/careers/berkeley/jobs/5487103-0",
-      "source": "governmentjobs"
-    },
     {
       "department": "Fairfield Fire Department",
       "title": "Firefighter/Paramedic (Entry Level & Lateral Level)",
@@ -43,20 +34,20 @@
     },
     {
       "department": "Los Angeles County Fire Department",
-      "title": "CALL FIRE FIGHTER, NON-COMPETITIVE (AS NEEDED)",
-      "region": "Los Angeles/SoCal",
-      "open_date": "2025-06-03",
-      "close_date": null,
-      "source_url": "https://www.governmentjobs.com/careers/lacounty/jobs/4830530-0",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Los Angeles County Fire Department",
       "title": "FIRE FIGHTER TRAINEE (PARAMEDIC)",
       "region": "Los Angeles/SoCal",
       "open_date": "2026-10-07",
       "close_date": "2026-10-23",
       "source_url": "https://www.governmentjobs.com/careers/lacounty/jobs/5491217-0",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Los Angeles County Fire Department",
+      "title": "CALL FIRE FIGHTER, NON-COMPETITIVE (AS NEEDED)",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2025-06-03",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/lacounty/jobs/4830530-0",
       "source": "governmentjobs"
     },
     {
@@ -115,15 +106,6 @@
     },
     {
       "department": "San Bernardino County Fire",
-      "title": "Fire Captain",
-      "region": "Inland Empire",
-      "open_date": "2026-10-10",
-      "close_date": "2026-10-19",
-      "source_url": "https://www.governmentjobs.com/careers/sanbernardino/jobs/5498865-0",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "San Bernardino County Fire",
       "title": "Firefighter - Paramedic (Fire District)",
       "region": "Inland Empire",
       "open_date": "2026-03-07",
@@ -141,15 +123,6 @@
       "source": "governmentjobs"
     },
     {
-      "department": "Healdsburg Fire Department",
-      "title": "Firefighter",
-      "region": "Bay Area",
-      "open_date": "2026-09-28",
-      "close_date": "2026-10-19",
-      "source_url": "https://www.governmentjobs.com/careers/healdsburgca/jobs/5497341-0",
-      "source": "governmentjobs"
-    },
-    {
       "department": "Santa Clara Fire Department",
       "title": "Firefighter/Engineer - Paramedic",
       "region": "Bay Area",
@@ -159,39 +132,12 @@
       "source": "governmentjobs"
     },
     {
-      "department": "Montecito Fire Protection District",
-      "title": "Firefighter - Paramedic 2026 Recruitment",
+      "department": "Marina Fire Department",
+      "title": "Fire Fighter",
       "region": "Central Coast",
-      "open_date": "2026-09-24",
-      "close_date": "2026-10-19",
-      "source_url": "https://www.governmentjobs.com/careers/montecitofire/jobs/5494950-0",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Montecito Fire Protection District",
-      "title": "Firefighter - EMT 2026 Recruitment",
-      "region": "Central Coast",
-      "open_date": "2026-09-24",
-      "close_date": "2026-10-19",
-      "source_url": "https://www.governmentjobs.com/careers/montecitofire/jobs/5494741-0",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Oxnard Fire Department",
-      "title": "Fire Engineer (Department Promotion)",
-      "region": "Central Coast",
-      "open_date": "2026-09-21",
-      "close_date": "2026-10-19",
-      "source_url": "https://www.governmentjobs.com/careers/cityofoxnard/jobs/5477977-0",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Barstow Fire Protection District",
-      "title": "Fire Engineer",
-      "region": "Inland Empire",
-      "open_date": "2026-08-04",
-      "close_date": null,
-      "source_url": "https://www.governmentjobs.com/careers/barstowca/jobs/5415454-0",
+      "open_date": "2026-10-19",
+      "close_date": "2026-10-25",
+      "source_url": "https://www.governmentjobs.com/careers/cityofmarina/jobs/5521257-0",
       "source": "governmentjobs"
     },
     {
@@ -201,6 +147,15 @@
       "open_date": "2026-06-02",
       "close_date": null,
       "source_url": "https://www.governmentjobs.com/careers/barstowca/jobs/5210932-0",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Barstow Fire Protection District",
+      "title": "Fire Engineer",
+      "region": "Inland Empire",
+      "open_date": "2026-08-04",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/barstowca/jobs/5415454-0",
       "source": "governmentjobs"
     },
     {
@@ -250,11 +205,29 @@
     },
     {
       "department": "Orange County Fire Authority",
+      "title": "Firefighter Academy Instructor",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2026-10-19",
+      "close_date": "2026-11-09",
+      "source_url": "https://www.governmentjobs.com/careers/ocfa/jobs/5521119-0",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Orange County Fire Authority",
       "title": "Fire Apparatus Engineer Academy 44 & 45 Coordinator",
       "region": "Los Angeles/SoCal",
       "open_date": "2026-10-14",
       "close_date": "2026-10-29",
       "source_url": "https://www.governmentjobs.com/careers/ocfa/jobs/5383119-0",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Santa Fe Springs Fire Department",
+      "title": "AUXILIARY FIREFIGHTER (VOLUNTEER/NON-PAID)",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2026-10-19",
+      "close_date": "2026-11-19",
+      "source_url": "https://www.governmentjobs.com/careers/santafesprings/jobs/5521678-0",
       "source": "governmentjobs"
     },
     {
