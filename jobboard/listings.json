@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-10-20T05:38:16",
+    "generated": "2026-10-21T05:38:03",
     "count": 32,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
@@ -78,6 +78,15 @@
       "source": "governmentjobs"
     },
     {
+      "department": "Brea Fire Department",
+      "title": "Firefighter Trainee",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2026-10-21",
+      "close_date": "2026-11-02",
+      "source_url": "https://www.governmentjobs.com/careers/brea/jobs/5519450-0",
+      "source": "governmentjobs"
+    },
+    {
       "department": "Watsonville Fire Department",
       "title": "Firefighter (Paramedic) -Entry Level/Lateral",
       "region": "Central Coast",
@@ -129,15 +138,6 @@
       "open_date": "2026-10-12",
       "close_date": "2026-11-13",
       "source_url": "https://www.governmentjobs.com/careers/sccfd/jobs/5509366-0",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Marina Fire Department",
-      "title": "Fire Fighter",
-      "region": "Central Coast",
-      "open_date": "2026-10-19",
-      "close_date": "2026-10-25",
-      "source_url": "https://www.governmentjobs.com/careers/cityofmarina/jobs/5521257-0",
       "source": "governmentjobs"
     },
     {
