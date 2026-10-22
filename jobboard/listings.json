@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-10-21T05:38:03",
-    "count": 32,
+    "generated": "2026-10-22T05:37:55",
+    "count": 33,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
@@ -205,6 +205,15 @@
     },
     {
       "department": "Orange County Fire Authority",
+      "title": "Fire Apparatus Engineer Academy 44 and 45 Instructor / Assistant Coordinator",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2026-10-21",
+      "close_date": "2026-11-05",
+      "source_url": "https://www.governmentjobs.com/careers/ocfa/jobs/5515570-0",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Orange County Fire Authority",
       "title": "Firefighter Academy Instructor",
       "region": "Los Angeles/SoCal",
       "open_date": "2026-10-19",
@@ -250,20 +259,20 @@
     },
     {
       "department": "Rocklin Fire Department",
-      "title": "Firefighter/Paramedic (Non-Lateral)",
-      "region": "Sacramento/Central Valley",
-      "open_date": "2026-07-08",
-      "close_date": null,
-      "source_url": "https://www.governmentjobs.com/careers/rocklinca/jobs/5406709-0",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Rocklin Fire Department",
       "title": "Firefighter/Paramedic (Lateral)",
       "region": "Sacramento/Central Valley",
       "open_date": "2026-07-08",
       "close_date": null,
       "source_url": "https://www.governmentjobs.com/careers/rocklinca/jobs/5403075-0",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Rocklin Fire Department",
+      "title": "Firefighter/Paramedic (Non-Lateral)",
+      "region": "Sacramento/Central Valley",
+      "open_date": "2026-07-08",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/rocklinca/jobs/5406709-0",
       "source": "governmentjobs"
     },
     {
