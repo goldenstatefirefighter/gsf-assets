@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-10-22T05:37:55",
-    "count": 33,
+    "generated": "2026-10-24T05:38:17",
+    "count": 31,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
@@ -12,15 +12,6 @@
       "open_date": "2026-10-05",
       "close_date": "2026-10-26",
       "source_url": "https://www.governmentjobs.com/careers/fairfield/jobs/5499710-0",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Vallejo Fire Department",
-      "title": "Firefighter / Paramedic",
-      "region": "Bay Area",
-      "open_date": "2026-09-23",
-      "close_date": "2026-10-23",
-      "source_url": "https://www.governmentjobs.com/careers/vallejo/jobs/5493544-0",
       "source": "governmentjobs"
     },
     {
@@ -37,7 +28,7 @@
       "title": "FIRE FIGHTER TRAINEE (PARAMEDIC)",
       "region": "Los Angeles/SoCal",
       "open_date": "2026-10-07",
-      "close_date": "2026-10-23",
+      "close_date": "2026-10-30",
       "source_url": "https://www.governmentjobs.com/careers/lacounty/jobs/5491217-0",
       "source": "governmentjobs"
     },
@@ -57,15 +48,6 @@
       "open_date": "2026-08-27",
       "close_date": "2026-11-22",
       "source_url": "https://www.governmentjobs.com/careers/monrovia/jobs/5464473-0",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Montebello Fire Department",
-      "title": "FIRE ENGINEER (PROMOTIONAL)",
-      "region": "Los Angeles/SoCal",
-      "open_date": "2026-10-01",
-      "close_date": "2026-10-22",
-      "source_url": "https://www.governmentjobs.com/careers/montebello/jobs/5456352-0",
       "source": "governmentjobs"
     },
     {
