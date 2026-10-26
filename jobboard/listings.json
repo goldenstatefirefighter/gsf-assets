@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-10-25T05:37:49",
-    "count": 31,
+    "generated": "2026-10-26T05:38:09",
+    "count": 30,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
@@ -273,15 +273,6 @@
       "open_date": "2026-04-02",
       "close_date": null,
       "source_url": "https://www.governmentjobs.com/careers/imperialcounty/jobs/5295354-0",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "La Mesa Fire Department",
-      "title": "Firefighter Paramedic (Lateral and Entry Level)",
-      "region": "San Diego",
-      "open_date": "2026-10-08",
-      "close_date": "2026-10-25",
-      "source_url": "https://www.governmentjobs.com/careers/lamesa/jobs/5507988-0",
       "source": "governmentjobs"
     }
   ]
