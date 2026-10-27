@@ -1,28 +1,10 @@
 {
   "meta": {
-    "generated": "2026-10-26T05:38:09",
-    "count": 30,
+    "generated": "2026-10-27T05:37:40",
+    "count": 28,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
-    {
-      "department": "Fairfield Fire Department",
-      "title": "Firefighter/Paramedic (Entry Level & Lateral Level)",
-      "region": "Bay Area",
-      "open_date": "2026-10-05",
-      "close_date": "2026-10-26",
-      "source_url": "https://www.governmentjobs.com/careers/fairfield/jobs/5499710-0",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Bakersfield Fire Department",
-      "title": "Firefighter Trainee",
-      "region": "Sacramento/Central Valley",
-      "open_date": "2026-09-14",
-      "close_date": "2026-10-26",
-      "source_url": "https://www.governmentjobs.com/careers/bakersfield/jobs/5480502-0",
-      "source": "governmentjobs"
-    },
     {
       "department": "Los Angeles County Fire Department",
       "title": "FIRE FIGHTER TRAINEE (PARAMEDIC)",
