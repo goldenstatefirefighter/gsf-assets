@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-10-27T05:37:40",
+    "generated": "2026-10-28T05:37:41",
     "count": 28,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
@@ -30,15 +30,6 @@
       "open_date": "2026-08-27",
       "close_date": "2026-11-22",
       "source_url": "https://www.governmentjobs.com/careers/monrovia/jobs/5464473-0",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Fullerton Fire Department",
-      "title": "Fire Cadet",
-      "region": "Los Angeles/SoCal",
-      "open_date": "2026-08-03",
-      "close_date": null,
-      "source_url": "https://www.governmentjobs.com/careers/fullerton/jobs/5430126-0",
       "source": "governmentjobs"
     },
     {
@@ -219,6 +210,15 @@
       "open_date": "2026-07-29",
       "close_date": null,
       "source_url": "https://www.governmentjobs.com/careers/lindsayca/jobs/5430171-0",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Reedley Fire Department",
+      "title": "Volunteer Paid-Call Firefighter",
+      "region": "Sacramento/Central Valley",
+      "open_date": "2026-10-27",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/reedley/jobs/5530393-0",
       "source": "governmentjobs"
     },
     {
