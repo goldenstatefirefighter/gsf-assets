@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-11-08T04:36:47",
+    "generated": "2026-11-09T04:36:56",
     "count": 29,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
@@ -17,7 +17,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-08T12:31:08+00:00"
+      "observed_at": "2026-11-09T12:31:10+00:00"
     },
     {
       "department": "Monrovia Fire Department",
@@ -31,7 +31,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-08T12:31:34+00:00"
+      "observed_at": "2026-11-09T12:31:35+00:00"
     },
     {
       "department": "Fullerton Fire Department",
@@ -45,7 +45,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-08T12:31:44+00:00"
+      "observed_at": "2026-11-09T12:31:43+00:00"
     },
     {
       "department": "Watsonville Fire Department",
@@ -59,7 +59,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-08T12:32:08+00:00"
+      "observed_at": "2026-11-09T12:32:06+00:00"
     },
     {
       "department": "Oceanside Fire Department",
@@ -73,7 +73,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-08T12:32:26+00:00"
+      "observed_at": "2026-11-09T12:32:20+00:00"
     },
     {
       "department": "Santee Fire Department",
@@ -87,7 +87,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-08T12:32:32+00:00"
+      "observed_at": "2026-11-09T12:32:24+00:00"
     },
     {
       "department": "San Bernardino County Fire",
@@ -101,7 +101,7 @@
       "eligibility": "Internal/promotional recruitment only",
       "eligibility_excerpt": "",
       "source_exam_type": "Promotional",
-      "observed_at": "2026-11-08T12:32:37+00:00"
+      "observed_at": "2026-11-09T12:32:30+00:00"
     },
     {
       "department": "El Centro Fire Department",
@@ -115,7 +115,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-08T12:32:48+00:00"
+      "observed_at": "2026-11-09T12:32:41+00:00"
     },
     {
       "department": "Central Marin Fire Authority",
@@ -129,7 +129,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-08T12:32:57+00:00"
+      "observed_at": "2026-11-09T12:32:50+00:00"
     },
     {
       "department": "Santa Clara Fire Department",
@@ -143,7 +143,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-08T12:33:40+00:00"
+      "observed_at": "2026-11-09T12:33:32+00:00"
     },
     {
       "department": "Barstow Fire Protection District",
@@ -157,7 +157,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-08T12:34:21+00:00"
+      "observed_at": "2026-11-09T12:34:12+00:00"
     },
     {
       "department": "Barstow Fire Protection District",
@@ -171,7 +171,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open & Promotional",
-      "observed_at": "2026-11-08T12:34:21+00:00"
+      "observed_at": "2026-11-09T12:34:12+00:00"
     },
     {
       "department": "Cathedral City Fire Department",
@@ -185,7 +185,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-08T12:34:23+00:00"
+      "observed_at": "2026-11-09T12:34:14+00:00"
     },
     {
       "department": "Montclair Fire Department",
@@ -199,7 +199,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-08T12:34:36+00:00"
+      "observed_at": "2026-11-09T12:34:30+00:00"
     },
     {
       "department": "Montclair Fire Department",
@@ -213,7 +213,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-08T12:34:36+00:00"
+      "observed_at": "2026-11-09T12:34:30+00:00"
     },
     {
       "department": "Montclair Fire Department",
@@ -227,7 +227,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-08T12:34:36+00:00"
+      "observed_at": "2026-11-09T12:34:30+00:00"
     },
     {
       "department": "Compton Fire Department",
@@ -241,7 +241,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open & Promotional",
-      "observed_at": "2026-11-08T12:34:52+00:00"
+      "observed_at": "2026-11-09T12:34:49+00:00"
     },
     {
       "department": "Orange County Fire Authority",
@@ -255,7 +255,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open & Promotional",
-      "observed_at": "2026-11-08T12:35:09+00:00"
+      "observed_at": "2026-11-09T12:35:06+00:00"
     },
     {
       "department": "Orange County Fire Authority",
@@ -269,7 +269,7 @@
       "eligibility": "Internal recruitment only",
       "eligibility_excerpt": "This recruitment is an Orange County Fire Authority (OCFA) internal recruitment. ONLY applications from current, qualified non-probationary (all ranks) OCFA Fire Captains, Fire Apparatus Engineers, and Firefighter personnel will be accepted.",
       "source_exam_type": "Open & Promotional",
-      "observed_at": "2026-11-08T12:35:09+00:00"
+      "observed_at": "2026-11-09T12:35:06+00:00"
     },
     {
       "department": "Santa Fe Springs Fire Department",
@@ -283,7 +283,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-08T12:35:21+00:00"
+      "observed_at": "2026-11-09T12:35:16+00:00"
     },
     {
       "department": "Atwater Fire Department",
@@ -297,7 +297,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-08T12:35:39+00:00"
+      "observed_at": "2026-11-09T12:35:36+00:00"
     },
     {
       "department": "Lindsay Fire Department",
@@ -311,7 +311,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-08T12:35:54+00:00"
+      "observed_at": "2026-11-09T12:35:54+00:00"
     },
     {
       "department": "Manteca Fire Department",
@@ -325,7 +325,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-08T12:35:59+00:00"
+      "observed_at": "2026-11-09T12:35:58+00:00"
     },
     {
       "department": "Porterville Fire Department",
@@ -339,7 +339,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-08T12:36:01+00:00"
+      "observed_at": "2026-11-09T12:36:00+00:00"
     },
     {
       "department": "Reedley Fire Department",
@@ -353,7 +353,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-08T12:36:03+00:00"
+      "observed_at": "2026-11-09T12:36:02+00:00"
     },
     {
       "department": "Rocklin Fire Department",
@@ -367,7 +367,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-08T12:36:05+00:00"
+      "observed_at": "2026-11-09T12:36:06+00:00"
     },
     {
       "department": "Rocklin Fire Department",
@@ -381,7 +381,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-08T12:36:05+00:00"
+      "observed_at": "2026-11-09T12:36:06+00:00"
     },
     {
       "department": "Tulare Fire Department",
@@ -395,7 +395,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-08T12:36:24+00:00"
+      "observed_at": "2026-11-09T12:36:31+00:00"
     },
     {
       "department": "Imperial County Fire Department",
@@ -409,7 +409,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-08T12:36:41+00:00"
+      "observed_at": "2026-11-09T12:36:48+00:00"
     }
   ]
 }
