@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-11-17T04:37:19",
-    "count": 23,
+    "generated": "2026-11-18T04:36:44",
+    "count": 28,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
@@ -17,7 +17,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-17T12:30:07+00:00"
+      "observed_at": "2026-11-18T12:30:05+00:00"
     },
     {
       "department": "Sacramento City Fire Department",
@@ -31,7 +31,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-17T12:30:34+00:00"
+      "observed_at": "2026-11-18T12:30:28+00:00"
     },
     {
       "department": "Los Angeles County Fire Department",
@@ -45,7 +45,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-17T12:31:16+00:00"
+      "observed_at": "2026-11-18T12:31:06+00:00"
     },
     {
       "department": "Glendale Fire Department",
@@ -59,7 +59,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-17T12:31:23+00:00"
+      "observed_at": "2026-11-18T12:31:13+00:00"
     },
     {
       "department": "Monrovia Fire Department",
@@ -73,7 +73,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-17T12:31:44+00:00"
+      "observed_at": "2026-11-18T12:31:31+00:00"
     },
     {
       "department": "El Segundo Fire Department",
@@ -87,7 +87,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-17T12:32:03+00:00"
+      "observed_at": "2026-11-18T12:31:49+00:00"
     },
     {
       "department": "Watsonville Fire Department",
@@ -101,7 +101,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-17T12:32:15+00:00"
+      "observed_at": "2026-11-18T12:32:01+00:00"
     },
     {
       "department": "Oceanside Fire Department",
@@ -115,7 +115,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-17T12:32:30+00:00"
+      "observed_at": "2026-11-18T12:32:15+00:00"
     },
     {
       "department": "Santee Fire Department",
@@ -129,7 +129,21 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-17T12:32:35+00:00"
+      "observed_at": "2026-11-18T12:32:19+00:00"
+    },
+    {
+      "department": "San Bernardino County Fire",
+      "title": "Firefighter - Paramedic (Fire District)",
+      "region": "Inland Empire",
+      "open_date": "2026-03-07",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/sanbernardino/jobs/5257223-0",
+      "source": "governmentjobs",
+      "role_type": "Full-time",
+      "eligibility": "Internal/promotional recruitment only",
+      "eligibility_excerpt": "",
+      "source_exam_type": "Promotional",
+      "observed_at": "2026-11-18T12:32:24+00:00"
     },
     {
       "department": "El Centro Fire Department",
@@ -143,7 +157,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-17T12:32:56+00:00"
+      "observed_at": "2026-11-18T12:32:36+00:00"
     },
     {
       "department": "Central Marin Fire Authority",
@@ -157,7 +171,21 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-17T12:33:09+00:00"
+      "observed_at": "2026-11-18T12:32:46+00:00"
+    },
+    {
+      "department": "Barstow Fire Protection District",
+      "title": "Firefighter Paramedic",
+      "region": "Inland Empire",
+      "open_date": "2026-06-02",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/barstowca/jobs/5210932-0",
+      "source": "governmentjobs",
+      "role_type": "Full-Time",
+      "eligibility": "Eligibility: confirm in posting",
+      "eligibility_excerpt": "",
+      "source_exam_type": "Open",
+      "observed_at": "2026-11-18T12:34:10+00:00"
     },
     {
       "department": "Cathedral City Fire Department",
@@ -171,7 +199,49 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-17T12:34:46+00:00"
+      "observed_at": "2026-11-18T12:34:12+00:00"
+    },
+    {
+      "department": "Montclair Fire Department",
+      "title": "Firefighter (Paramedic) - Entry Level",
+      "region": "Inland Empire",
+      "open_date": "2023-04-25",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/cityofmontclair/jobs/3940420-0",
+      "source": "governmentjobs",
+      "role_type": "Full-Time",
+      "eligibility": "Eligibility: confirm in posting",
+      "eligibility_excerpt": "",
+      "source_exam_type": "Open",
+      "observed_at": "2026-11-18T12:34:26+00:00"
+    },
+    {
+      "department": "Montclair Fire Department",
+      "title": "Fire Engineer",
+      "region": "Inland Empire",
+      "open_date": "2026-05-19",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/cityofmontclair/jobs/5349138-0",
+      "source": "governmentjobs",
+      "role_type": "Full-Time",
+      "eligibility": "Eligibility: confirm in posting",
+      "eligibility_excerpt": "",
+      "source_exam_type": "Open",
+      "observed_at": "2026-11-18T12:34:26+00:00"
+    },
+    {
+      "department": "Montclair Fire Department",
+      "title": "Firefighter (Paramedic) - Lateral",
+      "region": "Inland Empire",
+      "open_date": "2023-04-25",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/cityofmontclair/jobs/3940529-0",
+      "source": "governmentjobs",
+      "role_type": "Lateral / Full-Time",
+      "eligibility": "Eligibility: confirm in posting",
+      "eligibility_excerpt": "",
+      "source_exam_type": "Open",
+      "observed_at": "2026-11-18T12:34:26+00:00"
     },
     {
       "department": "Orange County Fire Authority",
@@ -185,7 +255,7 @@
       "eligibility": "Internal recruitment only",
       "eligibility_excerpt": "The Division IV Administrative Fire Captain recruitment is an Orange County Fire Authority (OCFA) internal recruitment. Only applications from current, non-probationary OCFA Fire Captains will be considered .",
       "source_exam_type": "Open & Promotional",
-      "observed_at": "2026-11-17T12:35:37+00:00"
+      "observed_at": "2026-11-18T12:34:59+00:00"
     },
     {
       "department": "Orange County Fire Authority",
@@ -199,7 +269,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open & Promotional",
-      "observed_at": "2026-11-17T12:35:37+00:00"
+      "observed_at": "2026-11-18T12:34:59+00:00"
     },
     {
       "department": "Santa Fe Springs Fire Department",
@@ -213,7 +283,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-17T12:35:48+00:00"
+      "observed_at": "2026-11-18T12:35:08+00:00"
     },
     {
       "department": "Atwater Fire Department",
@@ -227,7 +297,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-17T12:36:06+00:00"
+      "observed_at": "2026-11-18T12:35:26+00:00"
     },
     {
       "department": "Lindsay Fire Department",
@@ -241,7 +311,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-17T12:36:26+00:00"
+      "observed_at": "2026-11-18T12:35:52+00:00"
     },
     {
       "department": "Manteca Fire Department",
@@ -255,7 +325,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-17T12:36:31+00:00"
+      "observed_at": "2026-11-18T12:35:57+00:00"
     },
     {
       "department": "Porterville Fire Department",
@@ -269,7 +339,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-17T12:36:34+00:00"
+      "observed_at": "2026-11-18T12:35:59+00:00"
     },
     {
       "department": "Rocklin Fire Department",
@@ -283,7 +353,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-17T12:36:38+00:00"
+      "observed_at": "2026-11-18T12:36:03+00:00"
     },
     {
       "department": "Rocklin Fire Department",
@@ -297,7 +367,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-17T12:36:38+00:00"
+      "observed_at": "2026-11-18T12:36:03+00:00"
     },
     {
       "department": "Tulare Fire Department",
@@ -311,7 +381,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-17T12:36:57+00:00"
+      "observed_at": "2026-11-18T12:36:22+00:00"
     },
     {
       "department": "Imperial County Fire Department",
@@ -325,7 +395,7 @@
       "eligibility": "Eligibility: confirm in posting",
       "eligibility_excerpt": "",
       "source_exam_type": "Open",
-      "observed_at": "2026-11-17T12:37:12+00:00"
+      "observed_at": "2026-11-18T12:36:38+00:00"
     }
   ]
 }
